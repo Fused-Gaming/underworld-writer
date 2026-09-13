@@ -7,23 +7,20 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
-    "./mcp": "./dist/mcp-tools.js"
+    "./mcp": "./dist/mcp-tools.js",
+    "./cli": "./dist/cli.js"
   },
   "bin": {
     "underworld-writer": "./dist/cli.js"
   },
+  "plugin": "./plugin.json",
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "dev": "tsc --project tsconfig.json --watch",
     "cli": "node dist/cli.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "benchmark": "npm run build && node benchmarks/utilities/benchmark-runner.js",
-    "benchmark:ts": "npx ts-node benchmarks/utilities/benchmark-runner.ts",
-    "benchmark:compare": "node scripts/compare-baselines.js",
-    "benchmark:report": "node scripts/generate-benchmark-report.js",
-    "benchmark:baseline": "npm run benchmark > benchmarks/packages/@h4shed/skill-underworld-writer/v2.0.0/baseline-results.json"
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@h4shed/mcp-core": "^1.0.40"

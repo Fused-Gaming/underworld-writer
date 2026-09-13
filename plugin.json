@@ -1,0 +1,88 @@
+{
+  "name": "underworld-writer",
+  "displayName": "Underworld Writer",
+  "version": "2.0.5",
+  "description": "Dual-purpose skill for fictional underworld narratives and factually sourced true crime writing with character development and PACER API integration",
+  "author": "Fused Gaming",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Fused-Gaming/underworld-writer",
+  "type": "skill",
+  "category": "creative-writing",
+  "tags": ["skill", "character-development", "narrative", "underworld", "true-crime", "pacer", "mcp"],
+  "exports": {
+    "skill": "./dist/index.js",
+    "tools": "./dist/mcp-tools.js",
+    "cli": "./dist/cli.js"
+  },
+  "cli": {
+    "command": "underworld-writer",
+    "description": "Command-line tool for character creation and narrative development"
+  },
+  "capabilities": {
+    "character_creation": {
+      "description": "Create detailed underworld character profiles",
+      "phases": ["foundation", "integration", "narrative"]
+    },
+    "character_validation": {
+      "description": "Validate character profiles for completeness"
+    },
+    "character_export": {
+      "description": "Export characters as markdown documentation"
+    },
+    "relationship_validation": {
+      "description": "Check relationship consistency between characters"
+    },
+    "pacer_integration": {
+      "description": "True crime fact-checking via PACER federal court records",
+      "source_tiers": ["tier1-federal-courts", "tier2-corroborating", "tier3-journalist", "tier4-searched-unavailable"]
+    },
+    "asset_validation": {
+      "description": "Cleanroom sandbox asset validation for distribution compliance",
+      "licenses": ["svgrepo-free", "cc0", "mit", "apache2", "unlicense", "public-domain"]
+    }
+  },
+  "tools": [
+    {
+      "name": "underworld_create_character",
+      "description": "Create a detailed underworld character profile with three-phase methodology",
+      "type": "character"
+    },
+    {
+      "name": "underworld_validate_character",
+      "description": "Validate a character profile for completeness and consistency",
+      "type": "validation"
+    },
+    {
+      "name": "underworld_export_character",
+      "description": "Export character profile as formatted markdown documentation",
+      "type": "export"
+    },
+    {
+      "name": "underworld_validate_relationships",
+      "description": "Check relationship consistency between two characters",
+      "type": "validation"
+    }
+  ],
+  "dependencies": {
+    "@h4shed/mcp-core": "^1.0.40"
+  },
+  "optionalDependencies": {
+    "@h4shed/cleanroom": "^1.0.0",
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "skill",
+    "underworld",
+    "character",
+    "narrative",
+    "creative-writing",
+    "true-crime",
+    "fiction",
+    "journalism",
+    "source-verification",
+    "editorial",
+    "pacer",
+    "fact-checking"
+  ]
+}
