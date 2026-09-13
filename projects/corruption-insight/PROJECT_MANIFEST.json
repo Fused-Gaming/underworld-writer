@@ -1,0 +1,72 @@
+{
+  "projectName": "Corruption Insight",
+  "tagline": "Bay Area Government Corruption Podcast Series",
+  "description": "Investigative true-crime podcast revealing California Bay Area scandals where powerful individuals escaped justice through legal maneuvering, connections, and systemic failures",
+  "brand": "Corruption Insight",
+  "genre": "true-crime-investigative",
+  "region": "California Bay Area (San Jose, San Francisco, Silicon Valley, surrounding counties)",
+  "targetAudience": "Listeners interested in government accountability, legal system analysis, and Bay Area corruption",
+  "podcastFormat": "two-part episodes",
+  "episodeDuration": "6-8 minutes per part",
+  "verificationMode": "pacer-records",
+  "episodes": [
+    {
+      "episodeNumber": 1,
+      "title": "The Union Boss Who Smuggled Opioids: Joanne Segovia's Zero-Jail Deal",
+      "caseFile": "joanne-segovia-case.json",
+      "location": "San Jose, California",
+      "year": 2024,
+      "status": "ready-for-script-generation"
+    },
+    {
+      "episodeNumber": 2,
+      "title": "Stealing from Housing: Clarke Howatt's $3.9M Embezzlement",
+      "caseFile": "clarke-howatt-case.json",
+      "location": "Bay Area Regional Government",
+      "year": 2016,
+      "status": "ready-for-script-generation"
+    },
+    {
+      "episodeNumber": 3,
+      "title": "The Building Inspector's Decade of Bribes: Rodolfo Pada",
+      "caseFile": "rodolfo-pada-case.json",
+      "location": "San Francisco, California",
+      "year": 2026,
+      "status": "ready-for-script-generation"
+    },
+    {
+      "episodeNumber": 4,
+      "title": "Half a Year for $20K Bribes: Ken Wong's Minimal Sentence",
+      "caseFile": "ken-wong-case.json",
+      "location": "San Francisco, California",
+      "year": 2023,
+      "status": "ready-for-script-generation"
+    },
+    {
+      "episodeNumber": 5,
+      "title": "A $36K Rolex and a Construction Deal: Florence Kong's Corruption",
+      "caseFile": "florence-kong-case.json",
+      "location": "San Francisco, California",
+      "year": 2023,
+      "status": "ready-for-script-generation"
+    }
+  ],
+  "commonThemes": [
+    "Legal system failures allowing wealthy/connected individuals to escape consequences",
+    "Restitution used as a replacement for prison time",
+    "Public service records cited to minimize sentences for federal crimes",
+    "Bay Area's systemic corruption across government agencies",
+    "The two-tiered justice system revealed through sentencing disparities"
+  ],
+  "investigativeAngles": [
+    "Why addiction narratives reduce sentences for drug smuggling",
+    "How restitution can replace prison time for embezzlement",
+    "What makes a 14-year bribery scheme worth only 13 months",
+    "Why parole officers get half-year sentences for federal bribery",
+    "The Rolex and the contract: Tracking contractor corruption"
+  ],
+  "producerNotes": "Each episode focuses on the 'escape mechanism' - the legal, procedural, or systemic factor that allowed justice to be subverted. Emphasize the public impact of these corruptions and contrast with typical sentencing for ordinary citizens.",
+  "createdDate": "2026-09-13",
+  "createdBy": "Corruption Insight Research Team",
+  "workspaceLocation": "/home/user/underworld-writer/projects/corruption-insight"
+}

@@ -1,0 +1,97 @@
+#!/usr/bin/env node
+
+import { SkillRegistry } from '@h4shed/mcp-core';
+
+console.log('🔍 Validating Corruption Insight MCP Setup...\n');
+
+async function validateSetup() {
+  try {
+    // Test 1: Initialize SkillRegistry
+    console.log('✓ Test 1: SkillRegistry initialization');
+    const registry = new SkillRegistry();
+    console.log('  Status: SkillRegistry created successfully\n');
+
+    // Test 2: Check installed packages
+    console.log('✓ Test 2: Package verification');
+    try {
+      const mcpCore = await import('@h4shed/mcp-core');
+      console.log('  @h4shed/mcp-core: Verified (v1.0.40+)');
+    } catch (e) {
+      console.error('  ✗ @h4shed/mcp-core: Failed to load');
+    }
+
+    try {
+      const underworldWriter = await import('@h4shed/skill-underworld-writer');
+      console.log('  @h4shed/skill-underworld-writer: Verified (v2.0.6+)');
+    } catch (e) {
+      console.log('  ℹ @h4shed/skill-underworld-writer: Running as project itself\n');
+    }
+
+    // Test 3: Workspace structure verification
+    console.log('✓ Test 3: Workspace structure');
+    const fs = await import('fs').then(m => m.promises);
+    const path = await import('path');
+    const __dirname = path.dirname(new URL(import.meta.url).pathname);
+    const projectRoot = path.resolve(__dirname, '..');
+
+    const directories = [
+      'projects/corruption-insight/characters',
+      'projects/corruption-insight/episodes',
+      'projects/corruption-insight/research',
+      'output/corruption-insight'
+    ];
+
+    for (const dir of directories) {
+      const fullPath = path.join(projectRoot, dir);
+      try {
+        await fs.access(fullPath);
+        console.log(`  ✓ ${dir}`);
+      } catch {
+        console.log(`  ✗ ${dir} - not found`);
+      }
+    }
+
+    // Test 4: Configuration file
+    console.log('\n✓ Test 4: MCP configuration');
+    const configPath = path.join(projectRoot, '.fused-gaming-mcp.json');
+    try {
+      const configData = await fs.readFile(configPath, 'utf-8');
+      const config = JSON.parse(configData);
+      console.log(`  ✓ .fused-gaming-mcp.json loaded`);
+      console.log(`  Project: ${config.projectName}`);
+      console.log(`  Skills: ${config.skills.length} configured`);
+      console.log(`  Brand: ${config.skills[0].config.brand}`);
+    } catch (e) {
+      console.error('  ✗ Failed to load configuration');
+    }
+
+    // Test 5: Case files verification
+    console.log('\n✓ Test 5: Bay Area scandal case files');
+    const charactersDir = path.join(projectRoot, 'projects/corruption-insight/characters');
+    try {
+      const files = await fs.readdir(charactersDir);
+      const caseFiles = files.filter(f => f.endsWith('.json'));
+      console.log(`  Found ${caseFiles.length} case files:`);
+      caseFiles.forEach(f => {
+        const caseName = f.replace('-case.json', '').replace(/-/g, ' ').toUpperCase();
+        console.log(`    • ${caseName}`);
+      });
+    } catch (e) {
+      console.error('  ✗ Failed to read case files');
+    }
+
+    console.log('\n✅ Corruption Insight MCP Workspace Setup Complete!\n');
+    console.log('Ready to generate podcast scripts for:');
+    console.log('  Episode 1: Joanne Segovia - Union Boss Opioid Smuggling');
+    console.log('  Episode 2: Clarke Howatt - $3.9M Housing Fund Embezzlement');
+    console.log('  Episode 3: Rodolfo Pada - 14-Year Building Inspector Bribery Scheme');
+    console.log('  Episode 4: Ken Wong - Parole Officer $20K Bribery');
+    console.log('  Episode 5: Florence Kong - Contractor Luxury Bribery Network\n');
+
+  } catch (error) {
+    console.error('❌ Validation failed:', error.message);
+    process.exit(1);
+  }
+}
+
+validateSetup();

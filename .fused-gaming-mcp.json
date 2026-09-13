@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "projectName": "Underworld Writer - Corruption Insight Podcast",
+  "skills": [
+    {
+      "name": "skill-underworld-writer",
+      "version": "2.0.6",
+      "enabled": true,
+      "config": {
+        "brand": "Corruption Insight",
+        "genre": "government-corruption",
+        "region": "California Bay Area",
+        "podcastFormat": "true-crime-investigative",
+        "verificationMode": "pacer-records"
+      }
+    }
+  ],
+  "mcpServers": [
+    {
+      "name": "mcp-core",
+      "version": "1.0.40",
+      "enabled": true
+    }
+  ],
+  "workspace": {
+    "projectsDir": "./projects",
+    "outputDir": "./output/corruption-insight",
+    "templatesDir": "./templates",
+    "assetsDir": "./assets"
+  }
+}

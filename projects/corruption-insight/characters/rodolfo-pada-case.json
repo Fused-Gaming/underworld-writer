@@ -1,0 +1,60 @@
+{
+  "caseId": "corruption-bay-003",
+  "caseName": "Rodolfo Pada - SF Building Inspector Bribery Syndicate",
+  "brand": "Corruption Insight",
+  "type": "government-corruption",
+  "region": "San Francisco, California",
+  "year": 2026,
+  "character": {
+    "name": "Rodolfo Pada",
+    "title": "Building Inspector, San Francisco Department of Building Inspection",
+    "role": "Corrupt Government Official",
+    "background": "Long-serving building inspector with 14+ years exploiting position",
+    "faction": "Municipal Government Corruption",
+    "motivations": "Systematic bribery for financial gain while corrupting building permit process"
+  },
+  "offense": {
+    "type": "Bribery & Official Misconduct",
+    "description": "Accepted over $40,000 in bribes from construction firms over 14 years (2003-2017) to approve permits, expedite inspections, and approve building plans - directly compromising building code enforcement and public safety",
+    "severity": "Federal Crime - Long-term Corruption",
+    "scale": "$40,000+ in bribes",
+    "duration": "14 years of systematic corruption",
+    "impact": "Compromised building safety standards and permit integrity in San Francisco"
+  },
+  "howTheyGotAwayWithIt": {
+    "strategy": "Long Career Used to Mitigate Sentencing",
+    "keyFactors": [
+      "14 years of undetected systematic bribery",
+      "Used long government service record as mitigation argument",
+      "Bribes characterized as modest compared to scale of corruption",
+      "Career-ending rather than jail-ending consequence emphasis",
+      "Sentencing judge cited distinguished history as mitigating factor"
+    ]
+  },
+  "sentence": {
+    "prison_time": "1 year and 1 day",
+    "probation": "Supervised release",
+    "restitution": "Repayment of bribe amounts",
+    "status": "MINIMAL SENTENCE FOR 14-YEAR BRIBERY SCHEME"
+  },
+  "fallout": {
+    "consequences": [
+      "Loss of career with public pension implications",
+      "Buildings approved without proper safety compliance",
+      "Public trust erosion in building safety oversight",
+      "Questions about which buildings were approved fraudulently"
+    ],
+    "avoided": "Lengthy prison sentence despite 14 years of systematic bribery"
+  },
+  "narrative_hooks": {
+    "headline": "SF Building Inspector Took Bribes for 14 Years, Served Only 1 Year in Prison",
+    "question": "How does a decade-plus bribery scheme result in just 13 months of incarceration?",
+    "investigation_angle": "Which San Francisco buildings had their permits fraudulently approved by this inspector?"
+  },
+  "sources": [
+    "SF Chronicle - 2026",
+    "Federal Court Records",
+    "Department of Building Inspection Records"
+  ],
+  "verification_status": "VERIFIED - Recent federal sentencing (2026)"
+}
