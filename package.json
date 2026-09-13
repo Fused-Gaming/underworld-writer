@@ -1,20 +1,32 @@
 {
   "name": "@h4shed/skill-underworld-writer",
   "version": "2.0.0",
-  "description": "Dual-methodology skill for fictional underworld narratives and factually sourced true crime writing with systematic character development and editorial verification",
+  "description": "Dual-methodology skill for fictional underworld narratives and factually sourced true crime writing with systematic character development, editorial verification, and PACER API integration",
   "type": "module",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./mcp": "./dist/mcp-tools.js"
+  },
+  "bin": {
+    "underworld-writer": "./dist/cli.js"
   },
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "dev": "tsc --project tsconfig.json --watch",
+    "cli": "node dist/cli.js",
     "test": "echo \"No tests yet\"",
-    "benchmark": "echo 'Benchmarks: OK'"
+    "benchmark": "npm run build && node benchmarks/utilities/benchmark-runner.js",
+    "benchmark:ts": "npx ts-node benchmarks/utilities/benchmark-runner.ts",
+    "benchmark:compare": "node scripts/compare-baselines.js",
+    "benchmark:report": "node scripts/generate-benchmark-report.js",
+    "benchmark:baseline": "npm run benchmark > benchmarks/packages/@h4shed/skill-underworld-writer/v2.0.0/baseline-results.json"
   },
   "dependencies": {
-    "@h4shed/mcp-core": "^1.0.24"
+    "@h4shed/mcp-core": "^1.0.24",
+    "@h4shed/cleanroom": "^1.0.0",
+    "@modelcontextprotocol/sdk": "^1.29.0"
   },
   "devDependencies": {
     "@types/node": "^20.12.0",
@@ -31,8 +43,15 @@
     "fiction",
     "journalism",
     "source-verification",
-    "editorial"
+    "editorial",
+    "pacer",
+    "fact-checking"
   ],
   "author": "Fused Gaming",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Fused-Gaming/underworld-writer",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }
