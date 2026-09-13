@@ -1,7 +1,7 @@
 {
   "name": "@h4shed/skill-underworld-writer",
-  "version": "2.0.5",
-  "description": "Dual-methodology skill for fictional underworld narratives and factually sourced true crime writing with systematic character development, editorial verification, and PACER API integration",
+  "version": "2.0.6",
+  "description": "Dual-methodology skill for fictional underworld narratives and factually sourced true crime writing with podcast scripting engine, character development, editorial verification, and PACER API integration",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

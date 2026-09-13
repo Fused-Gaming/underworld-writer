@@ -1,8 +1,8 @@
 {
   "name": "underworld-writer",
   "displayName": "Underworld Writer",
-  "version": "2.0.5",
-  "description": "Dual-purpose skill for fictional underworld narratives and factually sourced true crime writing with character development and PACER API integration",
+  "version": "2.0.6",
+  "description": "Dual-purpose skill for fictional underworld narratives, podcast scripting engine, factually sourced true crime writing with character development and PACER API integration",
   "author": "Fused Gaming",
   "license": "Apache-2.0",
   "repository": "https://github.com/Fused-Gaming/underworld-writer",
@@ -31,6 +31,11 @@
     },
     "relationship_validation": {
       "description": "Check relationship consistency between characters"
+    },
+    "podcast_scripting": {
+      "description": "Generate production-ready podcast episode scripts for true crime producers",
+      "formats": ["single-episode", "two-part-episode"],
+      "features": ["fact-attribution", "qa-windows", "missing-fact-detection", "producer-briefs", "guest-handoffs"]
     },
     "pacer_integration": {
       "description": "True crime fact-checking via PACER federal court records",
@@ -61,6 +66,26 @@
       "name": "underworld_validate_relationships",
       "description": "Check relationship consistency between two characters",
       "type": "validation"
+    },
+    {
+      "name": "underworld_generate_episode_script",
+      "description": "Generate a podcast episode script from underworld character profile with optional PACER case data",
+      "type": "podcast"
+    },
+    {
+      "name": "underworld_create_guest_handoff",
+      "description": "Create producer brief and guest interview preparation materials for podcast episodes",
+      "type": "podcast"
+    },
+    {
+      "name": "underworld_identify_qa_windows",
+      "description": "Identify Q&A insertion points in podcast scripts for guest expertise and discussion",
+      "type": "podcast"
+    },
+    {
+      "name": "underworld_flag_missing_facts",
+      "description": "Flag claims lacking Tier 1 verification for guest interview follow-up opportunities",
+      "type": "podcast"
     }
   ],
   "dependencies": {

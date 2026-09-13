@@ -1,8 +1,8 @@
 # Underworld Writer
 
-**Dual-Purpose Character and Narrative Development for Creative Fiction and True Crime Documentation**
+**Multi-Purpose Character Development, True Crime Narratives, and Podcast Scripting Engine**
 
-Create detailed character profiles, mythologies, and narrative worlds for both fictional underworld-themed stories and fact-checked true crime narratives using PACER API integration for editorial accuracy and real story transformation.
+Create detailed character profiles, mythologies, and narrative worlds for fictional underworld-themed stories, fact-checked true crime narratives, and production-ready podcast episode scripts. Integrates PACER API for editorial accuracy, automatic fact attribution, and guest interview optimization.
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js->=20.0.0-green.svg)](package.json)
@@ -11,21 +11,28 @@ Create detailed character profiles, mythologies, and narrative worlds for both f
 
 ## Overview
 
-**Underworld Writer** is a specialized skill for developing sophisticated character profiles and narratives across two distinct scenarios:
+**Underworld Writer** is a specialized skill for developing sophisticated character profiles and narratives across three distinct use cases:
 
 1. **Creative Fiction** — Build richly detailed underworld-themed stories with mythologies and hierarchies
 2. **True Crime Documentation** — Transform real court cases into narrative-driven books with fact-checked legal details from PACER
+3. **Podcast Production** — Generate fact-checked episode scripts for true crime podcasters with complete producer handoff materials
 
-The tool provides a three-phase structured methodology for character and narrative development, integrated with PACER API (Public Access to Court Electronic Records) specifications for fact-checking editorial phases and ensuring accuracy in claim validation.
+The tool provides a three-phase structured methodology for character and narrative development, integrated with PACER API (Public Access to Court Electronic Records) specifications for fact-checking editorial phases and ensuring accuracy in claim validation. The podcast engine enables production-ready script generation from character narratives with automatic fact attribution and Q&A window identification.
 
 ### Key Features
 
 - **Dual-Purpose Development** — Fiction writing or true crime narrative transformation
 - **Three-Phase Character Development** — Foundation, Integration, Narrative Architecture  
+- **Podcast Scripting Engine** — Generate production-ready episode scripts (v2.0.6+)
+  - Single or two-part episode formats
+  - Automatic Q&A window identification
+  - Tier-based fact attribution system
+  - Producer briefs, guest handoffs, timing guides
+  - Missing fact detection for interview opportunities
 - **PACER API Integration** — Fact-check real court records and case details for accuracy
 - **MCP Tool Integration** — Register with Claude MCP ecosystem for seamless workflow
-- **CLI Tool** — Command-line interface for character creation and export
-- **Markdown Export** — Generate formatted documentation from character profiles
+- **CLI Tool** — Command-line interface for character creation, podcast generation, and export
+- **Markdown Export** — Generate formatted documentation from character profiles and scripts
 - **Relationship Validation** — Check character consistency across multi-character narratives
 - **Editorial Phase Tracking** — Document amendment history and claim verification status
 
@@ -45,6 +52,90 @@ underworld-writer create --name "Hades" --role "Lord" --faction "Olympian"
 
 # Export character as markdown
 underworld-writer export --file character.json --output character.md
+
+# Generate podcast episode script for true crime producers
+underworld-writer format-script --character character.json --output podcast/
+
+# Validate podcast script structure
+underworld-writer validate-script --character character.json
+
+# Run performance benchmarks
+underworld-writer benchmark
+```
+
+## 🎙️ Podcast Scripting Engine v2.0.6
+
+Generate production-ready podcast episode scripts from underworld character narratives and PACER court records. Perfect for true crime podcasters targeting audiences like *Darknet Diaries*.
+
+### Podcast Features
+
+- **Flexible Formats** — Single episode (~8-12 min) or two-part format (~6-8 min each)
+- **Fact Attribution** — Tier-based verification (Federal Records → Character Narrative)
+- **Q&A Windows** — Automatically identifies 3+ dialogue points for guest expertise
+- **Producer Materials** — Scripts, producer briefs, guest handoffs, timing guides
+- **Missing Facts Detection** — Flags unverified claims for interview follow-up
+- **Markdown Ready** — Export as production-ready documents for producers
+
+### Podcast Quick Start
+
+```bash
+# Generate complete podcast materials
+underworld-writer format-script \
+  --character solarwinds-operator.json \
+  --case pacer-case.json \
+  --output podcast-output/
+
+# Output includes:
+# - full-podcast-script.md (complete narrative with fact attributions)
+# - producer-brief.md (talking points, verification status)
+# - guest-handoff.md (interview preparation guide)
+# - script-data.json (structured data for processing)
+```
+
+### Podcast Example: SolarWinds Supply Chain Attack
+
+The repository includes a complete two-part podcast example about APT29/SVR operators:
+
+```bash
+# Generate the SolarWinds episode
+node generate-solarwinds-example.mjs
+
+# Output statistics:
+# ✓ Format: Two-part episode (13 minutes total)
+# ✓ Segments: 8 narrative segments with pacing
+# ✓ Q&A Windows: 3 identified discussion points
+# ✓ Fact Attributions: 3 verified facts
+# ✓ Missing Facts: 0 (ready for production)
+```
+
+### Programmatic Usage — Podcast Scripting
+
+```typescript
+import { ScriptGenerator } from '@h4shed/skill-underworld-writer/podcast-script-generator';
+
+const character = {
+  phase1: { name: "...", origin: "...", coreMotivation: "..." },
+  phase2: { roleAndRank: "...", factionAffiliation: { ... } },
+  phase3: { storyArc: { ... }, hierarchiesAndConflicts: { ... } }
+};
+
+const caseData = {
+  caseNumber: "CASE-2020-001",
+  title: "Investigation Title",
+  outcome: "Case outcome summary"
+};
+
+const generator = new ScriptGenerator(character, { format: 'two-part' }, caseData);
+
+// Generate complete script with all materials
+const script = generator.generateScript();
+const producerBrief = generator.createProducerBrief();
+const guestScript = generator.createGuestScript();
+
+// Access derived analysis
+const qaWindows = generator.identifyQAWindows();
+const missingFacts = generator.flagMissingFacts();
+const attributions = generator.extractAttributions();
 ```
 
 ### Programmatic Usage — Creative Fiction

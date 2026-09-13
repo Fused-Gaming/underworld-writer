@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-09-13T19:35:00Z",
+  "version": "2.0.6",
+  "metrics": {
+    "singleEpisodeMs": {
+      "value": 0.62,
+      "target": 50,
+      "status": "pass",
+      "description": "Time to generate single episode script"
+    },
+    "twoPartEpisodeMs": {
+      "value": 0.24,
+      "target": 100,
+      "status": "pass",
+      "description": "Time to generate two-part episode script"
+    },
+    "producerBriefMs": {
+      "value": 0.12,
+      "target": 20,
+      "status": "pass",
+      "description": "Time to generate producer brief"
+    },
+    "guestScriptMs": {
+      "value": 0.15,
+      "target": 20,
+      "status": "pass",
+      "description": "Time to generate guest script"
+    },
+    "completeWorkflowMs": {
+      "value": 0.07,
+      "target": 150,
+      "status": "pass",
+      "description": "Time for complete workflow (script + brief + guest)"
+    },
+    "concurrent50GenerationsMs": {
+      "value": 0.01,
+      "target": 1,
+      "avgPerScript": 0.01,
+      "status": "pass",
+      "description": "Average time per script for 50 concurrent generations"
+    },
+    "concurrent20TwoPartMs": {
+      "value": 0.02,
+      "target": 5,
+      "avgPerScript": 0.02,
+      "status": "pass",
+      "description": "Average time per two-part episode for 20 concurrent generations"
+    },
+    "concurrent100BriefsMs": {
+      "value": 0.00,
+      "target": 0.2,
+      "avgPerBrief": 0.00,
+      "status": "pass",
+      "description": "Average time per brief for 100 concurrent generations"
+    }
+  },
+  "testsTotal": 17,
+  "testsPassed": 17,
+  "testsFailed": 0,
+  "overallStatus": "EXCELLENT",
+  "notes": "All operations complete well under target times. Script generation is highly optimized and suitable for high-throughput podcast production."
+}

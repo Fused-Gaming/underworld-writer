@@ -1,0 +1,86 @@
+{
+  "phase1": {
+    "name": "The SolarWinds Operators",
+    "aliases": [
+      "APT29",
+      "Cozy Bear",
+      "The Dukes",
+      "SVR Advanced Persistent Threat Team"
+    ],
+    "origin": "Russian state-sponsored intelligence agency (SVR) operating in cyberspace since the late 2000s",
+    "background": "Highly sophisticated APT group with military-grade capabilities, focused on espionage and long-term network access. Known for sophisticated supply chain attacks and methodical operational security.",
+    "coreMotivation": "Gain sustained access to U.S. government networks and critical infrastructure without detection, enabling long-term intelligence gathering on national security matters"
+  },
+  "phase2": {
+    "roleAndRank": "State-Sponsored APT Team Leader / SVR Cyber Operations Division",
+    "factionAffiliation": {
+      "primary": "Russian Foreign Intelligence Service (SVR)",
+      "allies": [
+        "GRU (Russian military intelligence)",
+        "FSB (Federal Security Service)"
+      ],
+      "opposition": [
+        "NSA (National Security Agency)",
+        "CIA (Central Intelligence Agency)",
+        "CISA (Cybersecurity and Infrastructure Security Agency)",
+        "Microsoft Security Response Center",
+        "SolarWinds Security Team"
+      ]
+    },
+    "relationships": [
+      {
+        "name": "President Vladimir Putin",
+        "type": "authority",
+        "description": "Ultimate authority and strategic direction"
+      },
+      {
+        "name": "SolarWinds Development Team",
+        "type": "target",
+        "description": "Unwitting collaboration partners in supply chain compromise"
+      },
+      {
+        "name": "U.S. Government Network Administrators",
+        "type": "target",
+        "description": "Intelligence targets via compromised software"
+      },
+      {
+        "name": "FireEye Security Researchers",
+        "type": "enemy",
+        "description": "First major discoverers of the operation"
+      }
+    ]
+  },
+  "phase3": {
+    "storyArc": {
+      "act1": "2019-2020: Identified SolarWinds Orion as high-value supply chain target with access to thousands of government and private sector networks",
+      "act2": "March-December 2020: Successfully injected malicious code (SUNBURST) into SolarWinds update pipeline, compromised 18,000+ customers including multiple U.S. government agencies",
+      "act3": "December 2020 onwards: FireEye discovered the breach, U.S. government response, attribution to SVR confirmed, international sanctions imposed, operation exposed but legacy compromises persist"
+    },
+    "hierarchiesAndConflicts": {
+      "internal": [
+        "Balancing technical sophistication with operational stealth",
+        "Managing multiple compromised networks simultaneously",
+        "Maintaining security within Russian government structure"
+      ],
+      "external": [
+        "Detection risk from U.S. cybersecurity firms",
+        "International diplomatic response and sanctions",
+        "Technical detection methods from government agencies",
+        "Supply chain security improvements"
+      ],
+      "personal": [
+        "Operatives caught in geopolitical tensions",
+        "Career advancement tied to operation success",
+        "Psychological burden of managing massive espionage campaign"
+      ]
+    },
+    "thematicElements": [
+      "The vulnerabilities of software supply chains",
+      "Nation-state cyber warfare and espionage",
+      "The asymmetry between defenders and sophisticated attackers",
+      "Unintended consequences of interconnected infrastructure",
+      "The shadow world of state-sponsored cyber operations",
+      "Trust and transparency in technology"
+    ]
+  }
+}
