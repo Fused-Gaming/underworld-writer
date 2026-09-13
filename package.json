@@ -17,7 +17,11 @@
     "dev": "tsc --project tsconfig.json --watch",
     "cli": "node dist/cli.js",
     "test": "echo \"No tests yet\"",
-    "benchmark": "echo 'Benchmarks: OK'"
+    "benchmark": "npm run build && node benchmarks/utilities/benchmark-runner.js",
+    "benchmark:ts": "npx ts-node benchmarks/utilities/benchmark-runner.ts",
+    "benchmark:compare": "node scripts/compare-baselines.js",
+    "benchmark:report": "node scripts/generate-benchmark-report.js",
+    "benchmark:baseline": "npm run benchmark > benchmarks/packages/@h4shed/skill-underworld-writer/v1.0.25/baseline-results.json"
   },
   "dependencies": {
     "@h4shed/mcp-core": "^1.0.24",
