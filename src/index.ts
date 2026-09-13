@@ -295,10 +295,19 @@ ${phase3.interactionPoints.map(i => `- ${i}`).join('\n')}
 `;
 }
 
-export default {
-  createCharacter,
-  validateCharacter,
-  generateCharacterSummary,
-  validateRelationships,
-  exportCharacterAsMarkdown,
+import { UNDERWORLD_WRITER_TOOLS } from './mcp-tools.js';
+
+// Skill object for MCP integration
+const skill = {
+  name: 'underworld-writer',
+  version: '1.0.25',
+  description: 'Create detailed character profiles and narratives for underworld-themed stories with PACER API integration for fact-checking',
+  author: 'Fused Gaming',
+  license: 'Apache-2.0',
+  tools: UNDERWORLD_WRITER_TOOLS,
+  async initialize(_config: any): Promise<void> {
+    // No special initialization needed
+  },
 };
+
+export default skill;
