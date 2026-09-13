@@ -111,12 +111,17 @@ Producers receive:
   - [ ] Character validation + script generation chain
   - [ ] Multi-part episode continuity verification
 
-- [ ] **Performance Benchmarks**
-  - [ ] Single-episode generation: < 50ms
-  - [ ] Two-part episode generation: < 100ms
-  - [ ] PDF export: < 200ms
-  - [ ] Guest handoff formatting: < 30ms
-  - [ ] Stress test: 50 concurrent script generations
+- [ ] **Performance Benchmarks** (separate benchmark.test.ts file)
+  - [ ] Single-episode generation: < 50ms baseline established
+  - [ ] Two-part episode generation: < 100ms baseline established
+  - [ ] PDF export: < 200ms baseline established
+  - [ ] Guest handoff formatting: < 30ms baseline established
+  - [ ] Q&A window detection: < 15ms baseline established
+  - [ ] Stress test: 50 concurrent script generations < 5s total
+  - [ ] Stress test: 100 PDF exports < 20s total
+  - [ ] Benchmark baselines committed to `benchmarks/baseline.json`
+  - [ ] Performance regression detection (compare against baseline)
+  - [ ] Memory usage tracking for large character datasets
 
 - [ ] **Manual QA**
   - [ ] Generated scripts read naturally (read aloud)
@@ -129,76 +134,174 @@ Producers receive:
 
 ### Phase 5: Documentation
 
-- [ ] **README Updates**
-  - [ ] New "Podcast Scripting Engine" section
-  - [ ] Code examples: single + two-part generation
-  - [ ] Output format documentation with samples
-  - [ ] Producer workflow guide
-  - [ ] Guest handoff preparation steps
+- [ ] **README.md Main Updates**
+  - [ ] Add "Podcast Scripting Engine (v2.0.6)" section after intro
+  - [ ] Add "Quick Start" subsection:
+    - [ ] `npx underworld-writer generate-script --help`
+    - [ ] Single-episode example command
+    - [ ] Two-part episode example command
+  - [ ] Add "Features" section listing podcast capabilities
+  - [ ] Add "Use Cases" section (Darknet Diaries, Court Junkie, etc.)
+  - [ ] Add "CLI Commands" section with all 5 commands documented
+  - [ ] Add "MCP Tools for Claude AI" section with 4 tools listed
+  - [ ] Add "Output Formats" section with sample script excerpts
+  - [ ] Add "Performance" section with benchmark table (from benchmarks)
+  - [ ] Link to `PODCASTING_DoD.md` for detailed specification
 
-- [ ] **API Documentation**
-  - [ ] ScriptGenerator class API (methods, parameters, return types)
-  - [ ] ScriptOutput interface documentation
+- [ ] **API Documentation** (docs/api.md new file)
+  - [ ] ScriptGenerator class API
+    - [ ] Constructor signature
+    - [ ] `generateScript(character, options)` method
+    - [ ] `createGuestHandoff(script)` method
+    - [ ] `identifyQAWindows(script)` method
+    - [ ] `flagMissingFacts(script, tier?)` method
+  - [ ] ScriptOutput interface with all properties documented
   - [ ] ProducerBrief, GuestScript interfaces
   - [ ] QAWindow and MissingFactWindow documentation
-  - [ ] Error handling and validation rules
+  - [ ] Error types and validation rules
+  - [ ] TypeScript usage examples
 
-- [ ] **Tutorial/Guide**
+- [ ] **Tutorial/Guide** (docs/quick-start.md new file)
   - [ ] "5-Minute Quick Start" for producers
-  - [ ] Step-by-step: character → script → guest prep
-  - [ ] Example output (single-episode sample)
-  - [ ] Example output (two-part episode sample)
-  - [ ] Troubleshooting common issues
+  - [ ] Prerequisites (Node.js 18+, npx)
+  - [ ] Step 1: Character file format (JSON example)
+  - [ ] Step 2: Generate single-episode script (command + output sample)
+  - [ ] Step 3: Generate two-part episode (command + output sample)
+  - [ ] Step 4: Create guest handoff materials (command + sample)
+  - [ ] Step 5: Identify Q&A windows (command + sample)
+  - [ ] Step 6: Find missing facts (command + sample)
+  - [ ] Example output samples (single-episode excerpt)
+  - [ ] Example output samples (two-part episode excerpt)
+  - [ ] Troubleshooting section:
+    - [ ] "Script is too short/long" solutions
+    - [ ] "Missing facts not detected" solutions
+    - [ ] "PDF export failed" solutions
+    - [ ] "Q&A windows not appearing" solutions
 
-- [ ] **Release Notes**
+- [ ] **Release Notes** (RELEASE_NOTES_v2.0.6.md new file)
+  - [ ] Title: "Underworld Writer v2.0.6 — Podcast Scripting Engine"
+  - [ ] Release date: September 27, 2026
+  - [ ] Status: Production Ready
   - [ ] Feature overview and use cases
-  - [ ] Target audience (podcasters, journalists)
-  - [ ] Known limitations and roadmap
-  - [ ] Breaking changes (if any)
-  - [ ] Migration guide (if updating from v2.0.5)
+  - [ ] Target audience (podcasters, journalists, documentary makers)
+  - [ ] Major features (7 phases with checkmarks)
+  - [ ] Test coverage (40+ tests with baseline benchmarks)
+  - [ ] Performance metrics table
+  - [ ] Known limitations:
+    - [ ] OIDC token for npm publish still pending
+    - [ ] Live PACER API (planned v2.0.7)
+    - [ ] Bureau of Prisons integration (planned v2.1.0)
+  - [ ] Breaking changes (none from v2.0.5)
+  - [ ] Migration guide (if any)
+  - [ ] Upgrade instructions
+  - [ ] Roadmap for v2.0.7 and v2.1.0
 
 ### Phase 6: CLI & MCP Integration
 
-- [ ] **CLI Commands**
-  - [ ] `underworld-writer generate-script` — Create episode script
-  - [ ] `underworld-writer generate-guest-handoff` — Producer materials
-  - [ ] `underworld-writer format-script` — Apply formatting/PDF export
-  - [ ] `underworld-writer validate-script` — Verify facts and structure
-  - [ ] Each command includes `--format single|two-part` option
+- [ ] **CLI Executable Setup**
+  - [ ] `cli.ts` file implements all commands (src/cli.ts)
+  - [ ] Shebang line: `#!/usr/bin/env node`
+  - [ ] Package.json bin entry: `"underworld-writer": "./dist/cli.js"`
+  - [ ] Dist bin file executable permissions set (755)
+  - [ ] `npx underworld-writer --help` works without installation
+  - [ ] Each command has full help text and usage examples
+  - [ ] Error messages are user-friendly and actionable
 
-- [ ] **MCP Tools**
+- [ ] **CLI Commands** (via `npx underworld-writer` or direct binary)
+  - [ ] `npx underworld-writer generate-script [options]` — Create episode script
+    - [ ] `--character <file>` — JSON character file
+    - [ ] `--pacer-case <casenum>` — Optional PACER data
+    - [ ] `--format single|two-part` — Episode format
+    - [ ] `--output <file>` — Output script file
+    - [ ] `--json` — JSON output mode
+  - [ ] `npx underworld-writer generate-guest-handoff [options]` — Producer materials
+  - [ ] `npx underworld-writer format-script [options]` — Apply formatting/PDF export
+    - [ ] `--input <file>` — Input script
+    - [ ] `--output-pdf <file>` — PDF export path
+    - [ ] `--print-ready` — Printer-optimized formatting
+  - [ ] `npx underworld-writer validate-script [options]` — Verify facts and structure
+  - [ ] `npx underworld-writer benchmark` — Run performance tests and compare baselines
+
+- [ ] **MCP Tools** (4 new tools for Claude AI)
   - [ ] New MCP tool: `underworld_generate_episode_script`
-  - [ ] Accepts character + case data, returns formatted script
+    - [ ] Input: character object + episode format + optional PACER data
+    - [ ] Output: script object with text + metadata
+    - [ ] Error handling for malformed input
   - [ ] New MCP tool: `underworld_create_guest_handoff`
+    - [ ] Input: script object
+    - [ ] Output: producer brief + guest script + materials
   - [ ] New MCP tool: `underworld_identify_qa_windows`
+    - [ ] Input: script object
+    - [ ] Output: array of Q&A insertion points with context
   - [ ] New MCP tool: `underworld_flag_missing_facts`
-  - [ ] Integration tests with Claude AI
+    - [ ] Input: script object + optional source tier threshold
+    - [ ] Output: array of unverified claims with suggestions
+  - [ ] Integration tests with Claude AI (mcp-tools.test.ts)
 
-- [ ] **Plugin Manifest**
+- [ ] **Plugin Manifest Updates**
   - [ ] Updated plugin.json with new tool definitions
-  - [ ] All tools listed with correct input/output schemas
-  - [ ] Version bumped to 2.0.6
+  - [ ] All 4 tools listed with correct input/output schemas
+  - [ ] CLI entry: `"cli": "./dist/cli.js"`
+  - [ ] Version updated to 2.0.6
+  - [ ] Skills section includes podcast scripting engine
+  - [ ] Tools section includes all 4 new MCP tools
+  - [ ] Capabilities section lists new features
 
 ### Phase 7: Version & Package Updates
 
-- [ ] **package.json**
-  - [ ] Version bumped to 2.0.6
-  - [ ] New dependencies for PDF generation (if used)
-  - [ ] Updated description to mention podcast scripting
+- [ ] **Version Control**
+  - [ ] package.json version: 2.0.6
+  - [ ] src/index.ts skill version: 2.0.6
+  - [ ] plugin.json version: 2.0.6
+  - [ ] All version references aligned
+  - [ ] Git tags: `git tag v2.0.6` after merge
+  - [ ] CHANGELOG.md entry for v2.0.6
 
-- [ ] **TypeScript Types**
+- [ ] **package.json Updates**
+  - [ ] `"version": "2.0.6"`
+  - [ ] `"description"` updated: "...podcast scripting engine for true crime..."
+  - [ ] `"bin": { "underworld-writer": "./dist/cli.js" }` — npx executable
+  - [ ] `"scripts"` section updated with new commands:
+    - [ ] `"generate-script": "underworld-writer generate-script"`
+    - [ ] `"benchmark": "jest benchmarks/ --testNamePattern=benchmark"`
+    - [ ] Keep existing: build, dev, cli, test, test:watch, test:coverage
+  - [ ] Dependencies: add PDF generation library if needed (e.g., `pdfkit`)
+  - [ ] No removal of existing dependencies
+  - [ ] Ensure @h4shed dependencies remain at tested versions
+
+- [ ] **plugin.json Updates**
+  - [ ] Version: 2.0.6
+  - [ ] Add skills array with podcast scripting engine
+  - [ ] Add tools array with 4 new MCP tools
+  - [ ] Add CLI entry: `"cli": "./dist/cli.js"`
+  - [ ] Update capabilities with supported features
+  - [ ] License field: Apache-2.0
+  - [ ] Author: Fused Gaming
+
+- [ ] **TypeScript Types** (src/podcast-types.ts new file)
   - [ ] ScriptGenerator class with full type safety
-  - [ ] ScriptOutput, ProducerBrief, GuestScript interfaces
-  - [ ] QAWindow, MissingFactWindow types
-  - [ ] ScriptConfig and formatting options
+  - [ ] ScriptOutput interface (format, text, metadata, parts)
+  - [ ] ProducerBrief interface (title, summary, keyFacts, talkingPoints)
+  - [ ] GuestScript interface (speakers, segments, pausePoints, adlibNotes)
+  - [ ] QAWindow interface (lineNumber, topic, context, suggestedQuestions)
+  - [ ] MissingFactWindow interface (claim, tier, confidence, verificationApproach)
+  - [ ] ScriptConfig interface (format, includeAttribution, includeTimecodes)
   - [ ] No `any` types; strict mode compliance
+  - [ ] Full JSDoc comments on all types
 
 - [ ] **Build & Distribution**
-  - [ ] TypeScript compilation succeeds without errors
-  - [ ] ESM modules properly exported
-  - [ ] Dist folder generated with correct structure
-  - [ ] CLI binary works via npx
-  - [ ] No unused dependencies
+  - [ ] TypeScript compilation: `npm run build` succeeds without errors
+  - [ ] ESM modules properly exported in tsconfig.json
+  - [ ] Dist folder structure:
+    - [ ] `dist/index.js` (skill definition)
+    - [ ] `dist/cli.js` (CLI executable)
+    - [ ] `dist/mcp-tools.js` (MCP tool definitions)
+    - [ ] `dist/podcast-script-generator.js` (core engine)
+    - [ ] `dist/podcast-types.js` (TypeScript interfaces)
+  - [ ] CLI binary works via `npx underworld-writer --help`
+  - [ ] All exports properly declared in package.json
+  - [ ] No unused dependencies or dead code
+  - [ ] ESM imports work correctly (no CommonJS conflicts)
 
 ---
 
@@ -208,13 +311,111 @@ Producers receive:
 |--------|--------|--------|
 | Unit Tests Passing | 30+ | ❌ Pending |
 | Integration Tests Passing | 10+ | ❌ Pending |
+| Benchmark Tests | 10+ with baseline | ❌ Pending |
 | Performance (script generation) | < 50ms | ❌ Pending |
-| Documentation Complete | 100% | ❌ Pending |
+| Performance (two-part episode) | < 100ms | ❌ Pending |
+| Performance (PDF export) | < 200ms | ❌ Pending |
+| Benchmark Baselines Established | Yes | ❌ Pending |
+| Documentation Complete | 100% (3 docs) | ❌ Pending |
 | CLI Commands Functional | 5/5 | ❌ Pending |
+| npx Executable Working | Yes | ❌ Pending |
 | MCP Tools Functional | 4/4 | ❌ Pending |
+| Plugin Manifest Updated | v2.0.6 | ❌ Pending |
+| package.json Updated | v2.0.6 + bin | ❌ Pending |
+| Version Alignment | All 2.0.6 | ❌ Pending |
 | Producer-Ready Scripts | ✓ Tested | ❌ Pending |
 | Guest Handoff Format | ✓ Tested | ❌ Pending |
 | PDF Export | ✓ Tested | ❌ Pending |
+| README Updated | Main sections added | ❌ Pending |
+
+---
+
+## 🛠️ CLI Implementation Details
+
+### Command Structure
+Each command follows this pattern:
+```bash
+npx underworld-writer <command> [options]
+```
+
+### Available Commands
+
+1. **generate-script** — Create episode scripts from characters
+   - Required: `--character <file.json>`
+   - Optional: `--pacer-case <casenum>`, `--format single|two-part`, `--output <file>`, `--json`
+   - Output: Formatted script text or JSON
+
+2. **generate-guest-handoff** — Create producer materials
+   - Required: `--character <file.json>`
+   - Optional: `--output-dir <path>`, `--format pdf|markdown`, `--print-ready`
+   - Output: Producer brief, guest script, character sheet
+
+3. **format-script** — Apply formatting and export
+   - Required: `--input <script.txt>`
+   - Optional: `--output-pdf <file>`, `--output-markdown <file>`, `--print-ready`
+   - Output: Formatted/exported files
+
+4. **validate-script** — Verify facts and structure
+   - Required: `--input <script.txt>`
+   - Optional: `--pacer-case <casenum>`, `--tier-threshold 1-4`, `--json`
+   - Output: Validation report with issues and suggestions
+
+5. **benchmark** — Run performance tests against baseline
+   - Optional: `--compare <baseline.json>`, `--save <baseline.json>`
+   - Output: Performance metrics table
+
+### CLI Help System
+- [ ] Each command has: `--help` or `-h` flag
+- [ ] Global help: `npx underworld-writer --help` or `npx underworld-writer -h`
+- [ ] Version: `npx underworld-writer --version` or `npx underworld-writer -v`
+- [ ] Examples: `npx underworld-writer <command> --examples`
+
+### Error Handling
+- [ ] Clear error messages (missing required args, invalid formats)
+- [ ] Exit codes: 0 (success), 1 (validation error), 2 (not found), 127 (runtime error)
+- [ ] Suggestions for common mistakes
+
+---
+
+## 📖 README.md Update Sections
+
+### Main README Sections to Add
+
+1. **Podcast Scripting Engine** (after intro)
+   - Feature overview with use case examples
+   - Links to podcast series (Darknet Diaries, Court Junkie, etc.)
+
+2. **Quick Start** (before Features)
+   ```bash
+   npx underworld-writer generate-script --character my-character.json
+   ```
+
+3. **CLI Commands** (new major section)
+   - All 5 commands listed with examples
+   - Each command with required/optional args
+   - Sample output shown
+
+4. **MCP Tools for Claude AI** (new section)
+   - 4 tools listed and described
+   - How to register in Claude AI
+   - Example usage
+
+5. **Output Formats** (new section)
+   - Script format explanation
+   - Guest handoff structure
+   - Producer brief layout
+   - Sample excerpts
+
+6. **Performance & Benchmarks** (new section)
+   - Benchmark table from benchmarks/baseline.json
+   - System requirements
+   - Performance tips
+
+7. **Links & References** (update existing)
+   - Link to PODCASTING_DoD.md
+   - Link to docs/quick-start.md
+   - Link to docs/api.md
+   - Link to RELEASE_NOTES_v2.0.6.md
 
 ---
 
@@ -287,6 +488,61 @@ Before marking this feature complete:
 
 ---
 
+## 📁 Files to Create/Modify
+
+### New Files (Create)
+- [ ] `src/podcast-script-generator.ts` — Core ScriptGenerator class (300-400 LOC)
+- [ ] `src/podcast-guest-handoff.ts` — Guest handoff generation (200-300 LOC)
+- [ ] `src/podcast-types.ts` — TypeScript interfaces and types (150-200 LOC)
+- [ ] `src/cli.ts` — CLI command handler (400-500 LOC)
+- [ ] `tests/podcast-script.test.ts` — Unit tests (30+ tests, 600+ LOC)
+- [ ] `tests/podcast-integration.test.ts` — Integration tests (10+ tests, 400+ LOC)
+- [ ] `tests/podcast-benchmark.test.ts` — Benchmark tests (10+ tests, 300+ LOC)
+- [ ] `benchmarks/baseline.json` — Performance baseline data
+- [ ] `docs/quick-start.md` — Quick start guide (2000+ words)
+- [ ] `docs/api.md` — API documentation (1500+ words)
+- [ ] `RELEASE_NOTES_v2.0.6.md` — Release notes
+- [ ] `examples/sample-character.json` — Example character file
+- [ ] `examples/sample-script-output.md` — Example script output
+
+### Modified Files (Update)
+- [ ] `package.json` — Version 2.0.6, bin entry, scripts, dependencies
+- [ ] `src/index.ts` — Export podcast generator in skill definition
+- [ ] `src/mcp-tools.ts` — Add 4 new MCP tool definitions
+- [ ] `plugin.json` — Version 2.0.6, tools, skills, CLI entry
+- [ ] `README.md` — Add podcast scripting sections
+- [ ] `tsconfig.json` — Ensure podcast types properly exported
+
+### Build & Distribution
+- [ ] `dist/podcast-script-generator.js` (compiled from src/podcast-script-generator.ts)
+- [ ] `dist/podcast-types.js` (compiled from src/podcast-types.ts)
+- [ ] `dist/cli.js` (compiled from src/cli.ts, executable)
+- [ ] `dist/mcp-tools.js` (updated with new tools)
+- [ ] `dist/index.js` (updated with podcast exports)
+
+---
+
+## ✅ Verification Checklist (Before PR Merge)
+
+- [ ] All new TypeScript files compile without errors
+- [ ] All tests pass: `npm test`
+- [ ] Benchmark baselines established: `npm run benchmark -- --save`
+- [ ] CLI works: `npx underworld-writer --help`
+- [ ] All 5 CLI commands accessible and functional
+- [ ] MCP tools register and load successfully
+- [ ] plugin.json validates against schema
+- [ ] package.json has version 2.0.6 everywhere
+- [ ] dist/ folder fully built and current
+- [ ] No unused dependencies
+- [ ] No TypeScript errors with strict mode
+- [ ] README updated with podcast sections
+- [ ] All documentation files created and complete
+- [ ] No console.log or debug code left in
+- [ ] Performance benchmarks meet targets
+- [ ] No merge conflicts with main branch
+
+---
+
 **Release Target**: September 27, 2026  
 **Branch**: `feature/podcast-scripting-engine`  
-**Baseline Commit**: de08b2d
+**Baseline Commit**: de08b2d (init) + 7e818af (DoD)
