@@ -1,4 +1,6 @@
 # Underworld Writer
+<img width="2056" height="765" alt="image" src="https://github.com/user-attachments/assets/2844a708-922e-454f-9f09-828066f19852" />
+
 
 **Multi-Purpose Character Development, True Crime Narratives, and Podcast Scripting Engine**
 
