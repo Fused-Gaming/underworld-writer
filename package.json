@@ -24,9 +24,11 @@
     "benchmark:baseline": "npm run benchmark > benchmarks/packages/@h4shed/skill-underworld-writer/v2.0.0/baseline-results.json"
   },
   "dependencies": {
-    "@h4shed/mcp-core": "^1.0.24",
+    "@h4shed/mcp-core": "^1.0.24"
+  },
+  "optionalDependencies": {
     "@h4shed/cleanroom": "^1.0.0",
-    "@modelcontextprotocol/sdk": "^1.29.0"
+    "@modelcontextprotocol/sdk": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.12.0",
