@@ -702,6 +702,107 @@ npm run dev       # Watch mode
 npm run cli       # Test CLI
 ```
 
+## PACER Integration
+
+**Public Access to Court Electronic Records (PACER) Integration** enables true crime writers to fact-check claims against actual federal court records. The system supports:
+
+- **Mock Mode** (default): Uses real publicly available case data (e.g., ShadowCrew case: 03-CR-0322, Middle District of Florida)
+- **Tier-Based Source Verification**:
+  - Tier 1: Federal court records via PACER (100% confidence)
+  - Tier 2: Multiple corroborating sources (85% confidence)
+  - Tier 3: Single journalist source (70% confidence)
+  - Tier 4: Searched but unavailable (0% confidence)
+
+```typescript
+import { PACERClient, VerificationEngine } from '@h4shed/skill-underworld-writer/pacer';
+
+const client = new PACERClient(); // Mock mode by default
+const engine = new VerificationEngine();
+
+// Query federal court case
+const brianCase = await client.queryCaseByNumber('03-CR-0322', 'Middle District of Florida');
+
+// Classify claim with source verification
+const result = engine.classifyClaim(
+  "The defendant was sentenced to 90 months and released in October 2007",
+  {
+    pacer: brianCase,
+    dojStatement: "Federal prosecution records",
+    newsArticles: 3,
+  }
+);
+
+console.log(`Confidence: ${result.confidence}%`); // Tier 1: 100%
+```
+
+## Asset Validation (Cleanroom Sandbox)
+
+**Cleanroom sandbox asset validation** ensures all distributable assets meet licensing and compliance requirements before publication.
+
+Supported licenses:
+- `svgrepo-free` — SVG Repo free for commercial/personal use
+- `cc0` — Creative Commons Zero (public domain)
+- `mit` — MIT License
+- `apache2` — Apache License 2.0
+- `unlicense` — Unlicense (public domain)
+- `public-domain` — Public domain
+
+```typescript
+import { AssetValidator } from '@h4shed/skill-underworld-writer/asset-validation';
+
+const validator = new AssetValidator();
+
+const result = await validator.validateAsset({
+  path: 'assets/underworld-writer-icon.svg',
+  license: 'svgrepo-free',
+  attribution: 'SVG Repo community',
+  usage: 'package-icon',
+});
+
+if (result.valid) {
+  const attribution = validator.getAttributionString(result);
+  console.log(attribution);
+  
+  // Validate for publishing
+  const readyToPub = await validator.validateForPublishing(result);
+}
+```
+
+## Performance
+
+All core operations are highly performant and suitable for high-throughput applications:
+
+| Operation | Time | Tests |
+|-----------|------|-------|
+| Character creation | < 5ms | ✅ 100 characters/batch |
+| Character validation | < 5ms | ✅ Completeness checks |
+| Summary generation | < 3ms | ✅ Formatted output |
+| Markdown export | < 10ms | ✅ Document generation |
+| PACER query (mock) | < 10ms | ✅ Case lookups |
+| Asset validation | < 5ms | ✅ 50 assets/batch |
+
+Run benchmarks locally:
+```bash
+npm test -- tests/benchmark.test.ts
+```
+
+## Plugin Registration
+
+Underworld Writer is distributed as an MCP-compatible plugin with CLI and skill exports. The `plugin.json` manifest declares:
+
+- **Skill Export**: Three-phase character development methodology
+- **Tool Exports**: MCP-compatible tools for Claude integration
+- **CLI Export**: Command-line interface for batch operations
+
+```bash
+# Via npx (requires @h4shed/skill-underworld-writer installed)
+npx underworld-writer create --name "Character Name" --role "Role" --faction "Faction"
+
+# Programmatically
+import skill from '@h4shed/skill-underworld-writer';
+const tools = await skill.tools();
+```
+
 ## License
 
 Licensed under **Apache License 2.0**. See [LICENSE](LICENSE) file.
