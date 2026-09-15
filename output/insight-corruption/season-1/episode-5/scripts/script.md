@@ -21,7 +21,7 @@ San Francisco, California, as of 2023.
 
 ## Segment 3 — The Scheme (7:30–13:30)
 
-According to CBS San Francisco - 2023; SF Chronicle; Federal Court Records; NBC Bay Area:
+According to CBS San Francisco - 2023; SF Chronicle; Federal Court Records; NBC Bay Area, Florence Kong's offense breaks down like this:
 
 **[Tier 2]** Bribed Mohammed Nuru (San Francisco Public Works corruption figure) with a $36,000 Rolex watch and other luxury gifts to gain lucrative city contracts and preferential treatment for construction projects
 Reported motivation, per the same reporting: Securing lucrative city contracts through bribery and corruption

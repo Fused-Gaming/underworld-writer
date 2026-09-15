@@ -21,7 +21,7 @@ San Leandro (Alameda County), as of 2024.
 
 ## Segment 3 — The Scheme (7:30–13:30)
 
-According to Department of Justice - Oakland Corruption Probe; SF Chronicle - Corruption Investigation:
+According to Department of Justice - Oakland Corruption Probe; SF Chronicle - Corruption Investigation, Bryan Azevedo's offense breaks down like this:
 
 **[Tier 2]** First official to plead guilty in Oakland corruption probe. Now cooperating with federal investigators as a key witness.
 Reported motivation, per the same reporting: Unspecified corruption charges

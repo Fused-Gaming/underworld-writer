@@ -21,7 +21,7 @@ Oakland Police Department, as of 2000.
 
 ## Segment 3 — The Scheme (7:30–13:30)
 
-According to The Appeal - Police Corruption Files; Rolling Stone - Training Day Scandal; SF Chronicle - Oakland Police Timeline; Federal Oversight Reports:
+According to The Appeal - Police Corruption Files; Rolling Stone - Training Day Scandal; SF Chronicle - Oakland Police Timeline; Federal Oversight Reports, Officers Vasquez, Mabanag, Siapno, Hornung's offense breaks down like this:
 
 **[Tier 2]** Four narcotics officers charged with 48 felonies including planting drugs, conducting false arrests, assaults, and systematic corruption in West Oakland. Known as the 'Riders Scandal'
 Reported motivation, per the same reporting: Personal gain through drug distribution, false arrests, asset seizure

@@ -21,7 +21,7 @@ Oakland Parks & Recreation, as of 2020.
 
 ## Segment 3 — The Scheme (7:30–13:30)
 
-According to Oakland Parks Department; SF Chronicle:
+According to Oakland Parks Department; SF Chronicle, Parks Director's offense breaks down like this:
 
 **[Tier 2]** Parks director embezzled recreational facility grant funds for personal use
 

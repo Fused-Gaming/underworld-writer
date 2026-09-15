@@ -21,7 +21,7 @@ Bay Area Regional Government, as of 2016.
 
 ## Segment 3 — The Scheme (7:30–13:30)
 
-According to Palo Alto Online - 2016; Bay Area News Group; Federal Court Records:
+According to Palo Alto Online - 2016; Bay Area News Group; Federal Court Records, Clarke Howatt's offense breaks down like this:
 
 **[Tier 2]** Embezzled nearly $3.9 million from the Association of Bay Area Governments between 2011-2015, affecting affordable housing developments including Rincon Hill highrise and Windemere Ranch housing projects
 Reported motivation, per the same reporting: Systematic theft of public housing funds for personal gain

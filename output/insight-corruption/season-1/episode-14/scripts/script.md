@@ -21,7 +21,7 @@ Alameda County District Attorney, as of 2020.
 
 ## Segment 3 — The Scheme (7:30–13:30)
 
-According to Alameda County District Attorney; SF Chronicle - Corruption Investigation:
+According to Alameda County District Attorney; SF Chronicle - Corruption Investigation, Harry Hu's offense breaks down like this:
 
 **[Tier 2]** Pleaded guilty to 6-year bribery scheme involving Mercedes vehicles, luxury vacations, and cash bribes from a gang leader in exchange for favors
 Reported motivation, per the same reporting: Personal enrichment through bribes from gang leader

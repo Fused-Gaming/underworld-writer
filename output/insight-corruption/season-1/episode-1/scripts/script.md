@@ -21,7 +21,7 @@ San Jose, California, as of 2024.
 
 ## Segment 3 — The Scheme (7:30–13:30)
 
-According to San José Spotlight - 2024; NBC Bay Area - 2024; KQED News - 2024:
+According to San José Spotlight - 2024; NBC Bay Area - 2024; KQED News - 2024, Joanne Segovia's offense breaks down like this:
 
 **[Tier 2]** Smuggled over 17,000 opioid pills (Tapentadol) into the U.S. from India over multiple years while serving as head of the police union
 Reported motivation, per the same reporting: Personal enrichment through drug smuggling while maintaining public position

@@ -21,7 +21,7 @@ Oakland Police Department, as of 2002.
 
 ## Segment 3 — The Scheme (7:30–13:30)
 
-According to Oakland Police Records; SF Chronicle:
+According to Oakland Police Records; SF Chronicle, Mark Neely's offense breaks down like this:
 
 **[Tier 2]** Arrested with cocaine, heroin, marijuana, and firearms. Pleaded no contest to charges. Part of narcotics unit corruption.
 

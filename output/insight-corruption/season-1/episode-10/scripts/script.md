@@ -21,7 +21,7 @@ Oakland Housing Authority, as of 2018.
 
 ## Segment 3 — The Scheme (7:30–13:30)
 
-According to Oakland Housing Authority; SF Chronicle:
+According to Oakland Housing Authority; SF Chronicle, Housing Authority Official's offense breaks down like this:
 
 **[Tier 2]** Official embezzled public housing funds designated for low-income residents
 

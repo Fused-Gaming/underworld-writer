@@ -21,7 +21,7 @@ San Francisco, California, as of 2023.
 
 ## Segment 3 — The Scheme (7:30–13:30)
 
-According to SF Chronicle - 2023; Federal Court Records; SF Corruption Scandal Coverage:
+According to SF Chronicle - 2023; Federal Court Records; SF Corruption Scandal Coverage, Ken Wong's offense breaks down like this:
 
 **[Tier 2]** Accepted and facilitated $20,000 bribe from Mohammed Nuru (major SF corruption figure) to secure a city job for an engineer, while also receiving a $10,000 kickback for his participation
 Reported motivation, per the same reporting: Bribery and kickbacks through abuse of official position

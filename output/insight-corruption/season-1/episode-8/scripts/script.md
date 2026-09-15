@@ -21,7 +21,7 @@ Oakland Fire Department, as of 2020.
 
 ## Segment 3 — The Scheme (7:30–13:30)
 
-According to Oakland Fire Department; SF Chronicle:
+According to Oakland Fire Department; SF Chronicle, Fire Captain's offense breaks down like this:
 
 **[Tier 2]** Fire department captain falsified timesheets and overtime records to claim unauthorized compensation
 

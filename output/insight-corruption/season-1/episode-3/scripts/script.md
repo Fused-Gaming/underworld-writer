@@ -21,7 +21,7 @@ San Francisco, California, as of 2026.
 
 ## Segment 3 — The Scheme (7:30–13:30)
 
-According to SF Chronicle - 2026; Federal Court Records; Department of Building Inspection Records:
+According to SF Chronicle - 2026; Federal Court Records; Department of Building Inspection Records, Rodolfo Pada's offense breaks down like this:
 
 **[Tier 2]** Accepted over $40,000 in bribes from construction firms over 14 years (2003-2017) to approve permits, expedite inspections, and approve building plans - directly compromising building code enforcement and public safety
 Reported motivation, per the same reporting: Systematic bribery for financial gain while corrupting building permit process

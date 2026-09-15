@@ -21,7 +21,7 @@ Bay Area Rapid Transit Police, as of 2020.
 
 ## Segment 3 — The Scheme (7:30–13:30)
 
-According to BART Police; SF Chronicle; KQED:
+According to BART Police; SF Chronicle; KQED, BART Police Officer's offense breaks down like this:
 
 **[Tier 2]** BART officer filed false reports to cover up excessive force incident and intimidated witnesses
 
