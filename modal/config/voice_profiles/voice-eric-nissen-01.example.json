@@ -1,0 +1,21 @@
+{
+  "voiceProfileId": "voice-eric-nissen-01",
+  "authorHostId": "eric-william-nissen",
+  "baseModel": "coqui/XTTS-v2",
+  "language": "en",
+  "consent": {
+    "status": "confirmed",
+    "confirmedBy": "project owner (jlucus) on behalf of host",
+    "confirmedDate": "2026-09-15"
+  },
+  "referenceAudio": {
+    "clips": [
+      {
+        "path": "clips/eric-nissen/clip1.wav",
+        "durationSeconds": 22,
+        "source": "published social audio (link TBD at intake)"
+      }
+    ]
+  },
+  "fineTunedCheckpoint": null
+}
