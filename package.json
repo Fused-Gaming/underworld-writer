@@ -20,7 +20,8 @@
     "cli": "node dist/cli.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "verify-episode-claims": "node scripts/verify-episode-claims.mjs"
   },
   "dependencies": {
     "@h4shed/mcp-core": "^1.0.40"
