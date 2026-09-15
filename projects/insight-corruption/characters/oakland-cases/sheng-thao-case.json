@@ -1,0 +1,61 @@
+{
+  "caseId": "corruption-oakland-001",
+  "caseName": "Sheng Thao - Oakland Mayor Federal Bribery & Corruption",
+  "brand": "Insight Corruption",
+  "type": "government-corruption",
+  "region": "Oakland, California",
+  "year": 2025,
+  "character": {
+    "name": "Sheng Thao",
+    "title": "Former Mayor of Oakland",
+    "role": "Elected Official in Pay-to-Play Scheme",
+    "background": "Elected Oakland Mayor, served as city councilwoman",
+    "faction": "Municipal Government Corruption",
+    "motivations": "Personal enrichment through bribery from developers and contractors"
+  },
+  "offense": {
+    "type": "Federal Bribery, Corruption, Pay-to-Play Scheme",
+    "description": "Indicted January 2025 on federal charges along with 3 co-defendants (Duong family and associates) for a bribery and corruption scheme involving city contracts worth millions. Scheme allegedly involved exchanging official city actions for personal benefits.",
+    "severity": "Federal Crime - Mayor-Level Corruption",
+    "scale": "City contracts worth millions",
+    "duration": "Ongoing investigation through 2025",
+    "impact": "Compromised city procurement process, favored contractors, misallocation of city resources"
+  },
+  "howTheyGotAwayWithIt": {
+    "strategy": "Investigation Still Active - Not Yet Sentenced",
+    "keyFactors": [
+      "High-profile elected official",
+      "Indicted January 2025 - case still in progress",
+      "Multiple co-defendants including Duong family",
+      "Federal prosecution ongoing",
+      "Mayor position provided cover for corruption activities"
+    ]
+  },
+  "sentence": {
+    "status": "PENDING - Case in Federal Court",
+    "indictment_date": "January 2025",
+    "court": "Federal Court, Northern District of California"
+  },
+  "fallout": {
+    "consequences": [
+      "Forced resignation as Oakland Mayor",
+      "Career ended",
+      "Federal indictment",
+      "Public trust erosion in city leadership",
+      "Investigation of other city contracts"
+    ]
+  },
+  "narrative_hooks": {
+    "headline": "Oakland Mayor Indicted on Federal Bribery Charges in Pay-to-Play Scheme",
+    "question": "How did Oakland's top official get caught in a corruption scheme involving millions in city contracts?",
+    "investigation_angle": "The Duong family corruption network and its reach into Oakland city government"
+  },
+  "sources": [
+    "KQED - Oakland Corruption Coverage",
+    "OaklandSide - FBI Indictment Analysis",
+    "Department of Justice - Official Indictment",
+    "SF Chronicle - Oakland Corruption Timeline",
+    "NBC News Bay Area - 2025"
+  ],
+  "verification_status": "VERIFIED - Federal indictment, published reporting"
+}

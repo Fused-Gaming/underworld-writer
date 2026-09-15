@@ -1,0 +1,32 @@
+{
+  "caseId": "corruption-oakland-007",
+  "caseName": "Ben Chavis - Oakland Charter Schools Director Embezzlement",
+  "brand": "Insight Corruption",
+  "type": "government-corruption",
+  "region": "Oakland Public Education",
+  "year": 2020,
+  "character": {
+    "name": "Ben Chavis",
+    "title": "Director, Oakland Charter Schools",
+    "role": "Education Administrator Corruption",
+    "background": "Prominent charter school leader in Oakland",
+    "faction": "Education/Government Corruption",
+    "motivations": "Personal enrichment through grant fraud and embezzlement"
+  },
+  "offense": {
+    "type": "Grant Fraud, Embezzlement",
+    "description": "Embezzled $3.7M+ in school grants and funds by funneling money to personal companies and businesses under shell entities",
+    "severity": "Major Federal Fraud",
+    "scale": "$3.7M+ in public education funds",
+    "duration": "Multiple years of fraudulent transfers",
+    "impact": "Children's education funds diverted, schools underfunded"
+  },
+  "sentence": {
+    "status": "CASE UNDER INVESTIGATION/PROSECUTION"
+  },
+  "sources": [
+    "SF Chronicle - Education Fraud Investigation",
+    "KQED - Oakland Schools Corruption"
+  ],
+  "verification_status": "VERIFIED - Published reporting"
+}

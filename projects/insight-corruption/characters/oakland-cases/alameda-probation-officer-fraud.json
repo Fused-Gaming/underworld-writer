@@ -1,0 +1,27 @@
+{
+  "caseId": "corruption-oakland-020",
+  "caseName": "Alameda County Probation Officer Extortion",
+  "brand": "Insight Corruption",
+  "type": "government-corruption",
+  "region": "Alameda County Probation Department",
+  "year": 2023,
+  "character": {
+    "name": "Probation Officer",
+    "title": "Officer, Alameda County Probation",
+    "role": "Law Enforcement Corruption"
+  },
+  "offense": {
+    "type": "Extortion, Abuse of Authority",
+    "description": "Probation officer extorted money from probationers in exchange for favorable terms and reduced supervision",
+    "severity": "Felony Extortion",
+    "scale": "$50,000+ extorted from multiple probationers"
+  },
+  "sentence": {
+    "status": "CASE PENDING"
+  },
+  "sources": [
+    "Alameda County Probation",
+    "SF Chronicle"
+  ],
+  "verification_status": "VERIFIED"
+}

@@ -1,0 +1,64 @@
+{
+  "episodeNumber": 2,
+  "seasonNumber": 1,
+  "title": "Finance Director Stole $3.9M from Bay Area Housing Fund, Got 1 Year in Prison",
+  "subtitle": "Clarke Howatt - ABAG Housing Embezzlement",
+  "description": "Embezzled nearly $3.9 million from the Association of Bay Area Governments between 2011-2015, affecting affordable housing developments including Rincon Hill highrise and Windemere Ranch housing projects",
+  "characters": [
+    "Clarke Howatt"
+  ],
+  "location": "Bay Area Regional Government",
+  "year": 2016,
+  "tags": [
+    "government-corruption"
+  ],
+  "sourceVerificationTier": 2,
+  "caseReference": "clarke-howatt-case.json",
+  "status": "scripted",
+  "length": {
+    "format": "single-part",
+    "parts": [
+      {
+        "partNumber": 1,
+        "duration": {
+          "minimum": 28,
+          "maximum": 32,
+          "target": 30
+        },
+        "sponsorBreaks": [
+          {
+            "position": "mid-roll",
+            "lengthSeconds": 90,
+            "scriptTemplate": "This episode of Insight Corruption is brought to you by [SPONSOR]..."
+          }
+        ],
+        "contentDuration": {
+          "minimum": 26.5,
+          "maximum": 30.5,
+          "target": 28.5
+        }
+      }
+    ],
+    "totalDuration": {
+      "minimum": 28,
+      "maximum": 32,
+      "target": 30
+    }
+  },
+  "keyPoints": [
+    "Embezzled nearly $3.9 million from the Association of Bay Area Governments between 2011-2015, affecting affordable housing developments including Rincon Hill highrise and Windemere Ranch housing projects",
+    "Outcome: MINIMAL SENTENCE FOR MAJOR THEFT"
+  ],
+  "investigativeAngles": [
+    "The restitution loophole: When money can buy your way out of prison"
+  ],
+  "guestOpportunities": [
+    "a former prosecutor or defense attorney",
+    "a public-sector ethics researcher",
+    "an investigative reporter who covered the case"
+  ],
+  "factCheckLayers": [
+    "Published: Palo Alto Online - 2016; Bay Area News Group; Federal Court Records"
+  ],
+  "producerNotes": "RUNTIME FEASIBILITY: the case file's own verified facts (character/offense/sentence/fallout fields) support roughly 10-14 minutes of factual narration at a realistic ~150 words-per-minute spoken pace. The remaining runtime to reach the requested 30-minute target must come from clearly-labeled analysis and a guest/expert interview segment (see script.md [EXPAND] blocks) - not from invented case details. Do not pad the factual segments themselves."
+}

@@ -17,19 +17,84 @@ import {
   PACERCaseData,
   PodcastGenerationResult,
   FactAttribution,
+  TrueCrimeCaseFile,
 } from './podcast-types.js';
+
+/**
+ * True-crime case files (projects/*\/characters/*.json) use a `character` /
+ * `offense` / `sentence` shape, not the Fiction three-phase CharacterForPodcast
+ * shape ScriptGenerator was originally written against. Without this adapter,
+ * passing a case file straight to ScriptGenerator throws
+ * "Cannot read properties of undefined (reading 'name')" on `phase1.name` -
+ * reproducible via: node dist/cli.js generate-script --character <case-file>.json
+ */
+export function isTrueCrimeCaseFile(
+  input: CharacterForPodcast | TrueCrimeCaseFile
+): input is TrueCrimeCaseFile {
+  return !('phase1' in input) && 'character' in input && 'offense' in input;
+}
+
+export function adaptCaseFileToCharacter(raw: TrueCrimeCaseFile): CharacterForPodcast {
+  const c = raw.character;
+  const sentenceSummary = Object.entries(raw.sentence ?? {})
+    .filter(([, v]) => Boolean(v))
+    .map(([k, v]) => `${k.replace(/_/g, ' ')}: ${v}`)
+    .join('; ');
+
+  return {
+    phase1: {
+      name: c.name,
+      aliases: [],
+      origin: raw.region ? `${raw.region}${raw.year ? `, ${raw.year}` : ''}` : 'Region not on file',
+      background: c.background ?? 'No background documented in case file.',
+      coreMotivation: c.motivations ?? 'Not documented in case file.',
+    },
+    phase2: {
+      roleAndRank: c.role ?? c.title ?? 'Role not on file',
+      factionAffiliation: {
+        primary: c.faction ?? raw.type ?? 'Unspecified',
+        allies: [],
+        opposition: [],
+      },
+      relationships: [],
+    },
+    phase3: {
+      storyArc: {
+        act1: raw.offense.description,
+        act2:
+          raw.howTheyGotAwayWithIt?.strategy ??
+          `Case status: ${raw.sentence?.status ?? 'unresolved - see sentence field'}`,
+        act3: sentenceSummary || 'Outcome not yet on file.',
+      },
+      hierarchiesAndConflicts: {
+        internal: raw.howTheyGotAwayWithIt?.keyFactors ?? [],
+        external: raw.fallout?.consequences ?? [],
+        personal: [],
+      },
+      thematicElements: [raw.narrative_hooks?.investigation_angle, raw.narrative_hooks?.question].filter(
+        (x): x is string => Boolean(x)
+      ),
+    },
+  };
+}
 
 export class ScriptGenerator {
   private character: CharacterForPodcast;
   private config: ScriptConfig;
   private caseData?: PACERCaseData;
+  private sourceCaseFile?: TrueCrimeCaseFile;
 
   constructor(
-    character: CharacterForPodcast,
+    character: CharacterForPodcast | TrueCrimeCaseFile,
     config: Partial<ScriptConfig> = {},
     caseData?: PACERCaseData
   ) {
-    this.character = character;
+    if (isTrueCrimeCaseFile(character)) {
+      this.sourceCaseFile = character;
+      this.character = adaptCaseFileToCharacter(character);
+    } else {
+      this.character = character;
+    }
     this.config = {
       format: 'single',
       includeAttribution: true,
@@ -382,6 +447,26 @@ Thank you for listening. This has been [Series Name].`,
    */
   private extractAttributions(): FactAttribution[] {
     const attributions: FactAttribution[] = [];
+
+    if (this.sourceCaseFile) {
+      // Case file's own sources/verification_status are real reporting, not
+      // "character narrative" - tier per docs/use-cases/true-crime/protocols/verification-engine.md:
+      // Tier 1 = federal/court record, Tier 2 = multiple published sources, Tier 3 = single source.
+      const sources = this.sourceCaseFile.sources ?? [];
+      const isFederalRecord = /verified.*federal|federal.*indictment|pacer/i.test(
+        this.sourceCaseFile.verification_status ?? ''
+      );
+      const tier: 1 | 2 | 3 = isFederalRecord ? 1 : sources.length > 1 ? 2 : 3;
+      for (const source of sources) {
+        attributions.push({
+          claim: this.sourceCaseFile.narrative_hooks?.headline ?? `${this.character.phase1.name} case facts`,
+          tier,
+          source,
+          confidence: tier === 1 ? 1.0 : tier === 2 ? 0.85 : 0.6,
+        });
+      }
+      return attributions;
+    }
 
     if (this.caseData) {
       attributions.push({

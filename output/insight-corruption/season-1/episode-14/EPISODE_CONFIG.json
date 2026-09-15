@@ -1,0 +1,64 @@
+{
+  "episodeNumber": 14,
+  "seasonNumber": 1,
+  "title": "Harry Hu: Bribery, Corruption",
+  "subtitle": "Harry Hu - Alameda County DA Investigator Bribery",
+  "description": "Pleaded guilty to 6-year bribery scheme involving Mercedes vehicles, luxury vacations, and cash bribes from a gang leader in exchange for favors",
+  "characters": [
+    "Harry Hu"
+  ],
+  "location": "Alameda County District Attorney",
+  "year": 2020,
+  "tags": [
+    "government-corruption"
+  ],
+  "sourceVerificationTier": 2,
+  "caseReference": "oakland-cases/harry-hu-case.json",
+  "status": "scripted",
+  "length": {
+    "format": "single-part",
+    "parts": [
+      {
+        "partNumber": 1,
+        "duration": {
+          "minimum": 28,
+          "maximum": 32,
+          "target": 30
+        },
+        "sponsorBreaks": [
+          {
+            "position": "mid-roll",
+            "lengthSeconds": 90,
+            "scriptTemplate": "This episode of Insight Corruption is brought to you by [SPONSOR]..."
+          }
+        ],
+        "contentDuration": {
+          "minimum": 26.5,
+          "maximum": 30.5,
+          "target": 28.5
+        }
+      }
+    ],
+    "totalDuration": {
+      "minimum": 28,
+      "maximum": 32,
+      "target": 30
+    }
+  },
+  "keyPoints": [
+    "Pleaded guilty to 6-year bribery scheme involving Mercedes vehicles, luxury vacations, and cash bribes from a gang leader in exchange for favors",
+    "Outcome: GUILTY PLEA - AWAITING SENTENCING"
+  ],
+  "investigativeAngles": [
+    "Following the money and the paperwork trail."
+  ],
+  "guestOpportunities": [
+    "a former prosecutor or defense attorney",
+    "a public-sector ethics researcher",
+    "an investigative reporter who covered the case"
+  ],
+  "factCheckLayers": [
+    "Published: Alameda County District Attorney; SF Chronicle - Corruption Investigation"
+  ],
+  "producerNotes": "RUNTIME FEASIBILITY: the case file's own verified facts (character/offense/sentence/fallout fields) support roughly 10-14 minutes of factual narration at a realistic ~150 words-per-minute spoken pace. The remaining runtime to reach the requested 30-minute target must come from clearly-labeled analysis and a guest/expert interview segment (see script.md [EXPAND] blocks) - not from invented case details. Do not pad the factual segments themselves."
+}

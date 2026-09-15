@@ -1,0 +1,53 @@
+{
+  "episodeNumber": 10,
+  "seasonNumber": 1,
+  "title": "Episode 10: Lunch at COTS (Committee on the Shelterless)",
+  "description": "Host A and Host B eat lunch from COTS (Committee on the Shelterless) (Novato (Marin County)) and discuss Marin County's housing targets and shelter-bed capacity.",
+  "hosts": [
+    "Host A",
+    "Host B"
+  ],
+  "organizationFeatured": {
+    "name": "COTS (Committee on the Shelterless)",
+    "location": "Novato (Marin County)",
+    "mission": "A Marin County organization providing shelter, housing programs, and meal support in Novato.",
+    "contactStatus": "[PRODUCER: confirm outreach + on-air permission before recording]"
+  },
+  "topicFocus": "Marin County's housing targets and shelter-bed capacity",
+  "tags": [
+    "food-review",
+    "bay-area-policy"
+  ],
+  "status": "in-development",
+  "length": {
+    "format": "single-part",
+    "parts": [
+      {
+        "partNumber": 1,
+        "duration": {
+          "minimum": 14,
+          "maximum": 16,
+          "target": 15
+        },
+        "sponsorBreaks": [
+          {
+            "position": "mid-roll",
+            "lengthSeconds": 30,
+            "scriptTemplate": "This episode of The Homeless Lunchbox is brought to you by [SPONSOR]..."
+          }
+        ],
+        "contentDuration": {
+          "minimum": 13.5,
+          "maximum": 15.5,
+          "target": 14.5
+        }
+      }
+    ],
+    "totalDuration": {
+      "minimum": 14,
+      "maximum": 16,
+      "target": 15
+    }
+  },
+  "producerNotes": "The meal-tasting segment and any specific/current claim in the policy segment are intentionally left as [PRODUCER]/[VERIFY] placeholders below - neither the actual food served nor this week's news status is knowable in advance, and filling either in ahead of time would mean presenting a guess as if it were observed fact."
+}

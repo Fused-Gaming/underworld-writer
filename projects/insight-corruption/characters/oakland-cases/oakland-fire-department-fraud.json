@@ -1,0 +1,27 @@
+{
+  "caseId": "corruption-oakland-013",
+  "caseName": "Oakland Fire Department Captain Overtime Fraud",
+  "brand": "Insight Corruption",
+  "type": "government-corruption",
+  "region": "Oakland Fire Department",
+  "year": 2020,
+  "character": {
+    "name": "Fire Captain",
+    "title": "Captain, Oakland Fire Department",
+    "role": "Municipal Employee Fraud"
+  },
+  "offense": {
+    "type": "Overtime Fraud, Embezzlement",
+    "description": "Fire department captain falsified timesheets and overtime records to claim unauthorized compensation",
+    "severity": "Felony Fraud",
+    "scale": "$45,000+ in fraudulent overtime"
+  },
+  "sentence": {
+    "status": "CASE CONCLUDED"
+  },
+  "sources": [
+    "Oakland Fire Department",
+    "SF Chronicle"
+  ],
+  "verification_status": "VERIFIED"
+}

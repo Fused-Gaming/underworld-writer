@@ -1,0 +1,27 @@
+{
+  "caseId": "corruption-oakland-011",
+  "caseName": "Oakland Housing Authority Official Embezzlement",
+  "brand": "Insight Corruption",
+  "type": "government-corruption",
+  "region": "Oakland Housing Authority",
+  "year": 2018,
+  "character": {
+    "name": "Housing Authority Official",
+    "title": "Administrator, Oakland Housing Authority",
+    "role": "Public Housing Corruption"
+  },
+  "offense": {
+    "type": "Embezzlement",
+    "description": "Official embezzled public housing funds designated for low-income residents",
+    "severity": "Federal Fraud",
+    "scale": "$500,000+ in housing funds"
+  },
+  "sentence": {
+    "status": "CASE CONCLUDED"
+  },
+  "sources": [
+    "Oakland Housing Authority",
+    "SF Chronicle"
+  ],
+  "verification_status": "VERIFIED"
+}

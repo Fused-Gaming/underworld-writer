@@ -44,8 +44,8 @@ docs/shared/
 docs/use-cases/fiction/
 ├── README.md                         # Fiction use case overview
 ├── METHODOLOGY.md                    # Three-phase character development
-├── TEMPLATES.md                      # Character & world templates (coming)
-└── EXAMPLES.md                       # Sample characters & narrative worlds (coming)
+├── TEMPLATES.md                      # Character & world templates (planned, not yet written)
+└── EXAMPLES.md                       # Sample characters & narrative worlds (planned, not yet written)
 ```
 
 ### True Crime Use Case
@@ -58,7 +58,7 @@ docs/use-cases/true-crime/
 │   ├── query-construction-guide.md   # Research search strategies
 │   ├── cross-source-reconciliation.md # Handling conflicting sources
 │   └── escalation-protocols.md       # PACER, BOP, news archives
-└── EXAMPLES.md                       # Sample fact-checking workflows (coming)
+└── EXAMPLES.md                       # Sample fact-checking workflows (planned, not yet written)
 ```
 
 ### Podcast Production Use Case
@@ -68,8 +68,8 @@ docs/use-cases/podcast-production/
 ├── SERIES_FRAMEWORK.md               # Series setup & branding
 ├── EPISODE_DEVELOPMENT.md            # Episode workflow & directory structure
 ├── GUEST_COORDINATION.md             # Guest scripts & interview prep
-├── TEMPLATES.md                      # Configuration templates (coming)
-└── EXAMPLES.md                       # Real-world series examples (coming)
+├── TEMPLATES.md                      # Configuration templates (written)
+└── EXAMPLES.md                       # Real-world series examples (written)
 ```
 
 ---
@@ -80,8 +80,8 @@ docs/use-cases/podcast-production/
 
 1. Start: [Fiction README](./use-cases/fiction/README.md)
 2. Learn: [Three-Phase Methodology](./use-cases/fiction/METHODOLOGY.md)
-3. Review: [Character Profile Template](./use-cases/fiction/TEMPLATES.md)
-4. Study: [Example Characters](./use-cases/fiction/EXAMPLES.md)
+3. Review: fiction TEMPLATES.md (planned, not yet written)
+4. Study: fiction EXAMPLES.md (planned, not yet written) - or see [Podcast Production EXAMPLES.md](./use-cases/podcast-production/EXAMPLES.md) for a worked example
 5. Build: Create your character profile and world
 
 ### If You're a **Journalist or True Crime Podcaster**
@@ -93,7 +93,7 @@ docs/use-cases/podcast-production/
    - [Query Construction Guide](./use-cases/true-crime/protocols/query-construction-guide.md) — Research strategies
    - [Cross-Source Reconciliation](./use-cases/true-crime/protocols/cross-source-reconciliation.md) — Conflicting sources
    - [Escalation Protocols](./use-cases/true-crime/protocols/escalation-protocols.md) — PACER, BOP, archives
-4. Reference: [Example Workflows](./use-cases/true-crime/EXAMPLES.md)
+4. Reference: true-crime EXAMPLES.md (planned, not yet written) - or see [Podcast Production EXAMPLES.md](./use-cases/podcast-production/EXAMPLES.md) for a worked true-crime example series
 5. Execute: Verify facts for your investigation
 
 ### If You're a **Podcast Producer**
@@ -111,7 +111,7 @@ docs/use-cases/podcast-production/
 1. Read: [USE_CASES_OVERVIEW.md](./USE_CASES_OVERVIEW.md) — Hybrid workflows section
 2. Start with primary use case (above)
 3. Integrate secondary use cases as needed
-4. See [Examples](./use-cases/podcast-production/EXAMPLES.md) for hybrid workflows
+4. See [Examples](./use-cases/podcast-production/EXAMPLES.md) for hybrid workflows (written)
 
 ---
 
@@ -245,8 +245,8 @@ Common terms:
 - **...prepare a guest for interview** → [Guest Coordination](./use-cases/podcast-production/GUEST_COORDINATION.md)
 - **...generate a podcast script** → [Podcast Scripting](./shared/podcast-scripting.md)
 - **...understand the three-phase methodology** → [Character Development](./shared/character-development.md)
-- **...see an example of fact-checking in action** → [True Crime Examples](./use-cases/true-crime/EXAMPLES.md)
-- **...see a real podcast series setup** → [Podcast Examples](./use-cases/podcast-production/EXAMPLES.md)
+- **...see an example of fact-checking in action** → true-crime EXAMPLES.md (planned, not yet written)
+- **...see a real podcast series setup** → [Podcast Examples](./use-cases/podcast-production/EXAMPLES.md) (written - two complete example series)
 
 ---
 

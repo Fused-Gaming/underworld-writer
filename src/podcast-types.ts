@@ -169,6 +169,56 @@ export interface CharacterForPodcast {
   };
 }
 
+/**
+ * True Crime Case File
+ *
+ * Shape used by the podcast-production case files under `projects/*\/characters/*.json`
+ * (e.g. `joanne-segovia-case.json`). This is distinct from CharacterForPodcast (the
+ * Fiction three-phase schema) and from PACERCaseData (raw court-record data) -
+ * ScriptGenerator normalizes it into CharacterForPodcast via adaptCaseFileToCharacter().
+ */
+export interface TrueCrimeCaseFile {
+  caseId?: string;
+  caseName?: string;
+  brand?: string;
+  type?: string;
+  region?: string;
+  year?: number;
+  character: {
+    name: string;
+    title?: string;
+    role?: string;
+    background?: string;
+    faction?: string;
+    motivations?: string;
+  };
+  offense: {
+    type?: string;
+    description: string;
+    severity?: string;
+    scale?: string;
+    duration?: string;
+    yearsActive?: string;
+    impact?: string;
+  };
+  howTheyGotAwayWithIt?: {
+    strategy?: string;
+    keyFactors?: string[];
+  };
+  sentence: Record<string, string | undefined>;
+  fallout?: {
+    consequences?: string[];
+    avoided?: string;
+  };
+  narrative_hooks?: {
+    headline?: string;
+    question?: string;
+    investigation_angle?: string;
+  };
+  sources: string[];
+  verification_status: string;
+}
+
 export interface PodcastGenerationResult {
   script: ScriptOutput;
   producerBrief: ProducerBrief;

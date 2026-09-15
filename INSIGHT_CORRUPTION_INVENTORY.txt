@@ -1,0 +1,98 @@
+═══════════════════════════════════════════════════════════════════════════════
+  INSIGHT CORRUPTION PODCAST PROJECT - INVENTORY
+  (renamed from "Corruption Insight" 2026-09-15)
+═══════════════════════════════════════════════════════════════════════════════
+
+PROJECT OVERVIEW
+────────────────────────────────────────────────────────────────────────────
+Brand:           Insight Corruption
+Genre:           True-crime investigative podcast (government corruption)
+Region:          California Bay Area
+Format:          Single-part episodes, 30 minutes + one 90-second mid-roll
+                 sponsor break
+Case files:      24 compiled (projects/insight-corruption/characters/)
+Season 1:        15 episodes, complete (output/insight-corruption/)
+Package version: @h4shed/skill-underworld-writer@2.0.7
+Last updated:    2026-09-15
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📦 DEPENDENCIES
+────────────────────────────────────────────────────────────────────────────
+✓ @h4shed/mcp-core@^1.0.40 (declared in package.json - run `npm install`)
+✓ @h4shed/skill-underworld-writer@2.0.7 (this repository itself)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 CASE FILES (24 total)
+────────────────────────────────────────────────────────────────────────────
+
+Location: projects/insight-corruption/characters/
+
+5 original cases (resolved outcomes, Episodes 1-5):
+  joanne-segovia-case.json, clarke-howatt-case.json, rodolfo-pada-case.json,
+  ken-wong-case.json, florence-kong-case.json
+
+19 "Oakland expansion" cases in characters/oakland-cases/:
+  14 resolved-outcome cases became Episodes 6-14.
+  10 pending/under-investigation/awaiting-sentencing cases became the
+  Episode 15 "Docket Watch" roundup instead of a resolved-outcome narrative.
+
+Full per-case status: projects/insight-corruption/PROJECT_MANIFEST.json
+(oaklandExpansion.cases + seasonOneStatus fields)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📄 DOCUMENTATION FILES
+────────────────────────────────────────────────────────────────────────────
+
+/home/user/underworld-writer/INSIGHT_CORRUPTION_SETUP.md
+  - Setup, generation commands, and known CLI limitations
+
+/home/user/underworld-writer/INSIGHT_CORRUPTION_INVENTORY.txt
+  - This file
+
+projects/insight-corruption/PROJECT_MANIFEST.json
+  - Full case catalog + resolved/pending season split rationale
+
+projects/insight-corruption/PRODUCER_GUIDE.md
+  - Guest-interview angle research for Episodes 1-5 (predates Episodes 6-15;
+    see output/insight-corruption/ for those episodes' own producer briefs)
+
+output/insight-corruption/
+  - SERIES_CONFIG.json + season-1/episode-1 … episode-15/, each with
+    EPISODE_CONFIG.json, scripts/script.md, producer-briefs/brief.md, README.md
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🗂️ WORKSPACE DIRECTORY STRUCTURE
+────────────────────────────────────────────────────────────────────────────
+
+/home/user/underworld-writer/
+├── .fused-gaming-mcp.json                  Brand/workspace config
+├── INSIGHT_CORRUPTION_SETUP.md
+├── INSIGHT_CORRUPTION_INVENTORY.txt        This file
+├── projects/insight-corruption/
+│   ├── PROJECT_MANIFEST.json
+│   ├── PRODUCER_GUIDE.md
+│   └── characters/                          24 case files (+ oakland-cases/)
+├── output/insight-corruption/
+│   ├── SERIES_CONFIG.json
+│   └── season-1/episode-1..15/
+└── scripts/validate-insight-corruption.mjs  Workspace validation
+
+Run validation:
+    node scripts/validate-insight-corruption.mjs
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⚠️  KNOWN LIMITATIONS (see INSIGHT_CORRUPTION_SETUP.md for detail)
+────────────────────────────────────────────────────────────────────────────
+- The CLI's ScriptGenerator produces a fixed-length script and does not
+  consume EPISODE_CONFIG.json's length/sponsorBreaks block - it cannot
+  generate a 30-minute episode directly. Episodes were hand-assembled to the
+  documented directory structure to hit the actual requested runtime.
+- Re-verify sentencing/case status before air, especially for Episode 15's
+  10 pending cases - status can change after this data was compiled.
+
+═══════════════════════════════════════════════════════════════════════════════

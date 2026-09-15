@@ -1,0 +1,64 @@
+{
+  "episodeNumber": 3,
+  "seasonNumber": 1,
+  "title": "SF Building Inspector Took Bribes for 14 Years, Served Only 1 Year in Prison",
+  "subtitle": "Rodolfo Pada - SF Building Inspector Bribery Syndicate",
+  "description": "Accepted over $40,000 in bribes from construction firms over 14 years (2003-2017) to approve permits, expedite inspections, and approve building plans - directly compromising building code enforcement and public safety",
+  "characters": [
+    "Rodolfo Pada"
+  ],
+  "location": "San Francisco, California",
+  "year": 2026,
+  "tags": [
+    "government-corruption"
+  ],
+  "sourceVerificationTier": 2,
+  "caseReference": "rodolfo-pada-case.json",
+  "status": "scripted",
+  "length": {
+    "format": "single-part",
+    "parts": [
+      {
+        "partNumber": 1,
+        "duration": {
+          "minimum": 28,
+          "maximum": 32,
+          "target": 30
+        },
+        "sponsorBreaks": [
+          {
+            "position": "mid-roll",
+            "lengthSeconds": 90,
+            "scriptTemplate": "This episode of Insight Corruption is brought to you by [SPONSOR]..."
+          }
+        ],
+        "contentDuration": {
+          "minimum": 26.5,
+          "maximum": 30.5,
+          "target": 28.5
+        }
+      }
+    ],
+    "totalDuration": {
+      "minimum": 28,
+      "maximum": 32,
+      "target": 30
+    }
+  },
+  "keyPoints": [
+    "Accepted over $40,000 in bribes from construction firms over 14 years (2003-2017) to approve permits, expedite inspections, and approve building plans - directly compromising building code enforcement and public safety",
+    "Outcome: MINIMAL SENTENCE FOR 14-YEAR BRIBERY SCHEME"
+  ],
+  "investigativeAngles": [
+    "Which San Francisco buildings had their permits fraudulently approved by this inspector?"
+  ],
+  "guestOpportunities": [
+    "a former prosecutor or defense attorney",
+    "a public-sector ethics researcher",
+    "an investigative reporter who covered the case"
+  ],
+  "factCheckLayers": [
+    "Published: SF Chronicle - 2026; Federal Court Records; Department of Building Inspection Records"
+  ],
+  "producerNotes": "RUNTIME FEASIBILITY: the case file's own verified facts (character/offense/sentence/fallout fields) support roughly 10-14 minutes of factual narration at a realistic ~150 words-per-minute spoken pace. The remaining runtime to reach the requested 30-minute target must come from clearly-labeled analysis and a guest/expert interview segment (see script.md [EXPAND] blocks) - not from invented case details. Do not pad the factual segments themselves."
+}

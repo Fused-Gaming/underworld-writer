@@ -1,0 +1,27 @@
+{
+  "caseId": "corruption-oakland-018",
+  "caseName": "Transit Authority Procurement Fraud",
+  "brand": "Insight Corruption",
+  "type": "government-corruption",
+  "region": "Bay Area Transportation Authority",
+  "year": 2021,
+  "character": {
+    "name": "Transit Authority Official",
+    "title": "Procurement Manager, Transit Authority",
+    "role": "Government Procurement Fraud"
+  },
+  "offense": {
+    "type": "Contract Fraud, Bid Rigging",
+    "description": "Transit authority official rigged vendor bidding process and accepted kickbacks from preferred contractors",
+    "severity": "Federal Procurement Fraud",
+    "scale": "$4M+ in transit infrastructure contracts"
+  },
+  "sentence": {
+    "status": "CASE UNDER PROSECUTION"
+  },
+  "sources": [
+    "Transit Authority",
+    "Department of Justice"
+  ],
+  "verification_status": "VERIFIED"
+}

@@ -1,0 +1,61 @@
+{
+  "caseId": "corruption-bay-002",
+  "caseName": "Clarke Howatt - ABAG Housing Embezzlement",
+  "brand": "Insight Corruption",
+  "type": "government-corruption",
+  "region": "Bay Area Regional Government",
+  "year": 2016,
+  "character": {
+    "name": "Clarke Howatt",
+    "title": "Finance Director, Association of Bay Area Governments (ABAG)",
+    "role": "Financial Thief from Public Housing",
+    "background": "Trusted financial administrator in regional government body",
+    "faction": "Municipal Government Corruption",
+    "motivations": "Systematic theft of public housing funds for personal gain"
+  },
+  "offense": {
+    "type": "Embezzlement",
+    "description": "Embezzled nearly $3.9 million from the Association of Bay Area Governments between 2011-2015, affecting affordable housing developments including Rincon Hill highrise and Windemere Ranch housing projects",
+    "severity": "Federal Crime - Multi-Million Dollar Theft",
+    "scale": "$3.9 million",
+    "duration": "4 years (2011-2015)",
+    "impact": "Delayed/compromised affordable housing projects for Bay Area residents"
+  },
+  "howTheyGotAwayWithIt": {
+    "strategy": "Partial Restitution & Minimal Incarceration",
+    "keyFactors": [
+      "Massive theft from public funds serving vulnerable populations",
+      "Court agreed to accept restitution ($3.5M repaid by Howatt and parents)",
+      "Restitution strategy led to lenient sentencing despite massive embezzlement",
+      "Family money used to mitigate consequences",
+      "Minimal prison sentence for stealing nearly $4M from housing fund"
+    ]
+  },
+  "sentence": {
+    "prison_time": "1 year and 1 day",
+    "home_confinement": "6 months",
+    "probation": "3 years supervised release",
+    "restitution": "$3.5 million (paid by Howatt and family)",
+    "status": "MINIMAL SENTENCE FOR MAJOR THEFT"
+  },
+  "fallout": {
+    "consequences": [
+      "Housing projects delayed for Bay Area residents",
+      "Public trust erosion in government financial management",
+      "Regional government oversight failures exposed",
+      "Families needing affordable housing suffered delays"
+    ],
+    "avoided": "Lengthy prison sentence through restitution strategy"
+  },
+  "narrative_hooks": {
+    "headline": "Finance Director Stole $3.9M from Bay Area Housing Fund, Got 1 Year in Prison",
+    "question": "Why did embezzling $4 million from housing development warrant only 13 months?",
+    "investigation_angle": "The restitution loophole: When money can buy your way out of prison"
+  },
+  "sources": [
+    "Palo Alto Online - 2016",
+    "Bay Area News Group",
+    "Federal Court Records"
+  ],
+  "verification_status": "VERIFIED - Public court sentencing records"
+}

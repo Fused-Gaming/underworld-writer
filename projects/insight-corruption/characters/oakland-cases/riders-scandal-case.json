@@ -1,0 +1,59 @@
+{
+  "caseId": "corruption-oakland-002",
+  "caseName": "OPD Riders Scandal - Four Officers, 48 Felonies",
+  "brand": "Insight Corruption",
+  "type": "government-corruption",
+  "region": "Oakland Police Department",
+  "year": 2000,
+  "character": {
+    "name": "Officers Vasquez, Mabanag, Siapno, Hornung",
+    "title": "Oakland Police Officers (Narcotics Unit)",
+    "role": "Law Enforcement Corruption",
+    "background": "Four narcotics officers operating in West Oakland",
+    "faction": "Police Department Corruption",
+    "motivations": "Personal gain through drug distribution, false arrests, asset seizure"
+  },
+  "offense": {
+    "type": "Felony Corruption, Assault, False Arrest, Drug Planting",
+    "description": "Four narcotics officers charged with 48 felonies including planting drugs, conducting false arrests, assaults, and systematic corruption in West Oakland. Known as the 'Riders Scandal'",
+    "severity": "Major Police Corruption",
+    "scale": "48 felony charges across 4 officers",
+    "duration": "Years of systematic corruption in narcotics operations",
+    "impact": "Hundreds of false arrests, destroyed lives, drug cases tainted"
+  },
+  "howTheyGotAwayWithIt": {
+    "strategy": "Hung Juries, Dismissed Cases, Minimal Accountability",
+    "keyFactors": [
+      "Cases resulted in hung juries",
+      "Charges dismissed despite evidence",
+      "Officers maintained positions despite scandal",
+      "Led to federal oversight but no major convictions",
+      "Police union protected officers during proceedings"
+    ]
+  },
+  "sentence": {
+    "outcome": "Most charges dismissed/not convicted",
+    "status": "MINIMAL ACCOUNTABILITY DESPITE 48 FELONY CHARGES"
+  },
+  "fallout": {
+    "consequences": [
+      "Hundreds of cases dismissed",
+      "Victims of false arrests never compensated",
+      "Federal consent decree imposed on OPD",
+      "Created mistrust in Oakland police",
+      "Set precedent for police corruption handling"
+    ]
+  },
+  "narrative_hooks": {
+    "headline": "48 Felonies Against Four Cops: The Riders Scandal",
+    "question": "Why were four officers charged with 48 felonies never convicted?",
+    "investigation_angle": "How the justice system failed victims of the Riders Scandal"
+  },
+  "sources": [
+    "The Appeal - Police Corruption Files",
+    "Rolling Stone - Training Day Scandal",
+    "SF Chronicle - Oakland Police Timeline",
+    "Federal Oversight Reports"
+  ],
+  "verification_status": "VERIFIED - Federal records, court documents, published reporting"
+}

@@ -228,7 +228,7 @@ See [USE_CASES_OVERVIEW.md](./USE_CASES_OVERVIEW.md) for more hybrid examples.
 1. **Frequently asked?** → Check [FAQ.md](./FAQ.md) (coming soon)
 2. **Don't understand a term?** → Check [GLOSSARY.md](./shared/GLOSSARY.md) (coming soon)
 3. **Looking for something specific?** → Check [INDEX.md](./INDEX.md)
-4. **Want to see it in practice?** → Look for EXAMPLES.md in your use case
+4. **Want to see it in practice?** → [Podcast Production EXAMPLES.md](./use-cases/podcast-production/EXAMPLES.md) has two complete worked series; Fiction/True Crime EXAMPLES.md files are planned but not yet written
 
 ---
 

@@ -1,0 +1,91 @@
+{
+  "episodeNumber": 15,
+  "seasonNumber": 1,
+  "title": "The Docket Watch: 10 Bay Area Corruption Cases Still Moving Through Court",
+  "subtitle": "A season-closing roundup of unresolved cases",
+  "description": "A survey of ten Bay Area public-corruption cases that are indicted, charged, or awaiting sentencing but not yet resolved. Unlike Episodes 1-14, none of these cases get the show's usual 'how they got away with it' framing, because none of them have a final outcome yet.",
+  "characters": [
+    "Sheng Thao",
+    "Phong Tran",
+    "Kevin Arias",
+    "Brandon Mart & David Mac",
+    "Ben Chavis",
+    "Assessor's Office Official",
+    "Probation Officer",
+    "Sheriff Deputy",
+    "Public Works Official",
+    "Transit Authority Official"
+  ],
+  "location": "Bay Area, California",
+  "year": 2025,
+  "tags": [
+    "roundup",
+    "pending-cases",
+    "government-corruption"
+  ],
+  "sourceVerificationTier": 2,
+  "caseReference": [
+    "oakland-cases/sheng-thao-case.json",
+    "oakland-cases/phong-tran-case.json",
+    "oakland-cases/kevin-arias-case.json",
+    "oakland-cases/helicopter-pilots-case.json",
+    "oakland-cases/ben-chavis-case.json",
+    "oakland-cases/alameda-county-assessor-fraud.json",
+    "oakland-cases/alameda-probation-officer-fraud.json",
+    "oakland-cases/alameda-sheriff-corruption.json",
+    "oakland-cases/oakland-public-works-official.json",
+    "oakland-cases/transit-authority-fraud.json"
+  ],
+  "status": "scripted",
+  "length": {
+    "format": "single-part",
+    "parts": [
+      {
+        "partNumber": 1,
+        "duration": {
+          "minimum": 28,
+          "maximum": 32,
+          "target": 30
+        },
+        "sponsorBreaks": [
+          {
+            "position": "mid-roll",
+            "lengthSeconds": 90
+          }
+        ],
+        "contentDuration": {
+          "minimum": 26.5,
+          "maximum": 30.5,
+          "target": 28.5
+        }
+      }
+    ],
+    "totalDuration": {
+      "minimum": 28,
+      "maximum": 32,
+      "target": 30
+    }
+  },
+  "keyPoints": [
+    "Sheng Thao: PENDING - Case in Federal Court",
+    "Phong Tran: CASE IN PROGRESS",
+    "Kevin Arias: CASE IN PROGRESS",
+    "Brandon Mart & David Mac: CASE IN PROGRESS",
+    "Ben Chavis: CASE UNDER INVESTIGATION/PROSECUTION",
+    "Assessor's Office Official: CASE UNDER PROSECUTION",
+    "Probation Officer: CASE PENDING",
+    "Sheriff Deputy: CASE PENDING",
+    "Public Works Official: CASE UNDER INVESTIGATION",
+    "Transit Authority Official: CASE UNDER PROSECUTION"
+  ],
+  "investigativeAngles": [
+    "Why does the show separate resolved outcomes from open cases?"
+  ],
+  "guestOpportunities": [
+    "A courts reporter who tracks Bay Area corruption dockets"
+  ],
+  "factCheckLayers": [
+    "Each segment sourced individually - see script.md"
+  ],
+  "producerNotes": "EDITORIAL RATIONALE: 10 of the 24 case files originally compiled for this project describe cases that are indicted, under investigation, or awaiting sentencing rather than resolved. The season's 'how they got away with it' premise does not apply to a case with no final outcome, and narrating one as though it fit that premise would misstate its status. This episode is the honest home for that material: presumption-of-innocence language throughout, explicit per-case status, and no sentencing narrative implied. Re-verify every status line before air - these are the case files most likely to have moved."
+}

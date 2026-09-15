@@ -1,0 +1,32 @@
+{
+  "caseId": "corruption-oakland-008",
+  "caseName": "Bryan Azevedo - San Leandro Official First Guilty Plea",
+  "brand": "Insight Corruption",
+  "type": "government-corruption",
+  "region": "San Leandro (Alameda County)",
+  "year": 2024,
+  "character": {
+    "name": "Bryan Azevedo",
+    "title": "City Official, San Leandro",
+    "role": "Municipal Government Corruption",
+    "background": "City government official",
+    "faction": "Municipal Government Corruption",
+    "motivations": "Unspecified corruption charges"
+  },
+  "offense": {
+    "type": "Corruption",
+    "description": "First official to plead guilty in Oakland corruption probe. Now cooperating with federal investigators as a key witness.",
+    "severity": "Federal Corruption",
+    "scale": "Part of broader corruption investigation",
+    "duration": "Ongoing investigation",
+    "impact": "Cooperating witness in broader corruption network"
+  },
+  "sentence": {
+    "status": "GUILTY PLEA - COOPERATING WITH FEDERAL PROSECUTORS"
+  },
+  "sources": [
+    "Department of Justice - Oakland Corruption Probe",
+    "SF Chronicle - Corruption Investigation"
+  ],
+  "verification_status": "VERIFIED - Federal court filings"
+}
