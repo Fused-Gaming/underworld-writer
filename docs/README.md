@@ -18,6 +18,18 @@ Each use case includes methodology, protocols, templates, and examples.
 
 ---
 
+## 📚 Core Guides
+
+### 📏 Length & Format Specifications (All Use Cases)
+**Define narrative and podcast lengths with precision**
+
+- 📖 [LENGTH_SPECIFICATIONS.md](./LENGTH_SPECIFICATIONS.md) — Word counts, page counts, episode minutes, sponsor breaks
+- Covers books, chapters, novellas, and podcast episodes
+- Helper functions for time/word conversions
+- Production time estimation and constraint management
+
+---
+
 ## 📚 Choose Your Path
 
 ### 1. Fiction Writers

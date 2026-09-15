@@ -25,6 +25,7 @@
 docs/
 ├── INDEX.md                          # THIS FILE
 ├── USE_CASES_OVERVIEW.md            # Overview of all three use cases
+├── LENGTH_SPECIFICATIONS.md          # Length & format specifications (NEW)
 ├── QUICK_START.md                    # 5-minute quickstart (coming)
 └── FAQ.md                            # Frequently asked questions (coming)
 ```
@@ -168,6 +169,9 @@ From [Episode Development](./use-cases/podcast-production/EPISODE_DEVELOPMENT.md
 | Task | File | Use Case |
 |------|------|----------|
 | Build fictional character | [METHODOLOGY.md](./use-cases/fiction/METHODOLOGY.md) | Fiction |
+| Define narrative word/page count | [LENGTH_SPECIFICATIONS.md](./LENGTH_SPECIFICATIONS.md) | All |
+| Specify podcast episode length | [LENGTH_SPECIFICATIONS.md](./LENGTH_SPECIFICATIONS.md) | Podcast |
+| Plan sponsor breaks | [LENGTH_SPECIFICATIONS.md](./LENGTH_SPECIFICATIONS.md) | Podcast |
 | Verify a fact for true crime | [SKILL.md](./use-cases/true-crime/protocols/SKILL.md) | True Crime |
 | Set up a podcast series | [SERIES_FRAMEWORK.md](./use-cases/podcast-production/SERIES_FRAMEWORK.md) | Podcast |
 | Create an episode | [EPISODE_DEVELOPMENT.md](./use-cases/podcast-production/EPISODE_DEVELOPMENT.md) | Podcast |
