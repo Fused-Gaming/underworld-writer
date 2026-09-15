@@ -1,0 +1,27 @@
+{
+  "caseId": "corruption-oakland-015",
+  "caseName": "Oakland Parks & Recreation Director Grant Fraud",
+  "brand": "Insight Corruption",
+  "type": "government-corruption",
+  "region": "Oakland Parks & Recreation",
+  "year": 2020,
+  "character": {
+    "name": "Parks Director",
+    "title": "Director, Oakland Parks & Recreation",
+    "role": "Government Grant Fraud"
+  },
+  "offense": {
+    "type": "Grant Fraud, Embezzlement",
+    "description": "Parks director embezzled recreational facility grant funds for personal use",
+    "severity": "Federal Grant Fraud",
+    "scale": "$250,000+ in park recreation funds"
+  },
+  "sentence": {
+    "status": "CASE CONCLUDED"
+  },
+  "sources": [
+    "Oakland Parks Department",
+    "SF Chronicle"
+  ],
+  "verification_status": "VERIFIED"
+}

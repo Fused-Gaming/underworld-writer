@@ -61,8 +61,8 @@ Place the character within larger mythology and story systems.
 ## Key Documents
 
 - **[METHODOLOGY.md](./METHODOLOGY.md)** — Complete three-phase approach with best practices
-- **[TEMPLATES.md](./TEMPLATES.md)** — Character profile and world-building templates (coming soon)
-- **[EXAMPLES.md](./EXAMPLES.md)** — Sample characters and narrative worlds (coming soon)
+- **TEMPLATES.md** — Character profile and world-building templates (planned, not yet written)
+- **EXAMPLES.md** — Sample characters and narrative worlds (planned, not yet written)
 
 ---
 
@@ -107,8 +107,8 @@ A well-developed fictional character should have:
 ## Next Steps
 
 1. Read [METHODOLOGY.md](./METHODOLOGY.md) for the complete three-phase approach
-2. Review [TEMPLATES.md](./TEMPLATES.md) for character profile templates
-3. Study [EXAMPLES.md](./EXAMPLES.md) for sample characters
+2. Review METHODOLOGY.md's inline templates for character profile structure (a standalone TEMPLATES.md is planned but not yet written)
+3. See [Podcast Production EXAMPLES.md](../podcast-production/EXAMPLES.md) for a worked example series (fiction-specific examples are planned but not yet written)
 4. Start building your character using the three-phase methodology
 
 ---

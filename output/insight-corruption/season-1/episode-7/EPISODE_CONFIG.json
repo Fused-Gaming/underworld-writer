@@ -1,0 +1,64 @@
+{
+  "episodeNumber": 7,
+  "seasonNumber": 1,
+  "title": "BART Police Officer: Excessive Force, False Reports",
+  "subtitle": "BART Police Officer Misconduct & False Reports",
+  "description": "BART officer filed false reports to cover up excessive force incident and intimidated witnesses",
+  "characters": [
+    "BART Police Officer"
+  ],
+  "location": "Bay Area Rapid Transit Police",
+  "year": 2020,
+  "tags": [
+    "government-corruption"
+  ],
+  "sourceVerificationTier": 2,
+  "caseReference": "oakland-cases/bart-police-excessive-force.json",
+  "status": "scripted",
+  "length": {
+    "format": "single-part",
+    "parts": [
+      {
+        "partNumber": 1,
+        "duration": {
+          "minimum": 28,
+          "maximum": 32,
+          "target": 30
+        },
+        "sponsorBreaks": [
+          {
+            "position": "mid-roll",
+            "lengthSeconds": 90,
+            "scriptTemplate": "This episode of Insight Corruption is brought to you by [SPONSOR]..."
+          }
+        ],
+        "contentDuration": {
+          "minimum": 26.5,
+          "maximum": 30.5,
+          "target": 28.5
+        }
+      }
+    ],
+    "totalDuration": {
+      "minimum": 28,
+      "maximum": 32,
+      "target": 30
+    }
+  },
+  "keyPoints": [
+    "BART officer filed false reports to cover up excessive force incident and intimidated witnesses",
+    "Outcome: CASE CONCLUDED - OFFICER RESIGNED"
+  ],
+  "investigativeAngles": [
+    "Following the money and the paperwork trail."
+  ],
+  "guestOpportunities": [
+    "a former prosecutor or defense attorney",
+    "a public-sector ethics researcher",
+    "an investigative reporter who covered the case"
+  ],
+  "factCheckLayers": [
+    "Published: BART Police; SF Chronicle; KQED"
+  ],
+  "producerNotes": "RUNTIME FEASIBILITY: the case file's own verified facts (character/offense/sentence/fallout fields) support roughly 10-14 minutes of factual narration at a realistic ~150 words-per-minute spoken pace. The remaining runtime to reach the requested 30-minute target must come from clearly-labeled analysis and a guest/expert interview segment (see script.md [EXPAND] blocks) - not from invented case details. Do not pad the factual segments themselves."
+}

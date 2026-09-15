@@ -1,0 +1,64 @@
+{
+  "episodeNumber": 6,
+  "seasonNumber": 1,
+  "title": "48 Felonies Against Four Cops: The Riders Scandal",
+  "subtitle": "OPD Riders Scandal - Four Officers, 48 Felonies",
+  "description": "Four narcotics officers charged with 48 felonies including planting drugs, conducting false arrests, assaults, and systematic corruption in West Oakland. Known as the 'Riders Scandal'",
+  "characters": [
+    "Officers Vasquez, Mabanag, Siapno, Hornung"
+  ],
+  "location": "Oakland Police Department",
+  "year": 2000,
+  "tags": [
+    "government-corruption"
+  ],
+  "sourceVerificationTier": 2,
+  "caseReference": "oakland-cases/riders-scandal-case.json",
+  "status": "scripted",
+  "length": {
+    "format": "single-part",
+    "parts": [
+      {
+        "partNumber": 1,
+        "duration": {
+          "minimum": 28,
+          "maximum": 32,
+          "target": 30
+        },
+        "sponsorBreaks": [
+          {
+            "position": "mid-roll",
+            "lengthSeconds": 90,
+            "scriptTemplate": "This episode of Insight Corruption is brought to you by [SPONSOR]..."
+          }
+        ],
+        "contentDuration": {
+          "minimum": 26.5,
+          "maximum": 30.5,
+          "target": 28.5
+        }
+      }
+    ],
+    "totalDuration": {
+      "minimum": 28,
+      "maximum": 32,
+      "target": 30
+    }
+  },
+  "keyPoints": [
+    "Four narcotics officers charged with 48 felonies including planting drugs, conducting false arrests, assaults, and systematic corruption in West Oakland. Known as the 'Riders Scandal'",
+    "Outcome: MINIMAL ACCOUNTABILITY DESPITE 48 FELONY CHARGES"
+  ],
+  "investigativeAngles": [
+    "How the justice system failed victims of the Riders Scandal"
+  ],
+  "guestOpportunities": [
+    "a former prosecutor or defense attorney",
+    "a public-sector ethics researcher",
+    "an investigative reporter who covered the case"
+  ],
+  "factCheckLayers": [
+    "Published: The Appeal - Police Corruption Files; Rolling Stone - Training Day Scandal; SF Chronicle - Oakland Police Timeline; Federal Oversight Reports"
+  ],
+  "producerNotes": "RUNTIME FEASIBILITY: the case file's own verified facts (character/offense/sentence/fallout fields) support roughly 10-14 minutes of factual narration at a realistic ~150 words-per-minute spoken pace. The remaining runtime to reach the requested 30-minute target must come from clearly-labeled analysis and a guest/expert interview segment (see script.md [EXPAND] blocks) - not from invented case details. Do not pad the factual segments themselves."
+}

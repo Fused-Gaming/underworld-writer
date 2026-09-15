@@ -1,0 +1,47 @@
+{
+  "caseId": "corruption-oakland-003",
+  "caseName": "Phong Tran - OPD Detective Perjury & Witness Bribery",
+  "brand": "Insight Corruption",
+  "type": "government-corruption",
+  "region": "Oakland Police Department",
+  "year": 2024,
+  "character": {
+    "name": "Phong Tran",
+    "title": "Detective, Oakland Police Department",
+    "role": "Law Enforcement Corruption",
+    "background": "Career detective in Oakland PD",
+    "faction": "Police Department Corruption",
+    "motivations": "Case misconduct, witness tampering"
+  },
+  "offense": {
+    "type": "Perjury, Witness Bribery, Evidence Tampering",
+    "description": "Detective charged with perjury and witness bribery affecting over 125+ cases. Systematic corruption in criminal cases undermining justice system.",
+    "severity": "Felony Police Corruption",
+    "scale": "125+ cases compromised",
+    "duration": "Years of systematic case misconduct",
+    "impact": "Hundreds of criminal cases potentially invalid"
+  },
+  "sentence": {
+    "status": "CASE IN PROGRESS"
+  },
+  "fallout": {
+    "consequences": [
+      "125+ criminal cases under review",
+      "Defendants seeking retrials",
+      "Cases being dismissed",
+      "Public trust in OPD damaged",
+      "Victims of crimes may be released"
+    ]
+  },
+  "narrative_hooks": {
+    "headline": "Oakland Detective's Corruption Affects 125+ Criminal Cases",
+    "question": "How many innocent people are in prison due to detective perjury?",
+    "investigation_angle": "The systemic failures that allowed one detective to compromise 125+ cases"
+  },
+  "sources": [
+    "KTVU - OPD Investigation",
+    "NBC Bay Area - Detective Corruption",
+    "SF Chronicle - Oakland Police Misconduct"
+  ],
+  "verification_status": "VERIFIED - Published reporting, official court filings"
+}

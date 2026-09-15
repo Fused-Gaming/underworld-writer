@@ -97,7 +97,7 @@ Create fictional underworld podcasts where character consistency matters more th
 ### True Crime + Podcast Production
 Create fact-checked investigative podcast series.
 - **Workflow:** Verify facts via True Crime methodology → Organize into episodes via Podcast Production framework
-- **Example:** "Corruption Insight" — Bay Area corruption cases in episodic format
+- **Example:** "Insight Corruption" — Bay Area corruption cases in episodic format (see `output/insight-corruption/` for the full worked series)
 
 ### True Crime + Fiction
 Create narratives that blend real cases with imaginative reconstruction.
@@ -117,8 +117,8 @@ docs/
 │   ├── fiction/
 │   │   ├── README.md              # Fiction overview
 │   │   ├── METHODOLOGY.md         # Three-phase approach
-│   │   ├── TEMPLATES.md           # Character & world templates
-│   │   └── EXAMPLES.md            # Sample characters & worlds
+│   │   ├── TEMPLATES.md           # Character & world templates (planned)
+│   │   └── EXAMPLES.md            # Sample characters & worlds (planned)
 │   ├── true-crime/
 │   │   ├── README.md              # True Crime overview
 │   │   ├── SKILL.md               # Core verification workflow
@@ -127,14 +127,14 @@ docs/
 │   │   │   ├── query-construction-guide.md
 │   │   │   ├── cross-source-reconciliation.md
 │   │   │   └── escalation-protocols.md
-│   │   └── EXAMPLES.md            # Sample fact-checking workflows
+│   │   └── EXAMPLES.md            # Sample fact-checking workflows (planned)
 │   └── podcast-production/
 │       ├── README.md              # Podcast overview
 │       ├── SERIES_FRAMEWORK.md    # Building series & branding
 │       ├── EPISODE_DEVELOPMENT.md # Episode workflow
 │       ├── GUEST_COORDINATION.md  # Guest scripts & interviews
-│       ├── TEMPLATES.md           # Series config, episode metadata
-│       └── EXAMPLES.md            # Example series setup
+│       ├── TEMPLATES.md           # Series config, episode metadata (written)
+│       └── EXAMPLES.md            # Example series setup (written)
 
 └── SHARED/
     ├── character-development.md   # Three-phase methodology
@@ -155,14 +155,14 @@ docs/
 1. Read [Fiction Use Case Guide](./use-cases/fiction/README.md)
 2. Review [Three-Phase Methodology](./use-cases/fiction/METHODOLOGY.md)
 3. Use the character profile template to start building
-4. See [Fiction Examples](./use-cases/fiction/EXAMPLES.md) for inspiration
+4. Fiction-specific EXAMPLES.md is planned but not yet written; see [Podcast Production EXAMPLES.md](./use-cases/podcast-production/EXAMPLES.md) for a worked example in the meantime
 
 ### For True Crime Podcasters
 1. Read [True Crime Use Case Guide](./use-cases/true-crime/README.md)
 2. Learn the [Verification Workflow](./use-cases/true-crime/protocols/SKILL.md)
 3. Work through [Query Construction](./use-cases/true-crime/protocols/query-construction-guide.md)
 4. Reference [Escalation Protocols](./use-cases/true-crime/protocols/escalation-protocols.md) for unverified claims
-5. See [True Crime Examples](./use-cases/true-crime/EXAMPLES.md) for workflow samples
+5. True-crime-specific EXAMPLES.md is planned but not yet written; see [Podcast Production EXAMPLES.md](./use-cases/podcast-production/EXAMPLES.md) for a worked true-crime example series
 
 ### For Podcast Producers
 1. Read [Podcast Production Use Case Guide](./use-cases/podcast-production/README.md)

@@ -1,0 +1,64 @@
+{
+  "episodeNumber": 1,
+  "seasonNumber": 1,
+  "title": "Union Boss Smuggled 17,000 Opioid Pills, Faced Zero Jail Time",
+  "subtitle": "Joanne Segovia - San Jose Police Officers' Association Opioid Smuggling",
+  "description": "Smuggled over 17,000 opioid pills (Tapentadol) into the U.S. from India over multiple years while serving as head of the police union",
+  "characters": [
+    "Joanne Segovia"
+  ],
+  "location": "San Jose, California",
+  "year": 2024,
+  "tags": [
+    "government-corruption"
+  ],
+  "sourceVerificationTier": 2,
+  "caseReference": "joanne-segovia-case.json",
+  "status": "scripted",
+  "length": {
+    "format": "single-part",
+    "parts": [
+      {
+        "partNumber": 1,
+        "duration": {
+          "minimum": 28,
+          "maximum": 32,
+          "target": 30
+        },
+        "sponsorBreaks": [
+          {
+            "position": "mid-roll",
+            "lengthSeconds": 90,
+            "scriptTemplate": "This episode of Insight Corruption is brought to you by [SPONSOR]..."
+          }
+        ],
+        "contentDuration": {
+          "minimum": 26.5,
+          "maximum": 30.5,
+          "target": 28.5
+        }
+      }
+    ],
+    "totalDuration": {
+      "minimum": 28,
+      "maximum": 32,
+      "target": 30
+    }
+  },
+  "keyPoints": [
+    "Smuggled over 17,000 opioid pills (Tapentadol) into the U.S. from India over multiple years while serving as head of the police union",
+    "Outcome: AVOIDED INCARCERATION"
+  ],
+  "investigativeAngles": [
+    "The role of addiction narratives in federal sentencing disparities"
+  ],
+  "guestOpportunities": [
+    "a former prosecutor or defense attorney",
+    "a public-sector ethics researcher",
+    "an investigative reporter who covered the case"
+  ],
+  "factCheckLayers": [
+    "Published: San Jos\u00e9 Spotlight - 2024; NBC Bay Area - 2024; KQED News - 2024"
+  ],
+  "producerNotes": "RUNTIME FEASIBILITY: the case file's own verified facts (character/offense/sentence/fallout fields) support roughly 10-14 minutes of factual narration at a realistic ~150 words-per-minute spoken pace. The remaining runtime to reach the requested 30-minute target must come from clearly-labeled analysis and a guest/expert interview segment (see script.md [EXPAND] blocks) - not from invented case details. Do not pad the factual segments themselves."
+}

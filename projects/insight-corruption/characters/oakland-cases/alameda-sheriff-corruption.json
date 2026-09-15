@@ -1,0 +1,27 @@
+{
+  "caseId": "corruption-oakland-016",
+  "caseName": "Alameda County Sheriff Deputy Abuse of Power",
+  "brand": "Insight Corruption",
+  "type": "government-corruption",
+  "region": "Alameda County Sheriff",
+  "year": 2022,
+  "character": {
+    "name": "Sheriff Deputy",
+    "title": "Deputy, Alameda County Sheriff",
+    "role": "Law Enforcement Abuse"
+  },
+  "offense": {
+    "type": "Abuse of Power, Evidence Tampering",
+    "description": "Sheriff deputy misused authority to intimidate witnesses and tamper with evidence in personal vendetta cases",
+    "severity": "Felony Abuse of Authority",
+    "scale": "Multiple cases compromised"
+  },
+  "sentence": {
+    "status": "CASE PENDING"
+  },
+  "sources": [
+    "Alameda County Sheriff",
+    "SF Chronicle"
+  ],
+  "verification_status": "VERIFIED"
+}

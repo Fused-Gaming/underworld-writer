@@ -1,0 +1,39 @@
+{
+  "seriesName": "Insight Corruption",
+  "seriesSlug": "insight-corruption",
+  "description": "Investigative true-crime podcast revealing California Bay Area corruption cases - where they ended, and what the outcome reveals about accountability.",
+  "genre": "true-crime-investigative",
+  "targetAudience": "Listeners interested in government accountability and the California justice system",
+  "podcastFormat": "single-part episodes",
+  "episodeDuration": "30 minutes with one 90-second mid-roll sponsor break",
+  "verificationMode": "published-sources-and-court-records",
+  "branding": {
+    "primary": "#D32F2F",
+    "secondary": "#424242",
+    "accent": "#FFA726"
+  },
+  "fonts": {
+    "heading": "Inter",
+    "body": "Inter"
+  },
+  "producer": {
+    "name": "Investigation Team",
+    "email": "producer@insightcorruption.local"
+  },
+  "commonThemes": [
+    "Legal system failures allowing wealthy/connected individuals to escape consequences",
+    "Restitution used as a replacement for prison time",
+    "Public service records cited to minimize sentences for federal crimes",
+    "The Bay Area's systemic corruption across government agencies",
+    "The two-tiered justice system revealed through sentencing disparities"
+  ],
+  "investigativeAngles": [
+    "Why addiction narratives reduce sentences for federal crimes",
+    "How restitution can replace prison time",
+    "Sentencing disparities between institutions and individuals"
+  ],
+  "producerNotes": "Season 1 covers 14 cases with resolved outcomes (Episodes 1-14) plus one roundup episode (15) for cases still pending. See PROJECT_MANIFEST.json for why the other 9 of the original 24 compiled cases were excluded rather than narrated as though resolved.",
+  "totalEpisodes": 15,
+  "createdDate": "2026-09-15",
+  "updatedDate": "2026-09-15"
+}

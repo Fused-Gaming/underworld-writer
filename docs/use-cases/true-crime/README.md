@@ -71,7 +71,7 @@ For unresolved claims:
 - **[escalation-protocols.md](./protocols/escalation-protocols.md)** — PACER, BOP, archives, gap disclosure
 
 ### Examples & Workflows
-- **[EXAMPLES.md](./EXAMPLES.md)** — Real-world fact-checking walkthroughs (coming soon)
+- **EXAMPLES.md** — Real-world fact-checking walkthroughs (planned, not yet written)
 
 ---
 
@@ -96,7 +96,7 @@ Combine verification workflow with episodic podcast structure:
 Verify facts (True Crime) → Organize into episodes → Generate scripts (Podcast Production) → Record with guests
 ```
 
-**Example:** "Corruption Insight" Bay Area corruption podcast
+**Example:** "Insight Corruption" Bay Area corruption podcast (see `output/insight-corruption/`)
 
 ### True Crime + Fiction
 Blend real cases with imagined reconstruction:
@@ -218,7 +218,7 @@ Different claims require different verification levels:
 3. Review [query-construction-guide.md](./protocols/query-construction-guide.md) for search strategies
 4. Reference [cross-source-reconciliation.md](./protocols/cross-source-reconciliation.md) for conflicts
 5. Learn [escalation-protocols.md](./protocols/escalation-protocols.md) for PACER and gaps
-6. Walk through [EXAMPLES.md](./EXAMPLES.md) for real workflows
+6. See [Podcast Production EXAMPLES.md](../podcast-production/EXAMPLES.md) for a worked true-crime example series (true-crime-specific examples are planned but not yet written)
 7. Start verifying claims in your own narrative
 
 ---

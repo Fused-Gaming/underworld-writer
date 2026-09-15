@@ -1,0 +1,62 @@
+{
+  "caseId": "corruption-bay-005",
+  "caseName": "Florence Kong - Contractor Bribery & Mohammed Nuru Corruption Network",
+  "brand": "Insight Corruption",
+  "type": "government-corruption",
+  "region": "San Francisco, California",
+  "year": 2023,
+  "character": {
+    "name": "Florence Kong",
+    "title": "Contractor",
+    "role": "Private Sector Corruptor in Government Scheme",
+    "background": "Contractor seeking city contracts through illegal means",
+    "faction": "Private Contractor/City Corruption Network",
+    "motivations": "Securing lucrative city contracts through bribery and corruption"
+  },
+  "offense": {
+    "type": "Bribery & Fraud",
+    "description": "Bribed Mohammed Nuru (San Francisco Public Works corruption figure) with a $36,000 Rolex watch and other luxury gifts to gain lucrative city contracts and preferential treatment for construction projects",
+    "severity": "Federal Crime - Large-scale Bribery",
+    "scale": "$36,000 Rolex + additional gifts",
+    "duration": "Part of ongoing SF Public Works corruption scandal",
+    "impact": "Contracts awarded through corruption rather than merit, construction project favoritism"
+  },
+  "howTheyGotAwayWithIt": {
+    "strategy": "Relatively Light Sentence Despite Large-Scale Bribery",
+    "keyFactors": [
+      "Bribing with luxury items (Rolex watch worth $36,000)",
+      "Systematic corruption of contract-award process",
+      "Received favorable sentencing despite significant bribery amount",
+      "Larger network (Mohammed Nuru got 7 years, Kong got much less)",
+      "Corporate/private sector bribery treated leniently compared to government official"
+    ]
+  },
+  "sentence": {
+    "prison_time": "1 year and 1 day",
+    "probation": "3 years supervised release",
+    "fines": "$95,000",
+    "status": "LIGHT SENTENCE FOR LARGE BRIBERY SCHEME"
+  },
+  "fallout": {
+    "consequences": [
+      "Loss of city contract opportunities",
+      "Construction projects awarded through corruption exposed",
+      "Contractor licensing questions",
+      "Contract-award integrity compromised"
+    ],
+    "avoided": "Substantial prison sentence for six-figure bribery operation"
+  },
+  "narrative_hooks": {
+    "headline": "Contractor Bribed SF Official with $36K Rolex, Got 1 Year Prison + $95K Fine",
+    "question": "How much does a luxury Rolex bribe have to cost before you get real prison time in San Francisco?",
+    "investigation_angle": "The Mohammed Nuru network: How many contractors paid bribes for contracts?"
+  },
+  "relatedCases": ["ken-wong-case.json", "mohammed-nuru-broader-scandal"],
+  "sources": [
+    "CBS San Francisco - 2023",
+    "SF Chronicle",
+    "Federal Court Records",
+    "NBC Bay Area"
+  ],
+  "verification_status": "VERIFIED - Part of documented SF Public Works corruption scandal (2023-2024)"
+}

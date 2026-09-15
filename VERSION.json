@@ -1,10 +1,10 @@
 {
-  "version": "1.0.25",
-  "releaseDate": "2026-09-13",
+  "version": "2.0.7",
+  "releaseDate": "2026-09-15",
   "status": "stable",
-  "majorVersion": 1,
+  "majorVersion": 2,
   "minorVersion": 0,
-  "patchVersion": 25,
+  "patchVersion": 7,
   "prerelease": null,
   "metadata": {
     "nodeMinimum": "20.0.0",
@@ -16,8 +16,8 @@
     "name": "@h4shed/skill-underworld-writer",
     "scope": "h4shed",
     "publishedScope": "h4shed",
-    "description": "Create detailed character profiles, mythologies, and narrative worlds for underworld-themed stories with PACER API integration for fact-checking editorial phases",
-    "repository": "https://github.com/fused-gaming/underworld-writer",
+    "description": "Three-use-case skill for fictional underworld narratives, fact-sourced true crime writing, and episodic podcast production, with PACER-informed fact-checking",
+    "repository": "https://github.com/Fused-Gaming/underworld-writer",
     "npmRegistry": "https://registry.npmjs.org"
   },
   "features": {
@@ -62,6 +62,7 @@
     "Implemented plugin manifest for Claude plugin discovery"
   ],
   "benchmarkBaseline": {
+    "note": "STALE - captured before the podcast scripting engine (2.0.x) existed and before the true-crime case-file adapter fix. Re-run `npm run benchmark -- --save` and replace this block before treating these numbers as current.",
     "version": "v1.0.25",
     "timestamp": "2026-09-13T18:30:00.000Z",
     "behavioral": {
@@ -94,6 +95,43 @@
     "nextSecurityAudit": "2026-10-13"
   },
   "changelog": {
+    "2.0.7": {
+      "releaseDate": "2026-09-15",
+      "highlights": [
+        "Fixed ScriptGenerator crash on true-crime case files (projects/*/characters/*.json)",
+        "Fact-attribution tiers now derived from a case file's own sources/verification_status",
+        "Version fields aligned across package.json, plugin.json, VERSION.json, src/index.ts"
+      ],
+      "breaking_changes": [],
+      "deprecations": [],
+      "new_features": [
+        "adaptCaseFileToCharacter()/isTrueCrimeCaseFile() in podcast-script-generator.ts"
+      ],
+      "bug_fixes": [
+        "generate-script/generate-guest-handoff/validate-script/format-script no longer throw \"Cannot read properties of undefined (reading 'name')\" when given a true-crime case file instead of a Fiction character"
+      ],
+      "improvements": [
+        "Regression test added: tests/true-crime-case-adapter.test.ts"
+      ]
+    },
+    "2.0.6": {
+      "releaseDate": "2026-09-27",
+      "highlights": [
+        "Podcast Scripting Engine: series/episode framework, guest handoff, Q&A windows",
+        "Length Specifications system for narrative and podcast episode length/sponsor-break planning"
+      ],
+      "breaking_changes": [],
+      "deprecations": [],
+      "new_features": [
+        "ScriptGenerator (single/two-part episode generation)",
+        "docs/use-cases/podcast-production/ (series framework, episode development, guest coordination)",
+        "docs/LENGTH_SPECIFICATIONS.md and src/length-specifications.ts helper functions"
+      ],
+      "bug_fixes": [],
+      "improvements": [
+        "See PODCASTING_DoD.md and RELEASE_NOTES_v2.0.6.md for full scope"
+      ]
+    },
     "1.0.25": {
       "releaseDate": "2026-09-13",
       "highlights": [

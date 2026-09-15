@@ -1,0 +1,53 @@
+{
+  "episodeNumber": 5,
+  "seasonNumber": 1,
+  "title": "Episode 5: Lunch at Trinity Center",
+  "description": "Host A and Host B eat lunch from Trinity Center (Walnut Creek) and discuss Suburban homelessness and shelter-siting opposition.",
+  "hosts": [
+    "Host A",
+    "Host B"
+  ],
+  "organizationFeatured": {
+    "name": "Trinity Center",
+    "location": "Walnut Creek",
+    "mission": "A Walnut Creek day-program center offering meals and services for people experiencing homelessness in the suburban East Bay.",
+    "contactStatus": "[PRODUCER: confirm outreach + on-air permission before recording]"
+  },
+  "topicFocus": "Suburban homelessness and shelter-siting opposition",
+  "tags": [
+    "food-review",
+    "bay-area-policy"
+  ],
+  "status": "in-development",
+  "length": {
+    "format": "single-part",
+    "parts": [
+      {
+        "partNumber": 1,
+        "duration": {
+          "minimum": 14,
+          "maximum": 16,
+          "target": 15
+        },
+        "sponsorBreaks": [
+          {
+            "position": "mid-roll",
+            "lengthSeconds": 30,
+            "scriptTemplate": "This episode of The Homeless Lunchbox is brought to you by [SPONSOR]..."
+          }
+        ],
+        "contentDuration": {
+          "minimum": 13.5,
+          "maximum": 15.5,
+          "target": 14.5
+        }
+      }
+    ],
+    "totalDuration": {
+      "minimum": 14,
+      "maximum": 16,
+      "target": 15
+    }
+  },
+  "producerNotes": "The meal-tasting segment and any specific/current claim in the policy segment are intentionally left as [PRODUCER]/[VERIFY] placeholders below - neither the actual food served nor this week's news status is knowable in advance, and filling either in ahead of time would mean presenting a guess as if it were observed fact."
+}

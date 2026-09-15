@@ -1,0 +1,62 @@
+{
+  "caseId": "corruption-bay-001",
+  "caseName": "Joanne Segovia - San Jose Police Officers' Association Opioid Smuggling",
+  "brand": "Insight Corruption",
+  "type": "government-corruption",
+  "region": "San Jose, California",
+  "year": 2024,
+  "character": {
+    "name": "Joanne Segovia",
+    "title": "Executive Director, San Jose Police Officers' Association",
+    "role": "Union Leader & Smuggler",
+    "background": "Trusted union official with 20+ years in law enforcement community",
+    "faction": "Government/Law Enforcement Corruption",
+    "motivations": "Personal enrichment through drug smuggling while maintaining public position"
+  },
+  "offense": {
+    "type": "Drug Smuggling & FCPA Violations",
+    "description": "Smuggled over 17,000 opioid pills (Tapentadol) into the U.S. from India over multiple years while serving as head of the police union",
+    "severity": "Federal Crime",
+    "scale": "17,000+ prescription opioid pills",
+    "duration": "Multiple years of systematic smuggling",
+    "yearsActive": "2020-2024"
+  },
+  "howTheyGotAwayWithIt": {
+    "strategy": "Addiction Defense & Prosecutorial Leniency",
+    "keyFactors": [
+      "Claimed drug addiction as primary motivation rather than profit motive",
+      "Federal prosecutors agreed to reduce charges based on addiction narrative",
+      "High-profile defense strategy that portrayed personal struggle over criminal intent",
+      "Leveraged position as union leader for credibility",
+      "Settled case without jail time"
+    ],
+    "defense_attorney_role": "Not explicitly a former US Attorney, but sophisticated legal defense"
+  },
+  "sentence": {
+    "prison_time": "Zero days",
+    "probation": "3 years",
+    "community_service": "100 hours",
+    "fines": "Not publicly disclosed",
+    "status": "AVOIDED INCARCERATION"
+  },
+  "fallout": {
+    "consequences": [
+      "Loss of union position",
+      "Professional disgrace in law enforcement community",
+      "Permanent criminal record",
+      "Public trust erosion in police union"
+    ],
+    "avoided": "Prison time despite federal drug smuggling charges"
+  },
+  "narrative_hooks": {
+    "headline": "Union Boss Smuggled 17,000 Opioid Pills, Faced Zero Jail Time",
+    "question": "How did an opioid smuggling case result in probation instead of prison?",
+    "investigation_angle": "The role of addiction narratives in federal sentencing disparities"
+  },
+  "sources": [
+    "San José Spotlight - 2024",
+    "NBC Bay Area - 2024",
+    "KQED News - 2024"
+  ],
+  "verification_status": "VERIFIED - Published reporting from Bay Area outlets"
+}

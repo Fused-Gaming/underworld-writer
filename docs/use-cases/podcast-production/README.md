@@ -219,7 +219,7 @@ Episode directories with producer briefs and guest materials
 
 **Result:** Fact-checked, attributed, episodically organized podcast series
 
-**Example:** "Corruption Insight" Bay Area corruption cases
+**Example:** "Insight Corruption" Bay Area corruption cases (see `output/insight-corruption/`)
 
 ### With Fiction
 Create fictional podcast series with consistent character development:

@@ -1,8 +1,13 @@
 #!/usr/bin/env node
 
+// KNOWN ISSUE (confirmed 2026-09-15): @h4shed/mcp-core@1.0.40 as published to npm
+// ships only src/ - no dist/ - even though its package.json main/exports point at
+// ./dist/index.js. This import throws ERR_MODULE_NOT_FOUND regardless of anything
+// in this repository; it is an upstream packaging bug in @h4shed/mcp-core itself,
+// not something fixable here. Confirmed via: npm install && node scripts/validate-mcp-setup.mjs
 import { SkillRegistry } from '@h4shed/mcp-core';
 
-console.log('🔍 Validating Corruption Insight MCP Setup...\n');
+console.log('🔍 Validating Insight Corruption MCP Setup...\n');
 
 async function validateSetup() {
   try {
@@ -22,7 +27,7 @@ async function validateSetup() {
 
     try {
       const underworldWriter = await import('@h4shed/skill-underworld-writer');
-      console.log('  @h4shed/skill-underworld-writer: Verified (v2.0.6+)');
+      console.log('  @h4shed/skill-underworld-writer: Verified (v2.0.7+)');
     } catch (e) {
       console.log('  ℹ @h4shed/skill-underworld-writer: Running as project itself\n');
     }
@@ -35,10 +40,9 @@ async function validateSetup() {
     const projectRoot = path.resolve(__dirname, '..');
 
     const directories = [
-      'projects/corruption-insight/characters',
-      'projects/corruption-insight/episodes',
-      'projects/corruption-insight/research',
-      'output/corruption-insight'
+      'projects/insight-corruption/characters',
+      'projects/insight-corruption/characters/oakland-cases',
+      'output/insight-corruption'
     ];
 
     for (const dir of directories) {
@@ -67,7 +71,7 @@ async function validateSetup() {
 
     // Test 5: Case files verification
     console.log('\n✓ Test 5: Bay Area scandal case files');
-    const charactersDir = path.join(projectRoot, 'projects/corruption-insight/characters');
+    const charactersDir = path.join(projectRoot, 'projects/insight-corruption/characters');
     try {
       const files = await fs.readdir(charactersDir);
       const caseFiles = files.filter(f => f.endsWith('.json'));
@@ -80,13 +84,8 @@ async function validateSetup() {
       console.error('  ✗ Failed to read case files');
     }
 
-    console.log('\n✅ Corruption Insight MCP Workspace Setup Complete!\n');
-    console.log('Ready to generate podcast scripts for:');
-    console.log('  Episode 1: Joanne Segovia - Union Boss Opioid Smuggling');
-    console.log('  Episode 2: Clarke Howatt - $3.9M Housing Fund Embezzlement');
-    console.log('  Episode 3: Rodolfo Pada - 14-Year Building Inspector Bribery Scheme');
-    console.log('  Episode 4: Ken Wong - Parole Officer $20K Bribery');
-    console.log('  Episode 5: Florence Kong - Contractor Luxury Bribery Network\n');
+    console.log('\n✅ Insight Corruption MCP Workspace Setup Complete!\n');
+    console.log('See output/insight-corruption/season-1/ for the full 15-episode Season 1.');
 
   } catch (error) {
     console.error('❌ Validation failed:', error.message);
