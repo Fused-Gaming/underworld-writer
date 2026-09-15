@@ -121,6 +121,28 @@ clip is either (a) freshly synthesized from a script segment or (b) a
 pre-recorded human take passed through unchanged — allowing synthetic
 narration and real guest audio to be spliced into one continuous episode.
 
+## 6a. Voice profile intake checklist (real host/guest)
+
+For a real, named person (e.g. a show's main host), follow this order
+before any cloning/fine-tuning happens:
+
+1. **Record consent first.** Create/update a `voice-profiles/<slug>.json`
+   record (see `projects/insight-corruption/voice-profiles/eric-william-nissen.json`
+   for an example) with `consent.status`, who confirmed it, and the scope
+   of use. No audio work starts before this exists.
+2. **Source clean reference clips.** Prefer the host supplying a direct
+   10-30s solo recording. If sourcing from their own published social
+   audio instead, extract only clips that are their solo speech (no music
+   bed, no crosstalk, no third-party voices) and note the source per clip.
+3. **Upload to the Modal Volume**, never to this git repo — the JSON
+   record here only tracks metadata (profile id, consent, clip list by
+   reference/path), never raw audio.
+4. **Zero-shot first.** Try XTTS-v2/F5-TTS cloning directly from the
+   reference clip(s) before investing in a LoRA fine-tune; only fine-tune
+   if zero-shot quality isn't sufficient for recurring narration.
+5. **Disclose synthetic narration** in the episode's `Post.showNotes` per
+   the platform's AI-generated-audio disclosure norms.
+
 ## 7. Security / privacy notes
 
 - Voice reference audio for real hosts/guests requires explicit consent
