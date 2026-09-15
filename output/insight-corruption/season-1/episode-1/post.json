@@ -1,0 +1,27 @@
+{
+  "id": "s1e01",
+  "episodeNumber": 1,
+  "title": "Union Boss Smuggled 17,000 Opioid Pills, Faced Zero Jail Time",
+  "summary": "How did an opioid smuggling case result in probation instead of prison?",
+  "showNotes": "Joanne Segovia, Executive Director of the San Jose Police Officers' Association, smuggled over 17,000 opioid pills into the U.S. from India over multiple years while serving as head of the police union. She avoided incarceration entirely, receiving 3 years' probation and 100 hours of community service. This episode traces the addiction-defense strategy that turned a federal drug-smuggling case into a zero-jail outcome.",
+  "keyFacts": [
+    "Smuggled over 17,000 opioid pills (Tapentadol) into the U.S. from India over multiple years while serving as head of the police union",
+    "Outcome: AVOIDED INCARCERATION — zero days prison, 3 years probation, 100 hours community service"
+  ],
+  "tags": ["true-crime", "bay-area-accountability", "california-corruption", "insight-corruption", "season-1"],
+  "verificationTier": 2,
+  "verificationReportRef": "verification-report.json",
+  "sponsor": {
+    "status": "unconfirmed",
+    "note": "See scripts/script.md sponsor break block — house ad placeholder until a sponsor is booked."
+  },
+  "coverAssetRef": "published-assets/cover.html",
+  "publishedAt": null,
+  "platformLinks": {
+    "spotify": null,
+    "applePodcasts": null,
+    "youtube": null,
+    "davisVanguard": null,
+    "linkedin": null
+  }
+}
