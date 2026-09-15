@@ -1,0 +1,32 @@
+{
+  "caseId": "corruption-oakland-004",
+  "caseName": "Kevin Arias - OPD Sergeant Timesheet Fraud",
+  "brand": "Corruption Insight",
+  "type": "government-corruption",
+  "region": "Oakland Police Department",
+  "year": 2024,
+  "character": {
+    "name": "Kevin Arias",
+    "title": "Sergeant, Oakland Police Department",
+    "role": "Law Enforcement Corruption",
+    "background": "Police sergeant in Oakland",
+    "faction": "Police Department Corruption",
+    "motivations": "Personal enrichment through overtime fraud"
+  },
+  "offense": {
+    "type": "Timesheet Fraud, Embezzlement",
+    "description": "Sergeant charged with falsifying timesheets to fraudulently claim $38,000 in overtime pay",
+    "severity": "Felony Fraud",
+    "scale": "$38,000 in fraudulent overtime",
+    "duration": "Multiple fraudulent pay periods",
+    "impact": "Taxpayer money stolen, false overtime claims"
+  },
+  "sentence": {
+    "status": "CASE IN PROGRESS"
+  },
+  "sources": [
+    "KTVU - OPD Investigation",
+    "SF Chronicle - Oakland Police Misconduct"
+  ],
+  "verification_status": "VERIFIED - Published reporting"
+}
