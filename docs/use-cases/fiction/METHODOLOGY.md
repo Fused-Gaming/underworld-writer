@@ -1,28 +1,8 @@
-# Underworld Writer Skill
+# Underworld Fiction Methodology
 
 ## Overview
 
-The Underworld Writer Skill provides structured methodologies for three distinct narrative use cases:
-
-1. **Fiction** — Three-phase character development for imagined underworld worlds
-2. **True Crime** — Four-step fact-verification workflow for investigative narratives
-3. **Podcast Production** — Episodic series development with branding and guest coordination
-
-This skill enables creators and journalists to develop rich narratives—fictional, fact-checked, or both—with systematic character development, rigorous verification, and reproducible production workflows.
-
-## Quick Navigation
-
-- **New to Underworld Writer?** Start at [docs/README.md](./docs/README.md)
-- **Fiction writers** → [docs/use-cases/fiction/README.md](./docs/use-cases/fiction/README.md)
-- **Journalists & true crime** → [docs/use-cases/true-crime/README.md](./docs/use-cases/true-crime/README.md)
-- **Podcast producers** → [docs/use-cases/podcast-production/README.md](./docs/use-cases/podcast-production/README.md)
-- **Complete index** → [docs/INDEX.md](./docs/INDEX.md)
-
----
-
-## Fiction: Three-Phase Methodology
-
-The Underworld Writer Skill provides a structured three-phase methodology for creating detailed character profiles, mythologies, and narrative worlds for underworld-themed fiction. This methodology enables creators to develop rich, cohesive underworld narratives through systematic character development.
+The Underworld Fiction Methodology provides a structured three-phase approach for creating detailed character profiles, mythologies, and narrative worlds for underworld-themed fiction. This methodology focuses on building rich, cohesive fictional underworld narratives through systematic character and world development.
 
 ## Three-Phase Methodology
 
@@ -66,12 +46,30 @@ Place the character within larger mythology and story systems.
 - Clear motivation and conflict points established
 - Consistent with broader mythology and lore
 - Detailed enough for narrative development
+- World-building supports believable character arcs
 
-## Example Output
+## Best Practices
 
-A complete character profile includes:
-- 2-3 page character document
-- Relationship map showing connections
-- Mythology and backstory
-- Story arc outline
+1. **Build incrementally** - Don't try to complete all three phases at once; develop each layer systematically
+2. **Map relationships** - Create visual relationship maps showing how characters interconnect
+3. **Test consistency** - Ensure character motivations align with their faction and role
+4. **Develop supporting lore** - Create background mythology that makes character choices inevitable
+5. **Establish limitations** - Make sure character powers and abilities have clear costs or limits
+
+## Output Examples
+
+A complete fictional character profile includes:
+- 2-3 page character document with all three phases
+- Relationship map showing connections to other characters
+- Mythology and backstory document
+- Story arc outline with transformation points
 - Integration points with world-building
+- Faction and hierarchy documentation
+
+## Common Pitfalls to Avoid
+
+- **Overpowering characters**: Ensure limitations and costs balance abilities
+- **Isolated development**: Connect character to larger world and faction systems
+- **Motivation gaps**: Make sure emotional and practical motivations align
+- **Tonal inconsistency**: Keep character voice consistent with underworld setting
+- **Shallow relationships**: Develop antagonistic and ally relationships with depth
