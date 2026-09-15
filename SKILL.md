@@ -2,7 +2,27 @@
 
 ## Overview
 
-The Underworld Writer Skill provides a structured three-phase methodology for creating detailed character profiles, mythologies, and narrative worlds for underworld-themed fiction. This skill enables creators to develop rich, cohesive underworld narratives through systematic character development.
+The Underworld Writer Skill provides structured methodologies for three distinct narrative use cases:
+
+1. **Fiction** — Three-phase character development for imagined underworld worlds
+2. **True Crime** — Four-step fact-verification workflow for investigative narratives
+3. **Podcast Production** — Episodic series development with branding and guest coordination
+
+This skill enables creators and journalists to develop rich narratives—fictional, fact-checked, or both—with systematic character development, rigorous verification, and reproducible production workflows.
+
+## Quick Navigation
+
+- **New to Underworld Writer?** Start at [docs/README.md](./docs/README.md)
+- **Fiction writers** → [docs/use-cases/fiction/README.md](./docs/use-cases/fiction/README.md)
+- **Journalists & true crime** → [docs/use-cases/true-crime/README.md](./docs/use-cases/true-crime/README.md)
+- **Podcast producers** → [docs/use-cases/podcast-production/README.md](./docs/use-cases/podcast-production/README.md)
+- **Complete index** → [docs/INDEX.md](./docs/INDEX.md)
+
+---
+
+## Fiction: Three-Phase Methodology
+
+The Underworld Writer Skill provides a structured three-phase methodology for creating detailed character profiles, mythologies, and narrative worlds for underworld-themed fiction. This methodology enables creators to develop rich, cohesive underworld narratives through systematic character development.
 
 ## Three-Phase Methodology
 
