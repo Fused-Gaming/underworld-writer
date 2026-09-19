@@ -142,7 +142,7 @@ async function main() {
           const data = JSON.parse(readFileSync(filePath, 'utf-8'));
           const summary = generateCharacterSummary(data);
           console.log(summary);
-        } catch (error) {
+        } catch {
           console.error(`Error reading file: ${filePath}`);
           process.exit(1);
         }
@@ -549,7 +549,7 @@ async function main() {
             }
           };
 
-          const benchmarks: any = {};
+          const benchmarks: Record<string, string> = {};
 
           // Single episode benchmark
           const start1 = performance.now();
@@ -573,7 +573,7 @@ async function main() {
           benchmarks['Guest Script'] = (performance.now() - start4).toFixed(2);
 
           console.log(`📊 Performance Benchmarks:\n`);
-          Object.entries(benchmarks).forEach(([name, time]) => {
+          Object.entries(benchmarks).forEach(([name, time]: [string, string]) => {
             console.log(`  ${name}: ${time}ms`);
           });
           console.log(`\n✅ Benchmarks complete!\n`);

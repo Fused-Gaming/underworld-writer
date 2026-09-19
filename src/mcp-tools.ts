@@ -44,25 +44,25 @@ export const UNDERWORLD_WRITER_TOOLS = [
       },
       required: ['name', 'origin', 'motivation', 'role', 'faction', 'storyArc'],
     },
-    handler: async (params: any) => {
+    handler: async (params: Record<string, unknown>) => {
       try {
         const character = createCharacter(
           {
-            name: params.name,
+            name: params.name as string,
             aliases: [],
-            origin: params.origin,
+            origin: params.origin as string,
             physicalCharacteristics: {
               appearance: 'To be developed',
               distinctiveFeatures: 'To be developed',
             },
-            background: params.origin,
-            coreMotivation: params.motivation,
+            background: params.origin as string,
+            coreMotivation: params.motivation as string,
           },
           {
-            roleAndRank: params.role,
+            roleAndRank: params.role as string,
             responsibilities: [],
             factionAffiliation: {
-              primary: params.faction,
+              primary: params.faction as string,
               allies: [],
               opposition: [],
             },
@@ -80,7 +80,7 @@ export const UNDERWORLD_WRITER_TOOLS = [
               external: [],
               personal: [],
             },
-            storyArc: params.storyArc,
+            storyArc: params.storyArc as { act1: string; act2: string; act3: string },
             thematicElements: [],
             interactionPoints: [],
           }
@@ -109,7 +109,7 @@ export const UNDERWORLD_WRITER_TOOLS = [
       },
       required: ['character'],
     },
-    handler: async (params: any) => {
+    handler: async (params: Record<string, unknown>) => {
       try {
         const result = validateCharacter(params.character as Partial<UnderWorldCharacter>);
         return { status: 'success', validation: result };
@@ -128,7 +128,7 @@ export const UNDERWORLD_WRITER_TOOLS = [
       },
       required: ['character'],
     },
-    handler: async (params: any) => {
+    handler: async (params: Record<string, unknown>) => {
       try {
         const markdown = exportCharacterAsMarkdown(params.character as UnderWorldCharacter);
         return { status: 'success', markdown };
@@ -148,7 +148,7 @@ export const UNDERWORLD_WRITER_TOOLS = [
       },
       required: ['character1', 'character2'],
     },
-    handler: async (params: any) => {
+    handler: async (params: Record<string, unknown>) => {
       try {
         const result = validateRelationships(
           params.character1 as UnderWorldCharacter,
@@ -165,9 +165,10 @@ export const UNDERWORLD_WRITER_TOOLS = [
 /**
  * Register all underworld writer tools with an MCP orchestrator
  */
-export async function registerUnderWorldWriterTools(orchestrator: any): Promise<void> {
+export async function registerUnderWorldWriterTools(orchestrator: Record<string, unknown>): Promise<void> {
+  const { registerTool } = orchestrator as { registerTool: (name: string, desc: string, schema: unknown, handler: unknown) => void };
   for (const tool of UNDERWORLD_WRITER_TOOLS) {
-    orchestrator.registerTool(tool.name, tool.description, tool.inputSchema, tool.handler);
+    registerTool(tool.name, tool.description, tool.inputSchema, tool.handler);
   }
 }
 

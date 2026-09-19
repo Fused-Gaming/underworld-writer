@@ -15,7 +15,6 @@ import {
   MissingFactWindow,
   ScriptConfig,
   PACERCaseData,
-  PodcastGenerationResult,
   FactAttribution,
   TrueCrimeCaseFile,
 } from './podcast-types.js';
@@ -302,7 +301,7 @@ But having power in the criminal world means constant vigilance. Constant pressu
    * Create narrative arc segment (Phase 3, Act 1-2)
    */
   private createArcSegment(): ScriptSegment {
-    const { act1, act2, act3 } = this.character.phase3.storyArc;
+    const { act1, act2 } = this.character.phase3.storyArc;
     const themes = this.character.phase3.thematicElements.slice(0, 3).join(', ');
 
     return {
