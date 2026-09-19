@@ -24,11 +24,11 @@ module.exports = {
   },
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {
-      useESM: true,
+      useESM: false,
       tsconfig: {
         types: ['node', 'jest'],
         rootDir: '.',
-        module: 'esnext',
+        module: 'commonjs',
       },
     }],
   },
