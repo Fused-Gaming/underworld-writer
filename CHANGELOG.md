@@ -18,7 +18,8 @@ Format follows Keep a Changelog and Semantic Versioning.
 - Structured `Release Artwork` metadata so release-card copy is deterministically sourced from this changelog.
 
 ### Changed
-- Advanced the 2.2.0 release line to the **2.2.1 patch release** and normalized package, plugin, release-ledger, exported-skill, and lockfile release metadata around that version.
+- Advanced the 2.2.0 release line to the **2.2.1 patch release** and normalized the authoritative package, plugin, release-ledger, and exported-skill version surfaces around that version.
+- Retained `scripts/sync-version.mjs` as the deterministic local normalization path for generated lockfile root-version metadata; the dependency graph itself is unchanged from 2.2.0.
 - Consolidated the release-branding/versioning work previously split across PRs #138 and #139 into PR #137 without discarding the 2.2.0 benchmark baseline or historical release ledger.
 - Release artwork generation now reuses the exact approved Underworld Writer ArtPatch composition as an immutable visual base instead of redrawing the design from SVG primitives.
 - Underworld Writer owns the release-art template and overlay rules while Rock-Hardened remains responsible for changelog/release evidence workflows.
