@@ -37,8 +37,8 @@ image = (
     modal.Image.debian_slim(python_version="3.11")
     .apt_install("ffmpeg", "libsndfile1")
     .pip_install(
-        "torch==2.3.1",
-        "torchaudio==2.3.1",
+        "torch==2.6.0",
+        "torchaudio==2.6.0",
         "chatterbox-tts",
         "pydub==0.25.1",
         "soundfile==0.12.1",
@@ -49,6 +49,8 @@ image = (
     # sys.path.insert(...) above matches this file's local layout.
     .add_local_dir(str(Path(__file__).parent / "backends"), remote_path="/root/backends")
     .add_local_dir(str(Path(__file__).parent / "audio"), remote_path="/root/audio")
+    .add_local_dir(str(Path(__file__).parent / "config"), remote_path="/root/config")
+    .add_local_dir(str(Path(__file__).parent.parent / "output"), remote_path="/root/output")
 )
 
 app = modal.App(APP_NAME, image=image)
@@ -98,7 +100,6 @@ _MAX_CONCURRENT_CALLS = (
     # ("target: 30-60 seconds during benchmarks") instead of paying to keep
     # a GPU warm for an occasional podcast render.
     scaledown_window=60,
-    allow_concurrent_inputs=_MAX_CONCURRENT_CALLS,
 )
 class VoiceSynthesizer:
     """Loads a TTS model once per container and reuses it across segments."""
