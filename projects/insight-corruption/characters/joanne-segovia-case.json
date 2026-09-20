@@ -1,62 +1,62 @@
 {
   "caseId": "corruption-bay-001",
-  "caseName": "Joanne Segovia - San Jose Police Officers' Association Opioid Smuggling",
+  "caseName": "Joanne Segovia - San Jose Police Officers' Association Opioid Importation",
   "brand": "Insight Corruption",
-  "type": "government-corruption",
+  "type": "government-accountability",
   "region": "San Jose, California",
-  "year": 2024,
+  "year": 2025,
   "character": {
     "name": "Joanne Segovia",
-    "title": "Executive Director, San Jose Police Officers' Association",
-    "role": "Union Leader & Smuggler",
-    "background": "Trusted union official with 20+ years in law enforcement community",
-    "faction": "Government/Law Enforcement Corruption",
-    "motivations": "Personal enrichment through drug smuggling while maintaining public position"
+    "title": "Former Executive Director, San Jose Police Officers' Association",
+    "role": "Civilian police-union executive",
+    "background": "Longtime civilian administrator of the San Jose Police Officers' Association",
+    "faction": "Law-enforcement-adjacent public trust",
+    "motivations": "Sentencing records and reporting described years of opioid addiction; prosecutors and defense both argued the conduct was not profit-driven."
   },
   "offense": {
-    "type": "Drug Smuggling & FCPA Violations",
-    "description": "Smuggled over 17,000 opioid pills (Tapentadol) into the U.S. from India over multiple years while serving as head of the police union",
-    "severity": "Federal Crime",
-    "scale": "17,000+ prescription opioid pills",
-    "duration": "Multiple years of systematic smuggling",
-    "yearsActive": "2020-2024"
+    "type": "Illegal Importation of a Controlled Substance",
+    "description": "Pleaded guilty to unlawfully importing tapentadol after investigators documented years of overseas pill shipments; prosecutors said she ordered roughly 18,000 tapentadol pills during a 17-month period in 2021 and 2022.",
+    "severity": "Federal felony",
+    "scale": "Roughly 18,000 tapentadol pills during a 17-month period, within a longer shipment history",
+    "duration": "Federal complaint described at least 61 shipments from October 2015 through January 2023",
+    "yearsActive": "2015-2023"
   },
   "howTheyGotAwayWithIt": {
-    "strategy": "Addiction Defense & Prosecutorial Leniency",
+    "strategy": "Addiction, rehabilitation, and individualized mitigation at sentencing",
     "keyFactors": [
-      "Claimed drug addiction as primary motivation rather than profit motive",
-      "Federal prosecutors agreed to reduce charges based on addiction narrative",
-      "High-profile defense strategy that portrayed personal struggle over criminal intent",
-      "Leveraged position as union leader for credibility",
-      "Settled case without jail time"
+      "Prosecutors and defense both described addiction rather than profit as the central motive",
+      "The government credited her acceptance of responsibility, sobriety, and low risk of reoffending",
+      "Judge Eumi K. Lee characterized the conduct at sentencing as that of an addict rather than a dealer",
+      "The court nevertheless identified deception at the beginning of the investigation and abuse of a law-enforcement-adjacent position"
     ],
-    "defense_attorney_role": "Not explicitly a former US Attorney, but sophisticated legal defense"
+    "defense_attorney_role": "Defense counsel Adam Gasner argued for leniency based on addiction, recovery, family circumstances, and low recidivism risk"
   },
   "sentence": {
     "prison_time": "Zero days",
     "probation": "3 years",
     "community_service": "100 hours",
-    "fines": "Not publicly disclosed",
-    "status": "AVOIDED INCARCERATION"
+    "conditions": "Drug testing, counseling, and potential searches during probation were reported",
+    "status": "SENTENCED TO PROBATION"
   },
   "fallout": {
     "consequences": [
-      "Loss of union position",
-      "Professional disgrace in law enforcement community",
-      "Permanent criminal record",
-      "Public trust erosion in police union"
+      "Loss of San Jose Police Officers' Association employment",
+      "Federal felony conviction",
+      "Public controversy and protests over the case",
+      "Internal police-union investigation into whether others were involved or aware"
     ],
-    "avoided": "Prison time despite federal drug smuggling charges"
+    "avoided": "The court imposed no term of incarceration"
   },
   "narrative_hooks": {
-    "headline": "Union Boss Smuggled 17,000 Opioid Pills, Faced Zero Jail Time",
-    "question": "How did an opioid smuggling case result in probation instead of prison?",
-    "investigation_angle": "The role of addiction narratives in federal sentencing disparities"
+    "headline": "Police Union Executive Imported Thousands of Opioid Pills — Then Received Probation",
+    "question": "How did a years-long opioid-importation case end with probation instead of incarceration?",
+    "investigation_angle": "How addiction, rehabilitation, institutional position, deception, and individualized federal sentencing were weighed in the final outcome"
   },
   "sources": [
-    "San José Spotlight - 2024",
-    "NBC Bay Area - 2024",
-    "KQED News - 2024"
+    "U.S. Attorney's Office, Northern District of California - March 29, 2023 complaint announcement",
+    "KQED - October 8, 2024 guilty plea coverage",
+    "KQED - January 21, 2025 sentencing coverage",
+    "San Jose Spotlight - October 8, 2024 guilty plea coverage"
   ],
-  "verification_status": "VERIFIED - Published reporting from Bay Area outlets"
+  "verification_status": "VERIFIED - federal charging record plus multiple Bay Area news reports covering plea and sentencing"
 }
