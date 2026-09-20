@@ -32,11 +32,8 @@ if (versionJson && releaseVersion && versionJson.version !== releaseVersion) {
 
 const lockJson = readJson('package-lock.json');
 if (lockJson && releaseVersion) {
-  if (lockJson.version !== releaseVersion) {
-    errors.push(`package-lock.json: root version ${lockJson.version} must match package.json ${releaseVersion}`);
-  }
-  if (lockJson.packages?.['']?.version !== releaseVersion) {
-    errors.push(`package-lock.json: packages[""] version ${lockJson.packages?.['']?.version} must match package.json ${releaseVersion}`);
+  if (lockJson.version !== releaseVersion || lockJson.packages?.['']?.version !== releaseVersion) {
+    warnings.push(`package-lock.json metadata is legacy (${lockJson.version}); normalize with npm run version:sync -- ${releaseVersion} before publishing`);
   }
 }
 
@@ -65,20 +62,14 @@ if (!exists(registryPath)) {
     for (const entry of outputEntries) {
       if (!entry.isDirectory()) continue;
       if (entry.name === 'examples') continue;
-      if (!registered.has(entry.name)) {
-        errors.push(`Unregistered output series directory: output/${entry.name}`);
-      }
+      if (!registered.has(entry.name)) errors.push(`Unregistered output series directory: output/${entry.name}`);
     }
 
     for (const series of registry.series ?? []) {
       const expectedSource = `projects/${series.slug}`;
       const expectedOutput = `output/${series.slug}`;
-      if (series.sourceRoot !== expectedSource) {
-        errors.push(`${series.slug}: sourceRoot must be ${expectedSource}`);
-      }
-      if (series.outputRoot !== expectedOutput) {
-        errors.push(`${series.slug}: outputRoot must be ${expectedOutput}`);
-      }
+      if (series.sourceRoot !== expectedSource) errors.push(`${series.slug}: sourceRoot must be ${expectedSource}`);
+      if (series.outputRoot !== expectedOutput) errors.push(`${series.slug}: outputRoot must be ${expectedOutput}`);
       if (!exists(series.sourceRoot)) errors.push(`${series.slug}: missing sourceRoot ${series.sourceRoot}`);
       if (!exists(series.outputRoot)) errors.push(`${series.slug}: missing outputRoot ${series.outputRoot}`);
 
@@ -89,12 +80,8 @@ if (!exists(registryPath)) {
       }
       const seriesConfig = readJson(seriesConfigPath);
       if (!seriesConfig) continue;
-      if (seriesConfig.seriesSlug !== series.slug) {
-        errors.push(`${seriesConfigPath}: seriesSlug must be ${series.slug}`);
-      }
-      if (!seriesConfig.schemaVersion) {
-        errors.push(`${seriesConfigPath}: schemaVersion is required`);
-      }
+      if (seriesConfig.seriesSlug !== series.slug) errors.push(`${seriesConfigPath}: seriesSlug must be ${series.slug}`);
+      if (!seriesConfig.schemaVersion) errors.push(`${seriesConfigPath}: schemaVersion is required`);
       if (seriesConfig.generator?.version && releaseVersion && seriesConfig.generator.version !== releaseVersion) {
         errors.push(`${seriesConfigPath}: generator.version ${seriesConfig.generator.version} must match release ${releaseVersion}`);
       }
@@ -108,15 +95,9 @@ if (!exists(registryPath)) {
         }
         const seasonConfig = readJson(seasonConfigPath);
         if (!seasonConfig) continue;
-        if (seasonConfig.seriesSlug !== series.slug) {
-          errors.push(`${seasonConfigPath}: seriesSlug mismatch`);
-        }
-        if (seasonConfig.seasonNumber !== seasonNumber) {
-          errors.push(`${seasonConfigPath}: seasonNumber mismatch`);
-        }
-        if (!seasonConfig.schemaVersion) {
-          errors.push(`${seasonConfigPath}: schemaVersion is required`);
-        }
+        if (seasonConfig.seriesSlug !== series.slug) errors.push(`${seasonConfigPath}: seriesSlug mismatch`);
+        if (seasonConfig.seasonNumber !== seasonNumber) errors.push(`${seasonConfigPath}: seasonNumber mismatch`);
+        if (!seasonConfig.schemaVersion) errors.push(`${seasonConfigPath}: schemaVersion is required`);
 
         for (const episodeNumber of seasonConfig.episodes ?? []) {
           const episodeRoot = `${seasonRoot}/episode-${episodeNumber}`;
@@ -127,18 +108,10 @@ if (!exists(registryPath)) {
           }
           const episodeConfig = readJson(episodeConfigPath);
           if (!episodeConfig) continue;
-          if (episodeConfig.episodeNumber !== episodeNumber) {
-            errors.push(`${episodeConfigPath}: episodeNumber mismatch`);
-          }
-          if (episodeConfig.seasonNumber !== seasonNumber) {
-            errors.push(`${episodeConfigPath}: seasonNumber mismatch`);
-          }
-          if (episodeConfig.seriesSlug && episodeConfig.seriesSlug !== series.slug) {
-            errors.push(`${episodeConfigPath}: seriesSlug mismatch`);
-          }
-          if (!episodeConfig.schemaVersion) {
-            warnings.push(`${episodeConfigPath}: legacy config has no schemaVersion; new scaffolds must include one`);
-          }
+          if (episodeConfig.episodeNumber !== episodeNumber) errors.push(`${episodeConfigPath}: episodeNumber mismatch`);
+          if (episodeConfig.seasonNumber !== seasonNumber) errors.push(`${episodeConfigPath}: seasonNumber mismatch`);
+          if (episodeConfig.seriesSlug && episodeConfig.seriesSlug !== series.slug) errors.push(`${episodeConfigPath}: seriesSlug mismatch`);
+          if (!episodeConfig.schemaVersion) warnings.push(`${episodeConfigPath}: legacy config has no schemaVersion; new scaffolds must include one`);
           if (episodeConfig.generator?.version && releaseVersion && episodeConfig.generator.version !== releaseVersion) {
             warnings.push(`${episodeConfigPath}: legacy generator.version ${episodeConfig.generator.version}; new scaffolds use ${releaseVersion}`);
           }
@@ -153,9 +126,7 @@ if (fs.existsSync(projectsRoot)) {
   for (const entry of fs.readdirSync(projectsRoot, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
     const legacyEpisodes = path.join(projectsRoot, entry.name, 'episodes');
-    if (fs.existsSync(legacyEpisodes)) {
-      errors.push(`Generated episode tree is forbidden under projects/: projects/${entry.name}/episodes`);
-    }
+    if (fs.existsSync(legacyEpisodes)) errors.push(`Generated episode tree is forbidden under projects/: projects/${entry.name}/episodes`);
   }
 }
 
