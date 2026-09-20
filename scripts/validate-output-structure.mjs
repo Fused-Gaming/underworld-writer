@@ -16,6 +16,30 @@ const readJson = (p) => {
   }
 };
 
+const packageJson = readJson('package.json');
+const releaseVersion = packageJson?.version;
+if (!releaseVersion) errors.push('package.json: version is required');
+
+const pluginJson = readJson('plugin.json');
+if (pluginJson && releaseVersion && pluginJson.version !== releaseVersion) {
+  errors.push(`plugin.json: version ${pluginJson.version} must match package.json ${releaseVersion}`);
+}
+
+const versionJson = readJson('VERSION.json');
+if (versionJson && releaseVersion && versionJson.version !== releaseVersion) {
+  errors.push(`VERSION.json: version ${versionJson.version} must match package.json ${releaseVersion}`);
+}
+
+const lockJson = readJson('package-lock.json');
+if (lockJson && releaseVersion) {
+  if (lockJson.version !== releaseVersion) {
+    errors.push(`package-lock.json: root version ${lockJson.version} must match package.json ${releaseVersion}`);
+  }
+  if (lockJson.packages?.['']?.version !== releaseVersion) {
+    errors.push(`package-lock.json: packages[""] version ${lockJson.packages?.['']?.version} must match package.json ${releaseVersion}`);
+  }
+}
+
 const forbiddenRootPaths = [
   'podcast-output',
   'generated-output',
@@ -71,6 +95,9 @@ if (!exists(registryPath)) {
       if (!seriesConfig.schemaVersion) {
         errors.push(`${seriesConfigPath}: schemaVersion is required`);
       }
+      if (seriesConfig.generator?.version && releaseVersion && seriesConfig.generator.version !== releaseVersion) {
+        errors.push(`${seriesConfigPath}: generator.version ${seriesConfig.generator.version} must match release ${releaseVersion}`);
+      }
 
       for (const seasonNumber of series.seasons ?? []) {
         const seasonRoot = `${series.outputRoot}/season-${seasonNumber}`;
@@ -112,6 +139,9 @@ if (!exists(registryPath)) {
           if (!episodeConfig.schemaVersion) {
             warnings.push(`${episodeConfigPath}: legacy config has no schemaVersion; new scaffolds must include one`);
           }
+          if (episodeConfig.generator?.version && releaseVersion && episodeConfig.generator.version !== releaseVersion) {
+            warnings.push(`${episodeConfigPath}: legacy generator.version ${episodeConfig.generator.version}; new scaffolds use ${releaseVersion}`);
+          }
         }
       }
     }
@@ -140,4 +170,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log('Workspace validation passed.');
+console.log(`Workspace validation passed for release ${releaseVersion}.`);
