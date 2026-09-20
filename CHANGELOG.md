@@ -21,6 +21,8 @@ Format follows Keep a Changelog and Semantic Versioning.
 - Workspace-specific performance benchmarks.
 - Release version synchronization utility.
 - Rock-Hardened release validation/evidence integration.
+- Canonical Underworld Writer release-brand contract at `assets/branding/release-brand.json` with approved-cover fingerprint, palette, protected composition rules, and derivative format definitions.
+- Human-readable release-brand usage guidance at `assets/branding/README.md`.
 - Segment-first editorial package generator at `scripts/editorial-package.mjs`.
 - Reusable podcast/article block library at `templates/editorial/shared-segments.json`.
 - Shared evidence/claim packages capable of rendering both podcast and article outputs without independently rewriting core facts.
@@ -35,6 +37,8 @@ Format follows Keep a Changelog and Semantic Versioning.
 - Replaced Episode 1's timestamp-based outline with 13 independently recordable/scriptable segments plus a derived producer read-through file.
 - Replaced Episode 1's short monolithic LinkedIn article with a segmented 1,864-word article generated from the same evidence package as the podcast.
 - Made assembled podcast/article files derived artifacts; agents must edit episode packages/templates and regenerate instead of making source-of-truth corrections only in assembled files.
+- Wired `release-contract.config.json` to the approved Underworld Writer cover identity, brand contract, fallback icon, and non-destructive 1200×630 render strategy.
+- Extended `AGENTS.md` so future agents must use the approved Underworld Writer release art system rather than inventing a new release theme.
 - Release version advanced to 2.2.0.
 
 ### Fixed
@@ -52,6 +56,7 @@ Format follows Keep a Changelog and Semantic Versioning.
 - Episode 1 LinkedIn article result: **1,864 words** — **PASS** against the configured 1,800–2,300 word range.
 - `npm run benchmark:workspace` measures registry lookup, canonical path construction, and scaffold metadata validation in addition to existing benchmarks.
 - `npm run validate:release` combines version checks, workspace validation, Rock-Hardened changelog validation, workspace/editorial fixtures, build, tests, and benchmarks.
+- Approved release cover identity recorded as **1536×572**, SHA-256 `7ec8cb4032a8b37620327f06afffbb1c5fa4240ee150db80191c26a0acc67609`.
 
 ## [2.1.0] - 2026-09-20
 
