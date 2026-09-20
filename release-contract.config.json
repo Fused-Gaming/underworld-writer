@@ -7,24 +7,23 @@
     "name": "Underworld Writer",
     "tagline": "Build the story. Expose the truth. Ship what matters.",
     "brandContract": "assets/branding/release-brand.json",
-    "canonicalCover": "release-artifacts/underworld-writer-release-og-1200x630.svg",
+    "canonicalCover": "assets/branding/underworld-writer-release-cover.jpg",
     "fallbackIcon": "assets/underworld-writer-icon.svg"
   },
   "render": {
     "width": 1200,
     "height": 630,
     "maxHighlights": 6,
-    "artworkStrategy": "repository-owned-neon-underworld-changelog",
+    "artworkStrategy": "approved-composition",
     "preserveProtectedRegions": true,
-    "readmeHero": "release-artifacts/underworld-writer-release-og-1200x630.svg",
-    "designContract": "assets/branding/release-brand.json",
-    "requiredComposition": [
-      "left product wordmark",
-      "right voodoo-doll cavern scene",
-      "release/version row",
-      "current-release feature cards",
-      "repository footer"
-    ]
+    "allowPrimitiveRedraw": false,
+    "canonicalRasterOutput": "release-artifacts/underworld-writer-release-og-1200x630.jpg",
+    "svgWrapperOutput": "release-artifacts/underworld-writer-release-og-1200x630.svg"
+  },
+  "integration": {
+    "releaseDataProvider": "@h4shed/rock-hardened",
+    "visualDesignOwner": "Fused-Gaming/underworld-writer",
+    "note": "Rock-Hardened supplies changelog/release data. Underworld Writer owns and preserves the Neon Underworld visual composition."
   },
   "git": {
     "defaultBaseRef": "origin/main"

@@ -7,147 +7,76 @@
     "tagline": "Build the story. Expose the truth. Ship what matters.",
     "supportingLine": "Narrative engine · Editorial tooling · Podcast creation · Real impact"
   },
-  "designSystem": {
-    "name": "Neon Underworld Release Changelog",
-    "purpose": "Canonical repository-owned visual language for changelog, release-note, README hero, Open Graph, and social release graphics.",
-    "referenceArtifact": "release-artifacts/underworld-writer-release-og-1200x630.svg",
-    "dimensions": {
-      "width": 1200,
-      "height": 630,
-      "aspectRatio": "40:21"
-    },
-    "visualLanguage": [
-      "cinematic black and void-purple cavern environment",
-      "high-energy magenta portal or vertical light beam on the right",
-      "stitched voodoo-doll mascot as the recurring Underworld Writer character",
-      "large left-aligned UNDERWORLD WRITER wordmark with WRITER in magenta",
-      "release/version treatment directly beneath the product descriptor",
-      "feature cards across the lower third",
-      "repository identity and changelog metadata in a dark footer",
-      "strong contrast zones behind every text block"
+  "canonicalCover": {
+    "repoPath": "assets/branding/underworld-writer-release-cover.jpg",
+    "sourceStatus": "approved-neon-underworld-release-artwork",
+    "sourceDimensions": {"width": 1200, "height": 630, "aspectRatio": 1.904762},
+    "usage": "authoritative visual source for README hero, changelog release art, Open Graph cards, repository release notes, and package announcements",
+    "rules": [
+      "Use the approved artwork verbatim whenever a 1200x630 release asset is required.",
+      "Do not redraw the composition from primitive SVG shapes.",
+      "Do not substitute a generic mascot, white silhouette, alternate cavern, or generic cyberpunk scene.",
+      "Do not regenerate typography, feature cards, mascot placement, portal placement, or footer layout independently when the canonical artwork is available.",
+      "Derivative formats may crop or contain the canonical artwork, but must preserve the title, release badge, stitched voodoo-doll mascot, feature cards, and repository footer whenever the target format permits."
+    ]
+  },
+  "visualIdentity": {
+    "name": "Neon Underworld",
+    "traits": [
+      "black and near-black editorial UI field",
+      "electric magenta and violet cavern environment",
+      "stitched plush voodoo-doll mascot with button eye, stitched mouth, and neon pins",
+      "large left-aligned UNDERWORLD WRITER wordmark",
+      "v<semver> RELEASE badge",
+      "feature-card row for release highlights",
+      "Fused Gaming / Open Source eyebrow",
+      "repository footer and OPEN NARRATIVES. REAL CHANGE. signature"
     ]
   },
   "palette": {
-    "void": "#03040A",
-    "panel": "#050813",
-    "deepViolet": "#12051C",
-    "cavernPurple": "#35104E",
-    "electricViolet": "#9D20F3",
-    "writerMagenta": "#FF2AC8",
-    "hotMagenta": "#FF40CE",
-    "ghostWhite": "#F7F7FB",
-    "mistLavender": "#CFD3DD",
-    "mutedStone": "#70809D"
-  },
-  "typography": {
-    "display": "Arial Black, Impact, or equivalent heavy geometric sans-serif",
-    "body": "Inter, Arial, system-ui, sans-serif",
-    "metadata": "Menlo, Consolas, ui-monospace, monospace",
-    "rules": [
-      "UNDERWORLD must remain white or ghost-white and WRITER must use the magenta accent.",
-      "FUSED GAMING / OPEN SOURCE uses tracked uppercase magenta metadata styling.",
-      "Version and RELEASE form one visual row and remain secondary to the product wordmark.",
-      "Never place text directly on a high-detail cavern or mascot region without a dark contrast layer."
-    ]
+    "void": "#02030A",
+    "panel": "#070B14",
+    "deepViolet": "#160823",
+    "cavernPurple": "#421968",
+    "electricViolet": "#7C1AA7",
+    "writerMagenta": "#F11AAE",
+    "hotPink": "#FF2ABF",
+    "ghostWhite": "#F7F7FA",
+    "mistLavender": "#CFC7DC",
+    "mutedStone": "#74809A"
   },
   "composition": {
-    "zones": {
-      "brand": "upper-left 0-58% width",
-      "scene": "upper-right 42-100% width",
-      "release": "left-middle directly below descriptor",
-      "features": "lower-third full width with four to six cards",
-      "footer": "bottom full-width repository and changelog metadata strip"
-    },
     "protectedRegions": [
-      "UNDERWORLD WRITER wordmark",
-      "release/version row",
-      "voodoo-doll mascot silhouette and face",
-      "magenta portal/light-beam focal point",
-      "feature-card labels and descriptions",
-      "repository footer identity"
+      "left UNDERWORLD WRITER title block",
+      "v<semver> RELEASE badge and tagline",
+      "center-right stitched voodoo-doll mascot",
+      "right-side neon portal and cavern focal point",
+      "six release-highlight cards",
+      "repository/footer signature"
     ],
-    "mascot": {
-      "subject": "stitched voodoo doll",
-      "placement": "right-center foreground",
-      "treatment": "cloth/rag-doll silhouette with visible seams, button or stitched eye, pins, and magenta rim light",
-      "sourceReference": "https://www.svgrepo.com/svg/321677/voodoo-doll",
-      "sourceLicense": "CC0",
-      "rule": "The repository design may stylize the CC0 voodoo-doll motif, but the result must stay clearly recognizable as the recurring Underworld Writer mascot."
-    },
-    "background": {
-      "environment": "dark cyberpunk/fantasy cavern",
-      "focalLight": "vertical neon-magenta portal or energy beam on the right",
-      "readability": "dark overlays and negative space must preserve text contrast"
-    },
-    "featureCards": {
-      "count": "4-6",
-      "style": "dark translucent cards with thin blue-violet borders and magenta line icons",
-      "preferredLabels": [
-        "SEGMENT-FIRST",
-        "VOICE READY",
-        "ROCK-HARDENED",
-        "OPEN SOURCE",
-        "REAL IMPACT",
-        "BUILT FOR MORE"
-      ],
-      "contentRule": "Card copy must be derived from current CHANGELOG/release highlights rather than hard-coded historical claims."
-    }
+    "releaseBadge": {"preferredPosition": "left column beneath supporting line", "format": "v<semver> RELEASE", "maxVisualWeight": "secondary to the UNDERWORLD WRITER wordmark"}
   },
   "releaseFormats": {
-    "openGraph": {
-      "width": 1200,
-      "height": 630,
-      "canonicalOutput": "release-artifacts/underworld-writer-release-og-1200x630.svg",
-      "strategy": "render the full Neon Underworld Release Changelog composition"
-    },
-    "readmeHero": {
-      "width": 1200,
-      "height": 630,
-      "strategy": "use the canonical Open Graph SVG directly at the top of README.md"
-    },
-    "githubSocial": {
-      "width": 1280,
-      "height": 640,
-      "strategy": "adapt the same composition without cropping the wordmark, mascot, release row, or footer"
-    },
-    "wideHeader": {
-      "width": 1536,
-      "height": 572,
-      "strategy": "preserve left wordmark/right mascot split and reduce feature-card height before removing protected regions"
-    },
-    "square": {
-      "width": 1080,
-      "height": 1080,
-      "strategy": "stack brand/release above scene and cards; never center-crop the 1200x630 composition"
-    }
+    "openGraph": {"width": 1200, "height": 630, "strategy": "use canonical artwork verbatim"},
+    "readmeHero": {"width": 1200, "height": 630, "strategy": "use canonical artwork verbatim"},
+    "githubSocial": {"width": 1280, "height": 640, "strategy": "contain canonical artwork on void background; do not redraw"},
+    "square": {"width": 1080, "height": 1080, "strategy": "frame or crop the canonical artwork while preserving wordmark and mascot; do not redraw"}
   },
-  "generation": {
-    "changelogDriven": true,
-    "renderer": "@h4shed/rock-hardened",
-    "rendererOwnership": "external dependency; do not modify Rock-Hardened to implement repository-specific styling",
-    "repositoryConfig": "release-contract.config.json",
-    "sourceOfTruth": "assets/branding/release-brand.json",
-    "requiredDynamicFields": [
-      "release version",
-      "release label",
-      "current changelog highlights",
-      "repository identity"
-    ],
-    "rules": [
-      "Rock-Hardened supplies changelog/release data; Underworld Writer owns this visual design contract.",
-      "Future agents must update this repository contract/template rather than changing Rock-Hardened for Underworld Writer-specific styling.",
-      "Generated release SVGs are derivative output and must remain reproducible from repository release data and this contract.",
-      "A human preview is required before a materially new composition replaces the canonical release-art style."
-    ]
+  "rockHardenedIntegration": {
+    "responsibility": "Rock-Hardened supplies release/changelog data only.",
+    "visualAuthority": "This repository owns the visual composition and canonical artwork.",
+    "prohibition": "Do not modify Fused-Gaming/rock-hardened to change Underworld Writer release styling."
   },
   "agentRules": {
+    "sourceOfTruth": "assets/branding/release-brand.json",
+    "artworkAuthority": "canonicalCover",
+    "generatedReleaseOutput": "release-artifacts/",
     "requirements": [
-      "Read this file before generating Underworld Writer release artwork.",
-      "Use the Neon Underworld Release Changelog composition; do not fall back to generic dashboard or card-only artwork.",
-      "Keep the voodoo-doll mascot, magenta cavern/portal scene, product wordmark, release row, feature-card strip, and footer hierarchy.",
-      "Populate feature cards from the current release rather than blindly copying old release text.",
-      "Maintain WCAG-oriented high contrast for all essential text.",
-      "Never modify the Rock-Hardened package solely to change Underworld Writer visual styling."
+      "Read this file before generating release artwork.",
+      "Prefer the canonical release artwork over any generated approximation.",
+      "Never recreate the approved composition from simple SVG primitives when the source artwork exists.",
+      "Release metadata may be overlaid only when it does not obscure protected regions.",
+      "If a future release needs different highlights, update the repository-owned design template while retaining the Neon Underworld composition language."
     ]
   }
 }
