@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0",
+  "brandId": "insight-corruption-default",
+  "displayName": "Insight Corruption",
+  "audio": {
+    "sonicLogo": null,
+    "intro": "asset:insight-corruption-intro",
+    "outro": "asset:insight-corruption-outro",
+    "transitionStings": {},
+    "musicBeds": {},
+    "ducking": {
+      "enabled": true,
+      "speechOverMusicDb": -12
+    },
+    "mix": {
+      "targetLufs": -16,
+      "truePeakDb": -1
+    }
+  },
+  "visual": {
+    "artworkTemplate": null,
+    "logo": null,
+    "colorTokens": {},
+    "fontTokens": {}
+  },
+  "credits": [],
+  "disclosures": {
+    "syntheticNarration": "This episode contains synthetic narration generated with the consent of the referenced voice owner."
+  },
+  "sponsorship": {
+    "defaultBreaks": [
+      {
+        "id": "midroll-01",
+        "type": "midroll",
+        "targetDurationSeconds": 90
+      }
+    ],
+    "treatment": "episode-defined"
+  },
+  "assets": {
+    "insight-corruption-intro": {
+      "kind": "audio",
+      "path": "assets/audio/insight-corruption-intro.wav"
+    },
+    "insight-corruption-outro": {
+      "kind": "audio",
+      "path": "assets/audio/insight-corruption-outro.wav"
+    }
+  }
+}
