@@ -5,18 +5,26 @@
   "siteUrl": "https://github.com/Fused-Gaming/underworld-writer",
   "brand": {
     "name": "Underworld Writer",
-    "tagline": "Build the world. Track the truth. Ship the story.",
+    "tagline": "Build the story. Expose the truth. Ship what matters.",
     "brandContract": "assets/branding/release-brand.json",
-    "canonicalCover": "assets/branding/underworld-writer-release-cover.jpeg",
-    "fallbackIcon": "assets/underworld-writer-icon.svg",
-    "coverSha256": "7ec8cb4032a8b37620327f06afffbb1c5fa4240ee150db80191c26a0acc67609"
+    "canonicalCover": "release-artifacts/underworld-writer-release-og-1200x630.svg",
+    "fallbackIcon": "assets/underworld-writer-icon.svg"
   },
   "render": {
     "width": 1200,
     "height": 630,
-    "maxHighlights": 4,
-    "artworkStrategy": "contain-over-brand-background",
-    "preserveProtectedRegions": true
+    "maxHighlights": 6,
+    "artworkStrategy": "repository-owned-neon-underworld-changelog",
+    "preserveProtectedRegions": true,
+    "readmeHero": "release-artifacts/underworld-writer-release-og-1200x630.svg",
+    "designContract": "assets/branding/release-brand.json",
+    "requiredComposition": [
+      "left product wordmark",
+      "right voodoo-doll cavern scene",
+      "release/version row",
+      "current-release feature cards",
+      "repository footer"
+    ]
   },
   "git": {
     "defaultBaseRef": "origin/main"
