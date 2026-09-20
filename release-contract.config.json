@@ -1,0 +1,18 @@
+{
+  "changelogPath": "CHANGELOG.md",
+  "unreleasedHeading": "Unreleased",
+  "outputDir": "release-artifacts",
+  "siteUrl": "https://github.com/Fused-Gaming/underworld-writer",
+  "brand": {
+    "name": "Underworld Writer",
+    "tagline": "Fact-aware narrative and podcast production tooling"
+  },
+  "render": {
+    "width": 1200,
+    "height": 630,
+    "maxHighlights": 4
+  },
+  "git": {
+    "defaultBaseRef": "origin/main"
+  }
+}
