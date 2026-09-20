@@ -68,13 +68,21 @@ RENDER_PROFILE_PATH = Path(__file__).parent / "config" / "render_profiles" / "po
 
 DEFAULT_PAUSE_MS = 800
 DEFAULT_CROSSFADE_MS = 150
-TARGET_LUFS = -16.0
+TARGET_LUFS = -18.0  # Reduced from -16 to prevent clipping during normalization
+TRUE_PEAK_LIMIT_DB = -1.0  # Hard limiter to prevent any clipping
 
 # modal/CHATTERBOX_INTEGRATION_PLAN.md Section 3: benchmark cheapest-first.
 # L4 is the VOICE_PODCAST_GENERATION.md executive recommendation for the
 # initial inference GPU; the prior H100 default was never benchmarked
 # against it and is oversized/overpriced for this workload.
 DEFAULT_GPU = "L4"
+
+
+def _apply_hard_limiter(data: "numpy.ndarray", limit_db: float) -> "numpy.ndarray":
+    """Apply hard limiting to prevent clipping at true peaks."""
+    import numpy as np
+    limit_linear = 10 ** (limit_db / 20.0)
+    return np.clip(data, -limit_linear, limit_linear)
 
 
 def _load_render_profile() -> dict:
@@ -260,9 +268,14 @@ def assemble_episode(
     buf.seek(0)
 
     data, rate = sf.read(buf)
+
+    # Apply hard limiter before loudness normalization to prevent clipping.
+    # This ensures no peaks exceed -1 dB even during normalization.
+    limited_data = _apply_hard_limiter(data, TRUE_PEAK_LIMIT_DB)
+
     meter = pyln.Meter(rate)
-    loudness = meter.integrated_loudness(data)
-    normalized = pyln.normalize.loudness(data, loudness, TARGET_LUFS)
+    loudness = meter.integrated_loudness(limited_data)
+    normalized = pyln.normalize.loudness(limited_data, loudness, TARGET_LUFS)
 
     out_buf = BytesIO()
     sf.write(out_buf, normalized, rate, format="WAV")
