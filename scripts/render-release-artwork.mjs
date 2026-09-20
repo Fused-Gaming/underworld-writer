@@ -11,7 +11,7 @@ const packageJson = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 
 const version = versionArg ? versionArg.slice('--version='.length) : packageJson.version;
 
 const changelogPath = path.join(root, 'CHANGELOG.md');
-const templatePath = path.join(root, 'underworld-writer-release-og-1200x630-preview.svg');
+const templatePath = path.join(root, 'assets', 'branding', 'underworld-writer-release-changelog-template.svg');
 const outputPath = path.join(root, 'release-artifacts', 'underworld-writer-release-og-1200x630.svg');
 
 const changelog = fs.readFileSync(changelogPath, 'utf8');
@@ -104,8 +104,6 @@ if (!items.length) throw new Error(`No release artwork items could be derived fo
 const defaults = baselineCards;
 const cards = Array.from({ length: 6 }, (_, i) => items[i] ?? defaults[i]);
 
-// The approved v2.2.1 ArtPatch SVG is the visual source of truth. If the
-// changelog still describes that exact release, copy it byte-for-byte.
 const isApprovedBaseline = version === baselineVersion
   && cards.every((item, index) => normalized(item) === normalized(baselineCards[index]));
 
