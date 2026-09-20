@@ -8,8 +8,6 @@ services:
       target: builder
     image: underworld-writer:builder-latest
     container_name: underworld-writer-builder
-    volumes:
-      - ./build-output:/workspace/dist:ro
     command: npm run build
     environment:
       - NODE_ENV=production

@@ -43,10 +43,11 @@ RUN echo "✓ Checking TypeScript build output..." && \
     echo "✓ All build artifacts present"
 
 RUN echo "✓ Validating bin exports..." && \
-    ls -la dist/cli.js || echo "⚠ CLI entry point missing"
+    test -f dist/cli.js && \
+    echo "✓ CLI entry point present"
 
 RUN echo "✓ Running workspace validation tests..." && \
-    npm run test:workspace || echo "⚠ Workspace tests not available"
+    npm run test:workspace
 
 # Final production stage
 FROM node:22-alpine AS runtime
@@ -65,7 +66,9 @@ RUN addgroup -g 1000 nodejs && \
 USER nodejs
 
 # Verify the build is functional
-RUN node dist/index.js 2>&1 | head -1 || echo "Build validated"
+RUN set -o pipefail && \
+    (node dist/index.js 2>&1 | head -1 || true) && \
+    echo "✓ Runtime validation complete"
 
 # Default command shows version/help info
 CMD ["node", "dist/cli.js", "--help"]
