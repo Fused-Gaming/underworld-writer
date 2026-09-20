@@ -1,0 +1,13 @@
+{
+  "scriptOutputPath": "output/insight-corruption/season-1/episode-1/script-output.json",
+  "speakerVoiceProfiles": {
+    "narrator": "voice-eric-nissen-01"
+  },
+  "outputFileName": "insight-corruption-ep01.wav",
+  "episodeMeta": {
+    "title": "Police Union Executive Imported Thousands of Opioid Pills — Then Received Probation",
+    "episodeNumber": 1,
+    "seasonNumber": 1,
+    "series": "insight-corruption"
+  }
+}
