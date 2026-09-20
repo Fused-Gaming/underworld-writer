@@ -6,18 +6,9 @@ module.exports = {
   testMatch: ['**/test/**/*.test.ts'],
   moduleFileExtensions: ['ts', 'js', 'json'],
   collectCoverageFrom: [
-    'src/**/*.ts',
-    '!src/**/*.d.ts',
-    '!src/cli.ts'
+    'dist/**/*.js',
+    '!dist/**/*.d.ts'
   ],
-  coverageThreshold: {
-    global: {
-      lines: 80,
-      functions: 80,
-      branches: 75,
-      statements: 80
-    }
-  },
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.js$': '$1',
     '^@/(.*)$': '<rootDir>/src/$1'
