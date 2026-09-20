@@ -1,8 +1,8 @@
 # Underworld Writer
 
-![Underworld Writer v2.2.1 release changelog](release-artifacts/underworld-writer-release-og-1200x630.svg)
+![Underworld Writer v2.2.1 release changelog](release-artifacts/underworld-writer-release-og-1200x630.jpg)
 
-> **Release artwork:** Rock-Hardened supplies changelog/release data; Underworld Writer owns the visual design contract in `assets/branding/release-brand.json`. The canonical README/Open Graph asset is `release-artifacts/underworld-writer-release-og-1200x630.svg`.
+> **Release artwork:** Rock-Hardened supplies changelog/release data; Underworld Writer owns the visual design contract in `assets/branding/release-brand.json`. The canonical README/Open Graph source is the approved Neon Underworld composition at `assets/branding/underworld-writer-release-cover.jpg`, with derivatives emitted to `release-artifacts/`.
 
 **Current branch version: 2.2.1**  
 Multi-purpose character development, fact-sourced true-crime editorial tooling, and segment-first podcast/article production.
@@ -22,11 +22,11 @@ Underworld Writer supports three primary workflows:
 
 ## v2.2.x highlights
 
-The 2.2.x line turns Underworld Writer into a structured editorial workspace that humans and agents such as Claude, ChatGPT, Codex, Cursor, Copilot, and MCP-based automation can use consistently.
+The 2.2.x line moves Underworld Writer from a collection of generation utilities into a structured editorial workspace that can be used consistently by humans and agents such as Claude, ChatGPT, Codex, Cursor, Copilot, and MCP-based automation.
 
 ### Canonical output workspace
 
-Generated and producer-facing artifacts have one canonical root:
+Generated and producer-facing artifacts now have one canonical root:
 
 ```text
 output/
@@ -56,9 +56,11 @@ src/        runtime and library implementation
 scripts/    generators, validation, release tooling, and workspace automation
 ```
 
-Legacy/demo output belongs under `output/examples/` instead of competing root-level directories.
+Legacy/demo output belongs under `output/examples/` instead of competing root-level output directories.
 
 ### Cross-agent workspace contract
+
+The repository carries both human-readable and machine-readable rules so future agents do not invent new directory conventions.
 
 - `AGENTS.md` — authoritative repository contract
 - `CLAUDE.md` — Claude entry point referencing the shared contract
@@ -89,7 +91,7 @@ Generated manifests carry generator/version metadata so workspaces can be traced
 
 ## Segment-first editorial packages
 
-Long-form podcast and article output is built from composable editorial blocks rather than treating one giant Markdown file as the source of truth.
+Long-form podcast and article output is now built from composable editorial blocks instead of treating one giant Markdown file as the source of truth.
 
 ```text
 projects/<series>/episode-packages/season-<n>/episode-<n>.json
@@ -108,14 +110,21 @@ projects/<series>/episode-packages/season-<n>/episode-<n>.json
 
 The episode package is authoritative. Assembled scripts/articles are derived producer-facing views.
 
+Generate an editorial package:
+
 ```bash
 npm run editorial:generate -- --series insight-corruption --season 1 --episode 1
+```
+
+Validate without writing output:
+
+```bash
 npm run editorial:check -- --series insight-corruption --season 1 --episode 1
 ```
 
-### Reusable editorial blocks
+### Reusable blocks
 
-`templates/editorial/shared-segments.json` provides reusable material for:
+`templates/editorial/shared-segments.json` provides reusable blocks for recurring production material such as:
 
 - series intros
 - evidence/source disclosures
@@ -131,6 +140,8 @@ Case-specific evidence remains in the episode package while repeatable editorial
 
 Insight Corruption is the first full series using the v2.2.x workspace and editorial-package model.
 
+Canonical locations:
+
 ```text
 projects/insight-corruption/                         # source/research/configuration
 projects/insight-corruption/episode-packages/        # editorial source packages
@@ -141,14 +152,16 @@ output/insight-corruption/season-1/episode-1/        # generated Episode 1 packa
 
 ### Episode 1 validation baseline
 
+The Episode 1 reference package currently validates at:
+
 - **13 podcast segments**
 - **4,092 scripted words**
-- **29.52 estimated minutes** at 145 WPM including the fixed 90-second mid-roll
+- **29.52 estimated minutes** at 145 WPM, including the fixed 90-second mid-roll
 - **Runtime validation: PASS** against a 30 ± 1 minute target
 - **1,864-word LinkedIn article**
 - **Article validation: PASS** against the configured 1,800–2,300 word target
 
-The podcast and LinkedIn article reuse the same vetted evidence/claim package rather than independently rewriting case facts.
+The podcast and LinkedIn article reuse the same vetted evidence/claim package rather than independently rewriting the case facts.
 
 ## Authorized voice-production architecture
 
@@ -160,29 +173,7 @@ projects/insight-corruption/production/voice/VOICE_PODCAST_GENERATION.md
 
 It documents the intended Modal-based production architecture, authorized reference-voice handling, segment-level synthesis/retries, ASR critical-token verification, mastering, provenance, benchmarking, and cost controls.
 
-## Release graphics
-
-Underworld Writer uses a repository-owned **Neon Underworld Release Changelog** design.
-
-```text
-assets/branding/release-brand.json                        visual source of truth
-assets/branding/README.md                                 human-readable design guidance
-release-contract.config.json                              release renderer configuration
-release-artifacts/underworld-writer-release-og-1200x630.svg canonical README / OG asset
-```
-
-The design system requires:
-
-- cinematic black / purple cavern environment
-- neon-magenta portal or vertical light beam
-- stitched voodoo-doll mascot on the right
-- large `UNDERWORLD WRITER` identity on the left
-- explicit version / `RELEASE` row
-- four to six changelog-driven feature cards
-- dark repository/footer metadata strip
-- high-contrast text zones
-
-Rock-Hardened remains an external release-data/evidence tool. Repository-specific styling belongs here, not in the Rock-Hardened package.
+The specification is project-level infrastructure and is not tied to a single episode.
 
 ## Quick start
 
@@ -212,14 +203,26 @@ The original character-development, true-crime adaptation, PACER verification, M
 
 ## Validation and benchmarks
 
+Workspace validation:
+
 ```bash
 npm run validate:workspace
 npm run test:workspace
+```
+
+Episode 1 editorial fixture:
+
+```bash
 npm run test:episode1
+```
+
+Benchmarks:
+
+```bash
 npm run benchmark:workspace
 ```
 
-The v2.2.0 Node 22 workspace baseline recorded approximately:
+The v2.2.0 baseline recorded on Node 22 measured approximately:
 
 | Workspace operation | Baseline |
 | --- | ---: |
@@ -231,7 +234,7 @@ These microbenchmarks are regression indicators, not cross-machine performance g
 
 ## Release validation with Rock-Hardened
 
-Underworld Writer uses `@h4shed/rock-hardened` for changelog validation and deterministic release evidence.
+Underworld Writer uses [`@h4shed/rock-hardened`](https://www.npmjs.com/package/@h4shed/rock-hardened) for changelog validation and deterministic release evidence.
 
 ```bash
 npm run version:check
@@ -251,16 +254,16 @@ npm run release:evidence
 - Jest tests
 - workspace benchmarks
 
-Release data is changelog-driven; the visual composition is controlled by this repository's branding contract.
+Release artwork uses repository-owned branding: Rock-Hardened provides release/changelog data, while `assets/branding/release-brand.json` and the approved canonical cover control the Underworld Writer composition. Agents must not redraw the approved release design from primitive SVG shapes.
 
 ## Versioning
 
 The package follows Semantic Versioning.
 
 - **2.2.0** — canonical workspace, cross-agent contract, scaffolding/validation, segment-first podcast/article packages, Rock-Hardened release evidence, and the Episode 1 long-form reference package.
-- **2.2.1** — release-branding/version-alignment follow-up, canonical Neon Underworld changelog design, and refreshed root documentation.
+- **2.2.1** — patch release branch for release-branding/version-alignment follow-up work and refreshed root documentation.
 
-Use the version tooling rather than changing only one metadata surface:
+Primary release metadata is tracked through `package.json`, `plugin.json`, `VERSION.json`, source exports, and the changelog. Use the version tooling rather than manually changing only one surface:
 
 ```bash
 npm run version:check
@@ -271,13 +274,12 @@ npm run version:sync
 
 ```text
 AGENTS.md                       agent contract
-CHANGELOG.md                    release history / release-data source
+CHANGELOG.md                    release history / release-art source
 VERSION.json                    release ledger and benchmark evidence
-assets/branding/                repository-owned release-art contract
+assets/branding/                release-brand contract/assets
 docs/                           deeper documentation
 output/                         canonical generated content
 projects/                       source research and editorial packages
-release-artifacts/              generated release/changelog graphics and evidence
 schemas/podcast/                workspace schemas
 scripts/                        generation/validation/release tooling
 src/                            TypeScript package implementation
@@ -305,7 +307,6 @@ For any agent operating directly in this repository, **read `AGENTS.md` first**.
 - [Contributing](CONTRIBUTING.md)
 - [Agent Contract](AGENTS.md)
 - [Changelog](CHANGELOG.md)
-- [Release Branding](assets/branding/README.md)
 - [Output Contract](output/README.md)
 - [Insight Corruption Setup](INSIGHT_CORRUPTION_SETUP.md)
 - [Documentation](docs/)
