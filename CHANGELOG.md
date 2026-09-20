@@ -21,22 +21,37 @@ Format follows Keep a Changelog and Semantic Versioning.
 - Workspace-specific performance benchmarks.
 - Release version synchronization utility.
 - Rock-Hardened release validation/evidence integration.
+- Segment-first editorial package generator at `scripts/editorial-package.mjs`.
+- Reusable podcast/article block library at `templates/editorial/shared-segments.json`.
+- Shared evidence/claim packages capable of rendering both podcast and article outputs without independently rewriting core facts.
+- Runtime validation based on actual spoken-word counts plus fixed-duration blocks.
+- Article target-length validation with generated section manifests.
+- Release validation fixture for Insight Corruption Episode 1.
 
 ### Changed
 - Consolidated generated and producer-facing podcast artifacts beneath the canonical `output/` root.
 - Moved legacy Insight Corruption generated artifacts into the canonical series/episode structure without discarding source material.
 - Added a Season 1 manifest and generator metadata for Insight Corruption.
+- Replaced Episode 1's timestamp-based outline with 13 independently recordable/scriptable segments plus a derived producer read-through file.
+- Replaced Episode 1's short monolithic LinkedIn article with a segmented 1,864-word article generated from the same evidence package as the podcast.
+- Made assembled podcast/article files derived artifacts; agents must edit episode packages/templates and regenerate instead of making source-of-truth corrections only in assembled files.
 - Release version advanced to 2.2.0.
 
 ### Fixed
 - Prevented future agents from creating competing root-level podcast output directories.
 - Removed retired `migration` branch assumptions from test workflow configuration.
-- Normalized package/plugin release versioning and added automated drift detection.
+- Normalized package/plugin/exported-skill release versioning and added automated drift detection.
+- Corrected Episode 1's legacy offense framing: the final conviction concerned unlawful tapentadol importation, while the original fentanyl-related theory was withdrawn after prosecutors acknowledged a testing error.
+- Removed the unsupported `FCPA Violations` label from the Joanne Segovia case file.
+- Removed Episode 1's dependency on an unscripted four-minute guest block to claim a 30-minute runtime.
 
 ### Validation
 - `npm run test:workspace` exercises canonical series → season → episode scaffolding plus expected validator failures.
+- `npm run test:episode1` validates the Episode 1 editorial package without writing output.
+- Episode 1 podcast result: **4,092 scripted words**, **29.52 estimated minutes** at 145 WPM including the fixed 90-second mid-roll — **PASS** against a 30 ± 1 minute target.
+- Episode 1 LinkedIn article result: **1,864 words** — **PASS** against the configured 1,800–2,300 word range.
 - `npm run benchmark:workspace` measures registry lookup, canonical path construction, and scaffold metadata validation in addition to existing benchmarks.
-- `npm run validate:release` combines version checks, workspace validation, Rock-Hardened changelog validation, build, tests, and benchmarks.
+- `npm run validate:release` combines version checks, workspace validation, Rock-Hardened changelog validation, workspace/editorial fixtures, build, tests, and benchmarks.
 
 ## [2.1.0] - 2026-09-20
 
