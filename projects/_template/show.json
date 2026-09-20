@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0",
+  "showId": "new-show",
+  "title": "New Podcast",
+  "description": "Replace with the podcast description.",
+  "language": "en",
+  "categories": [],
+  "brandRef": "brand/brand.json",
+  "defaultRenderProfile": "podcast-standard",
+  "defaultVoiceBindingsRef": "voices/voice-bindings.json",
+  "editorialProfile": {
+    "tone": [],
+    "factCheckRequired": false,
+    "sourceVerificationMode": "project-defined",
+    "syntheticAudioDisclosure": "when-used"
+  },
+  "publishing": {
+    "explicitDefault": false,
+    "destinations": []
+  },
+  "defaults": {
+    "targetDurationMinutes": 30,
+    "seasonId": "season-01",
+    "renderProfile": "podcast-standard"
+  }
+}
