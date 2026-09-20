@@ -1,24 +1,33 @@
 # Underworld Writer Release Branding
 
-This directory defines the canonical visual contract for Underworld Writer releases.
+This directory defines the repository-owned visual contract for Underworld Writer release artwork.
 
-## Canonical cover
+## Canonical release artwork
 
-Approved artwork: `underworld-writer-release-cover.jpeg`
-
-The approved source is the wide Fused Gaming / Open Source cover featuring the `UNDERWORLD WRITER` wordmark, white mascot, purple-magenta cavern environment, and the line:
-
-> Build the world. Track the truth. Ship the story.
-
-Expected source dimensions: **1536 × 572**.
-
-Approved source fingerprint:
+The approved source is:
 
 ```text
-SHA-256 7ec8cb4032a8b37620327f06afffbb1c5fa4240ee150db80191c26a0acc67609
+assets/branding/underworld-writer-release-cover.jpg
 ```
 
-Until the binary is materialized at the canonical path, agents must treat that fingerprint and `release-brand.json` as the identity of the approved artwork supplied for the v2.2.0 release work.
+It is the **Neon Underworld** composition: a black/magenta/violet cavern scene with the large `UNDERWORLD WRITER` wordmark, `v<semver> RELEASE` treatment, stitched plush voodoo-doll mascot, neon portal, release-highlight cards, and repository footer.
+
+For the canonical README/Open Graph release card, use the 1200 × 630 composition directly. Do not rebuild it from basic vector shapes.
+
+## Non-negotiable rule
+
+**The approved composition is artwork, not a loose mood board.**
+
+Agents and release automation must not replace it with:
+
+- a generic cyberpunk background;
+- a simplified white mascot silhouette;
+- an independently redrawn voodoo doll;
+- a new wordmark layout;
+- a primitive SVG reconstruction;
+- a different feature-card/footer hierarchy.
+
+When the canonical artwork exists, use it directly. SVG derivatives should wrap or reference the approved source rather than approximate it.
 
 ## Source of truth
 
@@ -28,47 +37,34 @@ Machine-readable rules live in:
 assets/branding/release-brand.json
 ```
 
-Release automation, Rock-Hardened integration, coding agents, design agents, and humans should read that contract instead of inventing per-release visual styles.
+The release integration config lives at:
+
+```text
+release-contract.config.json
+```
+
+Rock-Hardened supplies changelog/release data. **Underworld Writer owns the visual design.** Do not modify `Fused-Gaming/rock-hardened` to alter this repository's release appearance.
 
 ## Visual hierarchy
 
 1. `FUSED GAMING / OPEN SOURCE`
 2. `UNDERWORLD WRITER`
-3. `CHARACTER SYSTEMS · NARRATIVE ENGINE · EDITORIAL CONTROL`
-4. `Build the world. Track the truth. Ship the story.`
-5. Optional release annotation such as `v2.2.0 · RELEASE`
+3. `NARRATIVE ENGINE · EDITORIAL TOOLING · PODCAST CREATION · REAL IMPACT`
+4. `v<semver> RELEASE`
+5. `BUILD THE STORY. EXPOSE THE TRUTH. SHIP WHAT MATTERS.`
+6. Release-highlight cards
+7. Repository footer / `OPEN NARRATIVES. REAL CHANGE.`
 
-Release annotations are additions to the approved artwork, not replacements for its identity.
-
-## Palette
-
-| Token | Hex | Use |
-|---|---|---|
-| `void` | `#020414` | primary background / extension field |
-| `deepViolet` | `#1D103B` | dark secondary field |
-| `cavernPurple` | `#421968` | environmental purple |
-| `electricViolet` | `#782198` | secondary accent |
-| `writerMagenta` | `#C739CC` | primary release accent |
-| `ghostWhite` | `#F4EAFA` | high-emphasis type / mascot-adjacent UI |
-| `mistLavender` | `#CFAEE5` | soft secondary type/accent |
-| `mutedStone` | `#716F7B` | low-emphasis metadata |
-
-The canonical cover remains the authority if sampled colors differ slightly because of compression, glow, or gradients.
-
-## Release derivatives
-
-- **1536 × 572:** use the approved cover directly.
-- **1280 × 640 GitHub social:** contain the cover over a dark purple/void extension rather than cropping the title or mascot.
-- **1200 × 630 Open Graph:** same containment rule; version badge may be added in a safe margin.
-- **1080 × 1080 square:** frame/inset the approved cover instead of center-cropping it.
-
-Do not stretch, recolor the mascot, replace the wordmark, or cover protected visual regions.
-
-## Repository boundary
+## Canonical files
 
 ```text
-assets/branding/        canonical brand definitions and source artwork
-release-artifacts/      generated release cards, manifests, attestations, and derivatives
+assets/branding/underworld-writer-release-cover.jpg
+release-artifacts/underworld-writer-release-og-1200x630.jpg
+release-artifacts/underworld-writer-release-og-1200x630.svg
 ```
 
-Generated artwork must never overwrite the canonical source asset.
+The JPG is the approved visual source/derivative. The SVG is a compatibility wrapper and must not contain a hand-redrawn substitute.
+
+## Release adaptation
+
+Future versions may update release number, changelog-driven highlights, and supporting copy while preserving the same design language and hierarchy. If the composition itself changes, the new design must be deliberately approved and then promoted to the canonical source before automation is allowed to use it.

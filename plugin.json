@@ -1,7 +1,7 @@
 {
   "name": "underworld-writer",
   "displayName": "Underworld Writer",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Dual-purpose skill for fictional underworld narratives, podcast scripting engine, factually sourced true crime writing with character development and PACER API integration",
   "author": "Fused Gaming",
   "license": "Apache-2.0",

@@ -9,6 +9,38 @@ Format follows Keep a Changelog and Semantic Versioning.
 ### Added
 - Future changes belong here before release.
 
+## [2.2.1] - 2026-09-20
+
+### Added
+- Repository-local release-art renderer at `scripts/render-release-artwork.mjs`.
+- Exact approved ArtPatch release template at `assets/branding/underworld-writer-release-changelog-template.svg`.
+- Canonical 1200×630 release/Open Graph output at `release-artifacts/underworld-writer-release-og-1200x630.svg`.
+- Structured `Release Artwork` metadata so release-card copy is deterministically sourced from this changelog.
+
+### Changed
+- Advanced the 2.2.0 release line to the **2.2.1 patch release** and normalized the authoritative package, plugin, release-ledger, and exported-skill version surfaces around that version.
+- Retained `scripts/sync-version.mjs` as the deterministic local normalization path for generated lockfile root-version metadata; the dependency graph itself is unchanged from 2.2.0.
+- Consolidated the release-branding/versioning work previously split across PRs #138 and #139 into PR #137 without discarding the 2.2.0 benchmark baseline or historical release ledger.
+- Release artwork generation now reuses the exact approved Underworld Writer ArtPatch composition as an immutable visual base instead of redrawing the design from SVG primitives.
+- Underworld Writer owns the release-art template and overlay rules while Rock-Hardened remains responsible for changelog/release evidence workflows.
+- The release renderer reads the active package version and selected release section from `CHANGELOG.md`; future release renders may replace only declared version and feature-card text zones.
+- The root README now uses the canonical generated 1200×630 SVG release asset.
+
+### Fixed
+- Replaced primitive/generic release-art approximations with the approved Neon Underworld ArtPatch composition.
+- Preserved the complete 2.2.0 validation and benchmark evidence while adding 2.2.1 release metadata instead of overwriting the existing release ledger.
+- Corrected stale release-art documentation that referenced the retired JPEG/raster template and `render-underworld-release-art.mjs` path.
+- Updated the release-brand contract to prohibit generic mascot substitutions, primitive redraws, alternate cavern compositions, and independently regenerated title/card/footer layouts.
+- Clarified the release boundary: Rock-Hardened supplies changelog/release data; Underworld Writer owns its visual composition.
+
+### Release Artwork
+- **SEGMENT-FIRST** — Podcast & article pipelines
+- **VOICE READY** — Scripts, timing & production docs
+- **ROCK-HARDENED** — Validated releases & changelog art
+- **OPEN SOURCE** — Build. Audit. Improve. Together.
+- **REAL IMPACT** — Fiction, true-crime, and investigative stories.
+- **BUILT FOR MORE** — Episodes. Series. A more transparent tomorrow.
+
 ## [2.2.0] - 2026-09-19
 
 ### Added
@@ -21,7 +53,7 @@ Format follows Keep a Changelog and Semantic Versioning.
 - Workspace-specific performance benchmarks.
 - Release version synchronization utility.
 - Rock-Hardened release validation/evidence integration.
-- Canonical Underworld Writer release-brand contract at `assets/branding/release-brand.json` with approved-cover fingerprint, palette, protected composition rules, and derivative format definitions.
+- Canonical Underworld Writer release-brand contract at `assets/branding/release-brand.json`.
 - Human-readable release-brand usage guidance at `assets/branding/README.md`.
 - Segment-first editorial package generator at `scripts/editorial-package.mjs`.
 - Reusable podcast/article block library at `templates/editorial/shared-segments.json`.
@@ -37,7 +69,6 @@ Format follows Keep a Changelog and Semantic Versioning.
 - Replaced Episode 1's timestamp-based outline with 13 independently recordable/scriptable segments plus a derived producer read-through file.
 - Replaced Episode 1's short monolithic LinkedIn article with a segmented 1,864-word article generated from the same evidence package as the podcast.
 - Made assembled podcast/article files derived artifacts; agents must edit episode packages/templates and regenerate instead of making source-of-truth corrections only in assembled files.
-- Wired `release-contract.config.json` to the approved Underworld Writer cover identity, brand contract, fallback icon, and non-destructive 1200×630 render strategy.
 - Extended `AGENTS.md` so future agents must use the approved Underworld Writer release art system rather than inventing a new release theme.
 - Release version advanced to 2.2.0.
 
@@ -56,7 +87,6 @@ Format follows Keep a Changelog and Semantic Versioning.
 - Episode 1 LinkedIn article result: **1,864 words** — **PASS** against the configured 1,800–2,300 word range.
 - `npm run benchmark:workspace` measures registry lookup, canonical path construction, and scaffold metadata validation in addition to existing benchmarks.
 - `npm run validate:release` combines version checks, workspace validation, Rock-Hardened changelog validation, workspace/editorial fixtures, build, tests, and benchmarks.
-- Approved release cover identity recorded as **1536×572**, SHA-256 `7ec8cb4032a8b37620327f06afffbb1c5fa4240ee150db80191c26a0acc67609`.
 
 ## [2.1.0] - 2026-09-20
 
@@ -69,4 +99,4 @@ Format follows Keep a Changelog and Semantic Versioning.
 
 ### Fixed
 - True-crime case files can be adapted by the podcast scripting engine without character-shape crashes.
-- Fact-attribution tiers derive from case-file source and verification metadata.
+- Fact-attribution tiers derive from a case file's own sources/verification_status.
