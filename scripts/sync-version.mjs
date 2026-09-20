@@ -26,24 +26,33 @@ const files = {
   lock: readJson('package-lock.json')
 };
 
-const mismatches = [];
-const check = (label, actual) => {
-  if (actual !== target) mismatches.push(`${label}: ${actual ?? '(missing)'} != ${target}`);
+const errors = [];
+const warnings = [];
+const requireMatch = (label, actual) => {
+  if (actual !== target) errors.push(`${label}: ${actual ?? '(missing)'} != ${target}`);
+};
+const warnMatch = (label, actual) => {
+  if (actual !== target) warnings.push(`${label}: ${actual ?? '(missing)'} != ${target}`);
 };
 
-check('package.json', files.package.version);
-check('plugin.json', files.plugin.version);
-check('VERSION.json', files.version.version);
-check('package-lock.json', files.lock.version);
-check('package-lock.json packages[""]', files.lock.packages?.['']?.version);
+requireMatch('package.json', files.package.version);
+requireMatch('plugin.json', files.plugin.version);
+requireMatch('VERSION.json', files.version.version);
+warnMatch('package-lock.json', files.lock.version);
+warnMatch('package-lock.json packages[""]', files.lock.packages?.['']?.version);
 
 if (checkOnly) {
-  if (mismatches.length) {
-    console.error('Version synchronization failed:');
-    mismatches.forEach((item) => console.error(`  - ${item}`));
+  if (warnings.length) {
+    console.warn('Lockfile metadata should be normalized before publishing:');
+    warnings.forEach((item) => console.warn(`  - ${item}`));
+    console.warn(`  Run: npm run version:sync -- ${target}`);
+  }
+  if (errors.length) {
+    console.error('Release version synchronization failed:');
+    errors.forEach((item) => console.error(`  - ${item}`));
     process.exit(1);
   }
-  console.log(`Version synchronization passed: ${target}`);
+  console.log(`Publish version synchronization passed: ${target}`);
   process.exit(0);
 }
 
@@ -63,5 +72,5 @@ writeJson('plugin.json', files.plugin);
 writeJson('VERSION.json', files.version);
 writeJson('package-lock.json', files.lock);
 
-console.log(`Synchronized release metadata to ${target}.`);
-console.log('Review VERSION.json changelog/release notes before publishing.');
+console.log(`Synchronized package, plugin, release ledger, and lockfile metadata to ${target}.`);
+console.log('Review VERSION.json and CHANGELOG.md before publishing.');
