@@ -8,7 +8,7 @@
     "supportingLine": "Narrative engine · Editorial tooling · Podcast creation · Real impact"
   },
   "canonicalCover": {
-    "repoPath": "assets/branding/underworld-writer-release-template-1200x630.svg",
+    "repoPath": "assets/branding/underworld-writer-release-changelog-template.svg",
     "sourceStatus": "approved-artpatch-neon-underworld-svg",
     "sourceDimensions": {"width": 1200, "height": 630, "aspectRatio": 1.904762},
     "usage": "immutable visual base for README hero, changelog release art, Open Graph cards, repository release notes, and package announcements",
@@ -82,7 +82,7 @@
   "generation": {
     "releaseDataProvider": "@h4shed/rock-hardened",
     "visualRenderer": "scripts/render-release-artwork.mjs",
-    "template": "assets/branding/underworld-writer-release-template-1200x630.svg",
+    "template": "assets/branding/underworld-writer-release-changelog-template.svg",
     "changelog": "CHANGELOG.md",
     "releaseArtworkHeading": "Release Artwork",
     "output": "release-artifacts/underworld-writer-release-og-1200x630.svg",
