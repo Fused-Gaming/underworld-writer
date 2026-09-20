@@ -9,7 +9,7 @@
   },
   "canonicalCover": {
     "repoPath": "assets/branding/underworld-writer-release-cover.jpeg",
-    "sourceStatus": "provided-approved-artwork",
+    "sourceStatus": "provided-approved-artwork-pending-binary-materialization",
     "sourceDimensions": {
       "width": 1536,
       "height": 572,
@@ -17,6 +17,16 @@
     },
     "sha256": "7ec8cb4032a8b37620327f06afffbb1c5fa4240ee150db80191c26a0acc67609",
     "usage": "authoritative visual source for product releases, release notes, social release cards, repository launch graphics, and package announcements"
+  },
+  "draftArtwork": {
+    "version": "2.2.1",
+    "openGraph1200x630": {
+      "repoPath": "release-artifacts/underworld-writer-release-og-1200x630.svg",
+      "width": 1200,
+      "height": 630,
+      "status": "draft-vector-artwork",
+      "purpose": "GitHub/OpenGraph/social release card sized for the approved Underworld Writer cover identity"
+    }
   },
   "palette": {
     "void": "#020414",
@@ -71,7 +81,8 @@
     "openGraph": {
       "width": 1200,
       "height": 630,
-      "strategy": "contain canonical cover over an extended/blurred void-purple background; add version badge only in a safe margin"
+      "strategy": "contain canonical cover over an extended/blurred void-purple background; add version badge only in a safe margin",
+      "draftPath": "release-artifacts/underworld-writer-release-og-1200x630.svg"
     },
     "square": {
       "width": 1080,
