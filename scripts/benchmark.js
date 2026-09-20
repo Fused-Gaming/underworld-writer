@@ -3,7 +3,7 @@
 /**
  * Performance Benchmarking Utility
  * Measures execution time and memory usage for core operations, including
- * the podcast workspace contract introduced in 2.2.0.
+ * the canonical podcast workspace contract.
  */
 
 import fs from 'fs';
@@ -14,6 +14,7 @@ import { performance } from 'perf_hooks';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const root = path.join(__dirname, '..');
+const packageVersion = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8')).version;
 
 const registryFixture = {
   schemaVersion: '1.0',
@@ -29,7 +30,6 @@ const registryFixture = {
   ]
 };
 
-// Benchmark configuration
 const BENCHMARKS = {
   'character-validation': {
     description: 'Validate a complete three-phase character',
@@ -141,7 +141,7 @@ const BENCHMARKS = {
     iterations: 5000,
     setup: () => ({
       schemaVersion: '1.0',
-      generator: { name: '@h4shed/skill-underworld-writer', version: '2.2.0' },
+      generator: { name: '@h4shed/skill-underworld-writer', version: packageVersion },
       seriesSlug: 'insight-corruption',
       seasonNumber: 2,
       episodeNumber: 3,
@@ -149,7 +149,7 @@ const BENCHMARKS = {
     }),
     execute: (data) => Boolean(
       data.schemaVersion &&
-      data.generator?.version === '2.2.0' &&
+      data.generator?.version === packageVersion &&
       data.seriesSlug &&
       Number.isInteger(data.seasonNumber) &&
       Number.isInteger(data.episodeNumber)
@@ -208,7 +208,7 @@ class BenchmarkRunner {
     console.log('════════════════════════════════════════════');
     console.log('  Underworld Writer Performance Benchmarks');
     console.log('════════════════════════════════════════════');
-    console.log(`  Package: 2.2.0`);
+    console.log(`  Package: ${packageVersion}`);
     console.log(`  Node.js ${process.version}`);
     console.log(`  Timestamp: ${new Date().toISOString()}`);
     console.log('════════════════════════════════════════════');
@@ -266,7 +266,7 @@ class BenchmarkRunner {
     if (!fs.existsSync(benchmarksDir)) fs.mkdirSync(benchmarksDir, { recursive: true });
 
     const output = {
-      packageVersion: '2.2.0',
+      packageVersion,
       timestamp: new Date().toISOString(),
       nodeVersion: process.version,
       results: this.results
