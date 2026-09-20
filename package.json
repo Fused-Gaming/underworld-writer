@@ -40,11 +40,12 @@
     "validate:workspace": "node scripts/validate-output-structure.mjs",
     "version:sync": "node scripts/sync-version.mjs",
     "version:check": "node scripts/sync-version.mjs --check",
+    "release:art": "node scripts/render-underworld-release-art.mjs",
     "rock:validate": "npx --yes --package=@h4shed/rock-hardened@1.0.0 hardened-changelogger validate",
     "rock:evidence": "npx --yes --package=@h4shed/rock-hardened@1.0.0 hardened-changelogger ci",
     "rock:manifest": "npx --yes --package=@h4shed/rock-hardened@1.0.0 hardened-changelogger manifest",
     "validate:release": "npm run version:check && npm run validate:workspace && npm run rock:validate && npm run test:workspace && npm run test:episode1 && npm run build && npm test && npm run benchmark:workspace",
-    "release:evidence": "npm run validate:release && npm run rock:evidence",
+    "release:evidence": "npm run validate:release && npm run rock:evidence && npm run release:art",
     "prepublishOnly": "npm run release:evidence && npm run lint && npm run test:coverage"
   },
   "dependencies": {
