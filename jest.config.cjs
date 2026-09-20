@@ -2,20 +2,24 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   extensionsToTreatAsEsm: ['.ts'],
-  roots: ['<rootDir>/tests'],
-  testMatch: ['**/tests/**/*.test.ts'],
+  roots: ['<rootDir>/test'],
+  testMatch: ['**/test/**/*.test.ts'],
   moduleFileExtensions: ['ts', 'js', 'json'],
-  collectCoverageFrom: ['src/**/*.ts', '!src/**/*.d.ts'],
+  collectCoverageFrom: [
+    'dist/**/*.js',
+    '!dist/**/*.d.ts'
+  ],
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.js$': '$1',
+    '^@/(.*)$': '<rootDir>/src/$1'
   },
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {
-      useESM: true,
+      useESM: false,
       tsconfig: {
         types: ['node', 'jest'],
         rootDir: '.',
-        module: 'esnext',
+        module: 'commonjs',
       },
     }],
   },

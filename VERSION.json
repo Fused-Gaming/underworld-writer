@@ -1,10 +1,10 @@
 {
-  "version": "2.0.7",
-  "releaseDate": "2026-09-15",
+  "version": "2.1.0",
+  "releaseDate": "2026-09-20",
   "status": "stable",
   "majorVersion": 2,
-  "minorVersion": 0,
-  "patchVersion": 7,
+  "minorVersion": 1,
+  "patchVersion": 0,
   "prerelease": null,
   "metadata": {
     "nodeMinimum": "20.0.0",
@@ -95,6 +95,37 @@
     "nextSecurityAudit": "2026-10-13"
   },
   "changelog": {
+    "2.1.0": {
+      "releaseDate": "2026-09-20",
+      "highlights": [
+        "Comprehensive integration test suite for character-to-story workflows",
+        "Performance benchmarking utilities with baseline metrics",
+        "Enhanced documentation with GETTING_STARTED.md and CONTRIBUTING.md",
+        "Jest coverage optimization for compiled dist/ output",
+        "TypeScript strict mode enforcement across all source files"
+      ],
+      "breaking_changes": [],
+      "deprecations": [],
+      "new_features": [
+        "Integration tests for character-to-story workflows (character-story.test.ts)",
+        "Performance benchmarking suite (scripts/benchmark.js)",
+        "GETTING_STARTED.md with installation and quick start guide",
+        "CONTRIBUTING.md with development guidelines and code standards",
+        "Performance guide with profiling and optimization strategies"
+      ],
+      "bug_fixes": [
+        "Fixed Jest coverage configuration to collect from dist/ instead of src/",
+        "Corrected undefined variable names in phase transition tests",
+        "Fixed ESLint strict mode violations (removed any types in mcp-tools.ts)"
+      ],
+      "improvements": [
+        "Expanded test coverage with integration test scenarios",
+        "Added performance baselines for future optimization tracking",
+        "Enhanced documentation structure with comprehensive guides",
+        "Improved code quality with stricter type checking",
+        "Better developer experience with detailed setup instructions"
+      ]
+    },
     "2.0.7": {
       "releaseDate": "2026-09-15",
       "highlights": [

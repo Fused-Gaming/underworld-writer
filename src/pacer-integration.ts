@@ -55,7 +55,7 @@ export class PACERClient {
    * Query a case by case number
    * Mock implementation returns known test cases
    */
-  async queryCaseByNumber(caseNumber: string, district: string): Promise<PACERCase | null> {
+  async queryCaseByNumber(caseNumber: string, _district: string): Promise<PACERCase | null> {
     if (this.mockMode) {
       return this.getMockCase(caseNumber);
     }
@@ -66,7 +66,7 @@ export class PACERClient {
   /**
    * Query cases by defendant name
    */
-  async queryCaseByDefendant(name: string, district: string): Promise<PACERCase[]> {
+  async queryCaseByDefendant(_name: string, _district: string): Promise<PACERCase[]> {
     if (this.mockMode) {
       return [this.getMockCase('03-CR-0322') || this.createMockCase()];
     }

@@ -306,7 +306,7 @@ const skill = {
     const { UNDERWORLD_WRITER_TOOLS } = await import('./mcp-tools.js');
     return UNDERWORLD_WRITER_TOOLS;
   },
-  async initialize(_config: any): Promise<void> {
+  async initialize(_config: Record<string, unknown>): Promise<void> {
     // No special initialization needed
   },
 };
