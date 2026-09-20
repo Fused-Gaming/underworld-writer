@@ -12,11 +12,11 @@ const root = process.cwd();
 const pkg = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
 const version = valueFor("--version") || pkg.version;
 const changelogPath = valueFor("--changelog") || path.join(root, "CHANGELOG.md");
-const templatePngPath = valueFor("--template") || path.join(root, "assets/branding/underworld-writer-release-changelog-template.png");
+const templatePath = valueFor("--template") || path.join(root, "assets/branding/underworld-writer-release-changelog-template.jpg");
 const outPath = valueFor("--out") || path.join(root, "release-artifacts/underworld-writer-release-og-1200x630.svg");
 
 const changelog = fs.readFileSync(changelogPath, "utf8");
-const templatePng = fs.readFileSync(templatePngPath).toString("base64");
+const template = fs.readFileSync(templatePath).toString("base64");
 
 function xml(value) {
   return String(value)
@@ -123,7 +123,7 @@ const cards = items.map((item, index) => {
 }).join("\n");
 
 const output = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Underworld Writer v${xml(version)} release changelog">
-  <image href="data:image/png;base64,${templatePng}" x="0" y="0" width="1200" height="630" preserveAspectRatio="xMidYMid slice"/>
+  <image href="data:image/jpeg;base64,${template}" x="0" y="0" width="1200" height="630" preserveAspectRatio="xMidYMid slice"/>
   <g id="underworld-writer-release-data">
     <rect x="60" y="295" width="132" height="34" rx="4" fill="#080910"/>
     <text x="67" y="323" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900" fill="#FF31C4">v${xml(version)}</text>
