@@ -8,6 +8,8 @@ This file is authoritative for every automated agent and human contributor worki
 - `projects/<series-slug>/` contains source material: research, evidence, case files, manifests, editorial guidance, authorized voice profiles, and episode editorial packages.
 - `output/<series-slug>/` contains generated, producer-facing, publishing, and production artifacts.
 - `output/examples/` contains sample/demo output only.
+- `assets/branding/` contains canonical product/release brand definitions and approved source artwork.
+- `release-artifacts/` contains generated release cards, manifests, attestations, and other release derivatives.
 
 Generated podcast or article artifacts MUST NOT be created outside `output/`.
 
@@ -100,6 +102,32 @@ npm run editorial:check -- --series <slug> --season <n> --episode <n>
 ```
 
 Episode runtime is validated from actual spoken-word count plus fixed-duration blocks. Section timestamps or labels alone are never sufficient proof of runtime.
+
+## Release branding contract
+
+All Underworld Writer release artwork must use the approved product identity defined in:
+
+```text
+assets/branding/release-brand.json
+assets/branding/README.md
+```
+
+The canonical cover is identified as:
+
+```text
+assets/branding/underworld-writer-release-cover.jpeg
+```
+
+Agents generating release notes graphics, GitHub social cards, Open Graph cards, package announcements, or launch assets MUST:
+
+1. Read `assets/branding/release-brand.json` first.
+2. Treat the approved cover as the visual anchor instead of inventing a new theme.
+3. Preserve the `UNDERWORLD WRITER` wordmark, white mascot, protected composition, and purple/magenta palette.
+4. Use containment/background extension rather than destructive cropping for narrower aspect ratios.
+5. Keep version badges and release highlights visually subordinate to the product wordmark.
+6. Write generated derivatives to `release-artifacts/`; never overwrite canonical brand source material.
+
+If an agent cannot access the binary cover, it must use the canonical fingerprint and rules in the brand contract rather than substituting unrelated artwork.
 
 ## Forbidden generated-output locations
 
