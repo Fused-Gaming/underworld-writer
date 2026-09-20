@@ -1,6 +1,10 @@
 # Underworld Writer
-<img width="2056" height="765" alt="image" src="https://github.com/user-attachments/assets/2844a708-922e-454f-9f09-828066f19852" />
 
+![Underworld Writer v2.2.0 release notes](release-artifacts/release-card-hero.svg)
+
+> Release artwork is generated from `CHANGELOG.md` with Rock-Hardened. Regenerate the hero profile with:
+>
+> `npx --yes --package=@h4shed/rock-hardened@1.0.0 hardened-changelogger render --svg-profiles hero --no-png`
 
 **Multi-Purpose Character Development, True Crime Narratives, and Podcast Scripting Engine**
 
@@ -325,7 +329,7 @@ Transform real court cases and legal proceedings into narrative-driven books wit
 
 1. **Research Phase** — Query PACER for relevant case numbers and court documents
 2. **Character Development** — Build narrative characters based on actual litigants
-3. **Fact-Checking Phase** — Cross-reference claims against PACER records and court filings
+3. **Fact-Checking Phase** — Cross-reference claims against court documents
 4. **Editorial Amendment** — Track corrections and verify updated information
 5. **Narrative Export** — Generate book-ready markdown with sourced claims
 
