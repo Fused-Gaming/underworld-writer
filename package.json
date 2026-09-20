@@ -42,9 +42,9 @@
     "version:check": "node scripts/sync-version.mjs --check",
     "release:art": "node scripts/render-release-artwork.mjs",
     "release:art:check": "node scripts/render-release-artwork.mjs --check",
-    "rock:validate": "npx --yes --package=@h4shed/rock-hardened@1.0.0 hardened-changelogger validate",
-    "rock:evidence": "npx --yes --package=@h4shed/rock-hardened@1.0.0 hardened-changelogger ci",
-    "rock:manifest": "npx --yes --package=@h4shed/rock-hardened@1.0.0 hardened-changelogger manifest",
+    "rock:validate": "npx --yes --package=@h4shed/rock-hardened@0.8.2 hardened-changelogger validate",
+    "rock:evidence": "npx --yes --package=@h4shed/rock-hardened@0.8.2 hardened-changelogger ci",
+    "rock:manifest": "npx --yes --package=@h4shed/rock-hardened@0.8.2 hardened-changelogger manifest",
     "validate:release": "npm run version:check && npm run validate:workspace && npm run rock:validate && npm run test:workspace && npm run test:episode1 && npm run build && npm test && npm run benchmark:workspace",
     "release:evidence": "npm run validate:release && npm run rock:evidence && npm run release:art",
     "prepublishOnly": "npm run release:evidence && npm run lint && npm run test:coverage"
