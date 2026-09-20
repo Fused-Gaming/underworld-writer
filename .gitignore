@@ -152,3 +152,4 @@ release-artifacts/
 # Claude Code local configuration (may contain credentials)
 .claude/settings.local.json
 modal/audio-samples/
+episode.wav
