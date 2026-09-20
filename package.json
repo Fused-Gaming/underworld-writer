@@ -19,6 +19,7 @@
     "dev": "tsc --project tsconfig.json --watch",
     "cli": "node dist/cli.js",
     "test": "jest",
+    "test:workspace": "node --test validation-tests/*.test.mjs",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "lint": "eslint src/ test/",
@@ -33,8 +34,12 @@
     "validate:workspace": "node scripts/validate-output-structure.mjs",
     "version:sync": "node scripts/sync-version.mjs",
     "version:check": "node scripts/sync-version.mjs --check",
-    "validate:release": "npm run version:check && npm run validate:workspace && npm run build && npm test && npm run benchmark:workspace",
-    "prepublishOnly": "npm run validate:release && npm run lint && npm run test:coverage"
+    "rock:validate": "npx --yes --package=@h4shed/rock-hardened@1.0.0 hardened-changelogger validate",
+    "rock:evidence": "npx --yes --package=@h4shed/rock-hardened@1.0.0 hardened-changelogger ci",
+    "rock:manifest": "npx --yes --package=@h4shed/rock-hardened@1.0.0 hardened-changelogger manifest",
+    "validate:release": "npm run version:check && npm run validate:workspace && npm run rock:validate && npm run test:workspace && npm run build && npm test && npm run benchmark:workspace",
+    "release:evidence": "npm run validate:release && npm run rock:evidence",
+    "prepublishOnly": "npm run release:evidence && npm run lint && npm run test:coverage"
   },
   "dependencies": {
     "@h4shed/mcp-core": "^1.0.40"
