@@ -6,7 +6,8 @@ import path from 'node:path';
 const root = process.cwd();
 const registryPath = path.join(root, 'output', 'SERIES_REGISTRY.json');
 const schemaVersion = '1.0';
-const generator = { name: '@h4shed/skill-underworld-writer', version: '2.2.0' };
+const packageVersion = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8')).version;
+const generator = { name: '@h4shed/skill-underworld-writer', version: packageVersion };
 const args = process.argv.slice(2);
 
 const fail = (message) => {
@@ -41,7 +42,7 @@ const findSeries = (slug) => {
 
 function preflight() {
   const data = registry();
-  console.log('UNDERWORLD WRITER WORKSPACE CONTRACT');
+  console.log(`UNDERWORLD WRITER ${packageVersion} WORKSPACE CONTRACT`);
   console.log('Source material: projects/<series-slug>/');
   console.log('Generated output: output/<series-slug>/');
   console.log('Examples only: output/examples/');
@@ -115,7 +116,7 @@ function createSeason(slug, rawSeason) {
   const seriesConfigPath = path.join(root, series.outputRoot, 'SERIES_CONFIG.json');
   const seriesConfig = readJson(seriesConfigPath);
   seriesConfig.schemaVersion ??= schemaVersion;
-  seriesConfig.generator ??= generator;
+  seriesConfig.generator = generator;
   seriesConfig.seasons = [...series.seasons];
   writeJson(seriesConfigPath, seriesConfig);
   console.log(`Created ${slug} season ${seasonNumber}.`);
