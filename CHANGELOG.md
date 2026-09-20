@@ -9,22 +9,26 @@ Format follows Keep a Changelog and Semantic Versioning.
 ### Added
 - Future changes belong here before release.
 
-## [2.2.1] - 2026-09-19
+## [2.2.1] - 2026-09-20
 
 ### Added
-- Repository-local release-art renderer at `scripts/render-underworld-release-art.mjs`.
-- Canonical Neon Underworld raster template at `assets/branding/underworld-writer-release-changelog-template.jpg`.
-- Structured `Release Artwork` metadata so visual feature cards stay changelog-driven without auto-summarizing arbitrary long bullets.
+- Repository-local release-art renderer at `scripts/render-release-artwork.mjs`.
+- Exact approved ArtPatch release template at `assets/branding/underworld-writer-release-changelog-template.svg`.
+- Canonical 1200×630 release/Open Graph output at `release-artifacts/underworld-writer-release-og-1200x630.svg`.
+- Structured `Release Artwork` metadata so release-card copy is deterministically sourced from this changelog.
 
 ### Changed
-- Release artwork generation now reuses the approved Underworld Writer composition as an immutable visual base instead of redrawing the design from SVG primitives.
+- Advanced the 2.2.0 release line to the **2.2.1 patch release** and normalized package, plugin, release-ledger, exported-skill, and lockfile release metadata around that version.
+- Consolidated the release-branding/versioning work previously split across PRs #138 and #139 into PR #137 without discarding the 2.2.0 benchmark baseline or historical release ledger.
+- Release artwork generation now reuses the exact approved Underworld Writer ArtPatch composition as an immutable visual base instead of redrawing the design from SVG primitives.
 - Underworld Writer owns the release-art template and overlay rules while Rock-Hardened remains responsible for changelog/release evidence workflows.
-- The release renderer reads the active package version and selected release section from `CHANGELOG.md`.
+- The release renderer reads the active package version and selected release section from `CHANGELOG.md`; future release renders may replace only declared version and feature-card text zones.
+- The root README now uses the canonical generated 1200×630 SVG release asset.
 
 ### Fixed
-- Replaced the primitive SVG approximation of the release artwork with the approved Neon Underworld composition as the canonical repository release source.
-- Added a real canonical release-cover asset and a 1200×630 release derivative to the repository.
-- Changed the SVG release asset into a compatibility/output surface around the approved artwork instead of independently redrawing the brand from vector primitives.
+- Replaced primitive/generic release-art approximations with the approved Neon Underworld ArtPatch composition.
+- Preserved the complete 2.2.0 validation and benchmark evidence while adding 2.2.1 release metadata instead of overwriting the existing release ledger.
+- Corrected stale release-art documentation that referenced the retired JPEG/raster template and `render-underworld-release-art.mjs` path.
 - Updated the release-brand contract to prohibit generic mascot substitutions, primitive redraws, alternate cavern compositions, and independently regenerated title/card/footer layouts.
 - Clarified the release boundary: Rock-Hardened supplies changelog/release data; Underworld Writer owns its visual composition.
 
