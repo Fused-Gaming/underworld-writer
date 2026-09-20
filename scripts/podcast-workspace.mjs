@@ -6,7 +6,7 @@ import path from 'node:path';
 const root = process.cwd();
 const registryPath = path.join(root, 'output', 'SERIES_REGISTRY.json');
 const schemaVersion = '1.0';
-const generator = { name: '@h4shed/skill-underworld-writer', version: '2.1.0' };
+const generator = { name: '@h4shed/skill-underworld-writer', version: '2.2.0' };
 const args = process.argv.slice(2);
 
 const fail = (message) => {
