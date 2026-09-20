@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://underworld-writer.local/schemas/podcast/series.schema.json",
+  "title": "Podcast Series Config",
+  "type": "object",
+  "required": ["schemaVersion", "seriesName", "seriesSlug"],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "seriesName": { "type": "string", "minLength": 1 },
+    "seriesSlug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "generator": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
