@@ -52,7 +52,7 @@ TARGET_LUFS = -16.0
 
 
 @app.cls(
-    gpu="A10G",
+    gpu="H100",
     volumes={VOICE_PROFILES_MOUNT: voice_profiles_volume},
     scaledown_window=300,
 )
