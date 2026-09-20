@@ -25,6 +25,10 @@ const files = {
   version: readJson('VERSION.json'),
   lock: readJson('package-lock.json')
 };
+const indexPath = path.join(root, 'src', 'index.ts');
+let indexSource = fs.readFileSync(indexPath, 'utf8');
+const skillVersionMatch = /const skill = \{[\s\S]*?version:\s*'([^']+)'/.exec(indexSource);
+const skillVersion = skillVersionMatch?.[1];
 
 const errors = [];
 const warnings = [];
@@ -38,6 +42,7 @@ const warnMatch = (label, actual) => {
 requireMatch('package.json', files.package.version);
 requireMatch('plugin.json', files.plugin.version);
 requireMatch('VERSION.json', files.version.version);
+requireMatch('src/index.ts skill.version', skillVersion);
 warnMatch('package-lock.json', files.lock.version);
 warnMatch('package-lock.json packages[""]', files.lock.packages?.['']?.version);
 
@@ -67,10 +72,20 @@ files.lock.packages ??= {};
 files.lock.packages[''] ??= {};
 files.lock.packages[''].version = target;
 
+if (!skillVersionMatch) {
+  console.error('Could not locate src/index.ts skill.version');
+  process.exit(1);
+}
+indexSource = indexSource.replace(
+  /(const skill = \{[\s\S]*?version:\s*)'[^']+'/, 
+  `$1'${target}'`
+);
+
 writeJson('package.json', files.package);
 writeJson('plugin.json', files.plugin);
 writeJson('VERSION.json', files.version);
 writeJson('package-lock.json', files.lock);
+fs.writeFileSync(indexPath, indexSource);
 
-console.log(`Synchronized package, plugin, release ledger, and lockfile metadata to ${target}.`);
+console.log(`Synchronized package, plugin, release ledger, exported skill, and lockfile metadata to ${target}.`);
 console.log('Review VERSION.json and CHANGELOG.md before publishing.');
