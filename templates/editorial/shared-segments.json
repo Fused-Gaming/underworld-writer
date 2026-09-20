@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0",
+  "description": "Reusable editorial blocks. Case-specific facts must never be embedded here; interpolate only verified episode data.",
+  "podcast": {
+    "intros": [
+      "Welcome to {{seriesTitle}}, where we follow public-trust cases past the headline, into the documents, the decisions, and the consequences.",
+      "This is {{seriesTitle}}. We start with the record, separate allegation from established fact, and follow the story through its outcome.",
+      "You're listening to {{seriesTitle}} — an evidence-first look at the cases that test public trust."
+    ],
+    "sourceDisclosures": [
+      "A source note before we begin: this episode distinguishes allegations, admitted conduct, court findings, and editorial analysis. The episode source manifest identifies the record supporting each case-specific segment.",
+      "For this episode, factual claims are tied to the source manifest. Where the record reflects an allegation or a party's position rather than an established fact, we say so explicitly."
+    ],
+    "transitions": [
+      "That brings us to the next question: {{nextQuestion}}",
+      "With that part of the record established, the timeline moves to {{nextTopic}}.",
+      "The distinction matters, because the next part of the story changes how the earlier facts should be understood."
+    ],
+    "sponsor": [
+      "We'll be right back after this short break. {{sponsorCopy}}",
+      "A quick break from {{seriesTitle}}. {{sponsorCopy}}"
+    ],
+    "houseAds": [
+      "If independent, document-driven reporting is useful to you, follow {{seriesTitle}}, share this episode, and use the source links in the show notes to examine the record for yourself.",
+      "Support evidence-first reporting by following {{seriesTitle}} and sharing the source-backed episodes and articles with people who care about local accountability."
+    ],
+    "outros": [
+      "That's this episode of {{seriesTitle}}. The source manifest and accompanying article are linked with the episode. If you have records or firsthand information that can be independently verified, use the contact information in the show notes.",
+      "You've been listening to {{seriesTitle}}. Read the accompanying article and source manifest for the underlying record, and check the show notes for corrections or updates."
+    ]
+  },
+  "article": {
+    "dek": [
+      "An evidence-first companion to {{seriesTitle}} Episode {{episodeNumber}}, tracing the record from allegation through outcome.",
+      "The document-backed story behind {{seriesTitle}} Episode {{episodeNumber}} — what happened, what changed, and what the final outcome was."
+    ],
+    "sourceNotes": [
+      "Source note: this article distinguishes allegations, admitted conduct, court findings, attributed arguments, and editorial analysis. Links and claim references appear in the source manifest.",
+      "Editorial note: factual assertions in this article are drawn from the accompanying source manifest; disputed or attributed claims are identified as such."
+    ],
+    "callsToAction": [
+      "Listen to Episode {{episodeNumber}} of {{seriesTitle}} for the full narrated timeline and analysis.",
+      "The full episode, source manifest, and corrections information are available with this article."
+    ]
+  }
+}
