@@ -5,9 +5,13 @@
  * Measures execution time and memory usage for core operations
  */
 
-const fs = require('fs');
-const path = require('path');
-const { performance } = require('perf_hooks');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { performance } from 'perf_hooks';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Benchmark configuration
 const BENCHMARKS = {
@@ -246,9 +250,7 @@ class BenchmarkRunner {
 }
 
 // Run benchmarks
-if (require.main === module) {
-  const runner = new BenchmarkRunner();
-  runner.runAll();
-}
+const runner = new BenchmarkRunner();
+runner.runAll();
 
-module.exports = { BenchmarkRunner, BENCHMARKS };
+export { BenchmarkRunner, BENCHMARKS };
