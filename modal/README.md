@@ -7,10 +7,41 @@ one trained/cloned voice profile per host/character.
 
 ## Setup
 
+### Step 1: Install Modal CLI
+
 ```bash
 pip install -r modal/requirements.txt
-modal setup   # authenticate this machine against your Modal account
 ```
+
+### Step 2: Authenticate with Modal
+
+Create a Modal account at [modal.com](https://modal.com) if you don't have one.
+
+**Option A: Interactive setup (recommended for first-time configuration)**
+```bash
+modal setup   # opens browser to authenticate and saves credentials locally
+```
+
+**Option B: Environment variables (for CI/remote environments)**
+
+In Claude Code (this project), credentials are configured via `.claude/settings.json`:
+
+```json
+{
+  "env": {
+    "MODAL_TOKEN_ID": "your-token-id-here",
+    "MODAL_TOKEN_SECRET": "your-token-secret-here"
+  }
+}
+```
+
+To obtain these credentials:
+1. Log into Modal at https://modal.com
+2. Go to Settings → Tokens
+3. Create a new token or copy your existing token ID and secret
+4. Update `.claude/settings.json` with these values (see `.claude/settings.json` template)
+
+**Never commit `.claude/settings.json` with real credentials.** Use `.claude/settings.local.json` for local-only overrides (already in `.gitignore`).
 
 ## Files
 
