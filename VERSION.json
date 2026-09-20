@@ -40,6 +40,11 @@
       "description": "Canonical cross-agent project/output boundaries, manifests, scaffolding, validation, and release evidence",
       "version": "2.2.0",
       "status": "release-candidate"
+    },
+    "segmentedEditorialPackages": {
+      "description": "Evidence/claim packages render reusable, runtime-validated podcast segments and channel-specific article segments from a shared source of truth",
+      "version": "2.2.0",
+      "status": "release-candidate"
     }
   },
   "improvementsFromPreviousVersion": [
@@ -49,12 +54,40 @@
     "Added new-series, new-season, and new-episode scaffolding commands",
     "Added fixture-based workspace validation tests and workspace performance benchmarks",
     "Added release-version drift detection and synchronization tooling",
-    "Integrated @h4shed/rock-hardened for changelog validation, deterministic release evidence, and attestation"
+    "Integrated @h4shed/rock-hardened for changelog validation, deterministic release evidence, and attestation",
+    "Added segment-first podcast and article generation from one evidence/claim package",
+    "Added reusable editorial blocks for intros, disclosures, transitions, sponsor/house ads, outros, article deks, source notes, and calls-to-action",
+    "Added spoken-word runtime and article target-length validation",
+    "Rebuilt Insight Corruption Episode 1 as a 13-segment 29.52-minute package plus a 1,864-word LinkedIn article"
   ],
   "benchmarkBaseline": {
-    "note": "2.2.0 requires a fresh benchmark run. Generated benchmark JSON is intentionally ignored and should be attached to release evidence rather than treated as a permanent source file.",
     "version": "2.2.0",
-    "status": "pending-validation"
+    "status": "local-validation-complete-actions-unavailable",
+    "environment": "Node.js 22 local execution environment",
+    "workspaceMicrobenchmarksMsPerOperation": {
+      "registryLookup": 0.000238,
+      "canonicalPathConstruction": 0.001439,
+      "configValidation": 0.000249
+    },
+    "functionalEvidence": {
+      "workspaceFixtureScaffolding": "PASS",
+      "rogueOutputRejection": "PASS",
+      "unregisteredSeriesRejection": "PASS",
+      "episode1PodcastRuntime": {
+        "scriptWords": 4092,
+        "estimatedMinutes": 29.52,
+        "targetMinutes": 30,
+        "toleranceMinutes": 1,
+        "status": "PASS"
+      },
+      "episode1LinkedInArticle": {
+        "words": 1864,
+        "minimum": 1800,
+        "maximum": 2300,
+        "status": "PASS"
+      }
+    },
+    "limitations": "GitHub Actions hosted runners were unavailable because repository billing/usage was disabled; validation evidence was produced independently of Actions."
   },
   "security": {
     "vulnerabilitiesFixed": 0,
@@ -69,12 +102,16 @@
         "Single canonical output structure for podcast generation",
         "Cross-agent workspace contract and deterministic scaffolding",
         "Machine-readable registry and schemas",
+        "Segment-first podcast and article editorial packages",
+        "Reusable cross-season editorial template library",
+        "Runtime and article-length validation from generated content",
         "Workspace validation tests and benchmarks",
         "Rock-Hardened release validation and evidence pipeline"
       ],
       "breaking_changes": [],
       "deprecations": [
-        "Legacy root-level generated-script.md, podcast-output/, producer-ready/, and guest-handoff/ output locations are no longer valid workspace destinations"
+        "Legacy root-level generated-script.md, podcast-output/, producer-ready/, and guest-handoff/ output locations are no longer valid workspace destinations",
+        "Monolithic assembled podcast/article files are no longer the primary authoring surface for new evidence-based episode packages"
       ],
       "new_features": [
         "AGENTS.md cross-agent contract",
@@ -83,17 +120,24 @@
         "scripts/podcast-workspace.mjs",
         "scripts/validate-output-structure.mjs",
         "scripts/sync-version.mjs",
+        "scripts/editorial-package.mjs",
+        "templates/editorial/shared-segments.json",
         "validation-tests/workspace-contract.test.mjs",
+        "Episode package source/claim manifests under projects/<series>/episode-packages/",
         "Rock-Hardened release-contract.config.json and structured CHANGELOG.md"
       ],
       "bug_fixes": [
         "Consolidated duplicate/legacy generated-output directories without discarding source material",
         "Removed retired migration branch from workflow assumptions",
-        "Corrected version drift across primary release manifests"
+        "Corrected version drift across primary release manifests",
+        "Corrected Insight Corruption Episode 1 offense framing and removed unsupported FCPA language",
+        "Replaced Episode 1's timestamp-only runtime claim and unscripted guest dependency with measured scripted runtime"
       ],
       "improvements": [
         "Future agents scaffold output instead of inventing directory layouts",
-        "Release validation now includes workspace semantics, functional tests, benchmarks, and changelog evidence",
+        "Podcast and article formats can reuse the same vetted evidence blocks and claim IDs",
+        "Long-form outputs can be recorded, edited, synthesized, retried, and reviewed one segment at a time",
+        "Release validation now includes workspace semantics, editorial length/runtime fixtures, functional tests, benchmarks, and changelog evidence",
         "Generator version is derived from package.json for future version bumps"
       ]
     },
