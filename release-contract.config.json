@@ -7,26 +7,25 @@
     "name": "Underworld Writer",
     "tagline": "Build the story. Expose the truth. Ship what matters.",
     "brandContract": "assets/branding/release-brand.json",
-    "canonicalCover": "assets/branding/underworld-writer-release-changelog-template.jpg",
+    "canonicalCover": "assets/branding/underworld-writer-release-template-1200x630.svg",
     "fallbackIcon": "assets/underworld-writer-icon.svg"
   },
   "render": {
     "width": 1200,
     "height": 630,
     "maxHighlights": 6,
-    "artworkStrategy": "approved-raster-plus-changelog-overlays",
+    "artworkStrategy": "approved-svg-template-plus-changelog-overlays",
     "preserveProtectedRegions": true,
     "allowPrimitiveRedraw": false,
-    "renderer": "scripts/render-underworld-release-art.mjs",
-    "template": "assets/branding/underworld-writer-release-changelog-template.jpg",
+    "renderer": "scripts/render-release-artwork.mjs",
+    "template": "assets/branding/underworld-writer-release-template-1200x630.svg",
     "releaseArtworkHeading": "Release Artwork",
-    "canonicalRasterOutput": "release-artifacts/underworld-writer-release-og-1200x630.jpg",
-    "svgWrapperOutput": "release-artifacts/underworld-writer-release-og-1200x630.svg"
+    "svgOutput": "release-artifacts/underworld-writer-release-og-1200x630.svg"
   },
   "integration": {
     "releaseDataProvider": "@h4shed/rock-hardened",
     "visualDesignOwner": "Fused-Gaming/underworld-writer",
-    "note": "Rock-Hardened supplies changelog/release evidence. Underworld Writer reads CHANGELOG.md and overlays release metadata onto the approved Neon Underworld composition."
+    "note": "Rock-Hardened supplies changelog/release evidence. Underworld Writer preserves the approved ArtPatch SVG composition and updates only declared release text zones from CHANGELOG.md."
   },
   "git": {
     "defaultBaseRef": "origin/main"
