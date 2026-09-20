@@ -9,6 +9,15 @@
   "podcastFormat": "single-part episodes",
   "episodeDuration": "30 minutes per episode + one 90-second mid-roll sponsor break",
   "verificationMode": "published-sources-and-court-records",
+  "hosts": [
+    {
+      "id": "eric-william-nissen",
+      "name": "Eric William Nissen",
+      "role": "host",
+      "voiceProfileId": "voice-eric-nissen-01",
+      "voiceProfileRef": "voice-profiles/eric-william-nissen.json"
+    }
+  ],
   "seasonOneStatus": "Complete - see output/insight-corruption/. 14 of the 24 case files below have resolved outcomes and became Episodes 1-14; the other 10 are indicted/under-investigation/awaiting-sentencing and were routed to the Episode 15 \"Docket Watch\" roundup instead of being narrated with a resolved-outcome framing they don't have.",
   "episodes": [
     {

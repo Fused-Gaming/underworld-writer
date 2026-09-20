@@ -1,0 +1,29 @@
+{
+  "voiceProfileId": "voice-eric-nissen-01",
+  "authorHostId": "eric-william-nissen",
+  "displayName": "Eric William Nissen",
+  "role": "main host",
+  "show": "Insight Corruption",
+  "baseModel": "coqui/XTTS-v2",
+  "language": "en",
+  "consent": {
+    "status": "confirmed",
+    "confirmedBy": "project owner (jlucus) on behalf of host",
+    "confirmedDate": "2026-09-15",
+    "scope": "Voice cloning/synthesis of Eric William Nissen's voice for Insight Corruption podcast narration and editing, sourced from his own published social audio.",
+    "note": "Per AUDIO_GENERATION_PLAN.md Section 7, consent must be recorded before any reference audio is fine-tuned or cloned. This record tracks that approval; it does not itself constitute the audio intake."
+  },
+  "referenceAudio": {
+    "status": "pending-intake",
+    "source": "Eric William Nissen's published social audio (platform/links TBD)",
+    "requirements": [
+      "10-30s minimum of clean solo speech, no music/crosstalk/background noise",
+      "Consistent mic distance and levels across clips if combining multiple sources",
+      "Prefer conversational/narration-style delivery matching intended episode tone"
+    ],
+    "storageLocation": "Modal Volume 'voice-profiles' (never committed to this repo)",
+    "clips": []
+  },
+  "fineTunedCheckpoint": null,
+  "notes": "This record is metadata/consent tracking only. Actual audio extraction from social platforms, cleanup, and upload to the Modal Volume is a manual intake step outside this repo — see AUDIO_GENERATION_PLAN.md Section 3 for the voice profile schema this feeds into."
+}

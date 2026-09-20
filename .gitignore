@@ -141,6 +141,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+__pycache__/
 
 # Benchmark results (generated artifacts)
 benchmarks/

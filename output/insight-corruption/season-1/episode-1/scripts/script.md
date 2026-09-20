@@ -28,7 +28,8 @@ Reported motivation, per the same reporting: Personal enrichment through drug sm
 
 ---
 **[SPONSOR BREAK — 90 SECONDS — mid-roll]**
-`[PRODUCER: insert current sponsor read here — see EPISODE_CONFIG.json sponsorBreaks]`
+This episode of Insight Corruption is brought to you by [SPONSOR].
+`[PRODUCER: sponsor not yet confirmed for S1E01 — swap in the current read once booked, or replace with a house ad per EPISODE_CONFIG.json sponsorBreaks.scriptTemplate]`
 ---
 
 ## Segment 4 — The Outcome (15:00–19:00)

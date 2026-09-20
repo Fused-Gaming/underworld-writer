@@ -1,0 +1,14 @@
+{
+  "scriptOutputPath": "output/insight-corruption/season-1/episode-1/script-output.json",
+  "speakerVoiceProfiles": {
+    "narrator": "voice-eric-nissen-01",
+    "guest": "voice-eric-nissen-01",
+    "both": "voice-eric-nissen-01"
+  },
+  "episodeMeta": {
+    "pauseAfterSegment": {}
+  },
+  "introBedPath": "assets/audio/insight-corruption-intro.wav",
+  "outroBedPath": "assets/audio/insight-corruption-outro.wav",
+  "outputFileName": "insight-corruption-ep01.wav"
+}

@@ -15,6 +15,7 @@
   "sourceVerificationTier": 2,
   "caseReference": "joanne-segovia-case.json",
   "status": "scripted",
+  "scheduledAirDate": "2026-10-06T13:00:00Z",
   "length": {
     "format": "single-part",
     "parts": [
