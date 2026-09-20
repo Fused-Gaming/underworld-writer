@@ -298,7 +298,7 @@ ${phase3.interactionPoints.map(i => `- ${i}`).join('\n')}
 // Skill object for MCP integration
 const skill = {
   name: 'underworld-writer',
-  version: '2.0.7',
+  version: '2.2.0',
   description: 'Create detailed character profiles and narratives for underworld-themed stories with PACER API integration for fact-checking',
   author: 'Fused Gaming',
   license: 'Apache-2.0',
