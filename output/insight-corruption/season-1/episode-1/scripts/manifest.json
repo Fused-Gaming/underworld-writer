@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0",
+  "sourcePackage": "projects/insight-corruption/episode-packages/season-1/episode-1.json",
+  "seriesSlug": "insight-corruption",
+  "seasonNumber": 1,
+  "episodeNumber": 1,
+  "wordsPerMinute": 145,
+  "targetRuntimeMinutes": 30,
+  "estimatedRuntimeMinutes": 29.52,
+  "totalWords": 4092,
+  "runtimePass": true,
+  "segments": [
+    {"order":1,"id":"cold-open","type":"case-specific","title":"Cold Open — Start With the Outcome","wordCount":273,"estimatedSeconds":113,"claimIds":["C03","C04","C07"]},
+    {"order":2,"id":"series-intro","type":"reusable","title":"Series Intro","wordCount":21,"estimatedSeconds":9,"claimIds":[]},
+    {"order":3,"id":"source-disclosure","type":"reusable","title":"Evidence and Attribution Note","wordCount":28,"estimatedSeconds":12,"claimIds":[]},
+    {"order":4,"id":"role-and-public-trust","type":"case-specific","title":"The Position of Trust","wordCount":413,"estimatedSeconds":171,"claimIds":["C08"]},
+    {"order":5,"id":"shipment-network","type":"case-specific","title":"How the Shipment Network Worked","wordCount":552,"estimatedSeconds":228,"claimIds":["C01","C02","C05","C06"]},
+    {"order":6,"id":"investigation-and-deception","type":"case-specific","title":"The Investigation and the False Explanation","wordCount":483,"estimatedSeconds":200,"claimIds":["C01","C02","C08"]},
+    {"order":7,"id":"charge-correction-and-plea","type":"case-specific","title":"The Fentanyl Claim Was Wrong — Then Came the Guilty Plea","wordCount":415,"estimatedSeconds":172,"claimIds":["C03","C04","C05"]},
+    {"order":8,"id":"midroll","type":"sponsor","title":"Mid-Roll Break","wordCount":31,"estimatedSeconds":90,"claimIds":[]},
+    {"order":9,"id":"sentencing-context","type":"context","title":"Why a Maximum Sentence Is Not the Expected Sentence","wordCount":357,"estimatedSeconds":148,"claimIds":["C09","C10"]},
+    {"order":10,"id":"sentencing-record","type":"case-specific","title":"Why the Judge Chose Probation","wordCount":571,"estimatedSeconds":236,"claimIds":["C06","C07"]},
+    {"order":11,"id":"institutional-accountability","type":"analysis","title":"What Institutional Accountability Does — and Does Not — Mean Here","wordCount":464,"estimatedSeconds":192,"claimIds":["C08"]},
+    {"order":12,"id":"analysis-known-unknown","type":"analysis","title":"What We Know, What We Don't, and the Better Next Question","wordCount":447,"estimatedSeconds":185,"claimIds":["C03","C04","C05","C06","C07","C08","C09"]},
+    {"order":13,"id":"series-outro","type":"reusable","title":"Outro and Source CTA","wordCount":37,"estimatedSeconds":15,"claimIds":[]}
+  ]
+}

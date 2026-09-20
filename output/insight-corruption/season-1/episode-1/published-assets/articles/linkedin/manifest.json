@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "sourcePackage": "projects/insight-corruption/episode-packages/season-1/episode-1.json",
+  "channel": "linkedin",
+  "targetWords": {"minimum": 1800, "maximum": 2300},
+  "totalWords": 1864,
+  "lengthPass": true,
+  "sections": [
+    {"order":1,"id":"dek","title":"Dek","wordCount":15,"claimIds":[]},
+    {"order":2,"id":"article-source-note","title":"Source Note","wordCount":24,"claimIds":[]},
+    {"order":3,"id":"article-opening","title":"Start With the Outcome","wordCount":273,"claimIds":["C03","C04","C07"]},
+    {"order":4,"id":"article-network","title":"A Years-Long Shipment Record","wordCount":552,"claimIds":["C01","C02","C05","C06"]},
+    {"order":5,"id":"article-correction","title":"The Fentanyl Allegation Was Corrected","wordCount":415,"claimIds":["C03","C04","C05"]},
+    {"order":6,"id":"article-sentence","title":"Why the Case Ended in Probation","wordCount":571,"claimIds":["C06","C07"]},
+    {"order":7,"id":"article-cta","title":"Listen and Read the Record","wordCount":14,"claimIds":[]}
+  ]
+}
