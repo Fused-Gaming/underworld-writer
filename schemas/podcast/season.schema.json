@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://underworld-writer.local/schemas/podcast/season.schema.json",
+  "title": "Podcast Season Config",
+  "type": "object",
+  "required": ["schemaVersion", "seriesSlug", "seasonNumber", "status", "episodes"],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "seriesSlug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "seasonNumber": { "type": "integer", "minimum": 1 },
+    "status": { "type": "string", "enum": ["planned", "active", "complete", "archived"] },
+    "episodes": {
+      "type": "array",
+      "items": { "type": "integer", "minimum": 1 },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": true
+}
