@@ -1,16 +1,16 @@
 {
-  "version": "2.2.0",
-  "releaseDate": "2026-09-19",
-  "status": "release-candidate",
+  "version": "2.2.1",
+  "releaseDate": "2026-09-20",
+  "status": "patch-release-candidate",
   "majorVersion": 2,
   "minorVersion": 2,
-  "patchVersion": 0,
+  "patchVersion": 1,
   "prerelease": null,
   "metadata": {
     "nodeMinimum": "20.0.0",
     "npmMinimum": "8.0.0",
     "typescriptVersion": "5.3.2",
-    "buildNumber": 1026
+    "buildNumber": 1027
   },
   "packageInfo": {
     "name": "@h4shed/skill-underworld-writer",
@@ -45,9 +45,17 @@
       "description": "Evidence/claim packages render reusable, runtime-validated podcast segments and channel-specific article segments from a shared source of truth",
       "version": "2.2.0",
       "status": "release-candidate"
+    },
+    "releaseBranding": {
+      "description": "Canonical Neon Underworld release artwork, changelog-driven release cards, and repository-owned release rendering",
+      "version": "2.2.1",
+      "status": "patch-release-candidate"
     }
   },
   "improvementsFromPreviousVersion": [
+    "Aligned all primary release-version surfaces to 2.2.1 without discarding prior release ledger history",
+    "Canonicalized the approved ArtPatch 1200x630 Neon Underworld SVG as the release-art template and README/OpenGraph asset",
+    "Added repository-local changelog-driven release artwork generation while leaving Rock-Hardened unchanged",
     "Consolidated generated podcast artifacts beneath a single output root",
     "Added an authoritative AGENTS.md contract for Claude, ChatGPT, Copilot, Codex, and future agents",
     "Added canonical series registry plus series/season/episode JSON schemas",
@@ -89,6 +97,22 @@
     },
     "limitations": "GitHub Actions hosted runners were unavailable because repository billing/usage was disabled; validation evidence was produced independently of Actions."
   },
+  "releaseArtwork": {
+    "template": {
+      "repoPath": "assets/branding/underworld-writer-release-changelog-template.svg",
+      "width": 1200,
+      "height": 630,
+      "status": "approved-artpatch-template"
+    },
+    "openGraph": {
+      "repoPath": "release-artifacts/underworld-writer-release-og-1200x630.svg",
+      "width": 1200,
+      "height": 630,
+      "status": "canonical"
+    },
+    "renderer": "scripts/render-release-artwork.mjs",
+    "dataSource": "CHANGELOG.md > current version > Release Artwork"
+  },
   "security": {
     "vulnerabilitiesFixed": 0,
     "currentVulnerabilities": 0,
@@ -96,6 +120,32 @@
     "nextSecurityAudit": "2026-10-13"
   },
   "changelog": {
+    "2.2.1": {
+      "releaseDate": "2026-09-20",
+      "highlights": [
+        "Patch version alignment across package, plugin, release ledger, and exported MCP skill",
+        "Approved ArtPatch Neon Underworld 1200x630 release artwork made canonical",
+        "Repository-local changelog-driven release artwork renderer",
+        "README/OpenGraph release art now use the approved composition rather than primitive redraws"
+      ],
+      "breaking_changes": [],
+      "deprecations": [],
+      "new_features": [
+        "assets/branding/underworld-writer-release-changelog-template.svg",
+        "scripts/render-release-artwork.mjs",
+        "npm run release:art",
+        "npm run release:art:check"
+      ],
+      "bug_fixes": [
+        "Corrected 2.2.1 release-version drift across plugin.json, VERSION.json, and src/index.ts",
+        "Preserved prior VERSION.json release and benchmark history while incorporating the 2.2.1 branding work",
+        "Replaced generic/primitive release-art approximations with the approved ArtPatch composition"
+      ],
+      "improvements": [
+        "Future release cards can derive version/highlight copy from CHANGELOG.md while preserving the approved visual composition",
+        "Rock-Hardened remains the release-evidence provider while Underworld Writer owns repository-specific visual rendering"
+      ]
+    },
     "2.2.0": {
       "releaseDate": "2026-09-19",
       "highlights": [
@@ -196,8 +246,7 @@
       "highlights": [
         "Comprehensive dual-use case documentation",
         "PACER API integration for fact-checking",
-        "Benchmark infrastructure with DoD framework",
-        "Plugin manifest for Claude ecosystem"
+        "Benchmark infrastructure with DoD framework"
       ]
     },
     "1.0.24": {
