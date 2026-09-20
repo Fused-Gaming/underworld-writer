@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+  "seasonId": "season-01",
+  "number": 1,
+  "title": "Season 1",
+  "description": null,
+  "hostBindings": {},
+  "release": {
+    "cadence": null,
+    "timezone": "America/Los_Angeles"
+  },
+  "productionOverrides": {},
+  "brandOverrides": {},
+  "publishingOverrides": {}
+}
