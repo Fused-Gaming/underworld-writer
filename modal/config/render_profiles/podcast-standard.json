@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0",
+  "profileId": "podcast-standard",
+  "purpose": "General-purpose full-length podcast render",
+  "synthesis": {
+    "backend": "chatterbox",
+    "modelVariant": "standard",
+    "hardwarePolicy": "cheapest-compatible",
+    "preferredGpuOrder": ["T4", "L4", "A10"],
+    "seedPolicy": "episode-stable",
+    "chunking": {
+      "strategy": "sentence-aware",
+      "targetSecondsMin": 10,
+      "targetSecondsMax": 30,
+      "coalesceAdjacentSameSpeaker": true
+    },
+    "concurrency": {
+      "maxCalls": 4,
+      "retryCount": 2
+    }
+  },
+  "mix": {
+    "targetLufs": -16,
+    "truePeakDb": -1,
+    "defaultCrossfadeMs": 150,
+    "defaultPauseMs": 800,
+    "musicDucking": true
+  },
+  "output": {
+    "masterFormat": "wav",
+    "deliveryFormats": ["mp3"],
+    "sampleRateHz": 48000
+  },
+  "manifest": {
+    "writeResolvedConfig": true,
+    "recordCosts": true,
+    "recordTimings": true,
+    "recordInputHashes": true
+  }
+}
