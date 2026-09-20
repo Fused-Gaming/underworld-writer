@@ -1,4 +1,4 @@
-# 06 — The Investigation and the False Explanation
+# 07 — The Investigation and the False Explanation
 
 **Segment ID:** investigation-and-deception
 **Type:** case-specific

@@ -1,8 +1,13 @@
 {
   "voiceProfileId": "voice-eric-nissen-01",
   "authorHostId": "eric-william-nissen",
-  "baseModel": "coqui/XTTS-v2",
+  "baseModel": "resemble-ai/chatterbox",
   "language": "en",
+  "synthesis": {
+    "backend": "chatterbox",
+    "exaggeration": 0.5,
+    "cfgWeight": 0.5
+  },
   "consent": {
     "status": "confirmed",
     "confirmedBy": "project owner (jlucus) on behalf of host",

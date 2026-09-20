@@ -1,7 +1,5 @@
 # The Police Union Opioid Case Was More Complicated Than the Headline
 
-## Dek
-
 An evidence-first companion to Insight Corruption Episode 1, tracing the record from allegation through outcome.
 
 ## Source Note

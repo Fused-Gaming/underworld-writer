@@ -2,6 +2,11 @@
   "schemaVersion": "1.0",
   "description": "Reusable editorial blocks. Case-specific facts must never be embedded here; interpolate only verified episode data.",
   "podcast": {
+    "hostIntros": [
+      "I'm {{hostName}}, and this is {{seriesTitle}}.",
+      "I'm {{hostName}}. This is {{seriesTitle}}, and this episode starts with the outcome.",
+      "My name is {{hostName}}. Welcome back to {{seriesTitle}}."
+    ],
     "intros": [
       "Welcome to {{seriesTitle}}, where we follow public-trust cases past the headline, into the documents, the decisions, and the consequences.",
       "This is {{seriesTitle}}. We start with the record, separate allegation from established fact, and follow the story through its outcome.",
@@ -27,6 +32,10 @@
     "outros": [
       "That's this episode of {{seriesTitle}}. The source manifest and accompanying article are linked with the episode. If you have records or firsthand information that can be independently verified, use the contact information in the show notes.",
       "You've been listening to {{seriesTitle}}. Read the accompanying article and source manifest for the underlying record, and check the show notes for corrections or updates."
+    ],
+    "credits": [
+      "{{seriesTitle}} is an independent investigative production, written, sourced, and hosted by {{hostName}}. This episode is narrated using an authorized AI-generated version of {{hostName}}'s voice, disclosed here and in the show notes. Research and fact-checking follow the source manifest linked with this episode; if you find an error, use the corrections contact in the show notes.",
+      "Production credits: {{seriesTitle}} is written and sourced by {{hostName}} and narrated with an authorized synthetic version of {{hostName}}'s own voice, per the disclosure in the show notes. Every case-specific claim in this episode is tied to the source manifest published alongside it. Corrections and tips go through the contact information in the show notes."
     ]
   },
   "article": {

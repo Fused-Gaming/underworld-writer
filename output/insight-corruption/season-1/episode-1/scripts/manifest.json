@@ -1,27 +1,200 @@
 {
   "schemaVersion": "1.0",
+  "generatedAt": "2026-09-20T14:18:11.985Z",
   "sourcePackage": "projects/insight-corruption/episode-packages/season-1/episode-1.json",
   "seriesSlug": "insight-corruption",
   "seasonNumber": 1,
   "episodeNumber": 1,
   "wordsPerMinute": 145,
   "targetRuntimeMinutes": 30,
-  "estimatedRuntimeMinutes": 29.52,
-  "totalWords": 4092,
+  "estimatedRuntimeMinutes": 29.97,
+  "totalWords": 4158,
   "runtimePass": true,
   "segments": [
-    {"order":1,"id":"cold-open","type":"case-specific","title":"Cold Open — Start With the Outcome","wordCount":273,"estimatedSeconds":113,"claimIds":["C03","C04","C07"]},
-    {"order":2,"id":"series-intro","type":"reusable","title":"Series Intro","wordCount":21,"estimatedSeconds":9,"claimIds":[]},
-    {"order":3,"id":"source-disclosure","type":"reusable","title":"Evidence and Attribution Note","wordCount":28,"estimatedSeconds":12,"claimIds":[]},
-    {"order":4,"id":"role-and-public-trust","type":"case-specific","title":"The Position of Trust","wordCount":413,"estimatedSeconds":171,"claimIds":["C08"]},
-    {"order":5,"id":"shipment-network","type":"case-specific","title":"How the Shipment Network Worked","wordCount":552,"estimatedSeconds":228,"claimIds":["C01","C02","C05","C06"]},
-    {"order":6,"id":"investigation-and-deception","type":"case-specific","title":"The Investigation and the False Explanation","wordCount":483,"estimatedSeconds":200,"claimIds":["C01","C02","C08"]},
-    {"order":7,"id":"charge-correction-and-plea","type":"case-specific","title":"The Fentanyl Claim Was Wrong — Then Came the Guilty Plea","wordCount":415,"estimatedSeconds":172,"claimIds":["C03","C04","C05"]},
-    {"order":8,"id":"midroll","type":"sponsor","title":"Mid-Roll Break","wordCount":31,"estimatedSeconds":90,"claimIds":[]},
-    {"order":9,"id":"sentencing-context","type":"context","title":"Why a Maximum Sentence Is Not the Expected Sentence","wordCount":357,"estimatedSeconds":148,"claimIds":["C09","C10"]},
-    {"order":10,"id":"sentencing-record","type":"case-specific","title":"Why the Judge Chose Probation","wordCount":571,"estimatedSeconds":236,"claimIds":["C06","C07"]},
-    {"order":11,"id":"institutional-accountability","type":"analysis","title":"What Institutional Accountability Does — and Does Not — Mean Here","wordCount":464,"estimatedSeconds":192,"claimIds":["C08"]},
-    {"order":12,"id":"analysis-known-unknown","type":"analysis","title":"What We Know, What We Don't, and the Better Next Question","wordCount":447,"estimatedSeconds":185,"claimIds":["C03","C04","C05","C06","C07","C08","C09"]},
-    {"order":13,"id":"series-outro","type":"reusable","title":"Outro and Source CTA","wordCount":37,"estimatedSeconds":15,"claimIds":[]}
+    {
+      "order": 1,
+      "id": "cold-open",
+      "type": "case-specific",
+      "title": "Cold Open — Start With the Outcome",
+      "wordCount": 273,
+      "estimatedSeconds": 113,
+      "claimIds": [
+        "C03",
+        "C04",
+        "C07"
+      ],
+      "sha256": "4decc82ec077a9a052ce9e14028147b9787a6e26e58f31ac303d4d0bc5a9aa4f"
+    },
+    {
+      "order": 2,
+      "id": "host-intro",
+      "type": "reusable",
+      "title": "Host Introduction",
+      "wordCount": 8,
+      "estimatedSeconds": 3,
+      "claimIds": [],
+      "sha256": "1cfef2245a20eafac5fafed43191647dbfb99a2d9d10d66518df8af1d9349fea"
+    },
+    {
+      "order": 3,
+      "id": "series-intro",
+      "type": "reusable",
+      "title": "Series Intro",
+      "wordCount": 21,
+      "estimatedSeconds": 9,
+      "claimIds": [],
+      "sha256": "43a517d005cf8432badf1c9d7c43e28af521fa8a5b494a882c4fef2c7ecec67f"
+    },
+    {
+      "order": 4,
+      "id": "source-disclosure",
+      "type": "reusable",
+      "title": "Evidence and Attribution Note",
+      "wordCount": 28,
+      "estimatedSeconds": 12,
+      "claimIds": [],
+      "sha256": "717802cb86c0c5db4dc24226b156aeeaa9afc9edc0f3b21f0cf26de18a504a7b"
+    },
+    {
+      "order": 5,
+      "id": "role-and-public-trust",
+      "type": "case-specific",
+      "title": "The Position of Trust",
+      "wordCount": 413,
+      "estimatedSeconds": 171,
+      "claimIds": [
+        "C08"
+      ],
+      "sha256": "9c695dda6e765b12298495a23b2d6f5b9b6a3757d80028c6073e4bfb41fe9fb4"
+    },
+    {
+      "order": 6,
+      "id": "shipment-network",
+      "type": "case-specific",
+      "title": "How the Shipment Network Worked",
+      "wordCount": 552,
+      "estimatedSeconds": 228,
+      "claimIds": [
+        "C01",
+        "C02",
+        "C05",
+        "C06"
+      ],
+      "sha256": "e0c5bd0db13b6e652aab547796d262e0bbf67f7e930b0d58fc89b559773b91e1"
+    },
+    {
+      "order": 7,
+      "id": "investigation-and-deception",
+      "type": "case-specific",
+      "title": "The Investigation and the False Explanation",
+      "wordCount": 483,
+      "estimatedSeconds": 200,
+      "claimIds": [
+        "C01",
+        "C02",
+        "C08"
+      ],
+      "sha256": "66497b67e53ef0a9acba4d87c162f189ee03710bed2aaa9c8411fb8a0285d734"
+    },
+    {
+      "order": 8,
+      "id": "charge-correction-and-plea",
+      "type": "case-specific",
+      "title": "The Fentanyl Claim Was Wrong — Then Came the Guilty Plea",
+      "wordCount": 415,
+      "estimatedSeconds": 172,
+      "claimIds": [
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "sha256": "6ba5ca1096baddbfd72f16139bc5bdd2568d9d590122aeb1c9a5110d7dc2dda4"
+    },
+    {
+      "order": 9,
+      "id": "midroll",
+      "type": "sponsor",
+      "title": "Mid-Roll Break",
+      "wordCount": 31,
+      "estimatedSeconds": 90,
+      "claimIds": [],
+      "sha256": "175efa4a9c9305f93c5902d40ba1c5010668d291dc1946a8ba3b02ea04c22c9e"
+    },
+    {
+      "order": 10,
+      "id": "sentencing-context",
+      "type": "context",
+      "title": "Why a Maximum Sentence Is Not the Expected Sentence",
+      "wordCount": 357,
+      "estimatedSeconds": 148,
+      "claimIds": [
+        "C09",
+        "C10"
+      ],
+      "sha256": "028c90573fe3b4930faa8587a7a401f17718a1f01ba110b0f252f992bb8db87f"
+    },
+    {
+      "order": 11,
+      "id": "sentencing-record",
+      "type": "case-specific",
+      "title": "Why the Judge Chose Probation",
+      "wordCount": 571,
+      "estimatedSeconds": 236,
+      "claimIds": [
+        "C06",
+        "C07"
+      ],
+      "sha256": "4b2e58a0b2a37c2544746b8f94506a0cdd486891f166ac483dccad859a3d1d82"
+    },
+    {
+      "order": 12,
+      "id": "institutional-accountability",
+      "type": "analysis",
+      "title": "What Institutional Accountability Does — and Does Not — Mean Here",
+      "wordCount": 464,
+      "estimatedSeconds": 192,
+      "claimIds": [
+        "C08"
+      ],
+      "sha256": "c1b53f2d4802715b271793feb475eb4a523014d3fc11a4b09c44b0796a3eb6b8"
+    },
+    {
+      "order": 13,
+      "id": "analysis-known-unknown",
+      "type": "analysis",
+      "title": "What We Know, What We Don't, and the Better Next Question",
+      "wordCount": 447,
+      "estimatedSeconds": 185,
+      "claimIds": [
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "sha256": "0779e5d32976c272d1115b4b7e2c8a67adb6dfab79014c076960023f817f5b52"
+    },
+    {
+      "order": 14,
+      "id": "series-outro",
+      "type": "reusable",
+      "title": "Outro and Source CTA",
+      "wordCount": 37,
+      "estimatedSeconds": 15,
+      "claimIds": [],
+      "sha256": "00f4fffc22425d0b21b6254c03672b48bf8aee43567072c2b3fc67a20ac023ea"
+    },
+    {
+      "order": 15,
+      "id": "credits",
+      "type": "reusable",
+      "title": "Production Credits",
+      "wordCount": 58,
+      "estimatedSeconds": 24,
+      "claimIds": [],
+      "sha256": "1f52e085abf66497891dfaad5dc8ed5783acd14cab5ed28dbc1c3e85a0f1c13d"
+    }
   ]
 }

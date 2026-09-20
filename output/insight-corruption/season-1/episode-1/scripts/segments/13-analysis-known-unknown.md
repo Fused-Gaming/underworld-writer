@@ -1,4 +1,4 @@
-# 12 — What We Know, What We Don't, and the Better Next Question
+# 13 — What We Know, What We Don't, and the Better Next Question
 
 **Segment ID:** analysis-known-unknown
 **Type:** analysis

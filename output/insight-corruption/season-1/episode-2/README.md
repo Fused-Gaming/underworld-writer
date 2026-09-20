@@ -10,8 +10,8 @@
 ## Production Status
 - [x] Research complete (from existing case file)
 - [x] Sources identified (3 on file)
-- [x] Script drafted
-- [ ] Guest booked (see script.md Segment 6)
-- [ ] Recording scheduled
+- [x] Segment-first script generated (`scripts/segments/`, assembled at `scripts/assembled-script.md`) — runtime PASS at 29.45 min
+- [ ] Guest booked (see producer-briefs/brief.md)
+- [ ] Recording scheduled — blocked on Modal voice-profile reference-audio intake (see `projects/insight-corruption/voice-profiles/eric-william-nissen.json`, `referenceAudio.status: "pending-intake"`)
 - [ ] Fact-check re-verified as of air date
 - [ ] Published

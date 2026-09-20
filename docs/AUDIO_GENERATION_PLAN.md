@@ -1,3 +1,5 @@
+> **Superseded model choice:** the synthesis backend described below (Coqui XTTS-v2) has been replaced by Chatterbox per `modal/CHATTERBOX_INTEGRATION_PLAN.md` (Phase 1 implemented in `modal/app.py`/`modal/backends/chatterbox.py`). The orchestration architecture on this page — Modal Volumes, warm-loaded model class, CPU-side assembly, consent gating — is still current; only the model-choice section is out of date.
+
 # Audio Generation Plan — Hugging Face Voice Models on Modal.com
 
 Design for turning a generated `ScriptOutput` (text) into a mixed, edited

@@ -1,4 +1,4 @@
-# Start With the Outcome
+## Start With the Outcome
 
 A former executive director of a police officers’ union admits to illegally importing a Schedule II opioid. Federal investigators say the shipments stretched across years, arrived from multiple countries, and were disguised behind ordinary customs descriptions. Thousands of pills were intercepted. Investigators said she used both personal and office computers, and at least one police-union shipping account was used to send drugs onward inside the United States.
 

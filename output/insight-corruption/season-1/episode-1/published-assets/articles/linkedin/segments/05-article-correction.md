@@ -1,4 +1,4 @@
-# The Fentanyl Allegation Was Corrected
+## The Fentanyl Allegation Was Corrected
 
 The most important correction in the entire case concerns fentanyl.
 

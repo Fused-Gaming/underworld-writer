@@ -1,4 +1,4 @@
-# 07 — The Fentanyl Claim Was Wrong — Then Came the Guilty Plea
+# 08 — The Fentanyl Claim Was Wrong — Then Came the Guilty Plea
 
 **Segment ID:** charge-correction-and-plea
 **Type:** case-specific

@@ -31,6 +31,7 @@
     "benchmark": "npm run build && node scripts/benchmark.js",
     "benchmark:workspace": "node scripts/benchmark.js",
     "verify-episode-claims": "node scripts/verify-episode-claims.mjs",
+    "audio:compress-oversized": "node scripts/convert-large-audio.mjs",
     "agent:preflight": "node scripts/podcast-workspace.mjs preflight",
     "podcast:new-series": "node scripts/podcast-workspace.mjs series create",
     "podcast:new-season": "node scripts/podcast-workspace.mjs season create",

@@ -1,4 +1,4 @@
-# 02 — Series Intro
+# 03 — Series Intro
 
 **Segment ID:** series-intro
 **Type:** reusable

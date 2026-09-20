@@ -2,7 +2,12 @@
   "voiceProfileId": "voice-eric-nissen-01",
   "voiceActor": "Eric William Nissen",
   "language": "en",
-  "model": "xtts_v2",
+  "baseModel": "resemble-ai/chatterbox",
+  "synthesis": {
+    "backend": "chatterbox",
+    "exaggeration": 0.5,
+    "cfgWeight": 0.5
+  },
   "referenceAudio": {
     "clips": [
       {
@@ -14,8 +19,10 @@
   },
   "consent": {
     "status": "confirmed",
-    "source": "Instagram published content",
-    "timestamp": "2026-09-20"
+    "confirmedBy": "project owner (jlucus) on behalf of host",
+    "confirmedDate": "2026-09-15",
+    "scope": "Voice cloning/synthesis of Eric William Nissen's voice for Insight Corruption podcast narration and editing, sourced from his own published social audio.",
+    "source": "Instagram published content"
   },
-  "notes": "Voice profile for Eric William Nissen, used for Underworld Writer podcast narration"
+  "notes": "Runtime copy of projects/insight-corruption/voice-profiles/eric-william-nissen.json for upload to the Modal 'underworld-voice-profiles' volume; model/backend updated to Chatterbox per modal/CHATTERBOX_INTEGRATION_PLAN.md Phase 1 (2026-09-20). FLAG FOR HUMAN REVIEW: this file's referenceAudio.clips lists a clip as already sourced, but the canonical consent record (projects/insight-corruption/voice-profiles/eric-william-nissen.json) still shows referenceAudio.status as \"pending-intake\" with no clips recorded. Reconcile which is accurate — and confirm the clip itself has actually been uploaded to the Modal Volume, not just described here — before this profile is used for synthesis; VoiceSynthesizer refuses to run without both a confirmed consent record and an uploaded clip."
 }

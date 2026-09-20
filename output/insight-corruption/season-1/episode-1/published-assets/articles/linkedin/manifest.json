@@ -1,17 +1,86 @@
 {
   "schemaVersion": "1.0",
+  "generatedAt": "2026-09-20T14:18:11.985Z",
   "sourcePackage": "projects/insight-corruption/episode-packages/season-1/episode-1.json",
   "channel": "linkedin",
-  "targetWords": {"minimum": 1800, "maximum": 2300},
+  "targetWords": {
+    "minimum": 1800,
+    "maximum": 2300
+  },
   "totalWords": 1864,
   "lengthPass": true,
   "sections": [
-    {"order":1,"id":"dek","title":"Dek","wordCount":15,"claimIds":[]},
-    {"order":2,"id":"article-source-note","title":"Source Note","wordCount":24,"claimIds":[]},
-    {"order":3,"id":"article-opening","title":"Start With the Outcome","wordCount":273,"claimIds":["C03","C04","C07"]},
-    {"order":4,"id":"article-network","title":"A Years-Long Shipment Record","wordCount":552,"claimIds":["C01","C02","C05","C06"]},
-    {"order":5,"id":"article-correction","title":"The Fentanyl Allegation Was Corrected","wordCount":415,"claimIds":["C03","C04","C05"]},
-    {"order":6,"id":"article-sentence","title":"Why the Case Ended in Probation","wordCount":571,"claimIds":["C06","C07"]},
-    {"order":7,"id":"article-cta","title":"Listen and Read the Record","wordCount":14,"claimIds":[]}
+    {
+      "order": 1,
+      "id": "dek",
+      "title": "Dek",
+      "wordCount": 15,
+      "claimIds": [],
+      "sha256": "3af349f8aca7607f40d07664cb2d1107d12dd75ae4703f8d500064da67d52650"
+    },
+    {
+      "order": 2,
+      "id": "article-source-note",
+      "title": "Source Note",
+      "wordCount": 24,
+      "claimIds": [],
+      "sha256": "805818798eb029520e26c6714226719788fdd5eaade2b3ff56b5a8c87c576d5b"
+    },
+    {
+      "order": 3,
+      "id": "article-opening",
+      "title": "Start With the Outcome",
+      "wordCount": 273,
+      "claimIds": [
+        "C03",
+        "C04",
+        "C07"
+      ],
+      "sha256": "4decc82ec077a9a052ce9e14028147b9787a6e26e58f31ac303d4d0bc5a9aa4f"
+    },
+    {
+      "order": 4,
+      "id": "article-network",
+      "title": "A Years-Long Shipment Record",
+      "wordCount": 552,
+      "claimIds": [
+        "C01",
+        "C02",
+        "C05",
+        "C06"
+      ],
+      "sha256": "e0c5bd0db13b6e652aab547796d262e0bbf67f7e930b0d58fc89b559773b91e1"
+    },
+    {
+      "order": 5,
+      "id": "article-correction",
+      "title": "The Fentanyl Allegation Was Corrected",
+      "wordCount": 415,
+      "claimIds": [
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "sha256": "6ba5ca1096baddbfd72f16139bc5bdd2568d9d590122aeb1c9a5110d7dc2dda4"
+    },
+    {
+      "order": 6,
+      "id": "article-sentence",
+      "title": "Why the Case Ended in Probation",
+      "wordCount": 571,
+      "claimIds": [
+        "C06",
+        "C07"
+      ],
+      "sha256": "4b2e58a0b2a37c2544746b8f94506a0cdd486891f166ac483dccad859a3d1d82"
+    },
+    {
+      "order": 7,
+      "id": "article-cta",
+      "title": "Listen and Read the Record",
+      "wordCount": 14,
+      "claimIds": [],
+      "sha256": "5a776f0a9216f75db1b12e5cacb9ce1618f88db0edd5d940127cc192758f974d"
+    }
   ]
 }

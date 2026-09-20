@@ -1,4 +1,4 @@
-# Why the Case Ended in Probation
+## Why the Case Ended in Probation
 
 By January 2025, the central question was no longer whether Segovia would accept criminal responsibility. She had pleaded guilty. The question was what punishment was appropriate.
 

@@ -1,4 +1,4 @@
-# 05 — How the Shipment Network Worked
+# 06 — How the Shipment Network Worked
 
 **Segment ID:** shipment-network
 **Type:** case-specific

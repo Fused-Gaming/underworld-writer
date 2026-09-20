@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-20T14:18:12.060Z",
+  "sourcePackage": "projects/insight-corruption/episode-packages/season-1/episode-2.json",
+  "channel": "linkedin",
+  "targetWords": {
+    "minimum": 1800,
+    "maximum": 2300
+  },
+  "totalWords": 2250,
+  "lengthPass": true,
+  "sections": [
+    {
+      "order": 1,
+      "id": "dek",
+      "title": "Dek",
+      "wordCount": 18,
+      "claimIds": [],
+      "sha256": "b80f2beb6b15bfed1096da6365d20b54064beb083112dfa6897f71ba1e8c74de"
+    },
+    {
+      "order": 2,
+      "id": "article-source-note",
+      "title": "Source Note",
+      "wordCount": 22,
+      "claimIds": [],
+      "sha256": "3fc9d9a9400539bf6f70a6fed36933beea27c70494c325b552a72408eed4f71a"
+    },
+    {
+      "order": 3,
+      "id": "article-opening",
+      "title": "The Restitution Question",
+      "wordCount": 368,
+      "claimIds": [
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "sha256": "e1b424b24cc11f84c9d73e437802c09267c9285e19fa30196bada9ede638e92f"
+    },
+    {
+      "order": 4,
+      "id": "article-scheme",
+      "title": "Nearly Four Million Dollars, Four Years",
+      "wordCount": 346,
+      "claimIds": [
+        "C02"
+      ],
+      "sha256": "b6cbd2b7400ba1b39d87f86266af8d1d109ea8e82fc0e4435b8518b2d258de96"
+    },
+    {
+      "order": 5,
+      "id": "article-sentencing",
+      "title": "The Restitution Strategy",
+      "wordCount": 373,
+      "claimIds": [
+        "C03",
+        "C04"
+      ],
+      "sha256": "45dbe881b7966da8a7ca2b89917528e7eb03b314e172b7acd0e2f55884535814"
+    },
+    {
+      "order": 6,
+      "id": "article-context",
+      "title": "Why Restitution Moves a Federal Sentence",
+      "wordCount": 437,
+      "claimIds": [
+        "C06",
+        "C07"
+      ],
+      "sha256": "15bbefe5eef9f07518f8e6b0c57f395f5b0ab5cc5b0efca9c2b9cbde16ab2df9"
+    },
+    {
+      "order": 7,
+      "id": "article-controls",
+      "title": "What Would Have Caught This Sooner",
+      "wordCount": 420,
+      "claimIds": [
+        "C01",
+        "C02"
+      ],
+      "sha256": "9567b582707a27483494f0d7f6c56675bc8a3eba32895a652e8bfd81f50d9536"
+    },
+    {
+      "order": 8,
+      "id": "article-pattern",
+      "title": "A Pattern This Season Keeps Finding",
+      "wordCount": 253,
+      "claimIds": [
+        "C03",
+        "C04"
+      ],
+      "sha256": "0ade3159b10362a36e84cb13fe379195c22c22a81a3c3981d39c0d96feb330ef"
+    },
+    {
+      "order": 9,
+      "id": "article-cta",
+      "title": "Listen and Read the Record",
+      "wordCount": 13,
+      "claimIds": [],
+      "sha256": "ec7140834baba66f59f847e96dcf103e773b7662ab43f28e21157cdc6e183370"
+    }
+  ]
+}
