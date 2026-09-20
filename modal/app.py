@@ -315,9 +315,21 @@ def generate_episode_audio(episode_config_json: str) -> str:
         outro_bed_path=config.get("outroBedPath"),
     )
 
+    # Write to Modal volume
     output_path = Path(EPISODE_OUTPUT_MOUNT) / config["outputFileName"]
     output_path.write_bytes(final_audio)
     episode_output_volume.commit()
+
+    # Also write to local output directory for accessibility
+    meta = config.get("episodeMeta", {})
+    series = meta.get("series", "")
+    season_num = meta.get("seasonNumber", 1)
+    ep_num = meta.get("episodeNumber", 1)
+    local_output_dir = Path("/root/output") / series / f"season-{season_num}" / f"episode-{ep_num}"
+    local_output_dir.mkdir(parents=True, exist_ok=True)
+    local_output_path = local_output_dir / "episode.wav"
+    local_output_path.write_bytes(final_audio)
+
     return str(output_path)
 
 
