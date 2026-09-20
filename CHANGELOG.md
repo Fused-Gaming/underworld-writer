@@ -9,6 +9,16 @@ Format follows Keep a Changelog and Semantic Versioning.
 ### Added
 - Future changes belong here before release.
 
+## [2.2.1] - 2026-09-20
+
+### Added
+- Drafted a properly sized **1200×630** Underworld Writer release artwork asset at `release-artifacts/underworld-writer-release-og-1200x630.svg`.
+
+### Changed
+- Bumped the package/plugin patch version to **2.2.1** for release-branding follow-up work.
+- Registered the 2.2.1 OpenGraph artwork draft in `assets/branding/release-brand.json`.
+- Clarified that the supplied 1536×572 cover remains the canonical source identity while generated release cards live under `release-artifacts/`.
+
 ## [2.2.0] - 2026-09-19
 
 ### Added
