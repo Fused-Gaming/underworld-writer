@@ -1,10 +1,9 @@
 # Insight Corruption
 
-Season 1 — 15 episodes, single-part format, 30 minutes + one 90-second mid-roll sponsor break per episode.
+Season 1 — 15 episodes, single-part format, 30 minutes + one 90-second mid-roll
+sponsor break per episode.
 
-## Canonical output location
-
-All generated or producer-facing **Insight Corruption** artifacts belong under this directory:
+## Canonical workspace
 
 ```text
 output/insight-corruption/
@@ -12,26 +11,27 @@ output/insight-corruption/
 ├── SERIES_CONFIG.json
 ├── production/
 │   ├── assets/
-│   │   └── linkedin-headers/
 │   └── voice/
 └── season-1/
+    ├── SEASON_CONFIG.json
     ├── episode-1/
-    │   ├── EPISODE_CONFIG.json
-    │   ├── README.md
-    │   ├── planning/
-    │   ├── producer-briefs/
-    │   ├── published-assets/
-    │   ├── scripts/
-    │   └── verification-report.json
-    ├── episode-2/
-    └── … episode-15/
+    ├── ...
+    └── episode-15/
 ```
 
-Do **not** create generated episode trees under `projects/`. The `projects/insight-corruption/` directory is reserved for source/input material such as case files, the project manifest, producer guidance, and voice-profile definitions.
+Source/research material remains under `projects/insight-corruption/`; generated
+and producer-facing artifacts belong here under `output/`.
 
-Legacy generated material from the former `projects/corruption-insight/` tree has been preserved inside the matching episode's `planning/legacy-corruption-insight/` directory. Legacy social assets were moved to `production/assets/`.
+Before creating future seasons or episodes, agents should run:
 
-## Season 1
+```bash
+npm run agent:preflight
+npm run podcast:new-season -- insight-corruption <season-number>
+npm run podcast:new-episode -- insight-corruption <season-number> <episode-number>
+npm run validate:workspace
+```
+
+The authoritative cross-agent repository contract is `/AGENTS.md`.
 
 | Ep | Subject | Title | Tier |
 |----|---------|-------|------|
@@ -51,4 +51,5 @@ Legacy generated material from the former `projects/corruption-insight/` tree ha
 | 14 | Harry Hu | Harry Hu: Bribery, Corruption | 2 |
 | 15 | (10-case roundup) | The Docket Watch | 2 |
 
-See `projects/insight-corruption/PROJECT_MANIFEST.json` for the full 24-case source library and the resolved/pending split rationale.
+See `PROJECT_MANIFEST.json` in `projects/insight-corruption/` for the full
+24-case source library and the resolved/pending split rationale.
