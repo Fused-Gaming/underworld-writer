@@ -1,74 +1,129 @@
 # Underworld Writer Release Branding
 
-This directory defines the canonical visual contract for Underworld Writer releases.
+This directory defines the canonical visual contract for **Underworld Writer** release artwork.
 
-## Canonical cover
+## Canonical release design
 
-Approved artwork: `underworld-writer-release-cover.jpeg`
+The approved repository-owned release composition is the **Neon Underworld Release Changelog** design.
 
-The approved source is the wide Fused Gaming / Open Source cover featuring the `UNDERWORLD WRITER` wordmark, white mascot, purple-magenta cavern environment, and the line:
-
-> Build the world. Track the truth. Ship the story.
-
-Expected source dimensions: **1536 × 572**.
-
-Approved source fingerprint:
+Canonical generated artifact:
 
 ```text
-SHA-256 7ec8cb4032a8b37620327f06afffbb1c5fa4240ee150db80191c26a0acc67609
+release-artifacts/underworld-writer-release-og-1200x630.svg
 ```
 
-Until the binary is materialized at the canonical path, agents must treat that fingerprint and `release-brand.json` as the identity of the approved artwork supplied for the v2.2.0 release work.
-
-## Source of truth
-
-Machine-readable rules live in:
+Machine-readable design contract:
 
 ```text
 assets/branding/release-brand.json
 ```
 
-Release automation, Rock-Hardened integration, coding agents, design agents, and humans should read that contract instead of inventing per-release visual styles.
+Repository render configuration:
 
-## Visual hierarchy
+```text
+release-contract.config.json
+```
+
+Rock-Hardened remains the changelog/release-data renderer. **Underworld Writer owns the visual design.** Do not modify Rock-Hardened solely to change this repository's artwork.
+
+## Visual identity
+
+The release graphic must preserve this hierarchy:
 
 1. `FUSED GAMING / OPEN SOURCE`
 2. `UNDERWORLD WRITER`
-3. `CHARACTER SYSTEMS · NARRATIVE ENGINE · EDITORIAL CONTROL`
-4. `Build the world. Track the truth. Ship the story.`
-5. Optional release annotation such as `v2.2.0 · RELEASE`
+3. `NARRATIVE ENGINE · EDITORIAL TOOLING · PODCAST CREATION · REAL IMPACT`
+4. release/version row such as `v2.2.1 RELEASE`
+5. `BUILD THE STORY. EXPOSE THE TRUTH. SHIP WHAT MATTERS.`
+6. four to six current-release feature cards
+7. repository/footer identity
 
-Release annotations are additions to the approved artwork, not replacements for its identity.
+The scene uses a cinematic black/purple cavern environment, a neon-magenta portal or vertical energy beam, and a stitched voodoo-doll mascot on the right side.
+
+## Mascot
+
+The recurring release mascot is a stitched voodoo doll inspired by the CC0 SVG Repo asset:
+
+```text
+https://www.svgrepo.com/svg/321677/voodoo-doll
+```
+
+The mascot may be stylized to fit the Underworld Writer visual language, but it must remain recognizable as a cloth/rag-doll form with seams, stitched or button-like facial details, pins, and magenta rim lighting.
 
 ## Palette
 
 | Token | Hex | Use |
 |---|---|---|
-| `void` | `#020414` | primary background / extension field |
-| `deepViolet` | `#1D103B` | dark secondary field |
-| `cavernPurple` | `#421968` | environmental purple |
-| `electricViolet` | `#782198` | secondary accent |
-| `writerMagenta` | `#C739CC` | primary release accent |
-| `ghostWhite` | `#F4EAFA` | high-emphasis type / mascot-adjacent UI |
-| `mistLavender` | `#CFAEE5` | soft secondary type/accent |
-| `mutedStone` | `#716F7B` | low-emphasis metadata |
+| `void` | `#03040A` | main background |
+| `panel` | `#050813` | feature cards/footer |
+| `deepViolet` | `#12051C` | cavern shadows |
+| `cavernPurple` | `#35104E` | environmental midtone |
+| `electricViolet` | `#9D20F3` | glow/supporting accent |
+| `writerMagenta` | `#FF2AC8` | primary accent |
+| `hotMagenta` | `#FF40CE` | release/version emphasis |
+| `ghostWhite` | `#F7F7FB` | primary text |
+| `mistLavender` | `#CFD3DD` | secondary text |
+| `mutedStone` | `#70809D` | low-emphasis metadata |
 
-The canonical cover remains the authority if sampled colors differ slightly because of compression, glow, or gradients.
+## Layout contract — 1200 × 630
 
-## Release derivatives
+- **Upper left:** product identity and descriptor.
+- **Upper/right center:** cavern scene, portal/light beam, mascot.
+- **Left middle:** version + `RELEASE` treatment and release tagline.
+- **Lower third:** four to six changelog-driven feature cards.
+- **Footer:** repository identity, `OPEN NARRATIVES. REAL CHANGE.`, and changelog/render metadata.
 
-- **1536 × 572:** use the approved cover directly.
-- **1280 × 640 GitHub social:** contain the cover over a dark purple/void extension rather than cropping the title or mascot.
-- **1200 × 630 Open Graph:** same containment rule; version badge may be added in a safe margin.
-- **1080 × 1080 square:** frame/inset the approved cover instead of center-cropping it.
+Essential text must always sit on a dark/high-contrast field. Never place release copy directly over a visually noisy portion of the cavern scene.
 
-Do not stretch, recolor the mascot, replace the wordmark, or cover protected visual regions.
+## Feature cards
+
+Preferred recurring card categories are:
+
+- `SEGMENT-FIRST`
+- `VOICE READY`
+- `ROCK-HARDENED`
+- `OPEN SOURCE`
+- `REAL IMPACT`
+- `BUILT FOR MORE`
+
+These labels are part of the visual language, but their descriptions must be derived from the **current** changelog/release. Do not preserve stale feature claims from an older release.
+
+## Generation flow
+
+```text
+CHANGELOG.md
+     │
+     ▼
+Rock-Hardened release data
+     │
+     ▼
+release-contract.config.json
+     │
+     ▼
+assets/branding/release-brand.json
+     │
+     ▼
+release-artifacts/underworld-writer-release-og-1200x630.svg
+     │
+     ├── README hero
+     ├── Open Graph / social release asset
+     └── release evidence
+```
+
+The release asset is derivative output. The **design contract**, not an individual generated release image, controls future artwork.
+
+## Format adaptations
+
+- **1200 × 630:** canonical README/Open Graph release composition.
+- **1280 × 640:** preserve the same left-brand/right-mascot split and feature cards.
+- **1536 × 572:** reduce card height before sacrificing protected brand/mascot regions.
+- **1080 × 1080:** stack the brand/release region above the scene and cards; do not center-crop the wide design.
 
 ## Repository boundary
 
 ```text
-assets/branding/        canonical brand definitions and source artwork
-release-artifacts/      generated release cards, manifests, attestations, and derivatives
+assets/branding/        repository-owned design contract and guidance
+release-artifacts/      generated changelog/release derivatives
 ```
 
-Generated artwork must never overwrite the canonical source asset.
+Future agents must preview any materially new composition before replacing this design system.
