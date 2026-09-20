@@ -310,5 +310,11 @@ def generate_episode_audio(episode_config_json: str) -> str:
 
 @app.local_entrypoint()
 def main(episode_config: str):
-    result_path = generate_episode_audio.remote(episode_config)
-    print(f"Episode audio rendered to: {result_path}")
+    try:
+        result_path = generate_episode_audio.remote(episode_config)
+        print(f"Episode audio rendered to: {result_path}")
+    finally:
+        # Automatically shut down the Modal app after generation completes
+        # to avoid unnecessary cloud compute charges.
+        print("Shutting down Modal app...")
+        app.stop()
