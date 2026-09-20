@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0",
+  "episodeId": "s01e01",
+  "identity": {
+    "seasonNumber": 1,
+    "episodeNumber": 1,
+    "title": "Episode Title",
+    "subtitle": null,
+    "slug": "episode-title",
+    "description": "",
+    "tags": [],
+    "explicit": false
+  },
+  "content": {
+    "scriptOutputRef": "script-output.json",
+    "researchRef": null,
+    "sourcePackageRef": null
+  },
+  "cast": {
+    "host": "voice:default-host",
+    "narrator": "voice:default-host"
+  },
+  "timeline": [
+    {
+      "id": "intro",
+      "type": "asset.audio",
+      "assetRole": "intro"
+    },
+    {
+      "id": "main-script",
+      "type": "script.generated",
+      "source": "content.scriptOutputRef",
+      "speakerResolution": "cast"
+    },
+    {
+      "id": "outro",
+      "type": "asset.audio",
+      "assetRole": "outro"
+    }
+  ],
+  "production": {
+    "renderProfile": "podcast-standard",
+    "pronunciationOverrides": {},
+    "pauseOverridesMs": {},
+    "mixOverrides": {}
+  },
+  "publishing": {
+    "scheduledAt": null,
+    "showNotes": "",
+    "chapters": [],
+    "artworkOverride": null,
+    "destinations": []
+  },
+  "extensions": {}
+}
