@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "seasonId": "season-01",
+  "number": 1,
+  "title": "Season 1",
+  "description": "Initial Insight Corruption season.",
+  "hostBindings": {
+    "host": "voice-eric-nissen-01",
+    "narrator": "voice-eric-nissen-01"
+  },
+  "release": {
+    "cadence": null,
+    "timezone": "America/Los_Angeles"
+  },
+  "productionOverrides": {
+    "targetDurationMinutes": 30
+  },
+  "brandOverrides": {},
+  "publishingOverrides": {}
+}

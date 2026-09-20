@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    image: underworld-writer:builder-latest
+    container_name: underworld-writer-builder
+    command: npm run build
+    environment:
+      - NODE_ENV=production
+
+  validator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: validator
+    image: underworld-writer:validator-latest
+    container_name: underworld-writer-validator
+    depends_on:
+      builder:
+        condition: service_completed_successfully
+    command: npm run test:workspace
+    environment:
+      - NODE_ENV=production
+
+  runtime:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    image: underworld-writer:latest
+    container_name: underworld-writer-runtime
+    depends_on:
+      validator:
+        condition: service_completed_successfully
+    command: node dist/cli.js --help
+
+  # Development image with TypeScript watching
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    image: underworld-writer:dev
+    container_name: underworld-writer-dev
+    volumes:
+      - .:/workspace
+      - /workspace/node_modules
+    command: npm run dev
+    environment:
+      - NODE_ENV=development
