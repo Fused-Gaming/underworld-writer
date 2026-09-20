@@ -1,8 +1,8 @@
 # Underworld Writer
 
-![Underworld Writer v2.2.1 release changelog](release-artifacts/underworld-writer-release-og-1200x630.jpg)
+![Underworld Writer v2.2.1 release changelog](release-artifacts/underworld-writer-release-og-1200x630.svg)
 
-> **Release artwork:** Rock-Hardened supplies changelog/release data; Underworld Writer owns the visual design contract in `assets/branding/release-brand.json`. The canonical README/Open Graph source is the approved Neon Underworld composition at `assets/branding/underworld-writer-release-cover.jpg`, with derivatives emitted to `release-artifacts/`.
+> **Release artwork:** Rock-Hardened supplies changelog/release evidence; Underworld Writer owns the visual design contract in `assets/branding/release-brand.json`. The immutable visual template is `assets/branding/underworld-writer-release-changelog-template.svg`, imported byte-for-byte from ArtPatch. `npm run release:art` regenerates only the declared changelog-driven text zones; `npm run release:art:check` verifies the committed artwork is current.
 
 **Current branch version: 2.2.1**  
 Multi-purpose character development, fact-sourced true-crime editorial tooling, and segment-first podcast/article production.
@@ -239,6 +239,8 @@ Underworld Writer uses [`@h4shed/rock-hardened`](https://www.npmjs.com/package/@
 ```bash
 npm run version:check
 npm run rock:validate
+npm run release:art
+npm run release:art:check
 npm run validate:release
 npm run release:evidence
 ```
@@ -254,7 +256,7 @@ npm run release:evidence
 - Jest tests
 - workspace benchmarks
 
-Release artwork uses repository-owned branding: Rock-Hardened provides release/changelog data, while `assets/branding/release-brand.json` and the approved canonical cover control the Underworld Writer composition. Agents must not redraw the approved release design from primitive SVG shapes.
+Release artwork uses repository-owned branding: Rock-Hardened provides release/changelog data, while `assets/branding/release-brand.json` and the approved ArtPatch SVG control the Underworld Writer composition. Agents must not redraw the approved release design from primitive SVG shapes.
 
 ## Versioning
 
