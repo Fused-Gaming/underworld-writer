@@ -61,9 +61,7 @@ function resolveShared(kind, item) {
 }
 
 function renderPodcastSegment(segment, index) {
-  const body = segment.shared
-    ? resolveShared('podcast', segment)
-    : segment.body;
+  const body = segment.shared ? resolveShared('podcast', segment) : segment.body;
   if (!body?.trim()) throw new Error(`Podcast segment ${segment.id} has no body`);
   const count = words(body);
   const fixed = segment.fixedDurationSeconds ?? null;
@@ -83,18 +81,29 @@ function renderPodcastSegment(segment, index) {
   return { ...segment, body, wordCount: count, estimatedSeconds: seconds, markdown: header };
 }
 
+const podcastSegments = spec.podcast.segments.map(renderPodcastSegment);
+const podcastById = new Map(podcastSegments.map((segment) => [segment.id, segment]));
+
 function renderArticleSection(section, index) {
-  const body = section.shared
-    ? resolveShared('article', section)
-    : section.body;
+  let body;
+  let claimIds = section.claimIds ?? [];
+  if (section.shared) {
+    body = resolveShared('article', section);
+  } else if (section.fromPodcast) {
+    const source = podcastById.get(section.fromPodcast);
+    if (!source) throw new Error(`Article section ${section.id} references unknown podcast segment ${section.fromPodcast}`);
+    body = source.body;
+    if (!claimIds.length) claimIds = source.claimIds ?? [];
+  } else {
+    body = section.body;
+  }
   if (!body?.trim()) throw new Error(`Article section ${section.id} has no body`);
   const count = words(body);
   const heading = section.headingLevel === 1 ? '# ' : '## ';
   const markdown = `${heading}${section.title}\n\n${body.trim()}\n`;
-  return { ...section, body, wordCount: count, markdown, index };
+  return { ...section, body, claimIds, wordCount: count, markdown, index };
 }
 
-const podcastSegments = spec.podcast.segments.map(renderPodcastSegment);
 const spokenSeconds = podcastSegments.reduce((sum, s) => sum + s.estimatedSeconds, 0);
 const spokenWords = podcastSegments.reduce((sum, s) => sum + s.wordCount, 0);
 const targetSeconds = spec.podcast.targetRuntimeMinutes * 60;
@@ -124,7 +133,7 @@ const assembledScript = [
 ].join('\n');
 write(`${outputRoot}/scripts/assembled-script.md`, assembledScript);
 
-const podcastManifest = {
+writeJson(`${outputRoot}/scripts/manifest.json`, {
   schemaVersion: '1.0',
   generatedAt,
   sourcePackage: packagePath,
@@ -146,8 +155,7 @@ const podcastManifest = {
     claimIds: s.claimIds ?? [],
     sha256: hash(s.body),
   })),
-};
-writeJson(`${outputRoot}/scripts/manifest.json`, podcastManifest);
+});
 
 const articleSections = spec.article.sections.map(renderArticleSection);
 const articleWords = articleSections.reduce((sum, s) => sum + s.wordCount, 0);
