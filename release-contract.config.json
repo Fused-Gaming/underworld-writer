@@ -7,7 +7,7 @@
     "name": "Underworld Writer",
     "tagline": "Build the story. Expose the truth. Ship what matters.",
     "brandContract": "assets/branding/release-brand.json",
-    "canonicalCover": "assets/branding/underworld-writer-release-template-1200x630.svg",
+    "canonicalCover": "assets/branding/underworld-writer-release-changelog-template.svg",
     "fallbackIcon": "assets/underworld-writer-icon.svg"
   },
   "render": {
@@ -18,7 +18,7 @@
     "preserveProtectedRegions": true,
     "allowPrimitiveRedraw": false,
     "renderer": "scripts/render-release-artwork.mjs",
-    "template": "assets/branding/underworld-writer-release-template-1200x630.svg",
+    "template": "assets/branding/underworld-writer-release-changelog-template.svg",
     "releaseArtworkHeading": "Release Artwork",
     "svgOutput": "release-artifacts/underworld-writer-release-og-1200x630.svg"
   },
