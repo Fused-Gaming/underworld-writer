@@ -182,12 +182,12 @@ describe('Fiction Methodology', () => {
 
     it('should validate phase transitions', () => {
       const phase1Complete = true; // Foundation done
-      const phase2Depends = phase1Complete; // Integration needs Foundation
-      const phase3Depends = phase2Complete; // Narrative needs Integration
+      const phase2Complete = phase1Complete; // Integration needs Foundation
+      const phase3Complete = phase2Complete; // Narrative needs Integration
 
       expect(phase1Complete).toBe(true);
-      expect(phase2Depends).toBe(true);
-      expect(phase3Depends).toBe(true);
+      expect(phase2Complete).toBe(true);
+      expect(phase3Complete).toBe(true);
     });
   });
 
