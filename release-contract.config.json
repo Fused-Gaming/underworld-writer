@@ -5,12 +5,18 @@
   "siteUrl": "https://github.com/Fused-Gaming/underworld-writer",
   "brand": {
     "name": "Underworld Writer",
-    "tagline": "Fact-aware narrative and podcast production tooling"
+    "tagline": "Build the world. Track the truth. Ship the story.",
+    "brandContract": "assets/branding/release-brand.json",
+    "canonicalCover": "assets/branding/underworld-writer-release-cover.jpeg",
+    "fallbackIcon": "assets/underworld-writer-icon.svg",
+    "coverSha256": "7ec8cb4032a8b37620327f06afffbb1c5fa4240ee150db80191c26a0acc67609"
   },
   "render": {
     "width": 1200,
     "height": 630,
-    "maxHighlights": 4
+    "maxHighlights": 4,
+    "artworkStrategy": "contain-over-brand-background",
+    "preserveProtectedRegions": true
   },
   "git": {
     "defaultBaseRef": "origin/main"
