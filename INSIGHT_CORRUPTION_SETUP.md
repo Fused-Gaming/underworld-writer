@@ -24,22 +24,65 @@ with presumption-of-innocence framing throughout. See
 `projects/insight-corruption/PROJECT_MANIFEST.json` (`seasonOneStatus` field)
 for the exact split.
 
+## Repository boundary
+
+- Source/research material: `projects/insight-corruption/`
+- Canonical generated output: `output/insight-corruption/`
+- Sample/demo output: `output/examples/`
+- Cross-agent repository contract: `AGENTS.md`
+- Series registry: `output/SERIES_REGISTRY.json`
+- Podcast JSON schemas: `schemas/podcast/`
+
+Agents must not create a second generated-output tree under `projects/` or at
+repository root.
+
 ## Where everything lives
 
 | What | Location |
 |------|----------|
 | Source case files (24) | `projects/insight-corruption/characters/` (+ `oakland-cases/` subfolder) |
 | Series config | `output/insight-corruption/SERIES_CONFIG.json` |
-| Episodes 1-15 (config, script, producer brief, README each) | `output/insight-corruption/season-1/episode-1/` … `episode-15/` |
-| Producer quick-reference (Episodes 1-5 guest angles) | `projects/insight-corruption/PRODUCER_GUIDE.md` |
-| Workspace validation | `node scripts/validate-insight-corruption.mjs` |
+| Season manifest | `output/insight-corruption/season-1/SEASON_CONFIG.json` |
+| Episodes 1-15 | `output/insight-corruption/season-1/episode-1/` … `episode-15/` |
+| Shared production assets | `output/insight-corruption/production/` |
+| Producer quick-reference | `projects/insight-corruption/PRODUCER_GUIDE.md` |
+| Workspace validation | `npm run validate:workspace` |
+
+## Agent-safe workflow
+
+Before creating a new season, episode, or podcast theme:
+
+```bash
+npm run agent:preflight
+```
+
+Use scaffolding instead of hand-building directories:
+
+```bash
+npm run podcast:new-series -- <slug> "Series Title"
+npm run podcast:new-season -- <slug> <season-number>
+npm run podcast:new-episode -- <slug> <season-number> <episode-number>
+```
+
+Then validate:
+
+```bash
+npm run validate:workspace
+```
 
 ## Generating a script via the CLI
 
+Use an explicit canonical output path:
+
 ```bash
 npm run build
-node dist/cli.js generate-script --character projects/insight-corruption/characters/joanne-segovia-case.json --format single
+node dist/cli.js generate-script \
+  --character projects/insight-corruption/characters/joanne-segovia-case.json \
+  --format single \
+  --output output/insight-corruption/season-1/episode-1/scripts/generated-draft.md
 ```
+
+Do not rely on the CLI's legacy root-level default output path.
 
 **Known limitation:** the CLI's `ScriptGenerator` produces a fixed-length
 script (currently ~9 minutes for `--format single`) and does not read the
@@ -61,4 +104,4 @@ especially for Episode 15's pending cases.
 
 ---
 
-*Last updated: 2026-09-15, as part of a package-consistency review.*
+*Last updated: 2026-09-19.*

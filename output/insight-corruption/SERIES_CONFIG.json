@@ -1,4 +1,9 @@
 {
+  "schemaVersion": "1.0",
+  "generator": {
+    "name": "@h4shed/skill-underworld-writer",
+    "version": "2.2.0"
+  },
   "seriesName": "Insight Corruption",
   "seriesSlug": "insight-corruption",
   "description": "Investigative true-crime podcast revealing California Bay Area corruption cases - where they ended, and what the outcome reveals about accountability.",
@@ -34,8 +39,9 @@
   ],
   "producerNotes": "Season 1 covers 14 cases with resolved outcomes (Episodes 1-14) plus one roundup episode (15) for cases still pending. See PROJECT_MANIFEST.json for why the other 9 of the original 24 compiled cases were excluded rather than narrated as though resolved.",
   "totalEpisodes": 15,
+  "seasons": [1],
   "createdDate": "2026-09-15",
-  "updatedDate": "2026-09-15",
+  "updatedDate": "2026-09-19",
   "distribution": {
     "linkedin": {
       "policy": "Every LinkedIn post and its companion article must cite the same sources as the episode's own script.md - never state something on LinkedIn that the episode itself couldn't verify. Placeholders ([LINK], [ORG DONATION LINK], [CONTACT LINK]) must be filled in before publishing, not left live.",
