@@ -145,3 +145,6 @@ benchmarks/
 
 # Rock-Hardened release evidence (generated artifacts)
 release-artifacts/
+
+# Local developer integrations and external MCP checkouts
+.tools/
