@@ -1,0 +1,21 @@
+{
+  "voiceProfileId": "voice-eric-nissen-01",
+  "voiceActor": "Eric William Nissen",
+  "language": "en",
+  "model": "xtts_v2",
+  "referenceAudio": {
+    "clips": [
+      {
+        "path": "clips/eric-nissen/clip1.wav",
+        "duration_seconds": 93,
+        "quality": "clear_speech"
+      }
+    ]
+  },
+  "consent": {
+    "status": "confirmed",
+    "source": "Instagram published content",
+    "timestamp": "2026-09-20"
+  },
+  "notes": "Voice profile for Eric William Nissen, used for Underworld Writer podcast narration"
+}
