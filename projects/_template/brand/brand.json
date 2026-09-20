@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0",
+  "brandId": "new-show-default",
+  "displayName": "New Podcast",
+  "audio": {
+    "sonicLogo": null,
+    "intro": null,
+    "outro": null,
+    "transitionStings": {},
+    "musicBeds": {},
+    "ducking": {
+      "enabled": true,
+      "speechOverMusicDb": -12
+    },
+    "mix": {
+      "targetLufs": -16,
+      "truePeakDb": -1
+    }
+  },
+  "visual": {
+    "artworkTemplate": null,
+    "logo": null,
+    "colorTokens": {},
+    "fontTokens": {}
+  },
+  "credits": [],
+  "disclosures": {
+    "syntheticNarration": "This episode may contain synthetic narration generated with the consent of the referenced voice owner."
+  },
+  "sponsorship": {
+    "defaultBreaks": [],
+    "treatment": "project-defined"
+  }
+}

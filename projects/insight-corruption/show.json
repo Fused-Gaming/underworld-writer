@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "showId": "insight-corruption",
+  "title": "Insight Corruption",
+  "description": "Investigative podcast focused on public corruption, legal-system accountability, and documented institutional failures in the California Bay Area.",
+  "language": "en",
+  "categories": [
+    "investigative",
+    "true-crime",
+    "government-accountability"
+  ],
+  "brandRef": "brand/brand.json",
+  "defaultRenderProfile": "podcast-standard",
+  "defaultVoiceBindingsRef": "voices/voice-bindings.json",
+  "legacyManifestRef": "PROJECT_MANIFEST.json",
+  "editorialProfile": {
+    "tone": [
+      "investigative",
+      "documentary",
+      "source-driven"
+    ],
+    "factCheckRequired": true,
+    "sourceVerificationMode": "published-sources-and-court-records",
+    "syntheticAudioDisclosure": "when-used",
+    "notes": "Episode-specific claims and framing remain governed by each episode's source package; the rendering engine does not encode editorial conclusions."
+  },
+  "publishing": {
+    "explicitDefault": false,
+    "destinations": []
+  },
+  "defaults": {
+    "targetDurationMinutes": 30,
+    "seasonId": "season-01",
+    "renderProfile": "podcast-standard"
+  }
+}

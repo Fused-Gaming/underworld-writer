@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0",
+  "bindings": {
+    "host": "voice-eric-nissen-01",
+    "narrator": "voice-eric-nissen-01"
+  },
+  "profiles": {
+    "voice-eric-nissen-01": {
+      "metadataRef": "../voice-profiles/eric-william-nissen.json"
+    }
+  }
+}
