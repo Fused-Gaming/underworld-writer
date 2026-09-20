@@ -13,7 +13,7 @@ Format follows Keep a Changelog and Semantic Versioning.
 
 ### Added
 - Repository-local release-art renderer at `scripts/render-underworld-release-art.mjs`.
-- Canonical Neon Underworld raster template at `assets/branding/underworld-writer-release-changelog-template.png`.
+- Canonical Neon Underworld raster template at `assets/branding/underworld-writer-release-changelog-template.jpg`.
 - Structured `Release Artwork` metadata so visual feature cards stay changelog-driven without auto-summarizing arbitrary long bullets.
 
 ### Changed
