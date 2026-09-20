@@ -25,7 +25,12 @@
     "lint:fix": "eslint src/ test/ --fix",
     "benchmark": "npm run build && node scripts/benchmark.js",
     "verify-episode-claims": "node scripts/verify-episode-claims.mjs",
-    "prepublishOnly": "npm run lint && npm run build && npm run test:coverage"
+    "agent:preflight": "node scripts/podcast-workspace.mjs preflight",
+    "podcast:new-series": "node scripts/podcast-workspace.mjs series create",
+    "podcast:new-season": "node scripts/podcast-workspace.mjs season create",
+    "podcast:new-episode": "node scripts/podcast-workspace.mjs episode create",
+    "validate:workspace": "node scripts/validate-output-structure.mjs",
+    "prepublishOnly": "npm run validate:workspace && npm run lint && npm run build && npm run test:coverage"
   },
   "dependencies": {
     "@h4shed/mcp-core": "^1.0.40"
