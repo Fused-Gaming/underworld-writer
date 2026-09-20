@@ -27,6 +27,7 @@ image = (
     .pip_install(
         "torch==2.3.1",
         "torchaudio==2.3.1",
+        "transformers==4.34.1",  # compatible with TTS
         "TTS==0.22.0",  # coqui/XTTS-v2 runtime
         "pydub==0.25.1",
         "soundfile==0.12.1",
@@ -61,12 +62,24 @@ class VoiceSynthesizer:
 
     @modal.enter()
     def load_model(self):
+        import sys
+        from io import StringIO
         from TTS.api import TTS
 
-        # Warm start: the model weights stay resident for the container's
-        # lifetime so per-segment calls only pay for inference, not load time.
-        self.tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2")
-        self.tts.to("cuda")
+        # Accept ToS automatically in non-interactive environment
+        os.environ["TTS_HOME"] = "/tmp/tts_models"
+
+        # Redirect stdin to avoid interactive prompts
+        old_stdin = sys.stdin
+        sys.stdin = StringIO("y\n")
+
+        try:
+            # Warm start: the model weights stay resident for the container's
+            # lifetime so per-segment calls only pay for inference, not load time.
+            self.tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2", gpu=True)
+            self.tts.to("cuda")
+        finally:
+            sys.stdin = old_stdin
 
     @modal.method()
     def synthesize(self, text: str, voice_profile_id: str, language: str = "en") -> bytes:
@@ -163,7 +176,7 @@ def assemble_episode(
     return out_buf.getvalue()
 
 
-@app.function(volumes={EPISODE_OUTPUT_MOUNT: episode_output_volume})
+@app.function(volumes={EPISODE_OUTPUT_MOUNT: episode_output_volume}, timeout=1200)
 def generate_episode_audio(episode_config_json: str) -> str:
     """Entrypoint: render one episode's audio from its ScriptOutput + config.
 
