@@ -11,12 +11,30 @@ Format follows Keep a Changelog and Semantic Versioning.
 
 ## [2.2.1] - 2026-09-19
 
+### Added
+- Repository-local release-art renderer at `scripts/render-underworld-release-art.mjs`.
+- Canonical Neon Underworld raster template at `assets/branding/underworld-writer-release-changelog-template.png`.
+- Structured `Release Artwork` metadata so visual feature cards stay changelog-driven without auto-summarizing arbitrary long bullets.
+
+### Changed
+- Release artwork generation now reuses the approved Underworld Writer composition as an immutable visual base instead of redrawing the design from SVG primitives.
+- Underworld Writer owns the release-art template and overlay rules while Rock-Hardened remains responsible for changelog/release evidence workflows.
+- The release renderer reads the active package version and selected release section from `CHANGELOG.md`.
+
 ### Fixed
 - Replaced the primitive SVG approximation of the release artwork with the approved Neon Underworld composition as the canonical repository release source.
-- Added a real canonical release-cover asset at `assets/branding/underworld-writer-release-cover.jpg` and a 1200×630 release derivative at `release-artifacts/underworld-writer-release-og-1200x630.jpg`.
-- Changed the SVG release asset into a compatibility wrapper around the approved artwork instead of independently redrawing the brand from vector primitives.
+- Added a real canonical release-cover asset and a 1200×630 release derivative to the repository.
+- Changed the SVG release asset into a compatibility/output surface around the approved artwork instead of independently redrawing the brand from vector primitives.
 - Updated the release-brand contract to prohibit generic mascot substitutions, primitive redraws, alternate cavern compositions, and independently regenerated title/card/footer layouts.
 - Clarified the release boundary: Rock-Hardened supplies changelog/release data; Underworld Writer owns its visual composition.
+
+### Release Artwork
+- **SEGMENT-FIRST** — Podcast & article pipelines
+- **VOICE READY** — Scripts, timing & production docs
+- **ROCK-HARDENED** — Validated releases & changelog art
+- **OPEN SOURCE** — Build. Audit. Improve. Together.
+- **REAL IMPACT** — Fiction, true-crime, and investigative stories.
+- **BUILT FOR MORE** — Episodes. Series. A more transparent tomorrow.
 
 ## [2.2.0] - 2026-09-19
 
@@ -76,4 +94,4 @@ Format follows Keep a Changelog and Semantic Versioning.
 
 ### Fixed
 - True-crime case files can be adapted by the podcast scripting engine without character-shape crashes.
-- Fact-attribution tiers derive from case-file source and verification_status.
+- Fact-attribution tiers derive from a case file's own sources/verification_status.
