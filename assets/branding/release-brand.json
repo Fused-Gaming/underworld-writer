@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.1",
+  "schemaVersion": "1.2",
   "brand": {
     "name": "Underworld Writer",
     "owner": "Fused Gaming",
@@ -8,16 +8,16 @@
     "supportingLine": "Narrative engine · Editorial tooling · Podcast creation · Real impact"
   },
   "canonicalCover": {
-    "repoPath": "assets/branding/underworld-writer-release-cover.jpg",
+    "repoPath": "assets/branding/underworld-writer-release-changelog-template.jpg",
     "sourceStatus": "approved-neon-underworld-release-artwork",
     "sourceDimensions": {"width": 1200, "height": 630, "aspectRatio": 1.904762},
-    "usage": "authoritative visual source for README hero, changelog release art, Open Graph cards, repository release notes, and package announcements",
+    "usage": "immutable visual base for README hero, changelog release art, Open Graph cards, repository release notes, and package announcements",
     "rules": [
-      "Use the approved artwork verbatim whenever a 1200x630 release asset is required.",
+      "Reuse the approved composition as the visual base for every 1200x630 release asset.",
       "Do not redraw the composition from primitive SVG shapes.",
       "Do not substitute a generic mascot, white silhouette, alternate cavern, or generic cyberpunk scene.",
-      "Do not regenerate typography, feature cards, mascot placement, portal placement, or footer layout independently when the canonical artwork is available.",
-      "Derivative formats may crop or contain the canonical artwork, but must preserve the title, release badge, stitched voodoo-doll mascot, feature cards, and repository footer whenever the target format permits."
+      "Do not regenerate the wordmark, mascot placement, portal placement, card geometry, or footer geometry independently when the canonical artwork is available.",
+      "Release-specific version and feature-card copy may be replaced only in the declared dynamic text zones."
     ]
   },
   "visualIdentity": {
@@ -46,25 +46,52 @@
     "mutedStone": "#74809A"
   },
   "composition": {
-    "protectedRegions": [
-      "left UNDERWORLD WRITER title block",
-      "v<semver> RELEASE badge and tagline",
+    "immutableRegions": [
+      "FUSED GAMING / OPEN SOURCE eyebrow",
+      "UNDERWORLD WRITER title block",
+      "supporting product descriptor",
       "center-right stitched voodoo-doll mascot",
       "right-side neon portal and cavern focal point",
-      "six release-highlight cards",
-      "repository/footer signature"
+      "feature-card containers and icons",
+      "repository/footer geometry"
     ],
-    "releaseBadge": {"preferredPosition": "left column beneath supporting line", "format": "v<semver> RELEASE", "maxVisualWeight": "secondary to the UNDERWORLD WRITER wordmark"}
+    "dynamicTextZones": {
+      "versionBadge": {
+        "source": "package.json version",
+        "format": "v<semver>",
+        "rule": "Replace version text while preserving badge geometry and RELEASE label."
+      },
+      "featureCards": {
+        "count": 6,
+        "source": "CHANGELOG.md > current version > Release Artwork",
+        "format": "- **TITLE** — description",
+        "rule": "Replace title and body text only; preserve approved card geometry, icons, spacing, background, and visual hierarchy."
+      },
+      "changelogMarker": {
+        "source": "package.json version",
+        "format": "CHANGELOG / v<semver>"
+      }
+    }
   },
   "releaseFormats": {
-    "openGraph": {"width": 1200, "height": 630, "strategy": "use canonical artwork verbatim"},
-    "readmeHero": {"width": 1200, "height": 630, "strategy": "use canonical artwork verbatim"},
-    "githubSocial": {"width": 1280, "height": 640, "strategy": "contain canonical artwork on void background; do not redraw"},
-    "square": {"width": 1080, "height": 1080, "strategy": "frame or crop the canonical artwork while preserving wordmark and mascot; do not redraw"}
+    "openGraph": {"width": 1200, "height": 630, "strategy": "reuse approved base and update dynamic text zones only"},
+    "readmeHero": {"width": 1200, "height": 630, "strategy": "use current generated Open Graph release asset"},
+    "githubSocial": {"width": 1280, "height": 640, "strategy": "contain the generated 1200x630 composition on void background; do not redraw"},
+    "square": {"width": 1080, "height": 1080, "strategy": "frame or crop the generated composition while preserving wordmark and mascot; do not redraw"}
+  },
+  "generation": {
+    "releaseDataProvider": "@h4shed/rock-hardened",
+    "visualRenderer": "scripts/render-underworld-release-art.mjs",
+    "template": "assets/branding/underworld-writer-release-changelog-template.jpg",
+    "changelog": "CHANGELOG.md",
+    "releaseArtworkHeading": "Release Artwork",
+    "output": "release-artifacts/underworld-writer-release-og-1200x630.svg",
+    "fallback": "If Release Artwork metadata is absent, derive up to six concise cards from Added, Changed, and Fixed bullets.",
+    "rule": "Rock-Hardened owns release evidence; Underworld Writer owns its repository-specific visual renderer and template."
   },
   "rockHardenedIntegration": {
-    "responsibility": "Rock-Hardened supplies release/changelog data only.",
-    "visualAuthority": "This repository owns the visual composition and canonical artwork.",
+    "responsibility": "Rock-Hardened supplies release/changelog evidence only.",
+    "visualAuthority": "This repository owns the visual composition, template, and dynamic overlay geometry.",
     "prohibition": "Do not modify Fused-Gaming/rock-hardened to change Underworld Writer release styling."
   },
   "agentRules": {
@@ -73,10 +100,11 @@
     "generatedReleaseOutput": "release-artifacts/",
     "requirements": [
       "Read this file before generating release artwork.",
-      "Prefer the canonical release artwork over any generated approximation.",
-      "Never recreate the approved composition from simple SVG primitives when the source artwork exists.",
-      "Release metadata may be overlaid only when it does not obscure protected regions.",
-      "If a future release needs different highlights, update the repository-owned design template while retaining the Neon Underworld composition language."
+      "Use the approved raster template; never approximate it with hand-drawn primitive SVG scenery.",
+      "Change only the declared dynamic text zones when rendering a new release.",
+      "Populate release cards from the current CHANGELOG.md release section.",
+      "Run npm run release:art after changing release version or Release Artwork metadata.",
+      "Never modify Rock-Hardened solely to change Underworld Writer styling."
     ]
   }
 }
