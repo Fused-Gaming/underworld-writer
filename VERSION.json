@@ -1,16 +1,16 @@
 {
-  "version": "2.2.0",
-  "releaseDate": "2026-09-19",
-  "status": "release-candidate",
+  "version": "2.2.1",
+  "releaseDate": "2026-09-20",
+  "status": "patch-release-candidate",
   "majorVersion": 2,
   "minorVersion": 2,
-  "patchVersion": 0,
+  "patchVersion": 1,
   "prerelease": null,
   "metadata": {
     "nodeMinimum": "20.0.0",
     "npmMinimum": "8.0.0",
     "typescriptVersion": "5.3.2",
-    "buildNumber": 1026
+    "buildNumber": 1027
   },
   "packageInfo": {
     "name": "@h4shed/skill-underworld-writer",
@@ -21,20 +21,10 @@
     "npmRegistry": "https://registry.npmjs.org"
   },
   "features": {
-    "characterCreation": {
-      "description": "Create detailed underworld character profiles with three-phase methodology",
-      "version": "1.0.25",
-      "status": "stable"
-    },
-    "narrativeArchitecture": {
-      "description": "Build complex mythologies and narrative worlds for fiction and true crime",
-      "version": "1.0.25",
-      "status": "stable"
-    },
-    "pacerIntegration": {
-      "description": "Integrate with PACER API for fact-checking real court cases and legal proceedings",
-      "version": "1.0.25",
-      "status": "stable"
+    "releaseBranding": {
+      "description": "Patch release for canonical Underworld Writer release artwork sizing and brand metadata",
+      "version": "2.2.1",
+      "status": "patch-release-candidate"
     },
     "podcastWorkspaceContract": {
       "description": "Canonical cross-agent project/output boundaries, manifests, scaffolding, validation, and release evidence",
@@ -48,46 +38,26 @@
     }
   },
   "improvementsFromPreviousVersion": [
-    "Consolidated generated podcast artifacts beneath a single output root",
-    "Added an authoritative AGENTS.md contract for Claude, ChatGPT, Copilot, Codex, and future agents",
-    "Added canonical series registry plus series/season/episode JSON schemas",
-    "Added new-series, new-season, and new-episode scaffolding commands",
-    "Added fixture-based workspace validation tests and workspace performance benchmarks",
-    "Added release-version drift detection and synchronization tooling",
-    "Integrated @h4shed/rock-hardened for changelog validation, deterministic release evidence, and attestation",
-    "Added segment-first podcast and article generation from one evidence/claim package",
-    "Added reusable editorial blocks for intros, disclosures, transitions, sponsor/house ads, outros, article deks, source notes, and calls-to-action",
-    "Added spoken-word runtime and article target-length validation",
-    "Rebuilt Insight Corruption Episode 1 as a 13-segment 29.52-minute package plus a 1,864-word LinkedIn article"
+    "Drafted a proper 1200x630 OpenGraph release artwork asset under release-artifacts/",
+    "Registered the release artwork path and dimensions in assets/branding/release-brand.json",
+    "Bumped package and plugin patch version to 2.2.1",
+    "Added a 2.2.1 changelog entry for the release-branding follow-up"
   ],
-  "benchmarkBaseline": {
-    "version": "2.2.0",
-    "status": "local-validation-complete-actions-unavailable",
-    "environment": "Node.js 22 local execution environment",
-    "workspaceMicrobenchmarksMsPerOperation": {
-      "registryLookup": 0.000238,
-      "canonicalPathConstruction": 0.001439,
-      "configValidation": 0.000249
-    },
-    "functionalEvidence": {
-      "workspaceFixtureScaffolding": "PASS",
-      "rogueOutputRejection": "PASS",
-      "unregisteredSeriesRejection": "PASS",
-      "episode1PodcastRuntime": {
-        "scriptWords": 4092,
-        "estimatedMinutes": 29.52,
-        "targetMinutes": 30,
-        "toleranceMinutes": 1,
-        "status": "PASS"
+  "releaseArtwork": {
+    "sourceCover": {
+      "expectedRepoPath": "assets/branding/underworld-writer-release-cover.jpeg",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 572
       },
-      "episode1LinkedInArticle": {
-        "words": 1864,
-        "minimum": 1800,
-        "maximum": 2300,
-        "status": "PASS"
-      }
+      "sha256": "7ec8cb4032a8b37620327f06afffbb1c5fa4240ee150db80191c26a0acc67609"
     },
-    "limitations": "GitHub Actions hosted runners were unavailable because repository billing/usage was disabled; validation evidence was produced independently of Actions."
+    "draftOpenGraph": {
+      "repoPath": "release-artifacts/underworld-writer-release-og-1200x630.svg",
+      "width": 1200,
+      "height": 630,
+      "status": "draft-vector-artwork"
+    }
   },
   "security": {
     "vulnerabilitiesFixed": 0,
@@ -96,115 +66,36 @@
     "nextSecurityAudit": "2026-10-13"
   },
   "changelog": {
+    "2.2.1": {
+      "releaseDate": "2026-09-20",
+      "highlights": [
+        "Patch bump for release branding",
+        "1200x630 OpenGraph release artwork draft",
+        "Brand contract updated with draft artwork path"
+      ],
+      "breaking_changes": [],
+      "deprecations": [],
+      "new_features": [
+        "release-artifacts/underworld-writer-release-og-1200x630.svg"
+      ],
+      "bug_fixes": [],
+      "improvements": [
+        "Release artwork is now drafted at the proper social-card dimensions",
+        "Patch-release metadata records the approved cover fingerprint and derivative size"
+      ]
+    },
     "2.2.0": {
       "releaseDate": "2026-09-19",
       "highlights": [
         "Single canonical output structure for podcast generation",
         "Cross-agent workspace contract and deterministic scaffolding",
-        "Machine-readable registry and schemas",
         "Segment-first podcast and article editorial packages",
-        "Reusable cross-season editorial template library",
-        "Runtime and article-length validation from generated content",
-        "Workspace validation tests and benchmarks",
-        "Rock-Hardened release validation and evidence pipeline"
+        "Runtime and article-length validation from generated content"
       ],
       "breaking_changes": [],
       "deprecations": [
         "Legacy root-level generated-script.md, podcast-output/, producer-ready/, and guest-handoff/ output locations are no longer valid workspace destinations",
         "Monolithic assembled podcast/article files are no longer the primary authoring surface for new evidence-based episode packages"
-      ],
-      "new_features": [
-        "AGENTS.md cross-agent contract",
-        "output/SERIES_REGISTRY.json",
-        "schemas/podcast/*.schema.json",
-        "scripts/podcast-workspace.mjs",
-        "scripts/validate-output-structure.mjs",
-        "scripts/sync-version.mjs",
-        "scripts/editorial-package.mjs",
-        "templates/editorial/shared-segments.json",
-        "validation-tests/workspace-contract.test.mjs",
-        "Episode package source/claim manifests under projects/<series>/episode-packages/",
-        "Rock-Hardened release-contract.config.json and structured CHANGELOG.md"
-      ],
-      "bug_fixes": [
-        "Consolidated duplicate/legacy generated-output directories without discarding source material",
-        "Removed retired migration branch from workflow assumptions",
-        "Corrected version drift across primary release manifests",
-        "Corrected Insight Corruption Episode 1 offense framing and removed unsupported FCPA language",
-        "Replaced Episode 1's timestamp-only runtime claim and unscripted guest dependency with measured scripted runtime"
-      ],
-      "improvements": [
-        "Future agents scaffold output instead of inventing directory layouts",
-        "Podcast and article formats can reuse the same vetted evidence blocks and claim IDs",
-        "Long-form outputs can be recorded, edited, synthesized, retried, and reviewed one segment at a time",
-        "Release validation now includes workspace semantics, editorial length/runtime fixtures, functional tests, benchmarks, and changelog evidence",
-        "Generator version is derived from package.json for future version bumps"
-      ]
-    },
-    "2.1.0": {
-      "releaseDate": "2026-09-20",
-      "highlights": [
-        "Comprehensive integration test suite for character-to-story workflows",
-        "Performance benchmarking utilities with baseline metrics",
-        "Enhanced documentation with GETTING_STARTED.md and CONTRIBUTING.md",
-        "Jest coverage optimization for compiled dist/ output",
-        "TypeScript strict mode enforcement across all source files"
-      ],
-      "breaking_changes": [],
-      "deprecations": [],
-      "new_features": [
-        "Integration tests for character-to-story workflows (character-story.test.ts)",
-        "Performance benchmarking suite (scripts/benchmark.js)",
-        "GETTING_STARTED.md with installation and quick start guide",
-        "CONTRIBUTING.md with development guidelines and code standards",
-        "Performance guide with profiling and optimization strategies"
-      ],
-      "bug_fixes": [
-        "Fixed Jest coverage configuration to collect from dist/ instead of src/",
-        "Corrected undefined variable names in phase transition tests",
-        "Fixed ESLint strict mode violations (removed any types in mcp-tools.ts)"
-      ],
-      "improvements": [
-        "Expanded test coverage with integration test scenarios",
-        "Added performance baselines for future optimization tracking",
-        "Enhanced documentation structure with comprehensive guides",
-        "Improved code quality with stricter type checking",
-        "Better developer experience with detailed setup instructions"
-      ]
-    },
-    "2.0.7": {
-      "releaseDate": "2026-09-15",
-      "highlights": [
-        "Fixed ScriptGenerator crash on true-crime case files (projects/*/characters/*.json)",
-        "Fact-attribution tiers now derived from a case file's own sources/verification_status",
-        "Version fields aligned across package.json, plugin.json, VERSION.json, src/index.ts"
-      ],
-      "breaking_changes": [],
-      "deprecations": [],
-      "new_features": [
-        "adaptCaseFileToCharacter()/isTrueCrimeCaseFile() in podcast-script-generator.ts"
-      ],
-      "bug_fixes": [
-        "generate-script/generate-guest-handoff/validate-script/format-script no longer throw when given a true-crime case file instead of a Fiction character"
-      ],
-      "improvements": [
-        "Regression test added: tests/true-crime-case-adapter.test.ts"
-      ]
-    },
-    "1.0.25": {
-      "releaseDate": "2026-09-13",
-      "highlights": [
-        "Comprehensive dual-use case documentation",
-        "PACER API integration for fact-checking",
-        "Benchmark infrastructure with DoD framework",
-        "Plugin manifest for Claude ecosystem"
-      ]
-    },
-    "1.0.24": {
-      "releaseDate": "2026-08-16",
-      "highlights": [
-        "Initial migration to standalone repository",
-        "Core character creation and narrative development"
       ]
     }
   }
