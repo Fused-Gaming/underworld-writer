@@ -153,3 +153,4 @@ release-artifacts/
 .claude/settings.local.json
 modal/audio-samples/
 episode.wav
+episode.mp3
