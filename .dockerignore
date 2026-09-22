@@ -17,7 +17,6 @@ coverage
 build-output.log
 docker-compose*.yml
 Dockerfile*
-README.md
 LICENSE
 .github
 output/

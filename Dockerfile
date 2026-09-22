@@ -1,5 +1,7 @@
+ARG NODE_VERSION=22
+
 # Build and validation stage
-FROM node:22-alpine AS builder
+FROM node:${NODE_VERSION}-alpine AS builder
 
 WORKDIR /workspace
 
@@ -19,7 +21,8 @@ COPY test/ ./test/
 RUN npm run build
 
 # Validation stage
-FROM node:22-alpine AS validator
+ARG NODE_VERSION
+FROM node:${NODE_VERSION}-alpine AS validator
 
 WORKDIR /workspace
 
@@ -33,7 +36,18 @@ COPY --from=builder /workspace/tsconfig.json ./
 # Copy additional files needed for validation
 COPY validation-tests/ ./validation-tests/
 COPY scripts/ ./scripts/
+COPY test/ ./test/
+COPY src/ ./src/
+COPY docs/ ./docs/
+COPY examples/ ./examples/
+COPY templates/ ./templates/
+COPY jest.config.cjs ./
+COPY eslint.config.mjs ./
 COPY .eslintrc.json ./
+COPY VERSION.json ./
+COPY plugin.json ./
+COPY README.md ./
+COPY SKILL.md ./
 
 # Run validation checks
 RUN echo "✓ Checking TypeScript build output..." && \
@@ -46,8 +60,12 @@ RUN echo "✓ Validating bin exports..." && \
     test -f dist/cli.js && \
     echo "✓ CLI entry point present"
 
+RUN echo "✓ Linting..." && npm run lint
+
 RUN echo "✓ Running workspace validation tests..." && \
     npm run test:workspace
+
+RUN echo "✓ Running Jest suite..." && npm test
 
 # Final production stage
 FROM node:22-alpine AS runtime
