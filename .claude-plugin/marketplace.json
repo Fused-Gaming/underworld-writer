@@ -1,0 +1,36 @@
+{
+  "name": "fused-gaming",
+  "owner": {
+    "name": "Fused Gaming",
+    "url": "https://github.com/Fused-Gaming"
+  },
+  "metadata": {
+    "description": "Fused Gaming plugin marketplace for Claude Code.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "underworld-writer",
+      "source": "./",
+      "description": "Dual-purpose skill for creative fiction and true crime narratives with PACER API fact-checking integration, episodic podcast production, and editorial verification.",
+      "version": "1.0.25",
+      "author": {
+        "name": "Fused Gaming",
+        "url": "https://github.com/Fused-Gaming"
+      },
+      "homepage": "https://github.com/Fused-Gaming/underworld-writer",
+      "license": "Apache-2.0",
+      "keywords": [
+        "underworld",
+        "character",
+        "narrative",
+        "fiction",
+        "true-crime",
+        "pacer",
+        "fact-checking",
+        "podcast",
+        "editorial"
+      ]
+    }
+  ]
+}
