@@ -1,0 +1,137 @@
+{
+  "episodeNumber": 2,
+  "title": "Finance Director Stole $3.9M from Bay Area Housing Fund, Got 1 Year in Prison",
+  "generatedAt": "2026-09-20T14:19:10.330Z",
+  "corpusSize": 116,
+  "claims": [
+    {
+      "claim": "Embezzled nearly $3.9 million from the Association of Bay Area Governments between 2011-2015, affecting affordable housing developments including Rincon Hill highrise and Windemere Ranch housing projects",
+      "tier": 2,
+      "confidence": 0.75,
+      "supportingEvidence": [
+        {
+          "id": "corruption-bay-002:offense:0",
+          "caseId": "corruption-bay-002",
+          "section": "offense",
+          "text": "Embezzled nearly $3.9 million from the Association of Bay Area Governments between 2011-2015, affecting affordable housing developments including Rincon Hill highrise and Windemere Ranch housing projects",
+          "suggestedTier": 2,
+          "citation": "Clarke Howatt - ABAG Housing Embezzlement — offense record",
+          "score": 56.53050395868561
+        },
+        {
+          "id": "corruption-bay-002:fallout:2",
+          "caseId": "corruption-bay-002",
+          "section": "fallout",
+          "text": "Housing projects delayed for Bay Area residents; Public trust erosion in government financial management; Regional government oversight failures exposed; Families needing affordable housing suffered delays",
+          "suggestedTier": 3,
+          "citation": "Clarke Howatt - ABAG Housing Embezzlement — fallout reporting",
+          "score": 14.097526644114126
+        },
+        {
+          "id": "corruption-bay-002:source-1:5",
+          "caseId": "corruption-bay-002",
+          "section": "source-1",
+          "text": "Bay Area News Group",
+          "suggestedTier": 3,
+          "citation": "Bay Area News Group",
+          "score": 7.874310086376578
+        },
+        {
+          "id": "corruption-bay-002:escape-mechanism:3",
+          "caseId": "corruption-bay-002",
+          "section": "escape-mechanism",
+          "text": "Massive theft from public funds serving vulnerable populations; Court agreed to accept restitution ($3.5M repaid by Howatt and parents); Restitution strategy led to lenient sentencing despite massive embezzlement; Family money used to mitigate consequences; Minimal prison sentence for stealing nearly $4M from housing fund",
+          "suggestedTier": 3,
+          "citation": "Clarke Howatt - ABAG Housing Embezzlement — analysis of sentencing/defense strategy",
+          "score": 4.512954318206852
+        },
+        {
+          "id": "corruption-bay-002:sentence:1",
+          "caseId": "corruption-bay-002",
+          "section": "sentence",
+          "text": "prison_time: 1 year and 1 day; home_confinement: 6 months; probation: 3 years supervised release; restitution: $3.5 million (paid by Howatt and family); status: MINIMAL SENTENCE FOR MAJOR THEFT",
+          "suggestedTier": 2,
+          "citation": "Clarke Howatt - ABAG Housing Embezzlement — sentencing outcome per published reporting",
+          "score": 2.535747166762814
+        }
+      ],
+      "verdict": "tier-2-corroborated",
+      "singleSource": false,
+      "notes": "Tier 2 direct-statement evidence found. Confirm the corroboration statement is specific, not just \"we fact-checked it\"."
+    },
+    {
+      "claim": "Sentenced to one year and one day in federal prison, six months of home confinement, and three years of supervised release.",
+      "tier": 2,
+      "confidence": 0.75,
+      "supportingEvidence": [
+        {
+          "id": "corruption-bay-002:sentence:1",
+          "caseId": "corruption-bay-002",
+          "section": "sentence",
+          "text": "prison_time: 1 year and 1 day; home_confinement: 6 months; probation: 3 years supervised release; restitution: $3.5 million (paid by Howatt and family); status: MINIMAL SENTENCE FOR MAJOR THEFT",
+          "suggestedTier": 2,
+          "citation": "Clarke Howatt - ABAG Housing Embezzlement — sentencing outcome per published reporting",
+          "score": 20.745293110224726
+        },
+        {
+          "id": "corruption-bay-002:source-2:6",
+          "caseId": "corruption-bay-002",
+          "section": "source-2",
+          "text": "Federal Court Records",
+          "suggestedTier": 3,
+          "citation": "Federal Court Records",
+          "score": 2.7612065142722524
+        },
+        {
+          "id": "corruption-bay-002:escape-mechanism:3",
+          "caseId": "corruption-bay-002",
+          "section": "escape-mechanism",
+          "text": "Massive theft from public funds serving vulnerable populations; Court agreed to accept restitution ($3.5M repaid by Howatt and parents); Restitution strategy led to lenient sentencing despite massive embezzlement; Family money used to mitigate consequences; Minimal prison sentence for stealing nearly $4M from housing fund",
+          "suggestedTier": 3,
+          "citation": "Clarke Howatt - ABAG Housing Embezzlement — analysis of sentencing/defense strategy",
+          "score": 1.24471821357854
+        }
+      ],
+      "verdict": "tier-2-corroborated",
+      "singleSource": false,
+      "notes": "Tier 2 direct-statement evidence found. Confirm the corroboration statement is specific, not just \"we fact-checked it\"."
+    },
+    {
+      "claim": "He and his family paid $3.5 million in restitution — most, but not all, of the amount taken.",
+      "tier": 2,
+      "confidence": 0.75,
+      "supportingEvidence": [
+        {
+          "id": "corruption-bay-002:sentence:1",
+          "caseId": "corruption-bay-002",
+          "section": "sentence",
+          "text": "prison_time: 1 year and 1 day; home_confinement: 6 months; probation: 3 years supervised release; restitution: $3.5 million (paid by Howatt and family); status: MINIMAL SENTENCE FOR MAJOR THEFT",
+          "suggestedTier": 2,
+          "citation": "Clarke Howatt - ABAG Housing Embezzlement — sentencing outcome per published reporting",
+          "score": 9.87039529710136
+        },
+        {
+          "id": "corruption-bay-002:escape-mechanism:3",
+          "caseId": "corruption-bay-002",
+          "section": "escape-mechanism",
+          "text": "Massive theft from public funds serving vulnerable populations; Court agreed to accept restitution ($3.5M repaid by Howatt and parents); Restitution strategy led to lenient sentencing despite massive embezzlement; Family money used to mitigate consequences; Minimal prison sentence for stealing nearly $4M from housing fund",
+          "suggestedTier": 3,
+          "citation": "Clarke Howatt - ABAG Housing Embezzlement — analysis of sentencing/defense strategy",
+          "score": 4.168311122023145
+        },
+        {
+          "id": "corruption-bay-002:offense:0",
+          "caseId": "corruption-bay-002",
+          "section": "offense",
+          "text": "Embezzled nearly $3.9 million from the Association of Bay Area Governments between 2011-2015, affecting affordable housing developments including Rincon Hill highrise and Windemere Ranch housing projects",
+          "suggestedTier": 2,
+          "citation": "Clarke Howatt - ABAG Housing Embezzlement — offense record",
+          "score": 2.4610527352380593
+        }
+      ],
+      "verdict": "tier-2-corroborated",
+      "singleSource": false,
+      "notes": "Tier 2 direct-statement evidence found. Confirm the corroboration statement is specific, not just \"we fact-checked it\"."
+    }
+  ]
+}

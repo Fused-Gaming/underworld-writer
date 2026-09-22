@@ -1,56 +1,62 @@
 {
+  "schemaVersion": "1.0",
+  "generator": {
+    "name": "@h4shed/skill-underworld-writer",
+    "version": "2.2.1"
+  },
+  "seriesSlug": "insight-corruption",
   "episodeNumber": 2,
   "seasonNumber": 1,
   "title": "Finance Director Stole $3.9M from Bay Area Housing Fund, Got 1 Year in Prison",
-  "subtitle": "Clarke Howatt - ABAG Housing Embezzlement",
-  "description": "Embezzled nearly $3.9 million from the Association of Bay Area Governments between 2011-2015, affecting affordable housing developments including Rincon Hill highrise and Windemere Ranch housing projects",
+  "subtitle": "Clarke Howatt — ABAG Housing Embezzlement",
+  "description": "A source-backed examination of Clarke Howatt's embezzlement of nearly $3.9 million from the Association of Bay Area Governments, the restitution payment that recovered most but not all of it, and what a sentence built around a fast, well-resourced restitution payment reveals about how the federal system weighs repayment against the scale of a public-sector theft.",
   "characters": [
     "Clarke Howatt"
   ],
   "location": "Bay Area Regional Government",
   "year": 2016,
   "tags": [
-    "government-corruption"
+    "government-corruption",
+    "public-trust",
+    "federal-sentencing",
+    "restitution"
   ],
   "sourceVerificationTier": 2,
   "caseReference": "clarke-howatt-case.json",
+  "sourcePackage": "projects/insight-corruption/episode-packages/season-1/episode-2.json",
   "status": "scripted",
   "length": {
     "format": "single-part",
-    "parts": [
+    "wordsPerMinute": 145,
+    "scriptWords": 4085,
+    "estimatedRuntimeMinutes": 29.45,
+    "runtimeValidation": "PASS",
+    "targetRuntimeMinutes": 30,
+    "runtimeToleranceMinutes": 1,
+    "sponsorBreaks": [
       {
-        "partNumber": 1,
-        "duration": {
-          "minimum": 28,
-          "maximum": 32,
-          "target": 30
-        },
-        "sponsorBreaks": [
-          {
-            "position": "mid-roll",
-            "lengthSeconds": 90,
-            "scriptTemplate": "This episode of Insight Corruption is brought to you by [SPONSOR]..."
-          }
-        ],
-        "contentDuration": {
-          "minimum": 26.5,
-          "maximum": 30.5,
-          "target": 28.5
-        }
+        "position": "mid-roll",
+        "lengthSeconds": 90,
+        "fallback": "approved Insight Corruption house advertisement"
       }
-    ],
-    "totalDuration": {
-      "minimum": 28,
-      "maximum": 32,
-      "target": 30
-    }
+    ]
+  },
+  "outputs": {
+    "podcastSegments": 16,
+    "scriptManifest": "scripts/manifest.json",
+    "assembledScript": "scripts/assembled-script.md",
+    "linkedinArticleWords": 2250,
+    "linkedinArticleLengthValidation": "PASS",
+    "linkedinArticle": "published-assets/articles/linkedin/article.md"
   },
   "keyPoints": [
     "Embezzled nearly $3.9 million from the Association of Bay Area Governments between 2011-2015, affecting affordable housing developments including Rincon Hill highrise and Windemere Ranch housing projects",
-    "Outcome: MINIMAL SENTENCE FOR MAJOR THEFT"
+    "Sentenced to one year and one day in federal prison, six months of home confinement, and three years of supervised release.",
+    "He and his family paid $3.5 million in restitution — most, but not all, of the amount taken."
   ],
   "investigativeAngles": [
-    "The restitution loophole: When money can buy your way out of prison"
+    "How a fast, well-resourced restitution payment shapes a federal sentence under 18 U.S.C. § 3553(a), separate from the legal requirement to make restitution at all.",
+    "What internal financial controls (separation of duties, independent audits) a public agency needs to catch a single-administrator embezzlement sooner."
   ],
   "guestOpportunities": [
     "a former prosecutor or defense attorney",
@@ -60,5 +66,5 @@
   "factCheckLayers": [
     "Published: Palo Alto Online - 2016; Bay Area News Group; Federal Court Records"
   ],
-  "producerNotes": "RUNTIME FEASIBILITY: the case file's own verified facts (character/offense/sentence/fallout fields) support roughly 10-14 minutes of factual narration at a realistic ~150 words-per-minute spoken pace. The remaining runtime to reach the requested 30-minute target must come from clearly-labeled analysis and a guest/expert interview segment (see script.md [EXPAND] blocks) - not from invented case details. Do not pad the factual segments themselves."
+  "producerNotes": "Regenerated via the segment-first editorial-package pipeline (see AGENTS.md) from projects/insight-corruption/episode-packages/season-1/episode-2.json, replacing the earlier single-file scripts/script.md draft. The segmented script under scripts/segments/ is authoritative; edit the source package or reusable templates in templates/editorial/shared-segments.json and regenerate instead of hand-editing assembled-script.md. Facts are limited to what clarke-howatt-case.json and its cited reporting establish; segments beyond the case-specific facts are clearly labeled analysis/context, not invented case detail, per this project's runtime-feasibility policy."
 }

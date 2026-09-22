@@ -1,0 +1,16 @@
+{
+  "episodes": [
+    {
+      "title": "Test - Single Segment",
+      "episodeNumber": 1,
+      "seasonNumber": 1,
+      "segments": [
+        {
+          "text": "A former executive director of a police officers' union admits to illegally importing a Schedule II opioid. Federal investigators say the shipments stretched across years, arrived from multiple countries, and were disguised behind ordinary customs descriptions.",
+          "speaker": "narrator",
+          "title": "Test Segment"
+        }
+      ]
+    }
+  ]
+}

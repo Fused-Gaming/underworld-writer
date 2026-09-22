@@ -1,0 +1,15 @@
+# 06 — Nearly Four Million Dollars, Four Years
+
+**Segment ID:** the-scheme
+**Type:** case-specific
+**Words:** 346
+**Estimated runtime:** 2:23
+**Claim IDs:** C02
+
+According to reporting from Palo Alto Online and the Bay Area News Group, and consistent with the federal court record, Clarke Howatt embezzled nearly three point nine million dollars from ABAG between 2011 and 2015.
+
+Two specific housing developments are named in connection with the affected funds: a high-rise project on Rincon Hill, and a development called Windemere Ranch. Both are the kind of projects regional housing agencies exist to support — the ordinary, unglamorous machinery of getting affordable units built and financed.
+
+What the publicly available case file does not spell out in detail is the specific mechanical method Howatt used to move the money — which internal controls failed, which approvals he was able to bypass, or whether anyone else inside the agency had a role in catching or missing it. This show does not fill that gap with speculation. What can be said responsibly is the shape of it: a four-year pattern, a specific and verified dollar figure, and public housing money as the source. The absence of a public accounting of ABAG's internal-control failure is itself worth naming, because an agency that handles public housing money and does not publish how a four-year, multi-million-dollar internal theft went undetected has not fully closed the institutional half of this story — even after the criminal case closed.
+
+There is also a chronology worth sitting with. Four years is not a single bad decision. It is dozens, if not hundreds, of individual transactions, repeated across annual audit cycles, board meetings, and routine financial reporting, none of which caught it in real time. Whatever ultimately triggered the discovery — this episode's sources do not specify the exact detection event — the length of the pattern says something on its own: whatever review process ABAG had in place before this case either was not looking closely enough at Finance Director-level transactions, or was looking and not finding what it needed to find. Both possibilities point toward the same fix, and it is the fix this episode keeps circling back to: independent verification that does not rely on trusting the person with access.

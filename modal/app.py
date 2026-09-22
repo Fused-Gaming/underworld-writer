@@ -4,9 +4,12 @@ Underworld Writer — episode audio generation on Modal.com.
 Consumes a ScriptOutput JSON (from ScriptGenerator, see src/podcast-types.ts)
 plus an episode config (see modal/config/episodes/*.json) and a voice
 profile per speaker (see modal/config/voice_profiles/*.json), and produces
-a mixed, edited episode audio file using Hugging Face voice-cloning models.
+a mixed, edited episode audio file using a zero-shot voice-cloning model.
 
-Design reference: docs/AUDIO_GENERATION_PLAN.md
+Design references:
+    docs/AUDIO_GENERATION_PLAN.md (original XTTS-v2 plan)
+    modal/CHATTERBOX_INTEGRATION_PLAN.md (Phase 1 backend swap this file implements)
+    projects/insight-corruption/production/voice/VOICE_PODCAST_GENERATION.md
 
 Usage:
     modal deploy modal/app.py
@@ -15,9 +18,18 @@ Usage:
 
 import json
 import os
+import sys
 from pathlib import Path
 
 import modal
+
+# This file lives in a directory named `modal/`, which shadows the `modal`
+# SDK package by name. Import sibling local modules (`backends/`, `audio/`)
+# by adding this directory to sys.path directly, rather than as `modal.*`
+# submodules, so they never collide with `import modal` above.
+sys.path.insert(0, str(Path(__file__).parent))
+from audio.segmenter import chunk_text  # noqa: E402
+from backends.chatterbox import ChatterboxBackend  # noqa: E402
 
 APP_NAME = "underworld-audio"
 
@@ -25,13 +37,20 @@ image = (
     modal.Image.debian_slim(python_version="3.11")
     .apt_install("ffmpeg", "libsndfile1")
     .pip_install(
-        "torch==2.3.1",
-        "torchaudio==2.3.1",
-        "TTS==0.22.0",  # coqui/XTTS-v2 runtime
+        "torch==2.6.0",
+        "torchaudio==2.6.0",
+        "chatterbox-tts",
         "pydub==0.25.1",
         "soundfile==0.12.1",
         "pyloudnorm==0.1.1",
     )
+    # Ship the local backends/audio modules explicitly rather than relying
+    # on Modal's automount, so the container's directory layout under
+    # sys.path.insert(...) above matches this file's local layout.
+    .add_local_dir(str(Path(__file__).parent / "backends"), remote_path="/root/backends")
+    .add_local_dir(str(Path(__file__).parent / "audio"), remote_path="/root/audio")
+    .add_local_dir(str(Path(__file__).parent / "config"), remote_path="/root/config")
+    .add_local_dir(str(Path(__file__).parent.parent / "output"), remote_path="/root/output")
 )
 
 app = modal.App(APP_NAME, image=image)
@@ -45,46 +64,141 @@ episode_output_volume = modal.Volume.from_name(
 
 VOICE_PROFILES_MOUNT = "/vol/voice-profiles"
 EPISODE_OUTPUT_MOUNT = "/vol/episode-output"
+RENDER_PROFILE_PATH = Path(__file__).parent / "config" / "render_profiles" / "podcast-standard.json"
 
 DEFAULT_PAUSE_MS = 800
 DEFAULT_CROSSFADE_MS = 150
-TARGET_LUFS = -16.0
+TARGET_LUFS = -18.0  # Reduced from -16 to prevent clipping during normalization
+TRUE_PEAK_LIMIT_DB = -1.0  # Hard limiter to prevent any clipping
+
+# modal/CHATTERBOX_INTEGRATION_PLAN.md Section 3: benchmark cheapest-first.
+# L4 is the VOICE_PODCAST_GENERATION.md executive recommendation for the
+# initial inference GPU; the prior H100 default was never benchmarked
+# against it and is oversized/overpriced for this workload.
+DEFAULT_GPU = "L4"
+
+
+def _apply_hard_limiter(data: "numpy.ndarray", limit_db: float) -> "numpy.ndarray":
+    """Apply hard limiting to prevent clipping at true peaks."""
+    import numpy as np
+    limit_linear = 10 ** (limit_db / 20.0)
+    return np.clip(data, -limit_linear, limit_linear)
+
+
+def _load_render_profile() -> dict:
+    if RENDER_PROFILE_PATH.exists():
+        return json.loads(RENDER_PROFILE_PATH.read_text())
+    return {}
+
+
+# Read once at module load (both locally, when the App is registered, and
+# in-container) so the concurrency cap below is config-driven instead of
+# hardcoded, per CHATTERBOX_INTEGRATION_PLAN.md Section 3 ("cap concurrency
+# rather than blindly fanning out all segments").
+_DEFAULT_RENDER_PROFILE = _load_render_profile()
+_MAX_CONCURRENT_CALLS = (
+    _DEFAULT_RENDER_PROFILE.get("synthesis", {}).get("concurrency", {}).get("maxCalls", 4)
+)
 
 
 @app.cls(
-    gpu="A10G",
+    gpu=DEFAULT_GPU,
     volumes={VOICE_PROFILES_MOUNT: voice_profiles_volume},
-    scaledown_window=300,
+    # Short scaledown window per CHATTERBOX_INTEGRATION_PLAN.md Section 3
+    # ("target: 30-60 seconds during benchmarks") instead of paying to keep
+    # a GPU warm for an occasional podcast render.
+    scaledown_window=60,
 )
 class VoiceSynthesizer:
     """Loads a TTS model once per container and reuses it across segments."""
 
     @modal.enter()
     def load_model(self):
-        from TTS.api import TTS
-
-        # Warm start: the model weights stay resident for the container's
-        # lifetime so per-segment calls only pay for inference, not load time.
-        self.tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2")
-        self.tts.to("cuda")
+        self.backend = ChatterboxBackend()
+        self.backend.load()
+        self.render_profile = _load_render_profile()
 
     @modal.method()
     def synthesize(self, text: str, voice_profile_id: str, language: str = "en") -> bytes:
-        """Synthesize one script segment's text in the given voice profile."""
+        """Synthesize one script segment's text in the given voice profile.
+
+        The segment's text is split into sentence-aware chunks per the
+        render profile's `synthesis.chunking` target (see
+        modal/audio/segmenter.py) so a 300-600 word section is not sent to
+        the model as a single inference call, and a failed chunk can be
+        retried on its own instead of forcing the whole segment to re-render.
+        """
         profile = self._load_voice_profile(voice_profile_id)
         reference_wav = self._resolve_reference_audio(profile)
+        synth_opts = profile.get("synthesis", {})
 
-        out_path = f"/tmp/{voice_profile_id}-{abs(hash(text))}.wav"
-        self.tts.tts_to_file(
-            text=text,
-            speaker_wav=reference_wav,
-            language=language,
-            file_path=out_path,
+        chunking = self.render_profile.get("synthesis", {}).get("chunking", {})
+        retry_count = self.render_profile.get("synthesis", {}).get("concurrency", {}).get("retryCount", 2)
+
+        chunks = chunk_text(
+            text,
+            target_seconds_min=chunking.get("targetSecondsMin", 10),
+            target_seconds_max=chunking.get("targetSecondsMax", 30),
         )
-        with open(out_path, "rb") as f:
-            data = f.read()
-        os.remove(out_path)
-        return data
+
+        chunk_wavs = [
+            self._synthesize_chunk_with_retry(
+                chunk,
+                reference_wav,
+                language=language,
+                exaggeration=synth_opts.get("exaggeration"),
+                cfg_weight=synth_opts.get("cfgWeight"),
+                retry_count=retry_count,
+            )
+            for chunk in chunks
+        ]
+
+        return self._stitch_chunks(chunk_wavs)
+
+    def _synthesize_chunk_with_retry(
+        self,
+        chunk_text_value: str,
+        reference_wav: str,
+        *,
+        language: str,
+        exaggeration: float | None,
+        cfg_weight: float | None,
+        retry_count: int,
+    ) -> bytes:
+        last_error: Exception | None = None
+        for attempt in range(retry_count + 1):
+            try:
+                return self.backend.synthesize(
+                    chunk_text_value,
+                    reference_wav,
+                    language=language,
+                    exaggeration=exaggeration,
+                    cfg_weight=cfg_weight,
+                )
+            except Exception as error:  # noqa: BLE001 - retry any synthesis failure
+                last_error = error
+        raise RuntimeError(
+            f"Synthesis failed after {retry_count + 1} attempt(s) for chunk: "
+            f"{chunk_text_value[:80]!r}"
+        ) from last_error
+
+    def _stitch_chunks(self, chunk_wavs: list[bytes]) -> bytes:
+        """Concatenate a segment's synthesized chunks back into one clip."""
+        if len(chunk_wavs) == 1:
+            return chunk_wavs[0]
+
+        from io import BytesIO
+
+        from pydub import AudioSegment
+
+        combined = AudioSegment.empty()
+        for i, data in enumerate(chunk_wavs):
+            clip = AudioSegment.from_wav(BytesIO(data))
+            combined = clip if i == 0 else combined.append(clip, crossfade=DEFAULT_CROSSFADE_MS)
+
+        out_buf = BytesIO()
+        combined.export(out_buf, format="wav")
+        return out_buf.getvalue()
 
     def _load_voice_profile(self, voice_profile_id: str) -> dict:
         profile_path = Path(VOICE_PROFILES_MOUNT) / f"{voice_profile_id}.json"
@@ -154,16 +268,21 @@ def assemble_episode(
     buf.seek(0)
 
     data, rate = sf.read(buf)
+
+    # Apply hard limiter before loudness normalization to prevent clipping.
+    # This ensures no peaks exceed -1 dB even during normalization.
+    limited_data = _apply_hard_limiter(data, TRUE_PEAK_LIMIT_DB)
+
     meter = pyln.Meter(rate)
-    loudness = meter.integrated_loudness(data)
-    normalized = pyln.normalize.loudness(data, loudness, TARGET_LUFS)
+    loudness = meter.integrated_loudness(limited_data)
+    normalized = pyln.normalize.loudness(limited_data, loudness, TARGET_LUFS)
 
     out_buf = BytesIO()
     sf.write(out_buf, normalized, rate, format="WAV")
     return out_buf.getvalue()
 
 
-@app.function(volumes={EPISODE_OUTPUT_MOUNT: episode_output_volume})
+@app.function(volumes={EPISODE_OUTPUT_MOUNT: episode_output_volume}, timeout=1200)
 def generate_episode_audio(episode_config_json: str) -> str:
     """Entrypoint: render one episode's audio from its ScriptOutput + config.
 
@@ -196,13 +315,31 @@ def generate_episode_audio(episode_config_json: str) -> str:
         outro_bed_path=config.get("outroBedPath"),
     )
 
+    # Write to Modal volume
     output_path = Path(EPISODE_OUTPUT_MOUNT) / config["outputFileName"]
     output_path.write_bytes(final_audio)
     episode_output_volume.commit()
+
+    # Also write to local output directory for accessibility
+    meta = config.get("episodeMeta", {})
+    series = meta.get("series", "")
+    season_num = meta.get("seasonNumber", 1)
+    ep_num = meta.get("episodeNumber", 1)
+    local_output_dir = Path("/root/output") / series / f"season-{season_num}" / f"episode-{ep_num}"
+    local_output_dir.mkdir(parents=True, exist_ok=True)
+    local_output_path = local_output_dir / "episode.wav"
+    local_output_path.write_bytes(final_audio)
+
     return str(output_path)
 
 
 @app.local_entrypoint()
 def main(episode_config: str):
-    result_path = generate_episode_audio.remote(episode_config)
-    print(f"Episode audio rendered to: {result_path}")
+    try:
+        result_path = generate_episode_audio.remote(episode_config)
+        print(f"Episode audio rendered to: {result_path}")
+    finally:
+        # Automatically shut down the Modal app after generation completes
+        # to avoid unnecessary cloud compute charges.
+        print("Shutting down Modal app...")
+        app.stop()

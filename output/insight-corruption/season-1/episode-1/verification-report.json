@@ -1,49 +1,31 @@
 {
   "episodeNumber": 1,
-  "title": "Union Boss Smuggled 17,000 Opioid Pills, Faced Zero Jail Time",
-  "generatedAt": "2026-09-15T18:45:15.935Z",
-  "corpusSize": 115,
+  "title": "Police Union Executive Imported Thousands of Opioid Pills — Then Received Probation",
+  "generatedAt": "2026-09-20T14:19:10.271Z",
+  "corpusSize": 116,
   "claims": [
     {
-      "claim": "Smuggled over 17,000 opioid pills (Tapentadol) into the U.S. from India over multiple years while serving as head of the police union",
+      "claim": "The 2023 complaint alleged a long history of overseas pill shipments.",
       "tier": 2,
       "confidence": 0.75,
       "supportingEvidence": [
         {
+          "id": "corruption-bay-001:source-0:4",
+          "caseId": "corruption-bay-001",
+          "section": "source-0",
+          "text": "U.S. Attorney's Office, Northern District of California - March 29, 2023 complaint announcement",
+          "suggestedTier": 3,
+          "citation": "U.S. Attorney's Office, Northern District of California - March 29, 2023 complaint announcement",
+          "score": 7.785790211445322
+        },
+        {
           "id": "corruption-bay-001:offense:0",
           "caseId": "corruption-bay-001",
           "section": "offense",
-          "text": "Smuggled over 17,000 opioid pills (Tapentadol) into the U.S. from India over multiple years while serving as head of the police union",
+          "text": "Pleaded guilty to unlawfully importing tapentadol after investigators documented years of overseas pill shipments; prosecutors said she ordered roughly 18,000 tapentadol pills during a 17-month period in 2021 and 2022.",
           "suggestedTier": 2,
-          "citation": "Joanne Segovia - San Jose Police Officers' Association Opioid Smuggling — offense record",
-          "score": 49.526930365797725
-        },
-        {
-          "id": "corruption-bay-001:fallout:2",
-          "caseId": "corruption-bay-001",
-          "section": "fallout",
-          "text": "Loss of union position; Professional disgrace in law enforcement community; Permanent criminal record; Public trust erosion in police union",
-          "suggestedTier": 3,
-          "citation": "Joanne Segovia - San Jose Police Officers' Association Opioid Smuggling — fallout reporting",
-          "score": 5.563727808316844
-        },
-        {
-          "id": "corruption-bay-001:escape-mechanism:3",
-          "caseId": "corruption-bay-001",
-          "section": "escape-mechanism",
-          "text": "Claimed drug addiction as primary motivation rather than profit motive; Federal prosecutors agreed to reduce charges based on addiction narrative; High-profile defense strategy that portrayed personal struggle over criminal intent; Leveraged position as union leader for credibility; Settled case without jail time",
-          "suggestedTier": 3,
-          "citation": "Joanne Segovia - San Jose Police Officers' Association Opioid Smuggling — analysis of sentencing/defense strategy",
-          "score": 4.223319528613759
-        },
-        {
-          "id": "corruption-bay-001:sentence:1",
-          "caseId": "corruption-bay-001",
-          "section": "sentence",
-          "text": "prison_time: Zero days; probation: 3 years; community_service: 100 hours; fines: Not publicly disclosed; status: AVOIDED INCARCERATION",
-          "suggestedTier": 2,
-          "citation": "Joanne Segovia - San Jose Police Officers' Association Opioid Smuggling — sentencing outcome per published reporting",
-          "score": 1.9247498925186934
+          "citation": "Joanne Segovia - San Jose Police Officers' Association Opioid Importation — offense record",
+          "score": 7.290110387289358
         }
       ],
       "verdict": "tier-2-corroborated",
@@ -51,7 +33,81 @@
       "notes": "Tier 2 direct-statement evidence found. Confirm the corroboration statement is specific, not just \"we fact-checked it\"."
     },
     {
-      "claim": "Outcome: AVOIDED INCARCERATION",
+      "claim": "Segovia pleaded guilty in October 2024 to unlawfully importing tapentadol.",
+      "tier": 2,
+      "confidence": 0.75,
+      "supportingEvidence": [
+        {
+          "id": "corruption-bay-001:source-1:5",
+          "caseId": "corruption-bay-001",
+          "section": "source-1",
+          "text": "KQED - October 8, 2024 guilty plea coverage",
+          "suggestedTier": 3,
+          "citation": "KQED - October 8, 2024 guilty plea coverage",
+          "score": 12.635146035859169
+        },
+        {
+          "id": "corruption-bay-001:offense:0",
+          "caseId": "corruption-bay-001",
+          "section": "offense",
+          "text": "Pleaded guilty to unlawfully importing tapentadol after investigators documented years of overseas pill shipments; prosecutors said she ordered roughly 18,000 tapentadol pills during a 17-month period in 2021 and 2022.",
+          "suggestedTier": 2,
+          "citation": "Joanne Segovia - San Jose Police Officers' Association Opioid Importation — offense record",
+          "score": 11.978120990060088
+        },
+        {
+          "id": "corruption-bay-001:source-3:7",
+          "caseId": "corruption-bay-001",
+          "section": "source-3",
+          "text": "San Jose Spotlight - October 8, 2024 guilty plea coverage",
+          "suggestedTier": 3,
+          "citation": "San Jose Spotlight - October 8, 2024 guilty plea coverage",
+          "score": 11.368355249204317
+        }
+      ],
+      "verdict": "tier-2-corroborated",
+      "singleSource": false,
+      "notes": "Tier 2 direct-statement evidence found. Confirm the corroboration statement is specific, not just \"we fact-checked it\"."
+    },
+    {
+      "claim": "The original fentanyl-related charge was removed after prosecutors acknowledged a testing error.",
+      "tier": 2,
+      "confidence": 0.75,
+      "supportingEvidence": [
+        {
+          "id": "corruption-bay-001:offense:0",
+          "caseId": "corruption-bay-001",
+          "section": "offense",
+          "text": "Pleaded guilty to unlawfully importing tapentadol after investigators documented years of overseas pill shipments; prosecutors said she ordered roughly 18,000 tapentadol pills during a 17-month period in 2021 and 2022.",
+          "suggestedTier": 2,
+          "citation": "Joanne Segovia - San Jose Police Officers' Association Opioid Importation — offense record",
+          "score": 4.387477175374014
+        },
+        {
+          "id": "corruption-bay-001:sentence:1",
+          "caseId": "corruption-bay-001",
+          "section": "sentence",
+          "text": "prison_time: Zero days; probation: 3 years; community_service: 100 hours; conditions: Drug testing, counseling, and potential searches during probation were reported; status: SENTENCED TO PROBATION",
+          "suggestedTier": 2,
+          "citation": "Joanne Segovia - San Jose Police Officers' Association Opioid Importation — sentencing outcome per published reporting",
+          "score": 2.787939625001974
+        },
+        {
+          "id": "corruption-bay-001:escape-mechanism:3",
+          "caseId": "corruption-bay-001",
+          "section": "escape-mechanism",
+          "text": "Prosecutors and defense both described addiction rather than profit as the central motive; The government credited her acceptance of responsibility, sobriety, and low risk of reoffending; Judge Eumi K. Lee characterized the conduct at sentencing as that of an addict rather than a dealer; The court nevertheless identified deception at the beginning of the investigation and abuse of a law-enforcement-adjacent position",
+          "suggestedTier": 3,
+          "citation": "Joanne Segovia - San Jose Police Officers' Association Opioid Importation — analysis of sentencing/defense strategy",
+          "score": 1.4675930360242315
+        }
+      ],
+      "verdict": "tier-2-corroborated",
+      "singleSource": false,
+      "notes": "Tier 2 direct-statement evidence found. Confirm the corroboration statement is specific, not just \"we fact-checked it\"."
+    },
+    {
+      "claim": "Judge Eumi K. Lee imposed three years of probation and 100 hours of community service with no prison term.",
       "tier": 2,
       "confidence": 0.75,
       "supportingEvidence": [
@@ -59,10 +115,28 @@
           "id": "corruption-bay-001:sentence:1",
           "caseId": "corruption-bay-001",
           "section": "sentence",
-          "text": "prison_time: Zero days; probation: 3 years; community_service: 100 hours; fines: Not publicly disclosed; status: AVOIDED INCARCERATION",
+          "text": "prison_time: Zero days; probation: 3 years; community_service: 100 hours; conditions: Drug testing, counseling, and potential searches during probation were reported; status: SENTENCED TO PROBATION",
           "suggestedTier": 2,
-          "citation": "Joanne Segovia - San Jose Police Officers' Association Opioid Smuggling — sentencing outcome per published reporting",
-          "score": 6.404420390052127
+          "citation": "Joanne Segovia - San Jose Police Officers' Association Opioid Importation — sentencing outcome per published reporting",
+          "score": 17.533827789798675
+        },
+        {
+          "id": "corruption-bay-001:escape-mechanism:3",
+          "caseId": "corruption-bay-001",
+          "section": "escape-mechanism",
+          "text": "Prosecutors and defense both described addiction rather than profit as the central motive; The government credited her acceptance of responsibility, sobriety, and low risk of reoffending; Judge Eumi K. Lee characterized the conduct at sentencing as that of an addict rather than a dealer; The court nevertheless identified deception at the beginning of the investigation and abuse of a law-enforcement-adjacent position",
+          "suggestedTier": 3,
+          "citation": "Joanne Segovia - San Jose Police Officers' Association Opioid Importation — analysis of sentencing/defense strategy",
+          "score": 5.111438453633847
+        },
+        {
+          "id": "corruption-bay-001:offense:0",
+          "caseId": "corruption-bay-001",
+          "section": "offense",
+          "text": "Pleaded guilty to unlawfully importing tapentadol after investigators documented years of overseas pill shipments; prosecutors said she ordered roughly 18,000 tapentadol pills during a 17-month period in 2021 and 2022.",
+          "suggestedTier": 2,
+          "citation": "Joanne Segovia - San Jose Police Officers' Association Opioid Importation — offense record",
+          "score": 1.4625302310048127
         }
       ],
       "verdict": "tier-2-corroborated",

@@ -23,23 +23,28 @@ Embezzled nearly $3.9 million from the Association of Bay Area Governments betwe
 Palo Alto Online - 2016; Bay Area News Group; Federal Court Records
 
 ## Runtime feasibility (read before recording)
-The verified facts above are enough for roughly **10-14 minutes** of honest narration.
-To responsibly fill the remaining ~15-18 minutes of the 30-minute target without
-fabricating case details, the script allocates that time to:
-1. A clearly-labeled **Pattern Analysis** segment connecting this case to the
-   season's documented common themes (editorial commentary, not new factual claims).
-2. A **guest/expert interview slot** ([EXPAND] block in script.md) — actually
-   booking a guest (see guest-materials/) is what makes this episode's runtime
-   real rather than padded.
+The case-specific facts above are enough for roughly **10-14 minutes** of honest
+narration on their own. The segment-first script in `scripts/segments/`
+(generated from `projects/insight-corruption/episode-packages/season-1/episode-2.json`)
+fills the remaining runtime to hit the 30-minute target with clearly-labeled
+**analysis/context segments** — general federal-sentencing and public-sector
+financial-control framework, and this season's cross-case restitution-vs-incarceration
+pattern — none of which introduce new case-specific claims about Clarke Howatt.
+Runtime validated at 29.45 minutes (PASS); see `scripts/manifest.json`.
 
-**Do not** extend the factual segments themselves to hit time — that is the
-exact failure mode this brief exists to prevent.
+**Do not** extend the case-specific segments themselves to hit time if this
+episode is ever revised — that is the exact failure mode this brief exists
+to prevent. A guest/expert interview remains an option for a future revision
+but was not required to reach a valid runtime for this generation.
 
 ## Talking points
 - The restitution loophole: When money can buy your way out of prison
-- How this case compares to the season's other 2 episodes on restitution vs. incarceration, public-trust mitigation, and sentencing disparity.
+- How a fast, well-resourced restitution payment functions as a mitigating factor under 18 U.S.C. § 3553(a), separate from restitution being legally mandatory
+- What internal financial controls (separation of duties, independent audits) should have caught a single-administrator embezzlement sooner
 
 ## Recording notes
-- Read the [VERIFY]/[EXPAND] tags in script.md aloud as producer cues, not as broadcast text.
+- `scripts/segments/` is authoritative for narration; `scripts/assembled-script.md` is the producer read-through copy only.
 - Confirm sentencing/case status is still current as of the recording date before airing —
   case files in this repository were compiled 2016-era and status can change.
+- Recording is currently blocked on Modal voice-profile reference-audio intake — see
+  `projects/insight-corruption/voice-profiles/eric-william-nissen.json` (`referenceAudio.status: "pending-intake"`).

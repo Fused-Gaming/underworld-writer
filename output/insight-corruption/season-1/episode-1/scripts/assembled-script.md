@@ -1,8 +1,8 @@
 # Insight Corruption — Episode 1: Police Union Executive Imported Thousands of Opioid Pills — Then Received Probation
 
 **Generated from:** `projects/insight-corruption/episode-packages/season-1/episode-1.json`
-**Words:** 4,092
-**Estimated runtime:** 29.52 minutes at 145 WPM with a fixed 90-second mid-roll
+**Words:** 4158
+**Estimated runtime:** 29.97 minutes at 145 WPM / fixed segment durations
 **Runtime validation:** PASS
 
 > The segmented files under `scripts/segments/` are authoritative. This assembled file is generated for producer read-through only.
@@ -20,6 +20,10 @@ Joanne Segovia receives three years of probation and one hundred hours of commun
 That outcome is where this episode begins, because the most useful question is not whether the sentence makes you angry or sympathetic. The useful question is how the record got from a years-long importation scheme to probation, what facts changed along the way, what the court said mattered, and what this case reveals about the difference between a dramatic headline and the much more complicated process of federal sentencing.
 
 This episode separates four things that are easy to blur together: what investigators originally alleged, what Segovia ultimately admitted, what prosecutors and defense lawyers argued at sentencing, and what the judge actually decided. Those distinctions matter here more than usual, because one of the most explosive allegations in the early case was later corrected by the government itself.
+
+## Host Introduction
+
+I'm Eric Nissen, and this is Insight Corruption.
 
 ## Series Intro
 
@@ -222,3 +226,7 @@ That sequence is complicated. It is also more interesting — and more useful �
 ## Outro and Source CTA
 
 That's this episode of Insight Corruption. The source manifest and accompanying article are linked with the episode. If you have records or firsthand information that can be independently verified, use the contact information in the show notes.
+
+## Production Credits
+
+Insight Corruption is an independent investigative production, written, sourced, and hosted by Eric Nissen. This episode is narrated using an authorized AI-generated version of Eric Nissen's voice, disclosed here and in the show notes. Research and fact-checking follow the source manifest linked with this episode; if you find an error, use the corrections contact in the show notes.

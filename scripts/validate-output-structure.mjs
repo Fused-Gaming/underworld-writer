@@ -125,6 +125,7 @@ const projectsRoot = path.join(root, 'projects');
 if (fs.existsSync(projectsRoot)) {
   for (const entry of fs.readdirSync(projectsRoot, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
+    if (entry.name === '_template') continue; // Skip template directory
     const legacyEpisodes = path.join(projectsRoot, entry.name, 'episodes');
     if (fs.existsSync(legacyEpisodes)) errors.push(`Generated episode tree is forbidden under projects/: projects/${entry.name}/episodes`);
   }

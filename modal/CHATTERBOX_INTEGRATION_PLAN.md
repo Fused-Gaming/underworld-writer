@@ -1,6 +1,6 @@
 # Chatterbox TTS on Modal — Integration Plan
 
-Status: planning
+Status: Phase 1 implemented (backend swap + config-driven chunking/retry/concurrency). Benchmarking (T4/L4/A10) and the ASR QA pipeline (Phase 3) remain outstanding — both require an actual Modal deployment with GPU access and a consented, uploaded reference clip, neither of which exists in this repo yet.
 Branch: `feature/modal-chatterbox`
 Target backend: Resemble AI Chatterbox TTS
 Primary goal: render recurring ~30 minute podcast episodes with cloned host voices at the lowest practical Modal compute cost while preserving acceptable voice consistency.
@@ -196,20 +196,20 @@ Acceptance gate:
 
 ### Phase 1 — Backend swap + benchmark
 
-- [ ] add Chatterbox backend adapter
-- [ ] switch Modal image dependencies from Coqui TTS to `chatterbox-tts`
-- [ ] benchmark T4, L4, A10
-- [ ] reduce scaledown window for batch workloads
-- [ ] keep existing voice-profile consent enforcement
-- [ ] render a short single-speaker sample
+- [x] add Chatterbox backend adapter (`modal/backends/chatterbox.py`, behind `modal/backends/base.py`'s protocol)
+- [x] switch Modal image dependencies from Coqui TTS to `chatterbox-tts`
+- [ ] benchmark T4, L4, A10 — needs a live Modal deployment; not runnable from this repo checkout
+- [x] reduce scaledown window for batch workloads (300s → 60s)
+- [x] keep existing voice-profile consent enforcement (`_resolve_reference_audio` unchanged)
+- [ ] render a short single-speaker sample — blocked on a consented, uploaded reference clip (see `projects/insight-corruption/voice-profiles/eric-william-nissen.json`, still `pending-intake`)
 
 ### Phase 2 — Production episode segmentation
 
-- [ ] sentence-aware chunking
-- [ ] same-speaker chunk coalescing
-- [ ] bounded parallel synthesis
-- [ ] per-segment retry/cache
-- [ ] render manifest
+- [x] sentence-aware chunking (`modal/audio/segmenter.py::chunk_text`, wired into `VoiceSynthesizer.synthesize`)
+- [ ] same-speaker chunk coalescing across adjacent script segments (current chunking is within one segment only)
+- [x] bounded parallel synthesis (`allow_concurrent_inputs` set from the render profile's `synthesis.concurrency.maxCalls`)
+- [x] per-segment retry (`_synthesize_chunk_with_retry`, count from `synthesis.concurrency.retryCount`) — no cache yet
+- [ ] render manifest (per-segment/per-chunk hashes and generation params — see VOICE_PODCAST_GENERATION.md Section 14)
 - [ ] resume incomplete episode renders
 
 ### Phase 3 — Podcast quality controls

@@ -4,8 +4,13 @@
   "displayName": "Eric William Nissen",
   "role": "main host",
   "show": "Insight Corruption",
-  "baseModel": "coqui/XTTS-v2",
+  "baseModel": "resemble-ai/chatterbox",
   "language": "en",
+  "synthesis": {
+    "backend": "chatterbox",
+    "exaggeration": 0.5,
+    "cfgWeight": 0.5
+  },
   "consent": {
     "status": "confirmed",
     "confirmedBy": "project owner (jlucus) on behalf of host",
@@ -25,5 +30,5 @@
     "clips": []
   },
   "fineTunedCheckpoint": null,
-  "notes": "This record is metadata/consent tracking only. Actual audio extraction from social platforms, cleanup, and upload to the Modal Volume is a manual intake step outside this repo — see AUDIO_GENERATION_PLAN.md Section 3 for the voice profile schema this feeds into."
+  "notes": "This record is metadata/consent tracking only. Actual audio extraction from social platforms, cleanup, and upload to the Modal Volume is a manual intake step outside this repo. baseModel/synthesis switched from coqui/XTTS-v2 to Chatterbox per modal/CHATTERBOX_INTEGRATION_PLAN.md Phase 1 (2026-09-20) — see modal/config/voice_profiles/README.md for the runtime copy this feeds into."
 }

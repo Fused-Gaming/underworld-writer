@@ -1,0 +1,205 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-20T14:18:12.060Z",
+  "sourcePackage": "projects/insight-corruption/episode-packages/season-1/episode-2.json",
+  "seriesSlug": "insight-corruption",
+  "seasonNumber": 1,
+  "episodeNumber": 2,
+  "wordsPerMinute": 145,
+  "targetRuntimeMinutes": 30,
+  "estimatedRuntimeMinutes": 29.45,
+  "totalWords": 4085,
+  "runtimePass": true,
+  "segments": [
+    {
+      "order": 1,
+      "id": "cold-open",
+      "type": "case-specific",
+      "title": "Cold Open — The Restitution Question",
+      "wordCount": 368,
+      "estimatedSeconds": 152,
+      "claimIds": [
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "sha256": "e1b424b24cc11f84c9d73e437802c09267c9285e19fa30196bada9ede638e92f"
+    },
+    {
+      "order": 2,
+      "id": "host-intro",
+      "type": "reusable",
+      "title": "Host Introduction",
+      "wordCount": 14,
+      "estimatedSeconds": 6,
+      "claimIds": [],
+      "sha256": "b2620c9072876cf6eb366ee22e35979a16153a58bc4e999d286d747c9457ff1a"
+    },
+    {
+      "order": 3,
+      "id": "series-intro",
+      "type": "reusable",
+      "title": "Series Intro",
+      "wordCount": 20,
+      "estimatedSeconds": 8,
+      "claimIds": [],
+      "sha256": "982f6857e785e9cd59fa887b890d6ae3b842969049e02f330391db4ebe6b802c"
+    },
+    {
+      "order": 4,
+      "id": "source-disclosure",
+      "type": "reusable",
+      "title": "Evidence and Attribution Note",
+      "wordCount": 30,
+      "estimatedSeconds": 12,
+      "claimIds": [],
+      "sha256": "7fd657ed22abba391e0b10663d422e589f4b829cc7b845d7bf02fff3626d2ee4"
+    },
+    {
+      "order": 5,
+      "id": "position-of-trust",
+      "type": "case-specific",
+      "title": "A Trusted Seat Inside Regional Government",
+      "wordCount": 441,
+      "estimatedSeconds": 182,
+      "claimIds": [
+        "C01"
+      ],
+      "sha256": "cee70cd9ef395758de9a16041fbea29e6da1d3574c92cae2a5faa525bdf4f4cf"
+    },
+    {
+      "order": 6,
+      "id": "the-scheme",
+      "type": "case-specific",
+      "title": "Nearly Four Million Dollars, Four Years",
+      "wordCount": 346,
+      "estimatedSeconds": 143,
+      "claimIds": [
+        "C02"
+      ],
+      "sha256": "b6cbd2b7400ba1b39d87f86266af8d1d109ea8e82fc0e4435b8518b2d258de96"
+    },
+    {
+      "order": 7,
+      "id": "midroll",
+      "type": "sponsor",
+      "title": "Mid-Roll Break",
+      "wordCount": 29,
+      "estimatedSeconds": 90,
+      "claimIds": [],
+      "sha256": "8e222a5291c8a4e4390e674bacd7a76a95b7511a37810e83d90ec2fc896f48f6"
+    },
+    {
+      "order": 8,
+      "id": "restitution-and-sentencing",
+      "type": "case-specific",
+      "title": "The Restitution Strategy",
+      "wordCount": 373,
+      "estimatedSeconds": 154,
+      "claimIds": [
+        "C03",
+        "C04"
+      ],
+      "sha256": "45dbe881b7966da8a7ca2b89917528e7eb03b314e172b7acd0e2f55884535814"
+    },
+    {
+      "order": 9,
+      "id": "fallout-and-institutional-accountability",
+      "type": "analysis",
+      "title": "What the Public Record Says About the Fallout",
+      "wordCount": 530,
+      "estimatedSeconds": 219,
+      "claimIds": [
+        "C05"
+      ],
+      "sha256": "84d154052e63336656975182cba01c71668c9be7da874222052ca3bbffd503b4"
+    },
+    {
+      "order": 10,
+      "id": "restitution-as-mitigation",
+      "type": "context",
+      "title": "Why Restitution Moves a Federal Sentence",
+      "wordCount": 437,
+      "estimatedSeconds": 181,
+      "claimIds": [
+        "C06",
+        "C07"
+      ],
+      "sha256": "15bbefe5eef9f07518f8e6b0c57f395f5b0ab5cc5b0efca9c2b9cbde16ab2df9"
+    },
+    {
+      "order": 11,
+      "id": "comparative-caution",
+      "type": "analysis",
+      "title": "Why Dollar Amounts Alone Don't Compare Sentences",
+      "wordCount": 354,
+      "estimatedSeconds": 146,
+      "claimIds": [
+        "C06"
+      ],
+      "sha256": "b4642437142e467c6c356edb612d44eedd9d88638feccbe4b95495b0d6ed8561"
+    },
+    {
+      "order": 12,
+      "id": "internal-controls",
+      "type": "analysis",
+      "title": "What Would Have Caught This Sooner",
+      "wordCount": 420,
+      "estimatedSeconds": 174,
+      "claimIds": [
+        "C01",
+        "C02"
+      ],
+      "sha256": "9567b582707a27483494f0d7f6c56675bc8a3eba32895a652e8bfd81f50d9536"
+    },
+    {
+      "order": 13,
+      "id": "the-season-pattern",
+      "type": "analysis",
+      "title": "A Pattern This Season Keeps Finding",
+      "wordCount": 253,
+      "estimatedSeconds": 105,
+      "claimIds": [
+        "C03",
+        "C04"
+      ],
+      "sha256": "0ade3159b10362a36e84cb13fe379195c22c22a81a3c3981d39c0d96feb330ef"
+    },
+    {
+      "order": 14,
+      "id": "known-vs-unknown",
+      "type": "analysis",
+      "title": "What This Case Establishes, and What It Doesn't",
+      "wordCount": 387,
+      "estimatedSeconds": 160,
+      "claimIds": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "sha256": "480e8e9aa00cd817516dbbf462b68966df9ce720c8ff2a0b76cb14d1466f01a9"
+    },
+    {
+      "order": 15,
+      "id": "series-outro",
+      "type": "reusable",
+      "title": "Outro and Source CTA",
+      "wordCount": 26,
+      "estimatedSeconds": 11,
+      "claimIds": [],
+      "sha256": "8d4e23aa54d096223724e19d9c562184baa2f5bc11492307d059947333f5d713"
+    },
+    {
+      "order": 16,
+      "id": "credits",
+      "type": "reusable",
+      "title": "Production Credits",
+      "wordCount": 57,
+      "estimatedSeconds": 24,
+      "claimIds": [],
+      "sha256": "b87583fff80075c8d16e37877cee2669b9de047170d971e6188f500de3a4839e"
+    }
+  ]
+}

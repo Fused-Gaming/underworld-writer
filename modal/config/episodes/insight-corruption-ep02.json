@@ -1,0 +1,13 @@
+{
+  "scriptOutputPath": "output/insight-corruption/season-1/episode-2/script-output.json",
+  "speakerVoiceProfiles": {
+    "narrator": "voice-eric-nissen-01"
+  },
+  "outputFileName": "insight-corruption-ep02.wav",
+  "episodeMeta": {
+    "title": "Finance Director Stole $3.9M from Bay Area Housing Fund, Got 1 Year in Prison",
+    "episodeNumber": 2,
+    "seasonNumber": 1,
+    "series": "insight-corruption"
+  }
+}
