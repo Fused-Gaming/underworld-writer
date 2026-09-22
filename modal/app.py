@@ -16,9 +16,11 @@ Usage:
     modal run modal/app.py::generate_episode_audio --episode-config modal/config/episodes/s1e01.json
 """
 
+import hashlib
 import json
 import os
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 import modal
@@ -30,6 +32,12 @@ import modal
 sys.path.insert(0, str(Path(__file__).parent))
 from audio.segmenter import chunk_text  # noqa: E402
 from backends.chatterbox import ChatterboxBackend  # noqa: E402
+from cache.chunk_cache import (  # noqa: E402
+    CACHE_VERSION,
+    FilesystemChunkCache,
+    compute_cache_key,
+    hash_file,
+)
 
 APP_NAME = "underworld-audio"
 
@@ -49,6 +57,7 @@ image = (
     # sys.path.insert(...) above matches this file's local layout.
     .add_local_dir(str(Path(__file__).parent / "backends"), remote_path="/root/backends")
     .add_local_dir(str(Path(__file__).parent / "audio"), remote_path="/root/audio")
+    .add_local_dir(str(Path(__file__).parent / "cache"), remote_path="/root/cache")
     .add_local_dir(str(Path(__file__).parent / "config"), remote_path="/root/config")
     .add_local_dir(str(Path(__file__).parent.parent / "output"), remote_path="/root/output")
 )
@@ -64,12 +73,22 @@ episode_output_volume = modal.Volume.from_name(
 
 VOICE_PROFILES_MOUNT = "/vol/voice-profiles"
 EPISODE_OUTPUT_MOUNT = "/vol/episode-output"
+# Chunk cache lives on the same persistent volume as episode output, keyed
+# by content hash (modal/cache/chunk_cache.py), so it survives across
+# container restarts/retries of the same episode render.
+CHUNK_CACHE_DIR = f"{EPISODE_OUTPUT_MOUNT}/chunk-cache"
 RENDER_PROFILE_PATH = Path(__file__).parent / "config" / "render_profiles" / "podcast-standard.json"
 
 DEFAULT_PAUSE_MS = 800
 DEFAULT_CROSSFADE_MS = 150
-TARGET_LUFS = -18.0  # Reduced from -16 to prevent clipping during normalization
-TRUE_PEAK_LIMIT_DB = -1.0  # Hard limiter to prevent any clipping
+# Fallback defaults, used only when the render profile's `mix` block
+# (modal/config/render_profiles/podcast-standard.json) doesn't specify a
+# value. The render profile is authoritative — see _master_episode_audio().
+TARGET_LUFS = -16.0
+TRUE_PEAK_LIMIT_DB = -1.0
+TARGET_LRA = 11.0
+
+RENDER_MANIFEST_SCHEMA_VERSION = "1.0"
 
 # modal/CHATTERBOX_INTEGRATION_PLAN.md Section 3: benchmark cheapest-first.
 # L4 is the VOICE_PODCAST_GENERATION.md executive recommendation for the
@@ -78,11 +97,75 @@ TRUE_PEAK_LIMIT_DB = -1.0  # Hard limiter to prevent any clipping
 DEFAULT_GPU = "L4"
 
 
-def _apply_hard_limiter(data: "numpy.ndarray", limit_db: float) -> "numpy.ndarray":
-    """Apply hard limiting to prevent clipping at true peaks."""
-    import numpy as np
-    limit_linear = 10 ** (limit_db / 20.0)
-    return np.clip(data, -limit_linear, limit_linear)
+def _parse_ffmpeg_loudnorm_json(stderr_text: str) -> dict:
+    """Extract the JSON stats block ffmpeg's loudnorm filter prints to stderr."""
+    start = stderr_text.rfind("{")
+    end = stderr_text.rfind("}")
+    if start == -1 or end == -1 or end < start:
+        raise RuntimeError(
+            f"Could not find loudnorm JSON stats in ffmpeg output:\n{stderr_text[-2000:]}"
+        )
+    return json.loads(stderr_text[start : end + 1])
+
+
+def _master_episode_audio(
+    wav_bytes: bytes, target_lufs: float, true_peak_db: float, lra: float
+) -> tuple[bytes, dict]:
+    """Master a stitched episode WAV with ffmpeg's two-pass EBU R128 loudnorm.
+
+    This replaces the previous naive sample-peak np.clip() limiter (which
+    could clip audio and did not measure or enforce true peak) with a real
+    true-peak-aware loudness normalization: pass 1 measures integrated
+    loudness/LRA/true peak, pass 2 applies `linear=true` loudnorm using the
+    measured values so the final file hits the target LUFS without the
+    non-linear compression the single-pass filter would otherwise apply.
+
+    Returns (mastered_wav_bytes, stats) where stats has "measured" (pass 1)
+    and "final" (pass 2) loudnorm JSON blocks, including true peak and LRA.
+    """
+    import subprocess
+    import tempfile
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        in_path = Path(tmpdir) / "in.wav"
+        out_path = Path(tmpdir) / "out.wav"
+        in_path.write_bytes(wav_bytes)
+
+        measure_filter = (
+            f"loudnorm=I={target_lufs}:TP={true_peak_db}:LRA={lra}:print_format=json"
+        )
+        measure_proc = subprocess.run(
+            ["ffmpeg", "-y", "-i", str(in_path), "-af", measure_filter, "-f", "null", "-"],
+            capture_output=True,
+            text=True,
+        )
+        if measure_proc.returncode != 0:
+            raise RuntimeError(
+                f"ffmpeg loudnorm measurement pass failed (exit {measure_proc.returncode}):\n"
+                f"{measure_proc.stderr[-2000:]}"
+            )
+        measured = _parse_ffmpeg_loudnorm_json(measure_proc.stderr)
+
+        apply_filter = (
+            f"loudnorm=I={target_lufs}:TP={true_peak_db}:LRA={lra}:"
+            f"measured_I={measured['input_i']}:measured_TP={measured['input_tp']}:"
+            f"measured_LRA={measured['input_lra']}:measured_thresh={measured['input_thresh']}:"
+            f"offset={measured.get('target_offset', 0)}:linear=true:print_format=json"
+        )
+        apply_proc = subprocess.run(
+            ["ffmpeg", "-y", "-i", str(in_path), "-af", apply_filter, str(out_path)],
+            capture_output=True,
+            text=True,
+        )
+        if apply_proc.returncode != 0:
+            raise RuntimeError(
+                f"ffmpeg loudnorm apply pass failed (exit {apply_proc.returncode}):\n"
+                f"{apply_proc.stderr[-2000:]}"
+            )
+        final_stats = _parse_ffmpeg_loudnorm_json(apply_proc.stderr)
+        mastered_bytes = out_path.read_bytes()
+
+    return mastered_bytes, {"measured": measured, "final": final_stats}
 
 
 def _load_render_profile() -> dict:
@@ -103,7 +186,13 @@ _MAX_CONCURRENT_CALLS = (
 
 @app.cls(
     gpu=DEFAULT_GPU,
-    volumes={VOICE_PROFILES_MOUNT: voice_profiles_volume},
+    volumes={
+        VOICE_PROFILES_MOUNT: voice_profiles_volume,
+        # Chunk cache lives on the episode-output volume so cache entries
+        # survive across container restarts/retries of the same episode
+        # (see modal/cache/chunk_cache.py).
+        EPISODE_OUTPUT_MOUNT: episode_output_volume,
+    },
     # Short scaledown window per CHATTERBOX_INTEGRATION_PLAN.md Section 3
     # ("target: 30-60 seconds during benchmarks") instead of paying to keep
     # a GPU warm for an occasional podcast render.
@@ -117,9 +206,18 @@ class VoiceSynthesizer:
         self.backend = ChatterboxBackend()
         self.backend.load()
         self.render_profile = _load_render_profile()
+        self.chunk_cache = FilesystemChunkCache(
+            CHUNK_CACHE_DIR, backend_version=f"chatterbox:v{CACHE_VERSION}"
+        )
 
     @modal.method()
-    def synthesize(self, text: str, voice_profile_id: str, language: str = "en") -> bytes:
+    def synthesize(
+        self,
+        text: str,
+        voice_profile_id: str,
+        language: str = "en",
+        force_regenerate: bool = False,
+    ) -> bytes:
         """Synthesize one script segment's text in the given voice profile.
 
         The segment's text is split into sentence-aware chunks per the
@@ -127,6 +225,12 @@ class VoiceSynthesizer:
         modal/audio/segmenter.py) so a 300-600 word section is not sent to
         the model as a single inference call, and a failed chunk can be
         retried on its own instead of forcing the whole segment to re-render.
+
+        Each chunk is looked up in the content-addressed chunk cache
+        (modal/cache/chunk_cache.py) before synthesis; a hit reuses the
+        cached audio instead of calling the model. Pass `force_regenerate`
+        to bypass the cache for an intentional re-render (e.g. after a
+        script or voice-profile change).
         """
         profile = self._load_voice_profile(voice_profile_id)
         reference_wav = self._resolve_reference_audio(profile)
@@ -141,6 +245,8 @@ class VoiceSynthesizer:
             target_seconds_max=chunking.get("targetSecondsMax", 30),
         )
 
+        reference_audio_hash = hash_file(reference_wav)
+
         chunk_wavs = [
             self._synthesize_chunk_with_retry(
                 chunk,
@@ -149,6 +255,10 @@ class VoiceSynthesizer:
                 exaggeration=synth_opts.get("exaggeration"),
                 cfg_weight=synth_opts.get("cfgWeight"),
                 retry_count=retry_count,
+                voice_profile_id=voice_profile_id,
+                voice_profile_revision=str(profile.get("fineTunedCheckpoint") or profile.get("consent", {}).get("confirmedDate", "")),
+                reference_audio_hash=reference_audio_hash,
+                force_regenerate=force_regenerate,
             )
             for chunk in chunks
         ]
@@ -164,17 +274,40 @@ class VoiceSynthesizer:
         exaggeration: float | None,
         cfg_weight: float | None,
         retry_count: int,
+        voice_profile_id: str,
+        voice_profile_revision: str,
+        reference_audio_hash: str,
+        force_regenerate: bool = False,
     ) -> bytes:
+        cache_key = compute_cache_key(
+            chunk_text_value,
+            voice_profile_id=voice_profile_id,
+            voice_profile_revision=voice_profile_revision,
+            reference_audio_hash=reference_audio_hash,
+            backend_revision=self.chunk_cache.backend_version,
+            exaggeration=exaggeration,
+            cfg_weight=cfg_weight,
+            extra_params={"language": language},
+        )
+
+        if not force_regenerate:
+            cached = self.chunk_cache.get(cache_key)
+            if cached is not None:
+                return cached
+
         last_error: Exception | None = None
         for attempt in range(retry_count + 1):
             try:
-                return self.backend.synthesize(
+                audio = self.backend.synthesize(
                     chunk_text_value,
                     reference_wav,
                     language=language,
                     exaggeration=exaggeration,
                     cfg_weight=cfg_weight,
                 )
+                self.chunk_cache.put(cache_key, audio)
+                episode_output_volume.commit()
+                return audio
             except Exception as error:  # noqa: BLE001 - retry any synthesis failure
                 last_error = error
         raise RuntimeError(
@@ -234,16 +367,23 @@ def assemble_episode(
     episode_meta: dict,
     intro_bed_path: str | None = None,
     outro_bed_path: str | None = None,
-) -> bytes:
-    """Stitch synthesized segments into one normalized episode file.
+    segment_chunks: list[tuple[str, str]] | None = None,
+) -> tuple[bytes, dict]:
+    """Stitch synthesized segments into one mastered episode file.
 
     No ML here on purpose — splicing, crossfades, pause padding, and
-    loudness normalization are deterministic audio-editing steps.
+    loudness mastering are deterministic audio-editing steps.
+
+    `segment_chunks` is the optional (text, voice_profile_id) list that
+    drove `segment_audio` synthesis, in the same order, used only to build
+    the render manifest's per-segment info (text hash, voice profile,
+    duration) — it is not required for mastering itself.
+
+    Returns (mastered_wav_bytes, render_manifest). The manifest is written
+    to disk by the caller alongside the WAV; this function only builds it.
     """
     from io import BytesIO
 
-    import pyloudnorm as pyln
-    import soundfile as sf
     from pydub import AudioSegment
 
     clips = [AudioSegment.from_wav(BytesIO(data)) for data in segment_audio]
@@ -265,29 +405,73 @@ def assemble_episode(
 
     buf = BytesIO()
     mixed.export(buf, format="wav")
-    buf.seek(0)
+    stitched_wav_bytes = buf.getvalue()
 
-    data, rate = sf.read(buf)
+    # The render profile's `mix` block is authoritative for mastering
+    # targets; the module-level TARGET_LUFS/TRUE_PEAK_LIMIT_DB/TARGET_LRA
+    # constants are fallback defaults only (podcast-standard.json currently
+    # sets targetLufs: -16, truePeakDb: -1).
+    render_profile = _load_render_profile()
+    mix_cfg = render_profile.get("mix", {})
+    target_lufs = mix_cfg.get("targetLufs", TARGET_LUFS)
+    true_peak_db = mix_cfg.get("truePeakDb", TRUE_PEAK_LIMIT_DB)
+    target_lra = mix_cfg.get("lra", TARGET_LRA)
 
-    # Apply hard limiter before loudness normalization to prevent clipping.
-    # This ensures no peaks exceed -1 dB even during normalization.
-    limited_data = _apply_hard_limiter(data, TRUE_PEAK_LIMIT_DB)
+    mastered_wav_bytes, loudnorm_stats = _master_episode_audio(
+        stitched_wav_bytes, target_lufs, true_peak_db, target_lra
+    )
 
-    meter = pyln.Meter(rate)
-    loudness = meter.integrated_loudness(limited_data)
-    normalized = pyln.normalize.loudness(limited_data, loudness, TARGET_LUFS)
+    segments_manifest = []
+    for i, clip in enumerate(clips):
+        entry = {
+            "index": i,
+            "durationSeconds": round(clip.duration_seconds, 3),
+        }
+        if segment_chunks and i < len(segment_chunks):
+            text, voice_profile_id = segment_chunks[i]
+            entry["textSha256"] = hashlib.sha256(text.encode("utf-8")).hexdigest()
+            entry["voiceProfileId"] = voice_profile_id
+        segments_manifest.append(entry)
 
-    out_buf = BytesIO()
-    sf.write(out_buf, normalized, rate, format="WAV")
-    return out_buf.getvalue()
+    synthesis_cfg = render_profile.get("synthesis", {})
+    render_manifest = {
+        "manifestSchemaVersion": RENDER_MANIFEST_SCHEMA_VERSION,
+        "generatedAt": datetime.now(timezone.utc).isoformat(),
+        "synthesis": {
+            "backend": synthesis_cfg.get("backend", "chatterbox"),
+            "modelVariant": synthesis_cfg.get("modelVariant"),
+        },
+        "mastering": {
+            "method": "ffmpeg-loudnorm-two-pass",
+            "target": {
+                "integratedLufs": target_lufs,
+                "truePeakDb": true_peak_db,
+                "lra": target_lra,
+            },
+            "measured": loudnorm_stats["measured"],
+            "final": loudnorm_stats["final"],
+        },
+        "segments": segments_manifest,
+    }
+
+    return mastered_wav_bytes, render_manifest
 
 
 @app.function(volumes={EPISODE_OUTPUT_MOUNT: episode_output_volume}, timeout=1200)
-def generate_episode_audio(episode_config_json: str) -> str:
+def generate_episode_audio(episode_config_json: str, force_regenerate: bool = False) -> str:
     """Entrypoint: render one episode's audio from its ScriptOutput + config.
 
     episode_config_json: path to a modal/config/episodes/*.json file
     (see that directory for the expected shape).
+
+    Resumability: each segment's chunks are synthesized through the chunk
+    cache (modal/cache/chunk_cache.py, keyed by content hash), so re-running
+    this function after a partial failure — the `starmap` below raises if
+    any one segment's synthesis ultimately fails after its retries — skips
+    every chunk whose cache entry already exists and only regenerates the
+    ones that are missing or failed. Pass `force_regenerate=True` to bypass
+    the cache entirely for an intentional re-render (e.g. after a script or
+    voice-profile change).
     """
     config = json.loads(Path(episode_config_json).read_text())
     script_output = json.loads(Path(config["scriptOutputPath"]).read_text())
@@ -304,20 +488,27 @@ def generate_episode_audio(episode_config_json: str) -> str:
         (text, speaker_to_voice_profile.get(speaker, speaker_to_voice_profile["narrator"]))
         for text, speaker in segment_texts_and_speakers
     ]
+    synth_calls = [
+        (text, voice_profile_id, "en", force_regenerate) for text, voice_profile_id in calls
+    ]
     segment_audio = list(
-        synthesizer.synthesize.starmap(calls)
+        synthesizer.synthesize.starmap(synth_calls)
     )
 
-    final_audio = assemble_episode.remote(
+    final_audio, render_manifest = assemble_episode.remote(
         segment_audio,
         config.get("episodeMeta", {}),
         intro_bed_path=config.get("introBedPath"),
         outro_bed_path=config.get("outroBedPath"),
+        segment_chunks=calls,
     )
+    manifest_json = json.dumps(render_manifest, indent=2)
 
-    # Write to Modal volume
+    # Write to Modal volume, alongside a render manifest with the same stem.
     output_path = Path(EPISODE_OUTPUT_MOUNT) / config["outputFileName"]
     output_path.write_bytes(final_audio)
+    manifest_path = output_path.with_name(output_path.stem + ".manifest.json")
+    manifest_path.write_text(manifest_json)
     episode_output_volume.commit()
 
     # Also write to local output directory for accessibility
@@ -329,14 +520,15 @@ def generate_episode_audio(episode_config_json: str) -> str:
     local_output_dir.mkdir(parents=True, exist_ok=True)
     local_output_path = local_output_dir / "episode.wav"
     local_output_path.write_bytes(final_audio)
+    (local_output_dir / "episode.manifest.json").write_text(manifest_json)
 
     return str(output_path)
 
 
 @app.local_entrypoint()
-def main(episode_config: str):
+def main(episode_config: str, force_regenerate: bool = False):
     try:
-        result_path = generate_episode_audio.remote(episode_config)
+        result_path = generate_episode_audio.remote(episode_config, force_regenerate=force_regenerate)
         print(f"Episode audio rendered to: {result_path}")
     finally:
         # Automatically shut down the Modal app after generation completes

@@ -209,11 +209,12 @@ Acceptance gate:
 - [ ] same-speaker chunk coalescing across adjacent script segments (current chunking is within one segment only)
 - [x] bounded parallel synthesis (`allow_concurrent_inputs` set from the render profile's `synthesis.concurrency.maxCalls`)
 - [x] per-segment retry (`_synthesize_chunk_with_retry`, count from `synthesis.concurrency.retryCount`) — no cache yet
-- [ ] render manifest (per-segment/per-chunk hashes and generation params — see VOICE_PODCAST_GENERATION.md Section 14)
+- [x] render manifest (per-segment/per-chunk hashes and generation params — see VOICE_PODCAST_GENERATION.md Section 14; written as `episode.manifest.json` next to `episode.wav` by `assemble_episode()`/`generate_episode_audio()` in `modal/app.py`)
 - [ ] resume incomplete episode renders
 
 ### Phase 3 — Podcast quality controls
 
+- [x] true-peak-aware audio mastering (ffmpeg two-pass EBU R128 `loudnorm`, `linear=true`, replacing the old `np.clip()` sample-peak hard limiter — see `_master_episode_audio()` in `modal/app.py`; targets read from `modal/config/render_profiles/podcast-standard.json`'s `mix` block)
 - [ ] benchmark Chatterbox vs Chatterbox Turbo
 - [ ] voice-specific generation presets
 - [ ] pronunciation overrides for names/acronyms
