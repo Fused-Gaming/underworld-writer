@@ -7,7 +7,18 @@ Format follows Keep a Changelog and Semantic Versioning.
 ## [Unreleased]
 
 ### Added
-- Future changes belong here before release.
+- Render manifest (`episode.manifest.json`) persisted next to each episode's mastered WAV, recording measured integrated loudness, true peak, LRA, mastering targets, backend/model info, and per-segment text hashes (#149).
+- Configurable editorial language linter (`src/editorial-lint.ts`) with `bannedPhrases`/`discouragedPhrases`/`preferredTerms` severities (`error`/`warn`/`review`), driven by `templates/editorial/style-dictionary.json` and overridable per brand/project (#146, #149).
+- Repeated-opening, repeated-transition, excessive-rhetorical-question, and repeated-n-gram detection in the editorial linter, wired into `scripts/editorial-package.mjs` via `--lint`/`--strict` and `npm run editorial:lint` (#149).
+- Chunk-level synthesis cache (`modal/cache/chunk_cache.py`) keyed on chunk text + voice profile (id/revision) + reference-audio hash + backend revision + synthesis params, enabling resumable episode rendering after a partial failure (#149).
+- `scripts/publish-npm.mjs` (`npm run publish:npm`): git/npm-auth safety checks, runs `release:evidence`, publishes, and tags the release; documented in `PUBLISHING.md` (#149).
+
+### Changed
+- Audio mastering now uses two-pass ffmpeg EBU R128 `loudnorm` true-peak limiting instead of a sample-peak `np.clip()` limiter; targets (`-16 LUFS` / `-1 dBTP` / `11 LRA`) are read from `modal/config/render_profiles/podcast-standard.json`'s `mix` block (#149).
+- `@h4shed/rock-hardened` is now an exact-pinned devDependency invoked via its local bin (`hardened-changelogger`), replacing an unpinned `npx --yes --package=@h4shed/rock-hardened@0.8.2 ...` that auto-installed and executed the package on every publish (#149).
+
+### Fixed
+- Chunk resynthesis after a partial episode-generation failure no longer regenerates the whole episode; already-cached chunks are skipped (`force_regenerate` still available to bypass the cache) (#149).
 
 ## [2.2.1] - 2026-09-20
 
