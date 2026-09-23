@@ -1,24 +1,103 @@
-This is free and unencumbered software released into the public domain.
+=========================================
+LICENSE
+=========================================
+© 2024 Fused Gaming LLC — Non-Commercial Rights Reserved
+SPDX-License-Identifier: LicenseRef-Fused-Gaming-Unlicense-NC
 
-Anyone is free to copy, modify, publish, use, compile, sell, or
-distribute this software, either in source code form or as a compiled
-binary, for any purpose, commercial or non-commercial, and by any
-means.
+Package: @h4shed/skill-underworld-writer
+Repository: https://github.com/Fused-Gaming/underworld-writer
+Contact: licensing@vln.gg | https://vln.gg
 
-In jurisdictions that recognize copyright laws, the author or authors
-of this software dedicate any and all copyright interest in the
-software to the public domain. We make this dedication for the benefit
-of the public at large and to the detriment of our heirs and
-successors. We intend this dedication to be an overt act of
-relinquishment in perpetuity of all present and future rights to this
-software under copyright law.
+=========================================
+TERMS AND CONDITIONS
+=========================================
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
+This software is provided in the public domain under the Unlicense with the
+following Fused Gaming Non-Commercial Rights Amendment:
 
-For more information, please refer to <https://unlicense.org>
+1. USE RESTRICTIONS
+   a. This software may be used for non-commercial purposes only.
+   b. Commercial use requires explicit written permission from Fused Gaming LLC.
+   c. Non-commercial use includes:
+      * Personal creative projects
+      * Educational research and study
+      * Home lab and experimental environments
+      * Internal business evaluation only (non-production)
+   d. Commercial use includes, without limitation:
+      * SaaS platforms or hosted services
+      * Proprietary software products
+      * Monetized content pipelines
+      * Revenue-generating integrations or derivatives
+
+2. ATTRIBUTION REQUIREMENTS
+   a. All uses must include clear attribution to Fused Gaming LLC.
+   b. Attribution must appear in:
+      * Project documentation and README files
+      * Help text and --version output where applicable
+      * User-facing interfaces where technically feasible
+   c. Original work attribution must be preserved in full.
+   d. Required attribution notice:
+      "This software includes @h4shed/skill-underworld-writer, by Fused Gaming LLC (https://vln.gg)."
+
+3. DERIVATIVE WORKS
+   a. Derivative works must carry this license in full, unmodified.
+   b. Derivative works must include clear, human-readable documentation of all
+      modifications made from the original.
+   c. All original attribution notices must be preserved and not obscured.
+   d. Derivative works may not remove, weaken, or override the non-commercial
+      restriction in Section 1.
+
+4. DEPENDENCY LICENSES
+   a. All third-party dependencies retain their original licenses.
+   b. A full list of dependencies and their licenses is available via
+      `npm ls` / `package-lock.json` within this distribution.
+   c. Users and distributors of this software must comply with all applicable
+      dependency licenses independently of this license.
+   d. This license does not grant any rights under dependency licenses.
+
+5. NO WARRANTY
+   This software is provided "as is", without warranty of any kind, express
+   or implied, including but not limited to the warranties of merchantability,
+   fitness for a particular purpose, and non-infringement. In no event shall
+   Fused Gaming LLC or any contributor be liable for any claim, damages, or
+   other liability arising from the use of this software.
+
+=========================================
+COMMERCIAL LICENSING
+=========================================
+
+For commercial use inquiries, contact Fused Gaming LLC:
+
+Email: licensing@vln.gg
+Web: https://vln.gg
+GitHub: https://github.com/Fused-Gaming
+Issues: https://github.com/Fused-Gaming/underworld-writer/issues
+
+A commercial license grants you rights to use this software in revenue-
+generating or proprietary contexts and includes support tier options.
+
+=========================================
+UNLICENSE BASE TEXT (PUBLIC DOMAIN)
+=========================================
+
+This is free and unencumbered software released into the public domain,
+subject to the Non-Commercial Amendment above, which takes precedence over
+the standard Unlicense terms in all commercial use matters.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or distribute
+this software, either in source code form or as a compiled binary, for any
+purpose, commercial or non-commercial, and by any means — EXCEPT where
+restricted by the Non-Commercial Amendment in Sections 1 through 4 above.
+
+In jurisdictions that recognize copyright law, the author or authors of this
+software dedicate any and all copyright interest in the software to the
+public domain to the maximum extent permitted by law, subject to the above
+amendment.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+For more information on the Unlicense base text, see https://unlicense.org
+=========================================
+END OF LICENSE
