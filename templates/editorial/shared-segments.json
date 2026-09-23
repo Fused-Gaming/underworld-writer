@@ -3,13 +3,13 @@
   "description": "Reusable editorial blocks. Case-specific facts must never be embedded here; interpolate only verified episode data.",
   "podcast": {
     "hostIntros": [
-      "I'm {{hostName}}, and this is {{seriesTitle}}.",
+      "I'm Eric Nissen, and this is Insight Corruption. Around here, the headline is where the work starts — not where it ends. We follow the documents, follow the money, separate allegations from established facts, and stay with a case through the outcome. Today: a longtime civilian executive inside a police officers' association, years of overseas opioid shipments, a guilty plea, and a sentence with no prison time. This is Episode One. Let's get into the record.",
       "I'm {{hostName}}. This is {{seriesTitle}}, and this episode starts with the outcome.",
       "My name is {{hostName}}. Welcome back to {{seriesTitle}}."
     ],
     "intros": [
       "Welcome to {{seriesTitle}}, where we follow public-trust cases past the headline, into the documents, the decisions, and the consequences.",
-      "This is {{seriesTitle}}. We start with the record, separate allegation from established fact, and follow the story through its outcome.",
+      "Insight Corruption is independent investigative journalism from Inner Rhythm Media. We work from court filings, government records, official statements, and documented reporting. When something is an allegation, we call it an allegation. When the record changes, we tell you. And when the documents do not answer a question, we do not pretend they do. The point is not to tell you what to think. It is to give you enough of the record to decide what you think.",
       "You're listening to {{seriesTitle}} — an evidence-first look at the cases that test public trust."
     ],
     "sourceDisclosures": [
@@ -22,7 +22,7 @@
       "The distinction matters, because the next part of the story changes how the earlier facts should be understood."
     ],
     "sponsor": [
-      "We'll be right back after this short break. {{sponsorCopy}}",
+      "A quick break. {{sponsorCopy}} Then we'll get back to the case.",
       "A quick break from {{seriesTitle}}. {{sponsorCopy}}"
     ],
     "houseAds": [
@@ -30,11 +30,11 @@
       "Support evidence-first reporting by following {{seriesTitle}} and sharing the source-backed episodes and articles with people who care about local accountability."
     ],
     "outros": [
-      "That's this episode of {{seriesTitle}}. The source manifest and accompanying article are linked with the episode. If you have records or firsthand information that can be independently verified, use the contact information in the show notes.",
+      "That's Episode {{episodeNumber}} of {{seriesTitle}}. The source manifest and companion article are linked with the episode, so don't take my word for it — inspect the record. If you have documents or firsthand information that can be independently verified, use the contact information in the show notes. Follow Eric William Nissen on social media, share the episode, and support the work through Inner Rhythm Media merchandise. I'm Eric Nissen. This is Insight Corruption. Follow the record. Follow the money. I'll see you in the next one.",
       "You've been listening to {{seriesTitle}}. Read the accompanying article and source manifest for the underlying record, and check the show notes for corrections or updates."
     ],
     "credits": [
-      "{{seriesTitle}} is an independent investigative production, written, sourced, and hosted by {{hostName}}. This episode is narrated using an authorized AI-generated version of {{hostName}}'s voice, disclosed here and in the show notes. Research and fact-checking follow the source manifest linked with this episode; if you find an error, use the corrections contact in the show notes.",
+      "{{seriesTitle}} is an independent Inner Rhythm Media production, written, researched, sourced, and hosted by {{hostName}}. This episode uses an authorized AI-generated version of {{hostName}}'s voice as part of the production process. Research and fact-checking follow the source manifest published with the episode. Corrections and tips go through the contact information in the show notes.",
       "Production credits: {{seriesTitle}} is written and sourced by {{hostName}} and narrated with an authorized synthetic version of {{hostName}}'s own voice, per the disclosure in the show notes. Every case-specific claim in this episode is tied to the source manifest published alongside it. Corrections and tips go through the contact information in the show notes."
     ]
   },
@@ -48,7 +48,7 @@
       "Editorial note: factual assertions in this article are drawn from the accompanying source manifest; disputed or attributed claims are identified as such."
     ],
     "callsToAction": [
-      "Listen to Episode {{episodeNumber}} of {{seriesTitle}} for the full narrated timeline and analysis.",
+      "Listen to Episode {{episodeNumber}} of {{seriesTitle}} for the narrated timeline, then inspect the source manifest for yourself. Follow Eric William Nissen on social media and support independent reporting through Inner Rhythm Media merchandise linked with the episode.",
       "The full episode, source manifest, and corrections information are available with this article."
     ]
   }
