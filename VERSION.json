@@ -1,10 +1,10 @@
 {
-  "version": "2.3.0",
+  "version": "2.3.1",
   "releaseDate": "2026-09-23",
   "status": "release-candidate",
   "majorVersion": 2,
   "minorVersion": 3,
-  "patchVersion": 0,
+  "patchVersion": 1,
   "prerelease": null,
   "metadata": {
     "nodeMinimum": "20.0.0",
@@ -120,6 +120,21 @@
     "nextSecurityAudit": "2026-10-13"
   },
   "changelog": {
+    "2.3.1": {
+      "releaseDate": "2026-09-23",
+      "highlights": [
+        "Scoped UW_NPM_TOKEN support for the local npm publish CLI, replacing the interactive-login-only auth path"
+      ],
+      "breaking_changes": [],
+      "deprecations": [],
+      "new_features": [
+        ".npmrc"
+      ],
+      "bug_fixes": [],
+      "improvements": [
+        "scripts/publish-npm.mjs authenticates via a scoped automation token when UW_NPM_TOKEN is set, falling back to npm login"
+      ]
+    },
     "2.3.0": {
       "releaseDate": "2026-09-23",
       "highlights": [

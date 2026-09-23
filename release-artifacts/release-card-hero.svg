@@ -1,5 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Underworld Writer v2.2.1 release changelog artwork</title>
-  <desc id="desc">Canonical Neon Underworld release composition. The approved repository artwork is used directly; this SVG does not redraw the design.</desc>
-  <image x="0" y="0" width="1200" height="630" preserveAspectRatio="xMidYMid slice" href="underworld-writer-release-og-1200x630.jpg"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 540" width="1920" height="540" data-release-card-svg="true">
+  <defs>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; }
+      .brand { font-size: 28px; font-weight: 800; letter-spacing: -0.04em; }
+      .meta { font-size: 11px; font-weight: 700; letter-spacing: 1.8px; }
+      .hero { font-family: Impact, 'Arial Narrow', sans-serif; font-size: 64px; font-weight: 400; line-height: 0.95; text-transform: uppercase; letter-spacing: -1px; }
+      .sub { font-size: 17px; }
+      .panel-title { font-size: 16px; font-weight: 800; letter-spacing: 0.6px; }
+      .panel-body { font-size: 12px; line-height: 1.35; }
+      .footer-text { font-size: 10px; font-family: ui-monospace, monospace; }
+    </style>
+  </defs>
+  <rect width="1920" height="540" fill=""/>
+  <line x1="0" y1="82" x2="1920" y2="82" stroke="#4b4b4b" stroke-width="1"/>
+  <text x="34" y="60" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.04em" fill="">Underworld Writer</text>
+  <text x="1886" y="46" font-family="ui-monospace, monospace" font-size="11" font-weight="700" letter-spacing="1.8px" fill="" text-anchor="end">UNRELEASED &nbsp;|&nbsp; RELEASE NOTES</text>
+  <text x="34" y="106" font-family="Impact, Arial Narrow, sans-serif" font-size="64" line-height="0.95" font-weight="400" text-transform="uppercase" letter-spacing="-1px" fill="">Build the story.</text>
+  <text x="34" y="166" font-family="Impact, Arial Narrow, sans-serif" font-size="64" line-height="0.95" font-weight="400" text-transform="uppercase" letter-spacing="-1px" fill="">Expose the truth.</text>
+  <text x="34" y="223" font-family="Impact, Arial Narrow, sans-serif" font-size="64" line-height="0.95" font-weight="400" text-transform="uppercase" letter-spacing="-1px" fill="">Ship what matters.</text>
+  <text x="34" y="178" font-family="ui-monospace, monospace" font-size="17" fill="">Release evidence generated from CHANGELOG.md.</text>
+  <rect x="34" y="202" width="917" height="150" fill="#090909" stroke="#565656" stroke-width="1"/>
+  <text x="54" y="226" font-family="ui-monospace, monospace" font-size="16" font-weight="800" letter-spacing="0.6px" fill="">Future changes belong here before release.</text>
+  <line x1="34" y1="490" x2="1886" y2="490" stroke="#555" stroke-width="1"/>
+  <text x="34" y="510" font-family="ui-monospace, monospace" font-size="10" fill="#888">VERSION 2.3.1 · claude/admiring-clarke-lprbwj · c3291e4ccbbf</text>
+  <text x="1886" y="510" font-family="ui-monospace, monospace" font-size="10" fill="" font-weight="700" text-anchor="end">https://github.com/Fused-Gaming/underworld-writer</text>
+  <text x="34" y="524" font-family="ui-monospace, monospace" font-size="10" fill="#888">SOURCE CHANGELOG.md · SHA256 4a48de89d326bdd2…</text>
+  <text x="1886" y="524" font-family="ui-monospace, monospace" font-size="10" fill="#888" text-anchor="end">HUMAN REVIEW REQUIRED</text>
 </svg>

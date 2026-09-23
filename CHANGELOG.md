@@ -9,6 +9,14 @@ Format follows Keep a Changelog and Semantic Versioning.
 ### Added
 - Future changes belong here before release.
 
+## [2.3.1] - 2026-09-23
+
+### Added
+- `.npmrc` reading `//registry.npmjs.org/:_authToken=${UW_NPM_TOKEN}` so `scripts/publish-npm.mjs` authenticates with a scoped npm automation token from the environment instead of requiring an interactive `npm login` session; documented in `docs/ops/PUBLISHING.md` and `.env.example` (#155).
+
+### Release Artwork
+- **Scoped Publish Auth** — `UW_NPM_TOKEN` support lets the CLI publish flow authenticate with a per-package scoped token, with automatic fallback to `npm login`.
+
 ## [2.3.0] - 2026-09-23
 
 ### Added
