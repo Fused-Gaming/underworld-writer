@@ -1,14 +1,22 @@
 {
   "name": "underworld-writer",
   "displayName": "Underworld Writer",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Dual-purpose skill for fictional underworld narratives, podcast scripting engine, factually sourced true crime writing with character development and PACER API integration",
   "author": "Fused Gaming",
-  "license": "Apache-2.0",
+  "license": "SEE LICENSE IN LICENSE.md",
   "repository": "https://github.com/Fused-Gaming/underworld-writer",
   "type": "skill",
   "category": "creative-writing",
-  "tags": ["skill", "character-development", "narrative", "underworld", "true-crime", "pacer", "mcp"],
+  "tags": [
+    "skill",
+    "character-development",
+    "narrative",
+    "underworld",
+    "true-crime",
+    "pacer",
+    "mcp"
+  ],
   "exports": {
     "skill": "./dist/index.js",
     "tools": "./dist/mcp-tools.js",
@@ -21,7 +29,11 @@
   "capabilities": {
     "character_creation": {
       "description": "Create detailed underworld character profiles",
-      "phases": ["foundation", "integration", "narrative"]
+      "phases": [
+        "foundation",
+        "integration",
+        "narrative"
+      ]
     },
     "character_validation": {
       "description": "Validate character profiles for completeness"
@@ -34,16 +46,37 @@
     },
     "podcast_scripting": {
       "description": "Generate production-ready podcast episode scripts for true crime producers",
-      "formats": ["single-episode", "two-part-episode"],
-      "features": ["fact-attribution", "qa-windows", "missing-fact-detection", "producer-briefs", "guest-handoffs"]
+      "formats": [
+        "single-episode",
+        "two-part-episode"
+      ],
+      "features": [
+        "fact-attribution",
+        "qa-windows",
+        "missing-fact-detection",
+        "producer-briefs",
+        "guest-handoffs"
+      ]
     },
     "pacer_integration": {
       "description": "True crime fact-checking via PACER federal court records",
-      "source_tiers": ["tier1-federal-courts", "tier2-corroborating", "tier3-journalist", "tier4-searched-unavailable"]
+      "source_tiers": [
+        "tier1-federal-courts",
+        "tier2-corroborating",
+        "tier3-journalist",
+        "tier4-searched-unavailable"
+      ]
     },
     "asset_validation": {
       "description": "Cleanroom sandbox asset validation for distribution compliance",
-      "licenses": ["svgrepo-free", "cc0", "mit", "apache2", "unlicense", "public-domain"]
+      "licenses": [
+        "svgrepo-free",
+        "cc0",
+        "mit",
+        "apache2",
+        "unlicense",
+        "public-domain"
+      ]
     }
   },
   "tools": [

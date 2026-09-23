@@ -8,7 +8,7 @@
 Multi-purpose character development, fact-sourced true-crime editorial tooling, and segment-first podcast/article production.
 
 [![Version](https://img.shields.io/badge/version-2.2.1-purple.svg)](package.json)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![License: Non-Commercial](https://img.shields.io/badge/License-Non--Commercial-blue.svg)](LICENSE.md)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-green.svg)](package.json)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-blue.svg)](package.json)
 
@@ -315,7 +315,7 @@ For any agent operating directly in this repository, **read `AGENTS.md` first**.
 
 ## License
 
-Licensed under the **Apache License 2.0**. See [LICENSE](LICENSE).
+Free for non-commercial use under the **Fused Gaming Non-Commercial Unlicense Amendment**. Commercial use requires a separate license from Fused Gaming LLC — contact licensing@vln.gg. See [LICENSE.md](LICENSE.md).
 
 ## Support
 

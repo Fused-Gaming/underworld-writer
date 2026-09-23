@@ -2,10 +2,10 @@
 LICENSE
 =========================================
 © 2024 Fused Gaming LLC — Non-Commercial Rights Reserved
-SPDX-License-Identifier: Unlicense
+SPDX-License-Identifier: LicenseRef-Fused-Gaming-Unlicense-NC
 
 Package: @h4shed/skill-underworld-writer
-Repository: https://github.com/fused-gaming/underworld-writer
+Repository: https://github.com/Fused-Gaming/underworld-writer
 Contact: licensing@vln.gg | https://vln.gg
 
 =========================================
@@ -37,11 +37,11 @@ following Fused Gaming Non-Commercial Rights Amendment:
       - Project documentation and README files
       - Help text and --version output where applicable
       - User-facing interfaces where technically feasible
-   c. Original work attribution must be preserved in full (see ATTRIBUTION.md).
+   c. Original work attribution must be preserved in full.
    d. Required attribution notice:
 
       "This software includes @h4shed/skill-underworld-writer,
-       a derivative work by Fused Gaming LLC (https://vln.gg).
+       by Fused Gaming LLC (https://vln.gg)."
 
 3. DERIVATIVE WORKS
 
@@ -52,49 +52,16 @@ following Fused Gaming Non-Commercial Rights Amendment:
    d. Derivative works may not remove, weaken, or override the non-commercial
       restriction in Section 1.
 
-4. ORIGINAL WORK ATTRIBUTION
-
-   This software is a cleanroom reverse-engineered and refactored derivative
-   work. Fused Gaming LLC conducted independent analysis and reimplementation
-   without copying original source code.
-
-   Original Work:  Underworld Writer
-   Source:         https://github.com/FUSED-Gaming/underworld-writer
-   Author:         jlucus / Fused Gaming team
-   License:        UNLICENSE
-
-   The cleanroom process was performed in accordance with standard industry
-   practices for independent reimplementation. No copyrighted source code
-   from the original work has been incorporated directly.
-
-5. DEPENDENCY LICENSES
+4. DEPENDENCY LICENSES
 
    a. All third-party dependencies retain their original licenses.
-   b. A full list of dependencies and their licenses is available in
-      DEPENDENCIES.md within this distribution.
+   b. A full list of dependencies and their licenses is available via
+      `npm ls` / `package-lock.json` within this distribution.
    c. Users and distributors of this software must comply with all applicable
       dependency licenses independently of this license.
    d. This license does not grant any rights under dependency licenses.
 
-6. TELEMETRY AND DATA COLLECTION
-
-   a. This package may include optional telemetry features.
-   b. Telemetry is disabled by default and requires explicit opt-in.
-   c. To configure telemetry, set the following environment variables:
-
-      FUSED_TELEMETRY_ENABLED=true
-      FUSED_TELEMETRY_ENDPOINT=https://telemetry.vln.gg/v1
-      FUSED_TELEMETRY_ANALYTICS=false
-      FUSED_TELEMETRY_CRASH_REPORTS=false
-      FUSED_TELEMETRY_PERFORMANCE=false
-      FUSED_TELEMETRY_USAGE=false
-
-   d. No personally identifiable information is collected without consent.
-   e. Consent date must be recorded before enabling telemetry:
-
-      FUSED_TELEMETRY_CONSENT_DATE=YYYY-MM-DD
-
-7. NO WARRANTY
+5. NO WARRANTY
 
    This software is provided "as is", without warranty of any kind, express or
    implied, including but not limited to the warranties of merchantability,
@@ -110,7 +77,7 @@ For commercial use inquiries, contact Fused Gaming LLC:
 
    Email:      licensing@vln.gg
    Web:        https://vln.gg
-   GitHub:     https://github.com/fused-gaming
+   GitHub:     https://github.com/Fused-Gaming
    Issues:     https://github.com/Fused-Gaming/underworld-writer/issues
 
 A commercial license grants you rights to use this software in revenue-
@@ -127,7 +94,7 @@ the standard Unlicense terms in all commercial use matters.
 Anyone is free to copy, modify, publish, use, compile, sell, or distribute
 this software, either in source code form or as a compiled binary, for any
 purpose, commercial or non-commercial, and by any means — EXCEPT where
-restricted by the Non-Commercial Amendment in Sections 1 through 6 above.
+restricted by the Non-Commercial Amendment in Sections 1 through 4 above.
 
 In jurisdictions that recognize copyright law, the author or authors of this
 software dedicate any and all copyright interest in the software to the public
@@ -137,7 +104,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
-For more information, see <https://unlicense.org>
+For more information on the Unlicense base text, see <https://unlicense.org>
 
 =========================================
 END OF LICENSE

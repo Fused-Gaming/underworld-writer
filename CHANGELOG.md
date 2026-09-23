@@ -7,15 +7,23 @@ Format follows Keep a Changelog and Semantic Versioning.
 ## [Unreleased]
 
 ### Added
+- Future changes belong here before release.
+
+## [2.3.0] - 2026-09-23
+
+### Added
 - Render manifest (`episode.manifest.json`) persisted next to each episode's mastered WAV, recording measured integrated loudness, true peak, LRA, mastering targets, backend/model info, and per-segment text hashes (#149).
 - Configurable editorial language linter (`src/editorial-lint.ts`) with `bannedPhrases`/`discouragedPhrases`/`preferredTerms` severities (`error`/`warn`/`review`), driven by `templates/editorial/style-dictionary.json` and overridable per brand/project (#146, #149).
 - Repeated-opening, repeated-transition, excessive-rhetorical-question, and repeated-n-gram detection in the editorial linter, wired into `scripts/editorial-package.mjs` via `--lint`/`--strict` and `npm run editorial:lint` (#149).
 - Chunk-level synthesis cache (`modal/cache/chunk_cache.py`) keyed on chunk text + voice profile (id/revision) + reference-audio hash + backend revision + synthesis params, enabling resumable episode rendering after a partial failure (#149).
-- `scripts/publish-npm.mjs` (`npm run publish:npm`): git/npm-auth safety checks, runs `release:evidence`, publishes, and tags the release; documented in `PUBLISHING.md` (#149).
+- `scripts/publish-npm.mjs` (`npm run publish:npm`): git/npm-auth safety checks, runs `release:evidence`, publishes, and tags the release; documented in `docs/ops/PUBLISHING.md` (#149).
+- `PRIVACY.md` at the repository root and in `.claude-plugin/`, documenting that this package has no telemetry, PACER queries default to mock mode with no live implementation yet, and cloud audio synthesis via Modal is opt-in and uses the user's own Modal account (#152).
 
 ### Changed
 - Audio mastering now uses two-pass ffmpeg EBU R128 `loudnorm` true-peak limiting instead of a sample-peak `np.clip()` limiter; targets (`-16 LUFS` / `-1 dBTP` / `11 LRA`) are read from `modal/config/render_profiles/podcast-standard.json`'s `mix` block (#149).
 - `@h4shed/rock-hardened` is now an exact-pinned devDependency invoked via its local bin (`hardened-changelogger`), replacing an unpinned `npx --yes --package=@h4shed/rock-hardened@0.8.2 ...` that auto-installed and executed the package on every publish (#149).
+- **License changed from Apache-2.0 to a custom non-commercial license** (Unlicense base + Fused Gaming Non-Commercial Rights Amendment): free for personal/educational/research/non-production use; commercial use now requires a separate written license from Fused Gaming LLC (licensing@vln.gg). `LICENSE` renamed to `LICENSE.md`. `package.json`/`plugin.json`/`.claude-plugin/marketplace.json` `license` fields changed from `Apache-2.0` to `SEE LICENSE IN LICENSE.md` (#152).
+- Moved operational/setup docs out of the repository root into `docs/ops/` (`DOCKER.md`, `MODAL_SETUP.md`, `PUBLISHING.md`) and `docs/archive/` (`BUILD_SETUP_REPORT.md`, `DOCKER_BUILD_SUMMARY.txt`) to reduce root clutter; `README.md`, `LICENSE.md`, `CHANGELOG.md`, `CONTRIBUTING.md`, `CLAUDE.md`, `AGENTS.md`, `SKILL.md`, and `PRIVACY.md` remain at the root.
 
 ### Fixed
 - Chunk resynthesis after a partial episode-generation failure no longer regenerates the whole episode; already-cached chunks are skipped (`force_regenerate` still available to bypass the cache) (#149).
