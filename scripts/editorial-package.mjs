@@ -16,6 +16,8 @@ const series = arg('--series');
 const season = Number(arg('--season', '1'));
 const episode = Number(arg('--episode', '1'));
 const checkOnly = args.includes('--check');
+const lintFlag = args.includes('--lint');
+const strictLint = args.includes('--strict');
 
 if (!series || !Number.isInteger(season) || !Number.isInteger(episode)) {
   console.error('Usage: node scripts/editorial-package.mjs generate --series <slug> --season <n> --episode <n> [--check]');
@@ -198,3 +200,44 @@ console.log(`Article: ${articleWords} words — ${articlePass ? 'PASS' : 'FAIL'}
 
 if (!runtimePass || !articlePass) process.exitCode = 1;
 if (command === 'check' && !checkOnly) console.warn('Use --check to validate without writing files.');
+
+// Editorial style/cliché/repetition linting — runs standalone with --lint,
+// or automatically as part of --check. Never blocks `generate` unless
+// severity is 'error' and --strict is also passed.
+if (lintFlag || checkOnly) {
+  await runEditorialLint();
+}
+
+async function runEditorialLint() {
+  let lintModule;
+  try {
+    lintModule = await import('../dist/editorial-lint.js');
+  } catch {
+    console.warn('Editorial lint skipped: run `npm run build` first (dist/editorial-lint.js not found).');
+    return;
+  }
+  const { lintSegments } = lintModule;
+
+  const segments = [
+    ...podcastSegments.map((s) => ({ id: `podcast:${s.id}`, text: s.body })),
+    ...articleSections.map((s) => ({ id: `article:${s.id}`, text: s.body })),
+  ];
+
+  const result = lintSegments(segments);
+  if (result.violations.length === 0) {
+    console.log('Editorial lint: no violations found.');
+    return;
+  }
+
+  console.log(`Editorial lint: ${result.violations.length} violation(s) — ${result.errorCount} error, ${result.warnCount} warn, ${result.reviewCount} review`);
+  for (const v of result.violations) {
+    const loc = v.location.segmentId ? `${v.location.segmentId}:${v.location.line}:${v.location.offset}` : `${v.location.line}:${v.location.offset}`;
+    const suggestion = v.suggestion ? ` (suggest: ${v.suggestion})` : '';
+    console.log(`  [${v.severity.toUpperCase()}] ${loc} — ${v.message}${suggestion}`);
+  }
+
+  if (result.errorCount > 0 && strictLint) {
+    console.error('Editorial lint: failing due to error-severity violations under --strict.');
+    process.exitCode = 1;
+  }
+}

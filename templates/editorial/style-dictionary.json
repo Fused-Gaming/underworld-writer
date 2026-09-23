@@ -1,0 +1,50 @@
+{
+  "$schema": "https://underworld-writer.internal/schemas/style-dictionary.json",
+  "description": "Default editorial style dictionary: banned/discouraged AI-cheap-model phrases and preferred term replacements. Override or extend per-brand or per-project by loading this file and merging in your own entries (see src/editorial-lint.ts loadStyleDictionary/mergeStyleDictionaries).",
+  "bannedPhrases": [
+    { "phrase": "in today's fast-paced world", "severity": "error", "suggestion": "Cut the throat-clearing; open on the concrete fact." },
+    { "phrase": "it's important to note", "severity": "error", "suggestion": "State the fact directly." },
+    { "phrase": "it is important to note", "severity": "error", "suggestion": "State the fact directly." },
+    { "phrase": "delve into", "severity": "error", "suggestion": "look at / dig into / examine" },
+    { "phrase": "let's dive in", "severity": "error", "suggestion": "Cut; go straight to the content." },
+    { "phrase": "let's unpack this", "severity": "error", "suggestion": "Cut; go straight to the content." },
+    { "phrase": "in conclusion", "severity": "warn", "suggestion": "Use a concrete closing beat instead of a label." },
+    { "phrase": "at the end of the day", "severity": "warn", "suggestion": "ultimately / in the end" },
+    { "phrase": "it goes without saying", "severity": "warn", "suggestion": "Cut it, or say the thing." },
+    { "phrase": "needless to say", "severity": "warn", "suggestion": "Cut it, or say the thing." },
+    { "phrase": "in the world of", "severity": "warn", "suggestion": "Name the specific domain." },
+    { "phrase": "when it comes to", "severity": "warn", "suggestion": "Name the subject directly." },
+    { "phrase": "a testament to", "severity": "warn", "suggestion": "evidence of / proof of" }
+  ],
+  "discouragedPhrases": [
+    { "phrase": "tapestry", "severity": "review", "suggestion": "Use a concrete, non-metaphorical noun." },
+    { "phrase": "landscape", "severity": "review", "suggestion": "Name the actual field/industry/situation." },
+    { "phrase": "realm", "severity": "review", "suggestion": "Name the actual domain." },
+    { "phrase": "navigate", "severity": "review", "suggestion": "handle / work through / manage" },
+    { "phrase": "underscore", "severity": "review", "suggestion": "show / highlight / confirm" },
+    { "phrase": "crucial", "severity": "review", "suggestion": "critical / necessary, or state why it matters" },
+    { "phrase": "pivotal", "severity": "review", "suggestion": "key / decisive, or state the effect" },
+    { "phrase": "robust", "severity": "review", "suggestion": "strong / well-tested, or be specific" },
+    { "phrase": "multifaceted", "severity": "review", "suggestion": "Name the specific facets." },
+    { "phrase": "comprehensive", "severity": "review", "suggestion": "thorough, or state the scope directly" },
+    { "phrase": "furthermore", "severity": "review", "suggestion": "also / and, or just start the next sentence" },
+    { "phrase": "moreover", "severity": "review", "suggestion": "also / and, or just start the next sentence" },
+    { "phrase": "in essence", "severity": "review", "suggestion": "essentially, or cut" },
+    { "phrase": "myriad", "severity": "review", "suggestion": "many / numerous, or give a count" },
+    { "phrase": "boasts", "severity": "review", "suggestion": "has / offers" },
+    { "phrase": "unleash", "severity": "review", "suggestion": "release / enable" },
+    { "phrase": "game-changer", "severity": "review", "suggestion": "Describe the actual change." },
+    { "phrase": "elevate", "severity": "review", "suggestion": "improve / raise, or be specific" },
+    { "phrase": "unlock", "severity": "review", "suggestion": "enable / provide access to" }
+  ],
+  "preferredTerms": [
+    { "avoid": "utilize", "preferred": "use", "severity": "warn" },
+    { "avoid": "leverage", "preferred": "use", "severity": "warn" },
+    { "avoid": "in order to", "preferred": "to", "severity": "review" }
+  ],
+  "transitionWords": [
+    "however", "furthermore", "moreover", "additionally", "meanwhile",
+    "ultimately", "consequently", "therefore", "nevertheless", "notably",
+    "importantly", "in fact", "as a result"
+  ]
+}

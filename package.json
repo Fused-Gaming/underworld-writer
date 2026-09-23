@@ -38,17 +38,19 @@
     "podcast:new-episode": "node scripts/podcast-workspace.mjs episode create",
     "editorial:generate": "node scripts/editorial-package.mjs generate",
     "editorial:check": "node scripts/editorial-package.mjs generate --check",
+    "editorial:lint": "node scripts/editorial-package.mjs generate --check --lint",
     "validate:workspace": "node scripts/validate-output-structure.mjs",
     "version:sync": "node scripts/sync-version.mjs",
     "version:check": "node scripts/sync-version.mjs --check",
     "release:art": "node scripts/render-release-artwork.mjs",
     "release:art:check": "node scripts/render-release-artwork.mjs --check",
-    "rock:validate": "npx --yes --package=@h4shed/rock-hardened@0.8.2 hardened-changelogger validate",
-    "rock:evidence": "npx --yes --package=@h4shed/rock-hardened@0.8.2 hardened-changelogger ci",
-    "rock:manifest": "npx --yes --package=@h4shed/rock-hardened@0.8.2 hardened-changelogger manifest",
+    "rock:validate": "hardened-changelogger validate",
+    "rock:evidence": "hardened-changelogger ci",
+    "rock:manifest": "hardened-changelogger manifest",
     "validate:release": "npm run version:check && npm run validate:workspace && npm run rock:validate && npm run test:workspace && npm run test:episode1 && npm run build && npm test && npm run benchmark:workspace",
     "release:evidence": "npm run validate:release && npm run rock:evidence && npm run release:art",
-    "prepublishOnly": "npm run release:evidence && npm run lint && npm run test:coverage"
+    "prepublishOnly": "npm run release:evidence && npm run lint && npm run test:coverage",
+    "publish:npm": "node scripts/publish-npm.mjs"
   },
   "dependencies": {
     "@h4shed/mcp-core": "^1.0.40"
@@ -58,6 +60,7 @@
     "@modelcontextprotocol/sdk": "^1.0.0"
   },
   "devDependencies": {
+    "@h4shed/rock-hardened": "0.8.2",
     "@types/jest": "^30.0.0",
     "@types/node": "^20.12.0",
     "@typescript-eslint/eslint-plugin": "^8.70.0",
