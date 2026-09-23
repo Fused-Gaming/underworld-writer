@@ -1,16 +1,16 @@
 {
-  "version": "2.2.1",
-  "releaseDate": "2026-09-20",
-  "status": "patch-release-candidate",
+  "version": "2.3.0",
+  "releaseDate": "2026-09-23",
+  "status": "release-candidate",
   "majorVersion": 2,
-  "minorVersion": 2,
-  "patchVersion": 1,
+  "minorVersion": 3,
+  "patchVersion": 0,
   "prerelease": null,
   "metadata": {
     "nodeMinimum": "20.0.0",
     "npmMinimum": "8.0.0",
     "typescriptVersion": "5.3.2",
-    "buildNumber": 1027
+    "buildNumber": 1028
   },
   "packageInfo": {
     "name": "@h4shed/skill-underworld-writer",
@@ -120,6 +120,36 @@
     "nextSecurityAudit": "2026-10-13"
   },
   "changelog": {
+    "2.3.0": {
+      "releaseDate": "2026-09-23",
+      "highlights": [
+        "Audio mastering: two-pass ffmpeg EBU R128 loudnorm true-peak limiting replacing np.clip()",
+        "Editorial language linter with configurable style dictionary",
+        "Chunk-level synthesis cache and resumable episode rendering",
+        "Local npm publish pipeline with pinned release tooling",
+        "Relicensed from Apache-2.0 to a custom non-commercial license (Fused Gaming Unlicense amendment)",
+        "Added PRIVACY.md at the repository root and in .claude-plugin/",
+        "Reduced root-directory clutter by relocating operational docs into docs/ops/ and docs/archive/"
+      ],
+      "breaking_changes": [
+        "License changed from Apache-2.0 to a custom non-commercial license; commercial use now requires a separate license from Fused Gaming LLC",
+        "LICENSE renamed to LICENSE.md"
+      ],
+      "deprecations": [],
+      "new_features": [
+        "src/editorial-lint.ts",
+        "modal/cache/chunk_cache.py",
+        "scripts/publish-npm.mjs",
+        "PRIVACY.md"
+      ],
+      "bug_fixes": [
+        "Chunk resynthesis after a partial episode-generation failure no longer regenerates the whole episode"
+      ],
+      "improvements": [
+        "@h4shed/rock-hardened pinned to an exact devDependency version instead of an unpinned npx invocation",
+        "Root directory decluttered: DOCKER.md, MODAL_SETUP.md, PUBLISHING.md moved to docs/ops/; BUILD_SETUP_REPORT.md, DOCKER_BUILD_SUMMARY.txt moved to docs/archive/"
+      ]
+    },
     "2.2.1": {
       "releaseDate": "2026-09-20",
       "highlights": [
