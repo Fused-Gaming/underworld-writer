@@ -8,7 +8,7 @@
 Multi-purpose character development, fact-sourced true-crime editorial tooling, and segment-first podcast/article production.
 
 [![Version](https://img.shields.io/badge/version-2.2.1-purple.svg)](package.json)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![License: Unlicense](https://img.shields.io/badge/License-Unlicense-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-green.svg)](package.json)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-blue.svg)](package.json)
 
@@ -315,7 +315,7 @@ For any agent operating directly in this repository, **read `AGENTS.md` first**.
 
 ## License
 
-Licensed under the **Apache License 2.0**. See [LICENSE](LICENSE).
+Released into the public domain under **The Unlicense**. See [LICENSE](LICENSE).
 
 ## Support
 

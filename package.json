@@ -86,7 +86,7 @@
     "fact-checking"
   ],
   "author": "Fused Gaming",
-  "license": "Apache-2.0",
+  "license": "Unlicense",
   "repository": "https://github.com/Fused-Gaming/underworld-writer",
   "publishConfig": {
     "access": "public",
