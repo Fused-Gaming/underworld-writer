@@ -22,26 +22,6 @@ That outcome is where this episode begins, because the most useful question is n
 
 This episode separates four things that are easy to blur together: what investigators originally alleged, what Segovia ultimately admitted, what prosecutors and defense lawyers argued at sentencing, and what the judge actually decided. Those distinctions matter here more than usual, because one of the most explosive allegations in the early case was later corrected by the government itself.
 
-## The Position of Trust — Part 1
-
-Before the criminal case, Joanne Segovia was not a sworn police officer. She was a longtime civilian administrator and executive director of the San Jose Police Officers’ Association. That distinction matters. The case did not establish that San Jose police officers were participating in the importation scheme, and both an internal union investigation and prosecutors later said they found no evidence that other union representatives knew about or joined in Segovia’s criminal conduct.
-
-But her position still matters to the public-trust story.
-
-The federal complaint said Segovia used both personal and office computers to order pills. Reporting on the case said investigators found drugs at her home and at the union office, including hundreds of tapentadol pills at the workplace. Prosecutors also said she used the police union’s UPS account to send packages to other people in the United States on behalf of her supplier. In the government’s sentencing presentation, that fact became part of the argument that her conduct was more than private drug use. She had become useful to a foreign supply network by helping move pills after they reached the United States.
-
-## The Position of Trust — Part 2
-
-That does not make the police union itself a criminal enterprise, and the evidence cited in the public record does not support saying that. It does create an institutional question: what happens when a trusted civilian executive inside a law-enforcement organization is able to use workplace resources during conduct that later results in a federal felony conviction?
-
-The union fired Segovia after the allegations became public and commissioned an outside investigation. That investigation concluded she acted alone and that there was no evidence other representatives were involved, knew about the conduct, or suspected it. Prosecutors agreed there was no evidence of a broader union conspiracy. At the same time, the prosecution criticized the union’s response after the search, accusing its counsel of resisting access to Segovia’s work email before ultimately not pursuing the threatened court intervention.
-
-Those are separate findings and should stay separate. One concerns whether colleagues were participants in Segovia’s drug activity. The other concerns how an institution reacted once federal investigators arrived. Conflating them would overstate the record.
-
-## The Position of Trust — Part 3
-
-For this series, the significance is narrower and more defensible: Segovia occupied a law-enforcement-adjacent position of trust; some of the conduct touched workplace systems and resources; no broader criminal involvement by union personnel was established; and the judge later said her position should have given her a firmer respect for the law and for truthfulness with investigators.
-
 ## How the Shipment Network Worked — Part 1
 
 The federal investigation described a long shipping history.
@@ -70,30 +50,6 @@ That tension is one of the reasons the sentencing outcome cannot be understood f
 
 There is another important point about chronology. The sixty-one-shipment allegation reaches back to 2015, while the roughly eighteen-thousand-pill figure highlighted at sentencing concerned a much narrower period in 2021 and 2022. Those numbers describe different slices of the record. Treating them as interchangeable would be inaccurate. The longer history describes the frequency of packages. The later number describes a quantity of tapentadol associated with a shorter period.
 
-## The Investigation and the False Explanation — Part 1
-
-Segovia came onto federal investigators’ radar through a broader Homeland Security investigation into an overseas drug network. The government said investigators became suspicious because of the unusually large quantities of pills associated with her.
-
-The initial public case was dramatic. In March 2023, federal prosecutors announced a criminal complaint accusing Segovia of attempting to illegally import a controlled substance, and the press release focused on a package that authorities initially believed contained a fentanyl analogue. The complaint also laid out the broader shipment history, the intercepted packages, the WhatsApp communications, and allegations that Segovia used personal and office computers to order drugs.
-
-Investigators said they confronted Segovia before the case became public. According to later reporting and the government’s sentencing arguments, she initially denied responsibility and attempted to blame her housekeeper. Prosecutors treated that deception as serious. At sentencing, they argued it was not simply an impulsive false statement made in the first seconds of a confrontation. Their position was that she had time to think about the investigation and continued with a false explanation.
-
-The defense gave that conduct a different interpretation. Segovia’s attorney argued that the denial came from panic and an attempt to conceal an addiction that had been kept separate from the rest of her life. That explanation did not make the false statements disappear. It framed why they happened.
-
-## The Investigation and the False Explanation — Part 2
-
-The judge ultimately acknowledged both sides of that picture. In explaining the sentence, Judge Eumi K. Lee identified deception at the beginning of the investigation and described Segovia’s law-enforcement-adjacent position as an aggravating consideration. The judge also credited the evidence of addiction and recovery.
-
-This is a useful example of how sentencing works differently from a binary question of guilt. By the time of sentencing, the court was not deciding whether every disputed fact made Segovia good or bad. The court was weighing conduct, motive, history, rehabilitation, deterrence, public safety, and the consequences she had already experienced.
-
-The investigation also produced institutional consequences outside the courtroom. The police union placed Segovia on leave and later fired her. The union commissioned a private investigation into whether anyone else was involved or aware. Public protests and political criticism followed the case. Yet the available record did not establish a broader criminal conspiracy inside the union.
-
-That distinction is important for an investigative show. Institutional embarrassment is not proof of institutional criminal participation. A failure of oversight is not automatically a conspiracy. And criticism of the union’s post-search response is not the same thing as evidence that union officials participated in the drug importation.
-
-## The Investigation and the False Explanation — Part 3
-
-The stronger story is the one the record actually supports: a trusted civilian executive inside a police-union organization carried on years of illegal pill importation; workplace resources became entangled in some of the conduct; investigators documented deception when she was confronted; and the evidence made public so far did not establish that other union personnel joined the scheme.
-
 ## The Fentanyl Claim Was Wrong — Then Came the Guilty Plea — Part 1
 
 The most important correction in the entire case concerns fentanyl.
@@ -115,16 +71,6 @@ In October 2024, she entered that guilty plea in federal court. The plea resolve
 The guilty plea also changed the posture of the narrative. Before the plea, some facts remained allegations made in charging documents. After the plea, Segovia had formally admitted criminal responsibility for unlawful importation of the controlled substance charged in the new case.
 
 That still does not mean every allegation in the original complaint became an admitted fact. A plea to one offense is not a blanket admission to every sentence ever written about the investigation.
-
-## Why a Maximum Sentence Is Not the Expected Sentence — Part 2
-
-A comparison based only on the name of a drug can be misleading. So can a comparison based only on the number of pills. A defendant who possessed a firearm, organized sales for profit, had a substantial criminal history, obstructed justice, or committed additional offenses presents a different sentencing record from a defendant whose conduct, motive, history, and rehabilitation findings are different.
-
-None of that requires the public to agree with a judge’s final sentence. It explains what a serious comparison would need to measure.
-
-In Segovia’s case, the public sentencing record described by KQED shows the court weighing factors pointing in opposite directions. The scale and duration of the conduct, redistribution of pills, deception during the investigation, and her trusted position counted against her. Addiction, sobriety, treatment, remorse, lack of a prior record, low risk of reoffending, and the government’s conclusion that she was not operating for profit counted in mitigation.
-
-That is the legal context for the probation sentence. It does not settle the policy question of whether the outcome was appropriate. It tells us which factual variables would have to be held constant before calling another case truly comparable.
 
 ## Why the Judge Chose Probation — Part 1
 
@@ -185,36 +131,6 @@ There is a temptation in corruption storytelling to use proximity as proof. Some
 The more useful accountability framework asks narrower questions: What access did the role provide? Which systems were used? What controls existed at the time? What changed after the case? Were investigators given timely access to relevant records? Were the conclusions of the internal investigation independently testable?
 
 Some of those questions have answers in the current reporting; others remain open or would require additional records.
-
-## What We Know, What We Don't, and the Better Next Question — Part 1
-
-What does this case establish, and what does it not?
-
-It establishes that Joanne Segovia pleaded guilty to unlawfully importing tapentadol. It establishes that investigators documented a long history of overseas shipments and that prosecutors described a period in which she ordered roughly eighteen thousand tapentadol pills. It establishes that some pills were redistributed, that workplace resources were implicated in parts of the conduct, and that she initially gave investigators a false explanation.
-
-It establishes that the original fentanyl-related charge was withdrawn after prosecutors acknowledged a testing error.
-
-It establishes that prosecutors and the defense both centered addiction in the sentencing story, that the government did not portray Segovia as a profit-driven dealer, and that Judge Lee ultimately imposed probation and community service rather than incarceration.
-
-It does not establish that the San Jose Police Officers’ Association as an organization participated in the drug scheme. It does not establish that sworn officers were co-conspirators. The public record cited here says the opposite: investigators and the union’s review did not identify broader participation.
-
-## What We Know, What We Don't, and the Better Next Question — Part 2
-
-It also does not mean the sentence can be evaluated fairly by comparing one number — eighteen thousand pills — to a sentence from an unrelated drug case. Criminal sentencing is highly fact-specific. A meaningful comparison would require matching offense conduct, criminal history, guideline calculations, plea posture, role, profit, weapons, obstruction, cooperation, addiction, rehabilitation, and other sentencing factors.
-
-The unresolved accountability question is therefore not a simple claim that one person got away with it. She was convicted and punished, but not incarcerated. The real question is why this form of punishment was chosen and whether the reasoning was applied consistently.
-
-The sentencing record gives a documented answer to the first half: addiction, recovery, remorse, low recidivism risk, and a non-profit motive were treated as powerful mitigating factors. Deception, redistribution, and the law-enforcement-adjacent position were treated as aggravating facts, but not enough to produce a prison sentence.
-
-The second half — consistency — requires broader comparative research that this episode should not fake. That can become a future data project: identify comparable federal tapentadol or controlled-substance importation cases, normalize for criminal history and aggravating conduct, and examine the distribution of sentences.
-
-That is a better investigative question than simply selecting the harshest comparison available.
-
-## What We Know, What We Don't, and the Better Next Question — Part 3
-
-For now, Episode One can end on the thing the record actually gives us: a case that began with a sensational fentanyl allegation, evolved after the government corrected its own testing, ended in a guilty plea to tapentadol importation, and produced a probationary sentence after both prosecution and defense presented addiction and rehabilitation as central to understanding the conduct.
-
-That sequence is complicated. It is also more interesting — and more useful — than the original headline.
 
 ## Listen, Read, and Support the Work
 
