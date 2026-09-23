@@ -458,7 +458,7 @@
     "headline": "Joanne Segovia, the Corrected Fentanyl Allegation, and the Probation Sentence",
     "targetWords": {
       "minimum": 1800,
-      "maximum": 3200
+      "maximum": 2600
     },
     "sections": [
       {
@@ -488,103 +488,53 @@
       },
       {
         "id": "article-3",
-        "title": "The Position of Trust — Part 1",
-        "fromPodcast": "role-and-public-trust"
-      },
-      {
-        "id": "article-4",
-        "title": "The Position of Trust — Part 2",
-        "fromPodcast": "role-and-public-trust-part-2"
-      },
-      {
-        "id": "article-5",
-        "title": "The Position of Trust — Part 3",
-        "fromPodcast": "role-and-public-trust-part-3"
-      },
-      {
-        "id": "article-6",
         "title": "How the Shipment Network Worked — Part 1",
         "fromPodcast": "shipment-network"
       },
       {
-        "id": "article-7",
+        "id": "article-4",
         "title": "How the Shipment Network Worked — Part 2",
         "fromPodcast": "shipment-network-part-2"
       },
       {
-        "id": "article-8",
+        "id": "article-5",
         "title": "How the Shipment Network Worked — Part 3",
         "fromPodcast": "shipment-network-part-3"
       },
       {
-        "id": "article-9",
-        "title": "The Investigation and the False Explanation — Part 1",
-        "fromPodcast": "investigation-and-deception"
-      },
-      {
-        "id": "article-10",
-        "title": "The Investigation and the False Explanation — Part 2",
-        "fromPodcast": "investigation-and-deception-part-2"
-      },
-      {
-        "id": "article-11",
-        "title": "The Investigation and the False Explanation — Part 3",
-        "fromPodcast": "investigation-and-deception-part-3"
-      },
-      {
-        "id": "article-12",
+        "id": "article-6",
         "title": "The Fentanyl Claim Was Wrong — Then Came the Guilty Plea — Part 1",
         "fromPodcast": "charge-correction-and-plea"
       },
       {
-        "id": "article-13",
+        "id": "article-7",
         "title": "The Fentanyl Claim Was Wrong — Then Came the Guilty Plea — Part 2",
         "fromPodcast": "charge-correction-and-plea-part-2"
       },
       {
-        "id": "article-14",
-        "title": "Why a Maximum Sentence Is Not the Expected Sentence — Part 2",
-        "fromPodcast": "sentencing-context-part-2"
-      },
-      {
-        "id": "article-15",
+        "id": "article-8",
         "title": "Why the Judge Chose Probation — Part 1",
         "fromPodcast": "sentencing-record"
       },
       {
-        "id": "article-16",
+        "id": "article-9",
         "title": "Why the Judge Chose Probation — Part 2",
         "fromPodcast": "sentencing-record-part-2"
       },
       {
-        "id": "article-17",
+        "id": "article-10",
         "title": "Why the Judge Chose Probation — Part 3",
         "fromPodcast": "sentencing-record-part-3"
       },
       {
-        "id": "article-18",
+        "id": "article-11",
         "title": "What Institutional Accountability Does — and Does Not — Mean Here — Part 1",
         "fromPodcast": "institutional-accountability"
       },
       {
-        "id": "article-19",
+        "id": "article-12",
         "title": "What Institutional Accountability Does — and Does Not — Mean Here — Part 2",
         "fromPodcast": "institutional-accountability-part-2"
-      },
-      {
-        "id": "article-20",
-        "title": "What We Know, What We Don't, and the Better Next Question — Part 1",
-        "fromPodcast": "analysis-known-unknown"
-      },
-      {
-        "id": "article-21",
-        "title": "What We Know, What We Don't, and the Better Next Question — Part 2",
-        "fromPodcast": "analysis-known-unknown-part-2"
-      },
-      {
-        "id": "article-22",
-        "title": "What We Know, What We Don't, and the Better Next Question — Part 3",
-        "fromPodcast": "analysis-known-unknown-part-3"
       },
       {
         "id": "article-cta",
