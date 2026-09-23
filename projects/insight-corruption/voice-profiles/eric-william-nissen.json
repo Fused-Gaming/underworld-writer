@@ -8,8 +8,45 @@
   "language": "en",
   "synthesis": {
     "backend": "chatterbox",
+    "model": "resemble-ai/chatterbox",
+    "mode": "zero-shot-voice-cloning",
     "exaggeration": 0.5,
-    "cfgWeight": 0.5
+    "cfgWeight": 0.5,
+    "deliveryProfile": {
+      "persona": "independent investigative journalist and podcast host",
+      "style": "conversational, grounded, document-driven, skeptical without sounding theatrical or conspiratorial",
+      "cadence": "natural podcast speech with varied sentence rhythm; deliberate on evidence, names, dates, quantities, charges, corrections, and court outcomes",
+      "energy": "controlled and engaged; increase emphasis for consequential contrasts without shouting or adopting an announcer voice",
+      "tone": "confident, curious, plainspoken, evidence-first",
+      "pacing": "approximately 145 spoken words per minute; allow brief pauses around section turns and important factual corrections",
+      "emphasis": [
+        "distinguish allegations from established facts",
+        "slow slightly for names, dates, drug names, quantities, statutes, charges, and sentencing outcomes",
+        "use subtle emphasis for contrast words such as alleged, admitted, corrected, pleaded guilty, and no prison time",
+        "treat source disclosures and corrections as editorially important rather than boilerplate"
+      ],
+      "avoid": [
+        "radio-announcer delivery",
+        "trailer voice",
+        "constant dramatic intensity",
+        "sarcasm when stating disputed facts",
+        "manufactured outrage",
+        "sing-song cadence",
+        "rushing citations, names, numbers, or legal terminology",
+        "over-emphasizing every sentence"
+      ]
+    },
+    "consistency": {
+      "canonicalReferenceRequired": true,
+      "useSameReferenceAcrossEpisode": true,
+      "preserveProfileAcrossChunks": true,
+      "targetSpeakingRateWpm": 145,
+      "chunkTargetSeconds": {
+        "minimum": 10,
+        "maximum": 30
+      },
+      "sentenceBoundaryChunking": true
+    }
   },
   "consent": {
     "status": "confirmed",
@@ -20,15 +57,80 @@
   },
   "referenceAudio": {
     "status": "pending-intake",
-    "source": "Eric William Nissen's published social audio (platform/links TBD)",
-    "requirements": [
-      "10-30s minimum of clean solo speech, no music/crosstalk/background noise",
-      "Consistent mic distance and levels across clips if combining multiple sources",
-      "Prefer conversational/narration-style delivery matching intended episode tone"
+    "purpose": "Canonical zero-shot Chatterbox voice reference for Eric William Nissen. This is not a fine-tuned checkpoint.",
+    "selectionProfile": {
+      "speaker": "Eric William Nissen only",
+      "desiredDelivery": "natural conversational speech closest to how Eric should host Insight Corruption",
+      "canonicalClipTargetSeconds": {
+        "minimum": 20,
+        "maximum": 30
+      },
+      "alternateClipTargetSeconds": {
+        "minimum": 10,
+        "maximum": 30
+      },
+      "preferredContent": "continuous declarative speech with natural phrasing; include enough tonal variation to capture Eric's normal cadence without yelling, music, or performance effects",
+      "rejectIf": [
+        "music or sound effects overlap speech",
+        "another speaker or crosstalk is audible",
+        "heavy room echo or aggressive noise reduction",
+        "clipping or distorted peaks",
+        "telephone-quality or heavily compressed source when a cleaner source exists",
+        "whispering, yelling, character voice, or atypical delivery",
+        "long silence or fragmented one-word cuts"
+      ],
+      "preprocessing": [
+        "preserve natural vocal timbre",
+        "trim leading/trailing dead air",
+        "remove non-speech only when cleanup does not alter the voice",
+        "avoid aggressive denoise, pitch correction, time stretching, or formant processing",
+        "normalize conservatively and retain an archival copy of the unprocessed source"
+      ]
+    },
+    "source": "Eric William Nissen's authorized published social audio; exact source URLs and timestamps must be recorded during intake",
+    "provenanceRequired": [
+      "source URL",
+      "platform",
+      "source publication date when available",
+      "clip start/end timestamps",
+      "local checksum",
+      "durationSeconds",
+      "sampleRateHz"
     ],
-    "storageLocation": "Modal Volume 'voice-profiles' (never committed to this repo)",
+    "storageLocation": "Modal Volume 'underworld-voice-profiles' under clips/eric-nissen/; audio is not committed to Git",
+    "canonicalClip": null,
+    "alternateClips": [],
     "clips": []
   },
   "fineTunedCheckpoint": null,
-  "notes": "This record is metadata/consent tracking only. Actual audio extraction from social platforms, cleanup, and upload to the Modal Volume is a manual intake step outside this repo. baseModel/synthesis switched from coqui/XTTS-v2 to Chatterbox per modal/CHATTERBOX_INTEGRATION_PLAN.md Phase 1 (2026-09-20) — see modal/config/voice_profiles/README.md for the runtime copy this feeds into."
+  "notes": "Canonical project voice specification for Eric William Nissen. Runtime voice-profile config should inherit these synthesis and delivery constraints, then add resolved Modal reference-clip paths. Consent is confirmed, but synthesis remains blocked until a clean canonical reference clip is selected, provenance is recorded, and the clip is uploaded. Chatterbox zero-shot cloning is the production baseline; fine-tuning is an escalation path, not the default.",
+  "training": {
+    "status": "not-planned",
+    "strategy": "Use Chatterbox zero-shot voice cloning first. Do not fine-tune unless controlled listening tests show unacceptable cross-segment identity or cadence drift.",
+    "fineTuningGate": [
+      "consented reference intake complete",
+      "zero-shot benchmark completed",
+      "same fixed test corpus compared across candidate settings",
+      "quality problem documented before training is approved"
+    ]
+  },
+  "qualityControl": {
+    "testCorpus": [
+      "neutral investigative narration",
+      "emphatic but controlled passage",
+      "proper names including Joanne Segovia and Eumi K. Lee",
+      "tapentadol and other domain terminology",
+      "numbers, dates, acronyms, and legal references",
+      "repeated phrase across separate chunks to evaluate voice drift"
+    ],
+    "reviewCriteria": [
+      "speaker identity consistency",
+      "natural cadence",
+      "pronunciation accuracy",
+      "absence of clipping/artifacts",
+      "stable loudness before mastering",
+      "appropriate emotional restraint for factual and disputed material"
+    ],
+    "humanApprovalRequiredBeforeFullEpisodeRender": true
+  }
 }
