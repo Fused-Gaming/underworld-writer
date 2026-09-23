@@ -1,13 +1,13 @@
 # Underworld Writer
 
-![Underworld Writer v2.2.1 release changelog](release-artifacts/underworld-writer-release-og-1200x630.svg)
+![Underworld Writer v2.3.1 release changelog](release-artifacts/underworld-writer-release-og-1200x630.svg)
 
 > **Release artwork:** Rock-Hardened supplies changelog/release evidence; Underworld Writer owns the visual design contract in `assets/branding/release-brand.json`. The immutable visual template is `assets/branding/underworld-writer-release-changelog-template.svg`, imported byte-for-byte from ArtPatch. `npm run release:art` regenerates only the declared changelog-driven text zones; `npm run release:art:check` verifies the committed artwork is current.
 
-**Current branch version: 2.2.1**  
+**Current version: 2.3.1**  
 Multi-purpose character development, fact-sourced true-crime editorial tooling, and segment-first podcast/article production.
 
-[![Version](https://img.shields.io/badge/version-2.2.1-purple.svg)](package.json)
+[![Version](https://img.shields.io/badge/version-2.3.1-purple.svg)](package.json)
 [![License: Non-Commercial](https://img.shields.io/badge/License-Non--Commercial-blue.svg)](LICENSE.md)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-green.svg)](package.json)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-blue.svg)](package.json)
@@ -19,6 +19,18 @@ Underworld Writer supports three primary workflows:
 1. **Creative fiction** — three-phase character and narrative-world development.
 2. **True-crime / investigative editorial work** — evidence-aware narrative construction with source attribution and PACER-informed verification workflows.
 3. **Podcast + article production** — deterministic, segment-first editorial packages that can produce long-form scripts, articles, producer materials, and downstream audio inputs from a shared evidence package.
+
+## v2.3.x highlights
+
+The 2.3.x line hardens audio production, editorial quality, licensing, and the release/publish pipeline on top of the 2.2.x workspace contract.
+
+- **Two-pass loudness-normalized mastering** — episode audio mastering now uses ffmpeg EBU R128 `loudnorm` true-peak limiting (targets read from `modal/config/render_profiles/podcast-standard.json`) instead of a sample-peak clip limiter.
+- **Configurable editorial language linter** (`src/editorial-lint.ts`) — banned/discouraged/preferred-term checking, repeated-opening/transition/n-gram detection, driven by `templates/editorial/style-dictionary.json` and wired into `npm run editorial:lint`.
+- **Chunk-level synthesis cache** (`modal/cache/chunk_cache.py`) — resumable episode rendering after a partial failure, keyed on chunk text + voice profile + reference-audio hash + backend revision.
+- **Local, scoped-token npm publish CLI** (`npm run publish:npm`) — git/npm-auth safety checks, full release-evidence pipeline, then publish and tag; authenticates via a scoped `UW_NPM_TOKEN` (falling back to `npm login`). See [`docs/ops/PUBLISHING.md`](docs/ops/PUBLISHING.md).
+- **Relicensed** from Apache-2.0 to a custom non-commercial license (Unlicense base + Fused Gaming Non-Commercial Rights Amendment) — see [License](#license).
+- **`PRIVACY.md`** added at the repository root and in `.claude-plugin/`, documenting the no-telemetry, mock-by-default PACER, and opt-in Modal audio posture.
+- **Root-directory cleanup** — operational docs moved into [`docs/ops/`](docs/ops/) and historical reports into [`docs/archive/`](docs/archive/); see [Documentation structure](#documentation-structure) below.
 
 ## v2.2.x highlights
 
@@ -239,10 +251,13 @@ Underworld Writer uses [`@h4shed/rock-hardened`](https://www.npmjs.com/package/@
 ```bash
 npm run version:check
 npm run rock:validate
+npm run rock:evidence     # manifest, SBOM, release cards, attestation
+npm run rock:manifest
 npm run release:art
 npm run release:art:check
 npm run validate:release
 npm run release:evidence
+npm run publish:npm       # local, scoped-token CLI publish (see docs/ops/PUBLISHING.md)
 ```
 
 `validate:release` combines:
@@ -264,6 +279,8 @@ The package follows Semantic Versioning.
 
 - **2.2.0** — canonical workspace, cross-agent contract, scaffolding/validation, segment-first podcast/article packages, Rock-Hardened release evidence, and the Episode 1 long-form reference package.
 - **2.2.1** — patch release branch for release-branding/version-alignment follow-up work and refreshed root documentation.
+- **2.3.0** — two-pass loudness-normalized mastering, configurable editorial linter, chunk-level synthesis cache, local npm publish pipeline, relicense to a custom non-commercial license, `PRIVACY.md`, and root-directory doc cleanup.
+- **2.3.1** — scoped `UW_NPM_TOKEN` publish-auth support for the CLI publish pipeline.
 
 Primary release metadata is tracked through `package.json`, `plugin.json`, `VERSION.json`, source exports, and the changelog. Use the version tooling rather than manually changing only one surface:
 
@@ -303,15 +320,44 @@ await registerUnderWorldWriterTools(orchestrator);
 
 For any agent operating directly in this repository, **read `AGENTS.md` first**.
 
-## Documentation
+## Documentation structure
 
-- [Getting Started](GETTING_STARTED.md)
+Root-level docs are load-bearing (`SKILL.md` and `README.md` are referenced by `test/core.test.ts` and the Dockerfile validator stage) or govern cross-agent behavior; everything else lives under `docs/`:
+
+```text
+README.md, LICENSE.md, CHANGELOG.md, CONTRIBUTING.md,   root: load-bearing / entry-point docs
+CLAUDE.md, AGENTS.md, SKILL.md, PRIVACY.md
+
+docs/
+├── INDEX.md                     documentation index and navigation
+├── USE_CASES_OVERVIEW.md        Fiction / True Crime / Podcast Production overview
+├── PODCAST_PROJECT_ARCHITECTURE.md
+├── AUDIO_GENERATION_PLAN.md
+├── EPISODE_PUBLISHING_SCHEMA.md
+├── LENGTH_SPECIFICATIONS.md / TEMPLATES_LENGTH.md
+├── MODAL_MCP_INTEGRATION.md
+├── performance-guide.md
+├── guides/
+│   └── GETTING_STARTED.md       installation and quick start
+├── ops/                         operational/setup runbooks
+│   ├── PUBLISHING.md            npm publish CLI (UW_NPM_TOKEN, dry-run, tagging)
+│   ├── DOCKER.md
+│   └── MODAL_SETUP.md
+├── use-cases/                   per-use-case docs (fiction, true-crime, podcast-production)
+└── archive/                     historical reports, superseded plans, past release notes
+```
+
+- [Getting Started](docs/guides/GETTING_STARTED.md)
+- [Documentation Index](docs/INDEX.md)
+- [Use Cases Overview](docs/USE_CASES_OVERVIEW.md)
+- [Publishing (CLI, UW_NPM_TOKEN)](docs/ops/PUBLISHING.md)
+- [Docker](docs/ops/DOCKER.md) · [Modal Setup](docs/ops/MODAL_SETUP.md)
 - [Contributing](CONTRIBUTING.md)
 - [Agent Contract](AGENTS.md)
+- [Privacy](PRIVACY.md)
 - [Changelog](CHANGELOG.md)
 - [Output Contract](output/README.md)
-- [Insight Corruption Setup](INSIGHT_CORRUPTION_SETUP.md)
-- [Documentation](docs/)
+- [Insight Corruption Setup (archived)](projects/insight-corruption/archive/INSIGHT_CORRUPTION_SETUP.md)
 
 ## License
 
