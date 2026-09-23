@@ -41,12 +41,21 @@ const [behind, aheadCount] = ahead.split(/\s+/).map(Number);
 if (behind > 0) fail("Local main is behind origin/main. Pull first.");
 if (aheadCount > 0) fail("Local main has unpushed commits. Push first.");
 
-// 3. Must be authenticated to npm.
+// 3. Must be authenticated to npm — either via a scoped UW_NPM_TOKEN
+// (read from `.npmrc`'s `${UW_NPM_TOKEN}` placeholder) or an existing
+// `npm login` session.
+if (!process.env.UW_NPM_TOKEN) {
+  console.log("UW_NPM_TOKEN not set; falling back to interactive npm login session.");
+}
 let whoami;
 try {
   whoami = run("npm", ["whoami"]);
 } catch {
-  fail('Not logged in to npm. Run "npm login" first.');
+  fail(
+    process.env.UW_NPM_TOKEN
+      ? "UW_NPM_TOKEN is set but was rejected by npm. Verify the scoped token has publish rights."
+      : 'Not logged in to npm. Set UW_NPM_TOKEN or run "npm login" first.'
+  );
 }
 console.log(`Publishing as npm user: ${whoami}`);
 
