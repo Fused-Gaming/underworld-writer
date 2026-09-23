@@ -1,13 +1,13 @@
 # Underworld Writer
 
-![Underworld Writer v2.3.1 release changelog](release-artifacts/underworld-writer-release-og-1200x630.svg)
+![Underworld Writer v2.3.2 release changelog](release-artifacts/underworld-writer-release-og-1200x630.svg)
 
 > **Release artwork:** Rock-Hardened supplies changelog/release evidence; Underworld Writer owns the visual design contract in `assets/branding/release-brand.json`. The immutable visual template is `assets/branding/underworld-writer-release-changelog-template.svg`, imported byte-for-byte from ArtPatch. `npm run release:art` regenerates only the declared changelog-driven text zones; `npm run release:art:check` verifies the committed artwork is current.
 
-**Current version: 2.3.1**  
+**Current version: 2.3.2**  
 Multi-purpose character development, fact-sourced true-crime editorial tooling, and segment-first podcast/article production.
 
-[![Version](https://img.shields.io/badge/version-2.3.1-purple.svg)](package.json)
+[![Version](https://img.shields.io/badge/version-2.3.2-purple.svg)](package.json)
 [![License: Non-Commercial](https://img.shields.io/badge/License-Non--Commercial-blue.svg)](LICENSE.md)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-green.svg)](package.json)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-blue.svg)](package.json)
@@ -281,6 +281,7 @@ The package follows Semantic Versioning.
 - **2.2.1** — patch release branch for release-branding/version-alignment follow-up work and refreshed root documentation.
 - **2.3.0** — two-pass loudness-normalized mastering, configurable editorial linter, chunk-level synthesis cache, local npm publish pipeline, relicense to a custom non-commercial license, `PRIVACY.md`, and root-directory doc cleanup.
 - **2.3.1** — scoped `UW_NPM_TOKEN` publish-auth support for the CLI publish pipeline.
+- **2.3.2** — root README refresh: current version tags, v2.3.x feature highlights, fixed doc links, documentation-structure overview.
 
 Primary release metadata is tracked through `package.json`, `plugin.json`, `VERSION.json`, source exports, and the changelog. Use the version tooling rather than manually changing only one surface:
 

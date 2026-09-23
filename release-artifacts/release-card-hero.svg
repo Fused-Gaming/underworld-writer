@@ -22,8 +22,8 @@
   <rect x="34" y="202" width="917" height="150" fill="#090909" stroke="#565656" stroke-width="1"/>
   <text x="54" y="226" font-family="ui-monospace, monospace" font-size="16" font-weight="800" letter-spacing="0.6px" fill="">Future changes belong here before release.</text>
   <line x1="34" y1="490" x2="1886" y2="490" stroke="#555" stroke-width="1"/>
-  <text x="34" y="510" font-family="ui-monospace, monospace" font-size="10" fill="#888">VERSION 2.3.1 · main · e89a9d7b5810</text>
+  <text x="34" y="510" font-family="ui-monospace, monospace" font-size="10" fill="#888">VERSION 2.3.2 · main · 1116f9ee3638</text>
   <text x="1886" y="510" font-family="ui-monospace, monospace" font-size="10" fill="" font-weight="700" text-anchor="end">https://github.com/Fused-Gaming/underworld-writer</text>
-  <text x="34" y="524" font-family="ui-monospace, monospace" font-size="10" fill="#888">SOURCE CHANGELOG.md · SHA256 4a48de89d326bdd2…</text>
+  <text x="34" y="524" font-family="ui-monospace, monospace" font-size="10" fill="#888">SOURCE CHANGELOG.md · SHA256 d4dd52c62d49f85a…</text>
   <text x="1886" y="524" font-family="ui-monospace, monospace" font-size="10" fill="#888" text-anchor="end">HUMAN REVIEW REQUIRED</text>
 </svg>

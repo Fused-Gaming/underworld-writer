@@ -1,10 +1,10 @@
 {
-  "version": "2.3.1",
+  "version": "2.3.2",
   "releaseDate": "2026-09-23",
   "status": "release-candidate",
   "majorVersion": 2,
   "minorVersion": 3,
-  "patchVersion": 1,
+  "patchVersion": 2,
   "prerelease": null,
   "metadata": {
     "nodeMinimum": "20.0.0",
@@ -120,6 +120,22 @@
     "nextSecurityAudit": "2026-10-13"
   },
   "changelog": {
+    "2.3.2": {
+      "releaseDate": "2026-09-23",
+      "highlights": [
+        "Refreshed root README.md: version tags, v2.3.x feature highlights, fixed dead doc links, documentation-structure overview"
+      ],
+      "breaking_changes": [],
+      "deprecations": [],
+      "new_features": [],
+      "bug_fixes": [
+        "Fixed README.md links to GETTING_STARTED.md and INSIGHT_CORRUPTION_SETUP.md that 404'd after #154's root-directory cleanup"
+      ],
+      "improvements": [
+        "README.md version badge/tag/artwork alt text now match the released version instead of being frozen at 2.2.1",
+        "Documentation section reorganized to mirror the actual docs/ tree (guides/, ops/, use-cases/, archive/)"
+      ]
+    },
     "2.3.1": {
       "releaseDate": "2026-09-23",
       "highlights": [

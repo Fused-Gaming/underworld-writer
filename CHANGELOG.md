@@ -9,6 +9,14 @@ Format follows Keep a Changelog and Semantic Versioning.
 ### Added
 - Future changes belong here before release.
 
+## [2.3.2] - 2026-09-23
+
+### Changed
+- Refreshed the root `README.md`, which had been frozen at the 2.2.1 version badge/tag/artwork alt text despite the 2.3.0/2.3.1 releases: bumped version references to 2.3.1, added a "v2.3.x highlights" section (mastering, editorial linter, chunk synthesis cache, scoped-token publish CLI, relicense, `PRIVACY.md`, root doc cleanup), replaced the flat documentation list with a "Documentation structure" section mapping the actual `docs/` tree, fixed two dead links left by #154's root cleanup (`GETTING_STARTED.md`, `INSIGHT_CORRUPTION_SETUP.md`), extended the versioning history through 2.3.1, and listed the newer release/publish commands (`rock:evidence`, `rock:manifest`, `publish:npm`).
+
+### Release Artwork
+- **Documentation Refresh** — Root README now reflects the current version, 2.3.x feature set, and actual documentation structure, with all internal links verified.
+
 ## [2.3.1] - 2026-09-23
 
 ### Added
