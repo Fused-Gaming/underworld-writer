@@ -37,11 +37,25 @@ class ChatterboxBackend:
         language: str = "en",
         exaggeration: float | None = None,
         cfg_weight: float | None = None,
+        seed: int | None = None,
     ) -> bytes:
         if self._model is None:
             raise RuntimeError("ChatterboxBackend.load() must run before synthesize()")
 
         import soundfile as sf
+
+        # Chatterbox's zero-shot generation is stochastic per call with no
+        # internal seed control — found by actually listening to a full
+        # episode render: with ~100+ independent generate() calls (each
+        # text chunk of each segment), the model would occasionally drift
+        # away from the reference voice's accent/timbre entirely (e.g.
+        # sounding British) in a handful of segments. Seeding torch's RNG
+        # before each call, from the same fixed seed, makes generation
+        # reproducible and keeps voice identity stable across the episode.
+        if seed is not None:
+            import torch
+
+            torch.manual_seed(seed)
 
         wav = self._model.generate(
             text,
