@@ -1,0 +1,291 @@
+{
+  "manifestSchemaVersion": "1.0",
+  "generatedAt": "2026-09-24T06:52:14.755491+00:00",
+  "synthesis": {
+    "backend": "chatterbox",
+    "modelVariant": "standard"
+  },
+  "mastering": {
+    "method": "ffmpeg-loudnorm-two-pass",
+    "target": {
+      "integratedLufs": -16,
+      "truePeakDb": -1,
+      "lra": 11
+    },
+    "measured": {
+      "input_i": "-13.20",
+      "input_tp": "0.09",
+      "input_lra": "9.20",
+      "input_thresh": "-23.61",
+      "output_i": "-16.20",
+      "output_tp": "-1.00",
+      "output_lra": "8.40",
+      "output_thresh": "-26.53",
+      "normalization_type": "dynamic",
+      "target_offset": "0.20"
+    },
+    "final": {
+      "input_i": "-13.17",
+      "input_tp": "0.00",
+      "input_lra": "9.30",
+      "input_thresh": "-23.58",
+      "output_i": "-15.97",
+      "output_tp": "-2.80",
+      "output_lra": "9.30",
+      "output_thresh": "-26.38",
+      "normalization_type": "linear",
+      "target_offset": "-0.03"
+    }
+  },
+  "segments": [
+    {
+      "index": 0,
+      "durationSeconds": 85.75,
+      "textSha256": "acc5197347e3c406e5c127dd70c7e9d66d975db4a35ce9cb8de19fe816ce6489",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 1,
+      "durationSeconds": 28.29,
+      "textSha256": "16807df2d907115f266319ed0f8fa13e6c3a013c403d8086a02334db98e8090a",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 2,
+      "durationSeconds": 31.53,
+      "textSha256": "5b7f971f7d3b884aec1e9fd4045f80c23c355b5056a6dd0d4b967c367c3920c3",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 3,
+      "durationSeconds": 27.81,
+      "textSha256": "c4397da36e4e0b64c89d4941e34296bf0a39e31cb0b089eebd08e6776202a3e2",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 4,
+      "durationSeconds": 17.72,
+      "textSha256": "b017b3e98cb1fef0a26ae39cc5fc20a4ffcea86829c1a248fa0f564d389b5f67",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 5,
+      "durationSeconds": 64.99,
+      "textSha256": "efb3bec734e1ab8d155394211cde378ad6c27fe917ca1676d89cc33ef0e0b41e",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 6,
+      "durationSeconds": 63.38,
+      "textSha256": "1b538d867b2fbdb893fcb688711132904c0fadfc5b96f27af5856c85b1fe6907",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 7,
+      "durationSeconds": 29.0,
+      "textSha256": "1ffe92af866ec1f51f3d5bef6cadf1d8d8d3b6608f6914fb7c6607ab38994c01",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 8,
+      "durationSeconds": 70.06,
+      "textSha256": "6a57da9d990fabe922d098edadd3e060952c8312f0f48541fa985c67a236a491",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 9,
+      "durationSeconds": 72.18,
+      "textSha256": "74a8821fa16b211932578990e51c27206dbf976f733f784f5411910922f9bb5b",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 10,
+      "durationSeconds": 57.3,
+      "textSha256": "aec66a4bb9ada513e8cac3d498e379a22580761e6f97f528d809a383a2b3cbb3",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 11,
+      "durationSeconds": 80.91,
+      "textSha256": "458b25b75f385c47fff2752aa705a44f0023b6df82cf008f6dfcda8f1c37200b",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 12,
+      "durationSeconds": 74.71,
+      "textSha256": "b6323e0b429ebb863e74adb126238c268667aa63c212baa83f545c4d897e464e",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 13,
+      "durationSeconds": 32.2,
+      "textSha256": "6c24e05f63774a72a169d651f3349e080f0871cdc2ff5a685042e573b3a08f10",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 14,
+      "durationSeconds": 75.19,
+      "textSha256": "2a8fff8684ccae5c706ee2d7d0afef5b658800b7d00d043189a3afb654f03fee",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 15,
+      "durationSeconds": 52.26,
+      "textSha256": "0445c749e03a3cc9178aefd0bf3d7b11985c8da31c5f3e377e474b220c13e28e",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 16,
+      "durationSeconds": 28.61,
+      "textSha256": "059ae05f68bfef86fc4ec5b6175ac4f77ff2067c53b24c0514205508ad290f29",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 17,
+      "durationSeconds": 59.86,
+      "textSha256": "ff1206581acee09c73eec530190aed4c37c0f03822efa0a5419301daa9b0e2f3",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 18,
+      "durationSeconds": 71.43,
+      "textSha256": "bbc4bc5e820d3a056be43091d7e4b1424f0e057e281af55b071c1f2706e53531",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 19,
+      "durationSeconds": 70.26,
+      "textSha256": "4b44b93f2f1c5b249ee14ef658b6dbe92ddafaab75789aca05ba702a80701405",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 20,
+      "durationSeconds": 78.91,
+      "textSha256": "a65b79db41deaf565d7303bc889d6ce947f2a431a39a19a1b53943916062c884",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 21,
+      "durationSeconds": 73.34,
+      "textSha256": "dced8c16aa159efdae7171c25fd3b8cd20f92521ee6f09364c32b98c88cff5c9",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 22,
+      "durationSeconds": 78.99,
+      "textSha256": "92738f19de407582319e9d7181b10623af42bbf432c7b1abdd8ead4256362b88",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 23,
+      "durationSeconds": 71.46,
+      "textSha256": "c0b91c17132dd34844123099cdd583cbda74a538216115454325f0a8e82f5c12",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 24,
+      "durationSeconds": 117.69,
+      "textSha256": "4f6bfa68d0123e7eca79c0337cdcb078e16cefe78c63288d74147ec29ba8557c",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 25,
+      "durationSeconds": 86.63,
+      "textSha256": "8be50b7ab7b6354bec194ee547a779b29b347654cf1abffa5497429a8877db60",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 26,
+      "durationSeconds": 40.01,
+      "textSha256": "6482fec468d6d152b440ea1fd99997fda2695cef7163082fcff52863e173d371",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 27,
+      "durationSeconds": 32.17,
+      "textSha256": "16b9c92d825a4afe220f6757d063899f0feff8c908260ca3a6eb8cbfb39c647a",
+      "voiceProfileId": "voice-eric-nissen-01"
+    },
+    {
+      "index": 28,
+      "durationSeconds": 25.04,
+      "textSha256": "3430829157f648ed1564571010425fd8c9a36efcf5e17a9b8346140073c746f2",
+      "voiceProfileId": "voice-eric-nissen-01"
+    }
+  ],
+  "postProduction": {
+    "productionPlan": "projects/insight-corruption/production/audio/episode-01.production.json",
+    "assetRegistry": "projects/insight-corruption/production/audio/asset-registry.json",
+    "assetRoot": "/vol/production-audio",
+    "appliedCues": [
+      {
+        "id": "open-theme",
+        "type": "intro-bed",
+        "asset": "insight-corruption/music/theme-main.wav",
+        "startMs": 0,
+        "durationMs": 18000,
+        "gainDb": -18,
+        "duckNarrationDb": -7
+      },
+      {
+        "id": "chapter-1",
+        "type": "stinger",
+        "asset": "insight-corruption/sfx/chapter-stinger.wav",
+        "startMs": 172930,
+        "durationMs": 1400,
+        "gainDb": -14,
+        "duckNarrationDb": null
+      },
+      {
+        "id": "investigation-bed",
+        "type": "music-bed",
+        "asset": "insight-corruption/music/investigation-bed.wav",
+        "startMs": 347420,
+        "durationMs": 461500,
+        "gainDb": -24,
+        "duckNarrationDb": -7
+      },
+      {
+        "id": "midroll-in",
+        "type": "stinger",
+        "asset": "insight-corruption/sfx/midroll-bumper.wav",
+        "startMs": 861030,
+        "durationMs": 2200,
+        "gainDb": -13,
+        "duckNarrationDb": null
+      },
+      {
+        "id": "midroll-out",
+        "type": "stinger",
+        "asset": "insight-corruption/sfx/midroll-bumper.wav",
+        "startMs": 889490,
+        "durationMs": 2200,
+        "gainDb": -15,
+        "duckNarrationDb": null
+      },
+      {
+        "id": "reflection-bed",
+        "type": "music-bed",
+        "asset": "insight-corruption/music/reflection-bed.wav",
+        "startMs": 1392690,
+        "durationMs": 275900,
+        "gainDb": -25,
+        "duckNarrationDb": -8
+      },
+      {
+        "id": "close-theme",
+        "type": "outro-bed",
+        "asset": "insight-corruption/music/theme-main.wav",
+        "startMs": 1636570,
+        "durationMs": 25000,
+        "gainDb": -19,
+        "duckNarrationDb": -8
+      }
+    ]
+  },
+  "delivery": {
+    "masterWav": "/vol/episode-output/insight-corruption-ep01.wav",
+    "mp3": "/vol/episode-output/insight-corruption-ep01.mp3",
+    "mp3BitrateKbps": 192
+  }
+}
