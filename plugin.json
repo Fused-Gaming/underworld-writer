@@ -1,8 +1,8 @@
 {
   "name": "underworld-writer",
   "displayName": "Underworld Writer",
-  "version": "2.3.2",
-  "description": "Dual-purpose skill for fictional underworld narratives, podcast scripting engine, factually sourced true crime writing with character development and PACER API integration",
+  "version": "2.4.0",
+  "description": "Three-use-case skill for fictional underworld narratives, fact-sourced true crime writing, and episodic podcast production with a scripting engine, character development, PACER-informed editorial verification, and an optional self-generated audio/mastering pipeline",
   "author": "Fused Gaming",
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": "https://github.com/Fused-Gaming/underworld-writer",
@@ -15,7 +15,9 @@
     "underworld",
     "true-crime",
     "pacer",
-    "mcp"
+    "mcp",
+    "podcast-production",
+    "audio-production"
   ],
   "exports": {
     "skill": "./dist/index.js",
@@ -77,6 +79,22 @@
         "unlicense",
         "public-domain"
       ]
+    },
+    "editorial_linting": {
+      "description": "Configurable editorial language linter (banned/discouraged/preferred terms, repetition detection) driven by a per-project style dictionary",
+      "severities": ["error", "warn", "review"]
+    },
+    "podcast_production_audio": {
+      "description": "Deterministic post-production mixer: semantic cue markers, narration ducking, fades, music beds, stingers, two-pass loudness-normalized mastering, and a fail-closed music/SFX rights-clearance registry",
+      "requires": "Modal account (optional — only for audio synthesis/mastering, not narrative/editorial features)"
+    },
+    "self_generated_audio": {
+      "description": "Optional $0 open-weight music/SFX generation (ACE-Step 1.5, Stable Audio Open) as an alternative to licensing stock audio, with reproducible prompt/seed manifests and human-approval gating before use",
+      "requires": "Modal account"
+    },
+    "release_publishing": {
+      "description": "Local, scoped-token npm publish pipeline with changelog-driven release evidence and artwork generation",
+      "requires": "npm account with publish rights (maintainers only)"
     }
   },
   "tools": [

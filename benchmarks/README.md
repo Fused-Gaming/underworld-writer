@@ -199,9 +199,8 @@ If performance score drops:
 
 ## Resources
 
-- [Definition of Done Framework](../../docs/DEFINITION_OF_DONE.md)
-- [Benchmark Utils Package](../../packages/benchmark-utils)
-- [Performance Optimization Guide](../../docs/PERFORMANCE_OPTIMIZATION.md)
+- Definition of Done framework and a dedicated performance-optimization guide aren't written yet
+- [Benchmark Utils Package](packages/@h4shed/benchmark-utils)
 
 ## Support
 

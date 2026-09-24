@@ -1,10 +1,10 @@
 {
-  "version": "2.3.2",
-  "releaseDate": "2026-09-23",
+  "version": "2.4.0",
+  "releaseDate": "2026-09-24",
   "status": "release-candidate",
   "majorVersion": 2,
-  "minorVersion": 3,
-  "patchVersion": 2,
+  "minorVersion": 4,
+  "patchVersion": 0,
   "prerelease": null,
   "metadata": {
     "nodeMinimum": "20.0.0",
@@ -120,6 +120,37 @@
     "nextSecurityAudit": "2026-10-13"
   },
   "changelog": {
+    "2.4.0": {
+      "releaseDate": "2026-09-24",
+      "highlights": [
+        "Deterministic dialogue/music/SFX post-production mixer with fail-closed asset clearance",
+        "Self-generated music/SFX pipeline (ACE-Step 1.5, Stable Audio Open) replacing licensed stock audio",
+        "Verified Chatterbox voice-reference clips for Eric Nissen",
+        "Insight Corruption sound-design brief, production profile, and Episode 1 cue plan",
+        "Documentation reorganization and broken-link cleanup",
+        ".claude-plugin plugin/marketplace metadata now kept in sync by version:sync"
+      ],
+      "breaking_changes": [],
+      "deprecations": [],
+      "new_features": [
+        "modal/audio/postproduction.py",
+        "modal/generate_production_audio.py",
+        "scripts/sync-modal-production-audio.py",
+        "projects/insight-corruption/production/audio/asset-registry.json",
+        "projects/insight-corruption/production/audio/generation-prompts.json"
+      ],
+      "bug_fixes": [
+        "Fixed a literal \\n in docs/README.md that broke its first-time-path list",
+        "Fixed ~15 broken relative documentation links across CONTRIBUTING.md, docs/use-cases/*, docs/guides/GETTING_STARTED.md, docs/ops/MODAL_SETUP.md, benchmarks/README.md, and five legacy episode planning docs",
+        "Fixed dist/cli.js publishing without its executable bit, which broke npx/the linked underworld-writer bin; npm run build now chmods it automatically",
+        "Fixed the production-audio Modal volume never being mounted in modal/app.py, so the render pipeline could never read what scripts/sync-modal-production-audio.py uploads",
+        "Fixed resolve_markers() ignoring dialogue crossfade/pause timing, which could drift cue positions seconds from the real edit by later chapters",
+        "Fixed verify_only in both Modal sync scripts reporting a never-uploaded clip/asset as synced"
+      ],
+      "improvements": [
+        ".claude-plugin/plugin.json and .claude-plugin/marketplace.json versions no longer drift from package.json (previously stuck at 1.0.25)"
+      ]
+    },
     "2.3.2": {
       "releaseDate": "2026-09-23",
       "highlights": [

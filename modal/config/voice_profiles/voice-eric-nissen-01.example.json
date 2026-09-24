@@ -20,18 +20,18 @@
     "canonicalClip": {
       "path": "clips/eric-nissen/eric-nissen-canonical.wav",
       "durationSeconds": 24,
-      "sha256": "f5643c26df69bcc71dc9998b62de4c85166ea13ecd6ae782e58d4c56d30644c4"
+      "sha256": "2cac4265948b42b25cf5c921ff4a88b8a7815259b071a7d2cd90d8bda667912b"
     },
     "alternateClips": [
       {
         "path": "clips/eric-nissen/eric-nissen-alt-neutral-emphatic.wav",
         "durationSeconds": 20,
-        "sha256": "ec7c041dfb397ed0270dacbf95a6257942c7f9ce92b1957aa89c5a06375f98fc"
+        "sha256": "8a3b1063245a5ad9382ddbdc089582df693395911b23229e05dd6d9968b410fc"
       },
       {
         "path": "clips/eric-nissen/eric-nissen-alt-emphatic.wav",
         "durationSeconds": 20,
-        "sha256": "f2791704644f43ed22b4069abb6ce9ba57ba35742700a892e401a1a110c54822"
+        "sha256": "1d18ead98686e9996631cbf6d226a005103a353cb4369e378249557e67f50dc5"
       }
     ],
     "clips": [

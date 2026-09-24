@@ -1,3 +1,7 @@
+# Historical migration plan
+
+> Archived after the Chatterbox backend and production pipeline became the current runtime. See `docs/AUDIO_GENERATION_PLAN.md` for operating guidance.
+
 # Chatterbox TTS on Modal — Integration Plan
 
 Status: Phase 1 implemented (backend swap + config-driven chunking/retry/concurrency). Benchmarking (T4/L4/A10) and the ASR QA pipeline (Phase 3) remain outstanding — both require an actual Modal deployment with GPU access and a consented, uploaded reference clip, neither of which exists in this repo yet.

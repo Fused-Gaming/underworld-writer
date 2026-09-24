@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "episodeId": "insight-corruption-s01e01",
+  "profile": "investigative-documentary",
+  "releaseGate": {
+    "requireApprovedAssets": true,
+    "requireVoiceQc": true,
+    "requireEditorialApproval": true
+  },
+  "cues": [
+    {
+      "id": "open-theme",
+      "type": "intro-bed",
+      "asset": "insight-corruption/music/theme-main.wav",
+      "startMs": 0,
+      "durationMs": 18000,
+      "gainDb": -18,
+      "duckNarrationDb": -7,
+      "fadeInMs": 250,
+      "fadeOutMs": 1800
+    },
+    {
+      "id": "chapter-1",
+      "type": "stinger",
+      "asset": "insight-corruption/sfx/chapter-stinger.wav",
+      "startMarker": "series-intro:end",
+      "gainDb": -14,
+      "fadeOutMs": 300
+    },
+    {
+      "id": "investigation-bed",
+      "type": "music-bed",
+      "asset": "insight-corruption/music/investigation-bed.wav",
+      "startMarker": "shipment-network:start",
+      "endMarker": "charge-correction-and-plea:end",
+      "gainDb": -24,
+      "duckNarrationDb": -7,
+      "fadeInMs": 1000,
+      "fadeOutMs": 1500
+    },
+    {
+      "id": "midroll-in",
+      "type": "stinger",
+      "asset": "insight-corruption/sfx/midroll-bumper.wav",
+      "startMarker": "midroll:start",
+      "gainDb": -13
+    },
+    {
+      "id": "midroll-out",
+      "type": "stinger",
+      "asset": "insight-corruption/sfx/midroll-bumper.wav",
+      "startMarker": "midroll:end",
+      "gainDb": -15
+    },
+    {
+      "id": "reflection-bed",
+      "type": "music-bed",
+      "asset": "insight-corruption/music/reflection-bed.wav",
+      "startMarker": "analysis-known-unknown:start",
+      "endMarker": "series-outro:end",
+      "gainDb": -25,
+      "duckNarrationDb": -8,
+      "fadeInMs": 1200,
+      "fadeOutMs": 1800
+    },
+    {
+      "id": "close-theme",
+      "type": "outro-bed",
+      "asset": "insight-corruption/music/theme-main.wav",
+      "startMarker": "series-outro:start",
+      "durationMs": 25000,
+      "gainDb": -19,
+      "duckNarrationDb": -8,
+      "fadeInMs": 800,
+      "fadeOutMs": 2500
+    }
+  ],
+  "notes": "Markers are resolved from segment IDs after synthesis. Asset files remain external until license/provenance status is approved."
+}

@@ -93,7 +93,7 @@
         "normalize conservatively and retain an archival copy of the unprocessed source"
       ]
     },
-    "source": "User-provided Eric-sample.mp3 supplied directly for authorized Insight Corruption voice intake on 2026-09-23.",
+    "source": "User-provided eric-nissen-source.mp3 (renamed from Eric-sample.mp3) supplied directly for authorized Insight Corruption voice intake on 2026-09-23.",
     "provenanceRequired": [
       "source URL",
       "platform",
@@ -106,102 +106,103 @@
     "storageLocation": "Modal Volume 'underworld-voice-profiles' under clips/eric-nissen/; audio is not committed to Git",
     "canonicalClip": {
       "path": "clips/eric-nissen/eric-nissen-canonical.wav",
-      "derivedFrom": "Eric-sample.mp3",
+      "derivedFrom": "eric-nissen-source.mp3",
       "sourceStartSeconds": 8,
       "sourceEndSeconds": 32,
       "durationSeconds": 24,
       "codec": "pcm_s16le",
       "sampleRateHz": 24000,
       "channels": 1,
-      "sha256": "f5643c26df69bcc71dc9998b62de4c85166ea13ecd6ae782e58d4c56d30644c4",
+      "sha256": "2cac4265948b42b25cf5c921ff4a88b8a7815259b071a7d2cd90d8bda667912b",
       "transform": "ffmpeg extraction; mono; 24 kHz; PCM signed 16-bit WAV; no denoise, pitch, time-stretch, formant, or loudness processing",
       "intendedUse": "Default Chatterbox audio_prompt_path for neutral/conversational Insight Corruption narration."
     },
     "alternateClips": [
       {
         "path": "clips/eric-nissen/eric-nissen-alt-neutral-emphatic.wav",
-        "derivedFrom": "Eric-sample.mp3",
+        "derivedFrom": "eric-nissen-source.mp3",
         "sourceStartSeconds": 34,
         "sourceEndSeconds": 54,
         "durationSeconds": 20,
         "codec": "pcm_s16le",
         "sampleRateHz": 24000,
         "channels": 1,
-        "sha256": "ec7c041dfb397ed0270dacbf95a6257942c7f9ce92b1957aa89c5a06375f98fc",
+        "sha256": "8a3b1063245a5ad9382ddbdc089582df693395911b23229e05dd6d9968b410fc",
         "intendedUse": "A/B reference for moderately stronger emphasis."
       },
       {
         "path": "clips/eric-nissen/eric-nissen-alt-emphatic.wav",
-        "derivedFrom": "Eric-sample.mp3",
+        "derivedFrom": "eric-nissen-source.mp3",
         "sourceStartSeconds": 58,
         "sourceEndSeconds": 78,
         "durationSeconds": 20,
         "codec": "pcm_s16le",
         "sampleRateHz": 24000,
         "channels": 1,
-        "sha256": "f2791704644f43ed22b4069abb6ce9ba57ba35742700a892e401a1a110c54822",
+        "sha256": "1d18ead98686e9996631cbf6d226a005103a353cb4369e378249557e67f50dc5",
         "intendedUse": "QC/benchmark alternate for stronger field-reporting emphasis; not default."
       }
     ],
     "clips": [
       {
         "path": "clips/eric-nissen/eric-nissen-canonical.wav",
-        "derivedFrom": "Eric-sample.mp3",
+        "derivedFrom": "eric-nissen-source.mp3",
         "sourceStartSeconds": 8,
         "sourceEndSeconds": 32,
         "durationSeconds": 24,
         "codec": "pcm_s16le",
         "sampleRateHz": 24000,
         "channels": 1,
-        "sha256": "f5643c26df69bcc71dc9998b62de4c85166ea13ecd6ae782e58d4c56d30644c4",
+        "sha256": "2cac4265948b42b25cf5c921ff4a88b8a7815259b071a7d2cd90d8bda667912b",
         "transform": "ffmpeg extraction; mono; 24 kHz; PCM signed 16-bit WAV; no denoise, pitch, time-stretch, formant, or loudness processing",
         "intendedUse": "Default Chatterbox audio_prompt_path for neutral/conversational Insight Corruption narration."
       },
       {
         "path": "clips/eric-nissen/eric-nissen-alt-neutral-emphatic.wav",
-        "derivedFrom": "Eric-sample.mp3",
+        "derivedFrom": "eric-nissen-source.mp3",
         "sourceStartSeconds": 34,
         "sourceEndSeconds": 54,
         "durationSeconds": 20,
         "codec": "pcm_s16le",
         "sampleRateHz": 24000,
         "channels": 1,
-        "sha256": "ec7c041dfb397ed0270dacbf95a6257942c7f9ce92b1957aa89c5a06375f98fc",
+        "sha256": "8a3b1063245a5ad9382ddbdc089582df693395911b23229e05dd6d9968b410fc",
         "intendedUse": "A/B reference for moderately stronger emphasis."
       },
       {
         "path": "clips/eric-nissen/eric-nissen-alt-emphatic.wav",
-        "derivedFrom": "Eric-sample.mp3",
+        "derivedFrom": "eric-nissen-source.mp3",
         "sourceStartSeconds": 58,
         "sourceEndSeconds": 78,
         "durationSeconds": 20,
         "codec": "pcm_s16le",
         "sampleRateHz": 24000,
         "channels": 1,
-        "sha256": "f2791704644f43ed22b4069abb6ce9ba57ba35742700a892e401a1a110c54822",
+        "sha256": "1d18ead98686e9996631cbf6d226a005103a353cb4369e378249557e67f50dc5",
         "intendedUse": "QC/benchmark alternate for stronger field-reporting emphasis; not default."
       }
     ],
     "sourceFile": {
-      "fileName": "Eric-sample.mp3",
+      "fileName": "eric-nissen-source.mp3",
       "format": "MP3",
       "codec": "mp3",
       "durationSeconds": 93.361625,
       "sampleRateHz": 44100,
       "channels": 2,
       "sha256": "7784366b4bbdf8f9c9d7304d469bea423bd7ca33be497e27a0abde0475bb10a6",
-      "disposition": "Original intake source. Preserve unchanged; do not use the repository as audio storage."
+      "disposition": "Original intake source, renamed from Eric-sample.mp3 for naming-convention consistency. Preserve unchanged; do not use the repository as long-term audio storage beyond this intake record."
     },
     "intake": {
-      "completedDate": "2026-09-23",
+      "completedDate": "2026-09-24",
       "derivedArtifactsVerified": true,
-      "verification": "Derived WAV files were actually generated from the uploaded Eric-sample.mp3 and SHA-256 checksums were calculated from those bytes.",
-      "runtimeReady": false,
-      "runtimeBlocker": "Upload the three verified WAV artifacts to the underworld-voice-profiles Modal Volume at the configured paths and verify their SHA-256 values after upload."
-    }
+      "verification": "Derived WAV files were regenerated from eric-nissen-source.mp3 with ffmpeg (mono, 24 kHz, pcm_s16le, -ss/-to trim, no denoise/pitch/time-stretch/formant processing) and SHA-256 checksums were computed directly from those output bytes. A prior commit on this branch had asserted different SHA-256 values for the same clip paths/parameters without matching bytes actually being present in the repository; those values did not reproduce and have been corrected here to the checksums of the actual committed WAV files.",
+      "runtimeReady": true,
+      "runtimeBlocker": null
+    },
+    "repositorySourceRoot": "projects/insight-corruption/production/voice/references"
   },
   "fineTunedCheckpoint": null,
-  "notes": "Voice intake completed and locally verified from the user-provided Eric-sample.mp3. The source MP3 remains the provenance master. Three real PCM WAV excerpts were generated from that MP3: a 24-second canonical Chatterbox reference and two 20-second alternates. Their SHA-256 values in this record correspond to the actual derived bytes. Runtime remains blocked only on uploading those exact WAV artifacts to the Modal voice-profile volume and verifying them there.",
+  "notes": "Voice intake completed and locally verified from the user-provided eric-nissen-source.mp3 (renamed from Eric-sample.mp3). The three derived WAV files are committed at their clip paths under projects/insight-corruption/production/voice/references/ and their SHA-256 checksums were computed from those exact bytes. Runtime deployment is automated by scripts/sync-modal-voice-profiles.py / scripts/deploy-modal-audio.sh, which verify these checksums before uploading to the Modal Volume.",
   "training": {
     "status": "not-planned",
     "strategy": "Use Chatterbox zero-shot voice cloning first. Do not fine-tune unless controlled listening tests show unacceptable cross-segment identity or cadence drift.",

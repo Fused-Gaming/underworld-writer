@@ -1,6 +1,6 @@
 # Episode 5: A $36K Rolex and a Construction Deal
 
-![Insight Corruption](../../assets/linkedin-headers/ci-2-skyline.png)
+![Insight Corruption](../../../../production/assets/linkedin-headers/ci-2-skyline.png)
 
 **Subtitle:** Florence Kong's Corruption
 

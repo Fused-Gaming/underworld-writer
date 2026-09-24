@@ -1,6 +1,6 @@
 # Episode 2: Stealing from Housing
 
-![Insight Corruption](../../assets/linkedin-headers/ci-3-broadsheet.png)
+![Insight Corruption](../../../../production/assets/linkedin-headers/ci-3-broadsheet.png)
 
 **Subtitle:** Clarke Howatt's $3.9M Embezzlement
 
