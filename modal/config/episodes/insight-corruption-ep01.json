@@ -9,5 +9,13 @@
     "episodeNumber": 1,
     "seasonNumber": 1,
     "series": "insight-corruption"
+  },
+  "productionPlanPath": "projects/insight-corruption/production/audio/episode-01.production.json",
+  "assetRegistryPath": "projects/insight-corruption/production/audio/asset-registry.json",
+  "productionProfilePath": "modal/config/production_profiles/investigative-documentary.json",
+  "releaseCandidate": {
+    "requireClearedAssets": true,
+    "requireHumanListen": true,
+    "generateDeliveryMp3": true
   }
 }
