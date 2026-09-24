@@ -117,7 +117,13 @@ class MusicGenerator:
             lyrics="",
             instrumental=True,
             duration=duration_s,
-            thinking=True,
+            # thinking=True hands the caption to the LM, which was found (by
+            # actually reading the generation log) to *replace* the caption
+            # wholesale rather than just infer missing metadata like BPM/key
+            # from it — e.g. a documentary-theme prompt came back conditioned
+            # on an unrelated "atmospheric world fusion" caption instead.
+            # False uses the caption verbatim as DiT conditioning.
+            thinking=False,
         )
         config = GenerationConfig(
             audio_format="wav",
