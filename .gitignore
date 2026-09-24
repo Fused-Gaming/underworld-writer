@@ -155,8 +155,3 @@ release-artifacts/
 modal/audio-samples/
 episode.wav
 episode.mp3
-
-# Generated music/SFX staging output (modal/generate_production_audio.py).
-# Runtime data, reviewed by a human and then synced to the Modal volume,
-# never committed — see modal/README.md and docs/guides/ASSET_PROCUREMENT.md.
-projects/*/production/audio/generated/

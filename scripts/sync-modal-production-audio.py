@@ -10,8 +10,8 @@ PRODUCTION_AUDIO.md step 10).
 
 Local staged files are expected at:
   projects/<show>/production/audio/generated/<registry path>
-(gitignored — see modal/generate_production_audio.py, which writes them
-there for review.)
+(committed to Git — see modal/generate_production_audio.py, which writes
+them there for review.)
 
 Usage:
   modal run scripts/sync-modal-production-audio.py --show insight-corruption
