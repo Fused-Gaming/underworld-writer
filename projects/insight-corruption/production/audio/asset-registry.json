@@ -6,41 +6,86 @@
       "id": "ic-theme-main",
       "path": "insight-corruption/music/theme-main.wav",
       "kind": "music",
-      "status": "required-not-procured",
+      "status": "approved",
       "usage": "opening/closing identity",
-      "license": null
+      "sha256": "d937382448b1ccae3ce1e574e03dc293371d79d170a12c2b2a1ad50e5f6e45fc",
+      "license": {
+        "type": "self-generated",
+        "model": "ACE-Step-1.5 v0.1.6 (acestep-v15-turbo, acestep-5Hz-lm-4B)",
+        "modelLicense": "Apache-2.0 (github.com/ace-step/ACE-Step-1.5) - unconditional commercial use, no revenue threshold",
+        "prompt": "Modern investigative documentary theme, instrumental, no vocals. 88 BPM. Sparse low percussion and a steady pulse, restrained sub bass, one subtle textural synth or organic instrumental element for color. Recognizable and identifiable within two seconds, restrained rather than cinematic-horror, leaves clear space for a spoken voice-over on top. Clean, deliberate ending button, not a fade.",
+        "seed": 101,
+        "durationSeconds": 75,
+        "generatedDate": "2026-09-24"
+      }
     },
     {
       "id": "ic-bed-investigation",
       "path": "insight-corruption/music/investigation-bed.wav",
       "kind": "music",
-      "status": "required-not-procured",
+      "status": "approved",
       "usage": "low-level evidence/timeline bed",
-      "license": null
+      "sha256": "5e1dac2ad26a8360a19c8c4c38204a6cf693e52044382492de3a87b4d2b2e7df",
+      "license": {
+        "type": "self-generated",
+        "model": "ACE-Step-1.5 v0.1.6 (acestep-v15-turbo, acestep-5Hz-lm-4B)",
+        "modelLicense": "Apache-2.0 (github.com/ace-step/ACE-Step-1.5) - unconditional commercial use, no revenue threshold",
+        "prompt": "Instrumental underscore for evidence review and timeline narration in an investigative documentary podcast. No vocals, no lead melody. Minimal harmonic movement, low rhythmic pulse, sparse texture. Designed to sit quietly beneath spoken narration, roughly 20-26 dB under a voice track, without pulling attention away from it. Even, unchanging energy throughout with no big builds or drops.",
+        "seed": 102,
+        "durationSeconds": 180,
+        "generatedDate": "2026-09-24"
+      }
     },
     {
       "id": "ic-bed-reflection",
       "path": "insight-corruption/music/reflection-bed.wav",
       "kind": "music",
-      "status": "required-not-procured",
+      "status": "approved",
       "usage": "known-vs-unknown / closing reflection",
-      "license": null
+      "sha256": "18c9e12d33ff025722aeab9e648fccabadf05cae709fab5393a710ad1021b673",
+      "license": {
+        "type": "self-generated",
+        "model": "ACE-Step-1.5 v0.1.6 (acestep-v15-turbo, acestep-5Hz-lm-4B)",
+        "modelLicense": "Apache-2.0 (github.com/ace-step/ACE-Step-1.5) - unconditional commercial use, no revenue threshold",
+        "prompt": "Instrumental underscore for a closing reflection and known-versus-unknown analysis segment in an investigative documentary podcast. No vocals. Warmer and more open than a tense investigation cue, less rhythmic, gentle sustained harmonic movement. Contemplative and restrained, not sad or triumphant. Sits quietly beneath spoken narration without a prominent lead melody.",
+        "seed": 103,
+        "durationSeconds": 180,
+        "generatedDate": "2026-09-24"
+      }
     },
     {
       "id": "ic-stinger-chapter",
       "path": "insight-corruption/sfx/chapter-stinger.wav",
       "kind": "stinger",
-      "status": "required-not-procured",
+      "status": "approved",
       "usage": "chapter transitions only",
-      "license": null
+      "sha256": "b2c3187fb34ef021b6254bd7bc3f4cf9e0706360dcb3d511e6e762ca95b9666c",
+      "license": {
+        "type": "self-generated",
+        "model": "Stable Audio Open 1.0 (stabilityai/stable-audio-open-1.0)",
+        "modelLicense": "Stability AI Community License - free commercial use for organizations under USD $1,000,000 annual revenue; Enterprise license required above that threshold",
+        "prompt": "A short, clean, modern documentary chapter-transition sound design hit. Subtle low pulse or soft metallic tick, restrained and minimal, no melody. Professional podcast branding punctuation, not dramatic or ominous.",
+        "seed": 104,
+        "durationSeconds": 1.4,
+        "generatedDate": "2026-09-24"
+      }
     },
     {
       "id": "ic-bumper-midroll",
       "path": "insight-corruption/sfx/midroll-bumper.wav",
       "kind": "stinger",
-      "status": "required-not-procured",
+      "status": "approved",
       "usage": "house-ad boundary",
-      "license": null
+      "sha256": "e5113f49ff945da6f49970b952f70dc622e351e0de40660786b478e6f734d6c0",
+      "license": {
+        "type": "self-generated",
+        "model": "Stable Audio Open 1.0 (stabilityai/stable-audio-open-1.0)",
+        "modelLicense": "Stability AI Community License - free commercial use for organizations under USD $1,000,000 annual revenue; Enterprise license required above that threshold",
+        "prompt": "A short transition sound design element related to a modern investigative-documentary theme, marking the boundary into a sponsor or house message. Clearly distinct from a chapter stinger, slightly longer and more open, but stylistically related to the same sonic identity. No melody, no vocals.",
+        "seed": 105,
+        "durationSeconds": 2.2,
+        "generatedDate": "2026-09-24"
+      }
     }
   ]
 }
