@@ -1,0 +1,81 @@
+{
+  "episodeNumber": 18,
+  "seasonNumber": 1,
+  "title": "Elizabeth Williams & Insight Housing: The Paper Trail",
+  "subtitle": "From an Oakland ethics case to a publicly funded housing dispute",
+  "description": "A source-tiered examination of Oakland Public Ethics Commission findings involving landlord Elizabeth Williams, and later allegations arising from an Insight Housing SSVF placement at an Oakland property associated with Williams.",
+  "characters": [
+    "Elizabeth Williams",
+    "Thomas Espinosa",
+    "Insight Housing"
+  ],
+  "location": "Oakland, California",
+  "year": 2026,
+  "tags": [
+    "government-corruption",
+    "public-ethics",
+    "housing",
+    "ssvf",
+    "public-funds",
+    "oakland"
+  ],
+  "sourceVerificationTier": 2,
+  "caseReference": "Oakland PEC Case No. 16-14 / SSVF housing records / OPD report T26008570",
+  "status": "studio-prep",
+  "length": {
+    "format": "single-part",
+    "parts": [
+      {
+        "partNumber": 1,
+        "duration": {
+          "minimum": 28,
+          "maximum": 32,
+          "target": 30
+        },
+        "sponsorBreaks": [
+          {
+            "position": "mid-roll",
+            "lengthSeconds": 90,
+            "scriptTemplate": "Insight Corruption house read"
+          }
+        ],
+        "contentDuration": {
+          "minimum": 26.5,
+          "maximum": 30.5,
+          "target": 28.5
+        }
+      }
+    ],
+    "totalDuration": {
+      "minimum": 28,
+      "maximum": 32,
+      "target": 30
+    }
+  },
+  "keyPoints": [
+    "In Oakland PEC Case No. 16-14, a hearing officer found that City building inspector Thomas Espinosa solicited and received four $300 payments from Elizabeth Williams in exchange for permit and inspection-related official acts.",
+    "The PEC findings describe Williams as an Oakland landlord whose properties had been the subject of multiple City maintenance lawsuits; the adjudicated ethics violations were findings against Espinosa, not a criminal judgment against Williams.",
+    "In 2024, a veteran was placed through Insight Housing's SSVF program at an Oakland rental property associated with Williams, with public funding supporting the placement.",
+    "A 2026 Oakland Police Department report records allegations by the reporting party concerning housing conditions, program funds, eviction, and retaliation; those allegations are not treated in this episode as proven criminal conduct.",
+    "The episode asks what due diligence, inspection, complaint-handling, and fund-tracing controls should exist when public housing dollars intersect with a property or landlord already present in a municipal enforcement record."
+  ],
+  "investigativeAngles": [
+    "Follow the property, permitting, inspection, and public-funding paper trail.",
+    "Separate adjudicated government findings from later complainant allegations.",
+    "Examine what screening and oversight existed before public funds supported the placement.",
+    "Identify gaps that require direct ACCELA, fire-inspection, SSVF ledger, and contracting records."
+  ],
+  "guestOpportunities": [
+    "a municipal ethics or public-integrity attorney",
+    "a supportive-housing compliance specialist",
+    "a housing-code or building-inspection expert",
+    "a reporter experienced in public-contracting and homelessness funding"
+  ],
+  "factCheckLayers": [
+    "Tier 1: Oakland Public Ethics Commission Case No. 16-14 findings and exhibits",
+    "Tier 1/2: court filings, agency correspondence, SSVF approval records, public-records responses",
+    "Tier 2: Oakland Police Department report T26008570 as proof an allegation was reported, not proof the allegation itself is true",
+    "Tier 3: complainant chronology where underlying primary record has not yet been independently matched"
+  ],
+  "producerNotes": "Editorial rule: never collapse the 2015-2016 PEC findings and the 2024-2026 SSVF dispute into a claim of one proven criminal scheme. The PEC adjudicated Espinosa's conduct. Later funding, habitability, retaliation, and fraud claims are allegations and requests for investigation unless independently established by primary records. Studio render may proceed with the current script because all unresolved propositions are either omitted or explicitly framed as allegations/questions. Any later ACCELA/fire/ledger records should trigger a script revision before publication if they materially change the facts."
+}
