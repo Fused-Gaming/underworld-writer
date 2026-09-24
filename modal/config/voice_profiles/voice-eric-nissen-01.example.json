@@ -5,8 +5,10 @@
   "language": "en",
   "synthesis": {
     "backend": "chatterbox",
+    "model": "resemble-ai/chatterbox",
     "exaggeration": 0.5,
-    "cfgWeight": 0.5
+    "cfgWeight": 0.5,
+    "referenceClip": "clips/eric-nissen/eric-nissen-canonical.wav"
   },
   "consent": {
     "status": "confirmed",
@@ -14,11 +16,36 @@
     "confirmedDate": "2026-09-15"
   },
   "referenceAudio": {
+    "status": "intake-complete-pending-modal-upload",
+    "canonicalClip": {
+      "path": "clips/eric-nissen/eric-nissen-canonical.wav",
+      "durationSeconds": 24,
+      "sha256": "f5643c26df69bcc71dc9998b62de4c85166ea13ecd6ae782e58d4c56d30644c4"
+    },
+    "alternateClips": [
+      {
+        "path": "clips/eric-nissen/eric-nissen-alt-neutral-emphatic.wav",
+        "durationSeconds": 20,
+        "sha256": "ec7c041dfb397ed0270dacbf95a6257942c7f9ce92b1957aa89c5a06375f98fc"
+      },
+      {
+        "path": "clips/eric-nissen/eric-nissen-alt-emphatic.wav",
+        "durationSeconds": 20,
+        "sha256": "f2791704644f43ed22b4069abb6ce9ba57ba35742700a892e401a1a110c54822"
+      }
+    ],
     "clips": [
       {
-        "path": "clips/eric-nissen/clip1.wav",
-        "durationSeconds": 22,
-        "source": "published social audio (link TBD at intake)"
+        "path": "clips/eric-nissen/eric-nissen-canonical.wav",
+        "durationSeconds": 24
+      },
+      {
+        "path": "clips/eric-nissen/eric-nissen-alt-neutral-emphatic.wav",
+        "durationSeconds": 20
+      },
+      {
+        "path": "clips/eric-nissen/eric-nissen-alt-emphatic.wav",
+        "durationSeconds": 20
       }
     ]
   },
