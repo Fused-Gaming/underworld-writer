@@ -223,4 +223,4 @@ Different claims require different verification levels:
 
 ---
 
-**Return to:** [Use Cases Overview](../USE_CASES_OVERVIEW.md)
+**Return to:** [Use Cases Overview](../../USE_CASES_OVERVIEW.md)

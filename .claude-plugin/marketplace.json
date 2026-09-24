@@ -12,8 +12,8 @@
     {
       "name": "underworld-writer",
       "source": "./",
-      "description": "Dual-purpose skill for creative fiction and true crime narratives with PACER API fact-checking integration, episodic podcast production, and editorial verification.",
-      "version": "1.0.25",
+      "description": "Three-use-case skill for fictional underworld narratives, fact-sourced true crime writing, and episodic podcast production — character development, PACER-informed editorial verification, and an optional self-generated audio/mastering pipeline.",
+      "version": "2.4.0",
       "author": {
         "name": "Fused Gaming",
         "url": "https://github.com/Fused-Gaming"
@@ -29,7 +29,9 @@
         "pacer",
         "fact-checking",
         "podcast",
-        "editorial"
+        "editorial",
+        "audio-production",
+        "modal"
       ]
     }
   ]

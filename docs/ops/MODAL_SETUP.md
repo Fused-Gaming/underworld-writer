@@ -23,7 +23,11 @@ This project uses [Modal.com](https://modal.com) for GPU-accelerated audio gener
 modal setup
 ```
 
-This opens your browser to authenticate. Your credentials are saved locally at `~/.modal/config.toml`.
+This opens your browser to authenticate. Your credentials are saved locally at `~/.modal.toml` (override the path with `MODAL_CONFIG_PATH`; on Windows this is `%APPDATA%\Modal\.modal.toml`).
+
+### Claude Code plugin users
+
+If you installed this as a Claude Code plugin, you can skip the `modal setup` browser flow: enter your Modal token ID/secret (from Settings → Tokens) into the plugin's configuration prompt when enabling it. A `SessionStart` hook (`scripts/plugin-onboard-secrets.sh`) writes them to `~/.modal.toml` via `modal token set` automatically at the start of each session — see `.claude-plugin/plugin.json`'s `userConfig`. Values are stored by Claude Code's secure per-user storage, never committed to the repo.
 
 ### Step 3: Verify Setup
 
@@ -199,6 +203,6 @@ modal/app.py
 ## Reference
 
 - [Modal Documentation](https://modal.com/docs)
-- [AUDIO_GENERATION_PLAN.md](docs/AUDIO_GENERATION_PLAN.md)
-- [modal/README.md](modal/README.md)
+- [AUDIO_GENERATION_PLAN.md](../AUDIO_GENERATION_PLAN.md)
+- [modal/README.md](../../modal/README.md)
 - [XTTS-v2 on Hugging Face](https://huggingface.co/coqui/XTTS-v2)

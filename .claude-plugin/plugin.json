@@ -1,13 +1,21 @@
 {
   "name": "underworld-writer",
-  "version": "1.0.25",
-  "description": "Dual-purpose skill for creative fiction and true crime narratives with PACER API fact-checking integration",
+  "version": "2.4.0",
+  "description": "Three-use-case skill for fictional underworld narratives, fact-sourced true crime writing, and episodic podcast production — character development, PACER-informed editorial verification, and an optional self-generated audio/mastering pipeline.",
   "author": {
     "name": "Fused Gaming",
     "url": "https://github.com/Fused-Gaming"
   },
   "homepage": "https://github.com/Fused-Gaming/underworld-writer",
-  "keywords": ["underworld", "character", "narrative", "fiction", "true-crime", "pacer", "fact-checking"],
+  "keywords": [
+    "underworld",
+    "character",
+    "narrative",
+    "fiction",
+    "true-crime",
+    "pacer",
+    "fact-checking"
+  ],
   "bin": {
     "underworld-writer": "./dist/cli.js"
   },
@@ -23,5 +31,45 @@
     "underworld_validate_character": "Validate character completeness and consistency",
     "underworld_export_character": "Export character as markdown documentation",
     "underworld_validate_relationships": "Check relationship consistency between characters"
+  },
+  "userConfig": {
+    "modal_token_id": {
+      "type": "string",
+      "title": "Modal token ID",
+      "description": "Optional — only needed for episode audio synthesis/mastering and the self-generated music/SFX pipeline (see docs/ops/MODAL_SETUP.md). Get one at modal.com/settings/tokens. Not required for character/narrative/editorial features.",
+      "sensitive": true,
+      "required": false
+    },
+    "modal_token_secret": {
+      "type": "string",
+      "title": "Modal token secret",
+      "description": "Paired with modal_token_id, from the same modal.com/settings/tokens page.",
+      "sensitive": true,
+      "required": false
+    },
+    "uw_npm_token": {
+      "type": "string",
+      "title": "npm publish token (maintainers only)",
+      "description": "Scoped npm automation token with publish rights to @h4shed/skill-underworld-writer, used by `npm run publish:npm` (docs/ops/PUBLISHING.md). Irrelevant unless you're cutting a release.",
+      "sensitive": true,
+      "required": false
+    }
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ["${CLAUDE_PLUGIN_ROOT}/scripts/plugin-onboard-secrets.sh"],
+            "args": [
+              "${user_config.modal_token_id}",
+              "${user_config.modal_token_secret}",
+              "${user_config.uw_npm_token}"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

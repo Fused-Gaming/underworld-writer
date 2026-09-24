@@ -18,7 +18,7 @@ We are committed to providing a welcoming and inclusive environment for all cont
 
 ### Before Starting Work
 
-1. Check existing [issues](../../issues) to avoid duplicate work
+1. Check existing [issues](https://github.com/Fused-Gaming/underworld-writer/issues) to avoid duplicate work
 2. For new features, open an issue first to discuss approach
 3. For bug fixes, link to the relevant issue in your PR
 
@@ -324,12 +324,11 @@ Maintainers handle releases, but contributors should:
 
 Contributors are recognized in:
 - Commit history
-- Release notes
-- [CONTRIBUTORS.md](CONTRIBUTORS.md)
+- Release notes ([CHANGELOG.md](CHANGELOG.md))
 
 ## Questions?
 
-- Check [GETTING_STARTED.md](GETTING_STARTED.md)
+- Check [Getting Started](docs/guides/GETTING_STARTED.md)
 - Review [docs/INDEX.md](docs/INDEX.md)
 - Open an issue for clarification
 

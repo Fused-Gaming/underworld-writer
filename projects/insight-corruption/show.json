@@ -32,5 +32,11 @@
     "targetDurationMinutes": 30,
     "seasonId": "season-01",
     "renderProfile": "podcast-standard"
+  },
+  "production": {
+    "profile": "investigative-documentary",
+    "assetRegistryRef": "production/audio/asset-registry.json",
+    "episodePlanPattern": "production/audio/episode-{episode}.production.json",
+    "soundDesignPrinciple": "restrained investigative documentary; voice/evidence foreground; no sonic implication of guilt"
   }
 }

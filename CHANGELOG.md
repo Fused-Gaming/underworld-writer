@@ -9,6 +9,31 @@ Format follows Keep a Changelog and Semantic Versioning.
 ### Added
 - Future changes belong here before release.
 
+## [2.4.0] - 2026-09-24
+
+### Added
+- Deterministic dialogue/music/SFX post-production mixer (`modal/audio/postproduction.py`): semantic segment markers so cue timing survives TTS duration changes, narration ducking, fades, beds, stingers, and intro/outro cue support.
+- Fail-closed music/SFX rights-clearance registry (`projects/<show>/production/audio/asset-registry.json`) — a release render refuses to run until every referenced asset is `status: "approved"` with a recorded license/provenance record.
+- Self-generated music/SFX pipeline (`modal/generate_production_audio.py`) as a $0, open-weight alternative to licensing stock audio: [ACE-Step 1.5](https://github.com/ace-step/ACE-Step-1.5) (Apache-2.0) for the theme and music beds, [Stable Audio Open 1.0](https://huggingface.co/stabilityai/stable-audio-open-1.0) (Stability AI Community License, free under USD $1M annual revenue) for short SFX/stingers. Reproducible via committed prompt/seed manifests (`generation-prompts.json`); generation is never treated as clearance — a human still approves after listening.
+- `scripts/sync-modal-production-audio.py` — fail-closed sync of approved, checksummed production audio into a persistent Modal volume, mirroring the existing voice-reference sync.
+- Verified, checksummed Chatterbox voice-reference clips for Eric Nissen, derived from the authorized intake source and committed under `projects/insight-corruption/production/voice/references/clips/eric-nissen/`.
+- Insight Corruption sound-design brief, Episode 1 production/cue plan, and a reusable show-level production profile (`modal/config/production_profiles/investigative-documentary.json`) encoding editorial-restraint rules (no sirens/gavels/gunshots/cash-register clichés).
+- WAV master + 192 kbps MP3 delivery path with production cue metadata recorded in the render manifest.
+- New guides: `docs/guides/VOICE_INTAKE.md`, `docs/guides/PRODUCTION_AUDIO.md`, `docs/guides/ASSET_PROCUREMENT.md`, `docs/guides/TROUBLESHOOTING_AUDIO.md`; new ops docs: `docs/ops/MODAL_VOICE_SYNC.md`, `docs/ops/MODAL_PRODUCTION_AUDIO.md`, `docs/ops/PRODUCTION_RELEASE.md`; `docs/REPOSITORY_STRUCTURE.md`.
+- `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` are now kept in sync with the package version by `npm run version:sync` (previously drifted to a stale `1.0.25`).
+
+### Changed
+- Audio mastering, editorial linting, and the publish CLI from 2.3.x carry forward unchanged; this release is additive on top of them.
+- Consolidated documentation navigation (`docs/README.md`, `docs/INDEX.md`) and moved completed/superseded plans into `docs/archive/` (including the completed Chatterbox migration plan).
+- Fixed a batch of broken relative documentation links left by earlier moves (root `CONTRIBUTING.md`, `docs/use-cases/*`, `docs/guides/GETTING_STARTED.md`, `docs/ops/MODAL_SETUP.md`, `benchmarks/README.md`, and five legacy Insight Corruption planning docs whose header images pointed at a pre-reorg path); flagged the two intentionally-archived documents with stale internal links as archived snapshots rather than rewriting history.
+
+### Fixed
+- A literal `\n` (rather than a newline) in `docs/README.md`'s first-time-path list, which broke that list's rendering.
+- `dist/cli.js` was published without its executable bit, breaking `npx @h4shed/skill-underworld-writer` and the linked `underworld-writer` bin (`sh: Permission denied`) after a fresh install. `npm run build` now runs a `postbuild` step (`chmod +x dist/cli.js`) automatically; verified end-to-end against a real packed tarball.
+- (Code review) `modal/app.py` never mounted the `underworld-production-audio` Modal volume that `scripts/sync-modal-production-audio.py` uploads approved music/SFX into, and defaulted `asset_root` to an in-image path (`/root/assets/audio`) that was never anything mounted — the render pipeline could never actually read synced production audio. Both `assemble_episode` and `generate_episode_audio` now mount the volume, and `asset_root` defaults to it.
+- (Code review) `resolve_markers()` computed cue positions by summing raw segment durations, ignoring the 150ms crossfade `assemble_episode`'s dialogue-assembly loop applies between every segment and the conditional 800ms post-segment pause — cue timing (stingers, bed entry/exit) could drift seconds from the real edit by later chapters. Segment boundaries are now recorded from the actual assembled `AudioSegment`'s length at each step and passed into `resolve_markers()` directly, instead of being independently re-derived.
+- (Code review) `verify_only=True` in `scripts/sync-modal-voice-profiles.py` and `scripts/sync-modal-production-audio.py` only checked the local repository/staged source; a clip/asset never actually uploaded to the Modal volume still came back reported as `"synced"` during a verification-only pass. Both scripts now require the destination to exist with matching bytes during verification.
+
 ## [2.3.2] - 2026-09-23
 
 ### Changed

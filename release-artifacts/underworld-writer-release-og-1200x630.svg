@@ -41,58 +41,58 @@
       <text x="31" y="20"
             font-family="Menlo, Consolas, monospace"
             font-size="11" letter-spacing="1.2"
-            fill="#d7d9e0">CHANGELOG / v2.3.2</text>
+            fill="#d7d9e0">CHANGELOG / v2.4.0</text>
     </g>
   
     <!-- BEGIN UNDERWORLD WRITER CHANGELOG-DERIVED LAYER -->
     <g id="underworld-release-dynamic" pointer-events="none">
       <rect x="52" y="281" width="156" height="43" rx="8" fill="#0A0710" fill-opacity="0.985"/>
-      <text x="69" y="312" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900" fill="#F02BB5">v2.3.2</text>
+      <text x="69" y="312" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900" fill="#F02BB5">v2.4.0</text>
       
     <g data-release-art-card="true">
       <rect x="52" y="447" width="166" height="80" rx="5" fill="#070B14" fill-opacity="0.985"/>
       <text x="59" y="466" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">CHANGE 1</text>
-      <text x="59" y="489" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">Refreshed the root</text>
-      <text x="59" y="507" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">README.md…</text>
+      <text x="59" y="489" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">Deterministic</text>
+      <text x="59" y="507" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">dialogue/music/SFX…</text>
     </g>
       
     <g data-release-art-card="true">
       <rect x="238" y="447" width="166" height="80" rx="5" fill="#070B14" fill-opacity="0.985"/>
-      <text x="245" y="466" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">VOICE READY</text>
-      <text x="245" y="489" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">Scripts, timing &amp;</text>
-      <text x="245" y="507" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">production…</text>
+      <text x="245" y="466" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">CHANGE 2</text>
+      <text x="245" y="489" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">Fail-closed music/SFX</text>
+      <text x="245" y="507" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">rights-clearance…</text>
     </g>
       
     <g data-release-art-card="true">
       <rect x="425" y="447" width="166" height="80" rx="5" fill="#070B14" fill-opacity="0.985"/>
-      <text x="432" y="466" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">ROCK-HARDENED</text>
-      <text x="432" y="489" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">Validated releases &amp;</text>
-      <text x="432" y="507" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">changelog…</text>
+      <text x="432" y="466" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">CHANGE 3</text>
+      <text x="432" y="489" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">Self-generated music/SFX</text>
+      <text x="432" y="507" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">pipeline…</text>
     </g>
       
     <g data-release-art-card="true">
       <rect x="612" y="447" width="166" height="80" rx="5" fill="#070B14" fill-opacity="0.985"/>
-      <text x="619" y="466" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">OPEN SOURCE</text>
-      <text x="619" y="489" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">Build. Audit. Improve.</text>
-      <text x="619" y="507" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">Together.</text>
+      <text x="619" y="466" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">CHANGE 4</text>
+      <text x="619" y="489" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">scripts/sync-modal-production-audio.py</text>
+      <text x="619" y="507" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">—…</text>
     </g>
       
     <g data-release-art-card="true">
       <rect x="806" y="447" width="166" height="80" rx="5" fill="#070B14" fill-opacity="0.985"/>
-      <text x="813" y="466" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">REAL IMPACT</text>
-      <text x="813" y="489" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">Fiction, true-crime, and</text>
-      <text x="813" y="507" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">investigative…</text>
+      <text x="813" y="466" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">CHANGE 5</text>
+      <text x="813" y="489" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">Verified, checksummed</text>
+      <text x="813" y="507" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">Chatterbox…</text>
     </g>
       
     <g data-release-art-card="true">
       <rect x="994" y="447" width="166" height="80" rx="5" fill="#070B14" fill-opacity="0.985"/>
-      <text x="1001" y="466" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">BUILT FOR MORE</text>
-      <text x="1001" y="489" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">Episodes. Series. A more</text>
-      <text x="1001" y="507" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">transparent…</text>
+      <text x="1001" y="466" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">CHANGE 6</text>
+      <text x="1001" y="489" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">Insight Corruption</text>
+      <text x="1001" y="507" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#D4D6DE">sound-design…</text>
     </g>
       <rect x="923" y="565" width="226" height="32" rx="16" fill="#05050A" fill-opacity="0.92" stroke="#FF2ABF" stroke-opacity="0.35"/>
       <circle cx="941" cy="581" r="4" fill="#FF2ABF"/>
-      <text x="955" y="586" font-family="Menlo, Consolas, monospace" font-size="11" letter-spacing="1.2" fill="#D7D9E0">CHANGELOG / v2.3.2</text>
+      <text x="955" y="586" font-family="Menlo, Consolas, monospace" font-size="11" letter-spacing="1.2" fill="#D7D9E0">CHANGELOG / v2.4.0</text>
     </g>
     <!-- END UNDERWORLD WRITER CHANGELOG-DERIVED LAYER -->
   </g>

@@ -178,7 +178,7 @@ docs/
 - **Underworld Writer Version:** 2.0.6+
 - **Skill Type:** MCP-compatible, CLI-available
 - **Last Updated:** 2026-09-15
-- **Questions?** See [FAQ.md](./FAQ.md) or check the [GLOSSARY.md](./GLOSSARY.md)
+- **Questions?** See the [documentation index](./INDEX.md) (a dedicated FAQ/glossary aren't written yet)
 
 ---
 

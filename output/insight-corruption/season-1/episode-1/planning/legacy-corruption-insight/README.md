@@ -1,6 +1,6 @@
 # Episode 1: The Union Boss Who Smuggled Opioids
 
-![Insight Corruption](../../assets/linkedin-headers/ci-1-redacted.png)
+![Insight Corruption](../../../../production/assets/linkedin-headers/ci-1-redacted.png)
 
 **Subtitle:** Joanne Segovia's Zero-Jail Deal
 

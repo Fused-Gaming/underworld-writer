@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0",
+  "policy": "Only owned, commissioned, public-domain, or properly licensed audio may move from candidate to approved.",
+  "assets": [
+    {
+      "id": "ic-theme-main",
+      "path": "insight-corruption/music/theme-main.wav",
+      "kind": "music",
+      "status": "required-not-procured",
+      "usage": "opening/closing identity",
+      "license": null
+    },
+    {
+      "id": "ic-bed-investigation",
+      "path": "insight-corruption/music/investigation-bed.wav",
+      "kind": "music",
+      "status": "required-not-procured",
+      "usage": "low-level evidence/timeline bed",
+      "license": null
+    },
+    {
+      "id": "ic-bed-reflection",
+      "path": "insight-corruption/music/reflection-bed.wav",
+      "kind": "music",
+      "status": "required-not-procured",
+      "usage": "known-vs-unknown / closing reflection",
+      "license": null
+    },
+    {
+      "id": "ic-stinger-chapter",
+      "path": "insight-corruption/sfx/chapter-stinger.wav",
+      "kind": "stinger",
+      "status": "required-not-procured",
+      "usage": "chapter transitions only",
+      "license": null
+    },
+    {
+      "id": "ic-bumper-midroll",
+      "path": "insight-corruption/sfx/midroll-bumper.wav",
+      "kind": "stinger",
+      "status": "required-not-procured",
+      "usage": "house-ad boundary",
+      "license": null
+    }
+  ]
+}

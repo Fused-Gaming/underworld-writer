@@ -1,13 +1,13 @@
 # Insight Corruption — Episode 1: Police Union Executive Imported Thousands of Opioid Pills — Then Received Probation
 
 **Generated from:** `projects/insight-corruption/episode-packages/season-1/episode-1.json`
-**Words:** 4158
-**Estimated runtime:** 29.97 minutes at 145 WPM / fixed segment durations
+**Words:** 4300
+**Estimated runtime:** 30.65 minutes at 145 WPM / fixed segment durations
 **Runtime validation:** PASS
 
 > The segmented files under `scripts/segments/` are authoritative. This assembled file is generated for producer read-through only.
 
-## Cold Open — Start With the Outcome
+## Cold Open — Start With the Outcome — Part 1
 
 A former executive director of a police officers’ union admits to illegally importing a Schedule II opioid. Federal investigators say the shipments stretched across years, arrived from multiple countries, and were disguised behind ordinary customs descriptions. Thousands of pills were intercepted. Investigators said she used both personal and office computers, and at least one police-union shipping account was used to send drugs onward inside the United States.
 
@@ -19,21 +19,23 @@ Joanne Segovia receives three years of probation and one hundred hours of commun
 
 That outcome is where this episode begins, because the most useful question is not whether the sentence makes you angry or sympathetic. The useful question is how the record got from a years-long importation scheme to probation, what facts changed along the way, what the court said mattered, and what this case reveals about the difference between a dramatic headline and the much more complicated process of federal sentencing.
 
+## Cold Open — Start With the Outcome — Part 2
+
 This episode separates four things that are easy to blur together: what investigators originally alleged, what Segovia ultimately admitted, what prosecutors and defense lawyers argued at sentencing, and what the judge actually decided. Those distinctions matter here more than usual, because one of the most explosive allegations in the early case was later corrected by the government itself.
 
 ## Host Introduction
 
-I'm Eric Nissen, and this is Insight Corruption.
+I'm Eric Nissen, and this is Insight Corruption. Around here, the headline is where the work starts — not where it ends. We follow the documents, follow the money, separate allegations from established facts, and stay with a case through the outcome. Today: a longtime civilian executive inside a police officers' association, years of overseas opioid shipments, a guilty plea, and a sentence with no prison time. This is Episode One. Let's get into the record.
 
 ## Series Intro
 
-This is Insight Corruption. We start with the record, separate allegation from established fact, and follow the story through its outcome.
+Insight Corruption is independent investigative journalism from Inner Rhythm Media. We work from court filings, government records, official statements, and documented reporting. When something is an allegation, we call it an allegation. When the record changes, we tell you. And when the documents do not answer a question, we do not pretend they do. The point is not to tell you what to think. It is to give you enough of the record to decide what you think.
 
 ## Evidence and Attribution Note
 
 A source note before we begin: this episode distinguishes allegations, admitted conduct, court findings, and editorial analysis. The episode source manifest identifies the record supporting each case-specific segment.
 
-## The Position of Trust
+## The Position of Trust — Part 1
 
 Before the criminal case, Joanne Segovia was not a sworn police officer. She was a longtime civilian administrator and executive director of the San Jose Police Officers’ Association. That distinction matters. The case did not establish that San Jose police officers were participating in the importation scheme, and both an internal union investigation and prosecutors later said they found no evidence that other union representatives knew about or joined in Segovia’s criminal conduct.
 
@@ -41,15 +43,19 @@ But her position still matters to the public-trust story.
 
 The federal complaint said Segovia used both personal and office computers to order pills. Reporting on the case said investigators found drugs at her home and at the union office, including hundreds of tapentadol pills at the workplace. Prosecutors also said she used the police union’s UPS account to send packages to other people in the United States on behalf of her supplier. In the government’s sentencing presentation, that fact became part of the argument that her conduct was more than private drug use. She had become useful to a foreign supply network by helping move pills after they reached the United States.
 
+## The Position of Trust — Part 2
+
 That does not make the police union itself a criminal enterprise, and the evidence cited in the public record does not support saying that. It does create an institutional question: what happens when a trusted civilian executive inside a law-enforcement organization is able to use workplace resources during conduct that later results in a federal felony conviction?
 
 The union fired Segovia after the allegations became public and commissioned an outside investigation. That investigation concluded she acted alone and that there was no evidence other representatives were involved, knew about the conduct, or suspected it. Prosecutors agreed there was no evidence of a broader union conspiracy. At the same time, the prosecution criticized the union’s response after the search, accusing its counsel of resisting access to Segovia’s work email before ultimately not pursuing the threatened court intervention.
 
 Those are separate findings and should stay separate. One concerns whether colleagues were participants in Segovia’s drug activity. The other concerns how an institution reacted once federal investigators arrived. Conflating them would overstate the record.
 
+## The Position of Trust — Part 3
+
 For this series, the significance is narrower and more defensible: Segovia occupied a law-enforcement-adjacent position of trust; some of the conduct touched workplace systems and resources; no broader criminal involvement by union personnel was established; and the judge later said her position should have given her a firmer respect for the law and for truthfulness with investigators.
 
-## How the Shipment Network Worked
+## How the Shipment Network Worked — Part 1
 
 The federal investigation described a long shipping history.
 
@@ -59,6 +65,8 @@ That kind of labeling was significant because the contents did not always match 
 
 The complaint also described encrypted WhatsApp communications. Investigators alleged that over a period from January 2020 into March 2023, Segovia exchanged hundreds of messages with a person using a telephone number associated with India. Those messages, the government said, were used to coordinate receiving and sending pill shipments.
 
+## How the Shipment Network Worked — Part 2
+
 Later reporting at the guilty-plea and sentencing stages added important detail. Prosecutors said Segovia ordered roughly eighteen thousand tapentadol pills during a seventeen-month period in 2021 and 2022. KQED reported that the government described her as consuming an extraordinarily large quantity herself while also sharing significant quantities with two other people. Prosecutors said she spent as much as twenty-seven thousand dollars on pills in 2022 and argued that she was putting large amounts of her own money into the overseas supply network rather than earning money from it.
 
 That distinction became central at sentencing.
@@ -67,15 +75,15 @@ A simple version of the story would say: thousands of pills came in, some pills 
 
 That does not erase the scale. It changes the explanation of motive.
 
+## How the Shipment Network Worked — Part 3
+
 The record therefore supports two propositions at the same time. First, this was not merely a single illegal purchase for personal use. The shipment history was extensive, investigators documented repeated overseas deliveries, and the government said she helped redistribute pills. Second, prosecutors did not ultimately characterize her as an entrepreneur running the scheme for profit.
 
 That tension is one of the reasons the sentencing outcome cannot be understood from the quantity of pills alone.
 
 There is another important point about chronology. The sixty-one-shipment allegation reaches back to 2015, while the roughly eighteen-thousand-pill figure highlighted at sentencing concerned a much narrower period in 2021 and 2022. Those numbers describe different slices of the record. Treating them as interchangeable would be inaccurate. The longer history describes the frequency of packages. The later number describes a quantity of tapentadol associated with a shorter period.
 
-For producers and listeners, this is exactly why segmented scripts help. The shipment history, the quantity calculation, and the sentencing interpretation are related, but they are not the same claim. Keeping them in separate blocks makes the sourcing easier to audit and makes corrections easier if a later court document changes one part of the timeline.
-
-## The Investigation and the False Explanation
+## The Investigation and the False Explanation — Part 1
 
 Segovia came onto federal investigators’ radar through a broader Homeland Security investigation into an overseas drug network. The government said investigators became suspicious because of the unusually large quantities of pills associated with her.
 
@@ -85,6 +93,8 @@ Investigators said they confronted Segovia before the case became public. Accord
 
 The defense gave that conduct a different interpretation. Segovia’s attorney argued that the denial came from panic and an attempt to conceal an addiction that had been kept separate from the rest of her life. That explanation did not make the false statements disappear. It framed why they happened.
 
+## The Investigation and the False Explanation — Part 2
+
 The judge ultimately acknowledged both sides of that picture. In explaining the sentence, Judge Eumi K. Lee identified deception at the beginning of the investigation and described Segovia’s law-enforcement-adjacent position as an aggravating consideration. The judge also credited the evidence of addiction and recovery.
 
 This is a useful example of how sentencing works differently from a binary question of guilt. By the time of sentencing, the court was not deciding whether every disputed fact made Segovia good or bad. The court was weighing conduct, motive, history, rehabilitation, deterrence, public safety, and the consequences she had already experienced.
@@ -93,9 +103,11 @@ The investigation also produced institutional consequences outside the courtroom
 
 That distinction is important for an investigative show. Institutional embarrassment is not proof of institutional criminal participation. A failure of oversight is not automatically a conspiracy. And criticism of the union’s post-search response is not the same thing as evidence that union officials participated in the drug importation.
 
+## The Investigation and the False Explanation — Part 3
+
 The stronger story is the one the record actually supports: a trusted civilian executive inside a police-union organization carried on years of illegal pill importation; workplace resources became entangled in some of the conduct; investigators documented deception when she was confronted; and the evidence made public so far did not establish that other union personnel joined the scheme.
 
-## The Fentanyl Claim Was Wrong — Then Came the Guilty Plea
+## The Fentanyl Claim Was Wrong — Then Came the Guilty Plea — Part 1
 
 The most important correction in the entire case concerns fentanyl.
 
@@ -109,19 +121,19 @@ This correction is not a footnote. It is a central fact.
 
 An evidence-first production should not continue to describe Segovia as convicted of importing fentanyl. She was not. The original accusation existed, but the government later said the testing was wrong. The accurate sequence is: investigators initially alleged a fentanyl-analogue importation offense; prosecutors later withdrew that theory after a testing problem; Segovia ultimately pleaded guilty to unlawfully importing tapentadol.
 
+## The Fentanyl Claim Was Wrong — Then Came the Guilty Plea — Part 2
+
 In October 2024, she entered that guilty plea in federal court. The plea resolved the central criminal case without a trial. Reporting from the hearing said prosecutors described more than seventeen thousand tapentadol pills imported during a seventeen-month period. The statutory maximum for the offense was far higher than the sentence she would eventually receive, but statutory maximums do not tell you what sentence a particular defendant is likely to receive under the federal system.
 
 The guilty plea also changed the posture of the narrative. Before the plea, some facts remained allegations made in charging documents. After the plea, Segovia had formally admitted criminal responsibility for unlawful importation of the controlled substance charged in the new case.
 
 That still does not mean every allegation in the original complaint became an admitted fact. A plea to one offense is not a blanket admission to every sentence ever written about the investigation.
 
-For the script engine, this case is almost a perfect argument for claim-level segmentation. A monolithic article or script tends to flatten the timeline into one summary. A segmented package can mark an early block as original allegation, a later block as government correction, another as admitted conduct, and a sentencing block as arguments and findings. That structure reduces the risk that a dramatic but superseded allegation survives into later seasons simply because an agent copied an old paragraph.
-
 ## Mid-Roll Break
 
-We'll be right back after this short break. This break is reserved for the current sponsor read. If no sponsor is booked, replace it with the approved Insight Corruption house advertisement.
+A quick break. Insight Corruption is supported by Inner Rhythm Media, the independent media company behind Eric William Nissen's reporting. Follow Eric William Nissen on social media for investigations, documents, updates, and commentary. If this work is useful, share the episode and support the reporting through Inner Rhythm Media merchandise linked in the show notes. Merchandise sales help fund records requests, research, production, hosting, travel, and equipment for independent journalism. Then we'll get back to the case.
 
-## Why a Maximum Sentence Is Not the Expected Sentence
+## Why a Maximum Sentence Is Not the Expected Sentence — Part 1
 
 To understand why the final punishment could be so different from the maximum penalty attached to the offense, it helps to separate a statutory maximum from an actual federal sentencing decision.
 
@@ -131,6 +143,8 @@ Federal judges begin with the applicable sentencing framework and then consider 
 
 That last phrase matters: similar records and similar conduct.
 
+## Why a Maximum Sentence Is Not the Expected Sentence — Part 2
+
 A comparison based only on the name of a drug can be misleading. So can a comparison based only on the number of pills. A defendant who possessed a firearm, organized sales for profit, had a substantial criminal history, obstructed justice, or committed additional offenses presents a different sentencing record from a defendant whose conduct, motive, history, and rehabilitation findings are different.
 
 None of that requires the public to agree with a judge’s final sentence. It explains what a serious comparison would need to measure.
@@ -139,7 +153,7 @@ In Segovia’s case, the public sentencing record described by KQED shows the co
 
 That is the legal context for the probation sentence. It does not settle the policy question of whether the outcome was appropriate. It tells us which factual variables would have to be held constant before calling another case truly comparable.
 
-## Why the Judge Chose Probation
+## Why the Judge Chose Probation — Part 1
 
 By January 2025, the central question was no longer whether Segovia would accept criminal responsibility. She had pleaded guilty. The question was what punishment was appropriate.
 
@@ -148,6 +162,8 @@ The prosecution and defense were unusually aligned on a key part of the explanat
 At the same time, prosecutors did not minimize everything she had done. They emphasized that she helped the overseas network function. She redistributed pills. She used the police union’s shipping account. She lied when investigators first confronted her. And she occupied a position connected to law enforcement that, in the government’s view, should have reinforced an obligation to follow the law and tell investigators the truth.
 
 That is a more complicated sentencing position than either throw the book at her or she was only a victim of addiction.
+
+## Why the Judge Chose Probation — Part 2
 
 The defense emphasized recovery. Segovia’s lawyer described chronic pain, years of prescribed opioid use, the point at which prescriptions were no longer renewed, and the transition to illicit sources. The defense highlighted sobriety, treatment, family responsibilities, lack of a prior criminal record, and a low risk of committing another offense.
 
@@ -159,6 +175,8 @@ Judge Lee ultimately imposed three years of probation and one hundred hours of c
 
 In explaining the decision, the judge agreed that Segovia’s conduct looked more like the conduct of an addict than a dealer. But the judge also explicitly recognized deception and abuse of a law-enforcement-adjacent position.
 
+## Why the Judge Chose Probation — Part 3
+
 Those statements are crucial because they show that the sentence was not based on a finding that the conduct was harmless. The court balanced serious misconduct against mitigation and rehabilitation.
 
 Whether a listener believes probation was too lenient, appropriately individualized, or somewhere in between is a separate judgment. The record can inform that judgment without making it for the listener.
@@ -167,7 +185,7 @@ The sentence also demonstrates why headline comparisons are difficult. Two defen
 
 For this episode, the most defensible conclusion is narrower: a federal felony involving a lengthy opioid-importation history ended in probation because the sentencing record gave substantial weight to addiction, rehabilitation, remorse, low recidivism risk, and the government’s conclusion that Segovia was not acting as a profit-seeking dealer, while still recognizing deception, redistribution, and misuse of a trusted institutional position.
 
-## What Institutional Accountability Does — and Does Not — Mean Here
+## What Institutional Accountability Does — and Does Not — Mean Here — Part 1
 
 There are two accountability stories here.
 
@@ -185,29 +203,31 @@ Organizations that possess trusted brands, access to facilities, shipping accoun
 
 That is an analytical question, not an accusation.
 
+## What Institutional Accountability Does — and Does Not — Mean Here — Part 2
+
 The public response to the case also reflected the symbolic weight of Segovia’s position. Protests followed. Local officials and activists criticized the situation. The union faced scrutiny not because the public record proved officers were trafficking drugs, but because the person at the center of the case had spent years as a key civilian figure inside the organization.
 
 There is a temptation in corruption storytelling to use proximity as proof. Someone works near police, therefore police are implicated. Someone uses an institutional account, therefore the institution intended the act. That leap is not supported here.
 
-The more useful accountability framework asks narrower questions: What access did the role provide? Which systems were used? What controls existed at the time? What changed after the case? Were investigators given timely access to relevant records? Were the conclusions of the internal investigation independently testable?
+The more useful accountability framework asks narrower questions: What access did the role provide? Which systems were used? What controls existed at the time? What changed after the case? Were investigators given timely access to relevant records? Were the conclusions of the internal investigation independently testable? What did Segovia receive, if anything, in exchange for the pills she redistributed, and does the documented volume support the sentencing record's account that this was not profit-driven?
 
 Some of those questions have answers in the current reporting; others remain open or would require additional records.
 
-That is another reason the article and podcast should be generated from the same claim manifest. The audio version can explain nuance at length. The article can present the chronology, source links, and institutional questions in a form readers can inspect. If both are built from the same evidence IDs, an update to a core fact can propagate across formats instead of leaving contradictory versions online.
-
-The engine should therefore treat episode as an editorial package, not as a single Markdown file. Audio script, article, social copy, source manifest, and later synthetic-voice segments should all be views over the same verified package.
-
-## What We Know, What We Don't, and the Better Next Question
+## What We Know, What We Don't, and the Better Next Question — Part 1
 
 What does this case establish, and what does it not?
 
 It establishes that Joanne Segovia pleaded guilty to unlawfully importing tapentadol. It establishes that investigators documented a long history of overseas shipments and that prosecutors described a period in which she ordered roughly eighteen thousand tapentadol pills. It establishes that some pills were redistributed, that workplace resources were implicated in parts of the conduct, and that she initially gave investigators a false explanation.
+
+That volume invites scrutiny on its own terms. Eighteen thousand pills across roughly seventeen months averages to more than thirty pills a day for that window alone, and prosecutors placed it inside a longer documented history of at least sixty-one shipments stretching back to 2015 — a fuller period whose total volume the public record does not state. Some of those pills went to other people. Prosecutors nonetheless argued addiction, not profit, was the driving motive. A volume and a pattern of redistribution large enough to raise the question of profit, alongside a sentencing position that argues there wasn't one, is a real tension in this record, not a resolved one. What Segovia received, if anything, for the pills she redistributed is not established here — that gap is worth naming rather than smoothing over.
 
 It establishes that the original fentanyl-related charge was withdrawn after prosecutors acknowledged a testing error.
 
 It establishes that prosecutors and the defense both centered addiction in the sentencing story, that the government did not portray Segovia as a profit-driven dealer, and that Judge Lee ultimately imposed probation and community service rather than incarceration.
 
 It does not establish that the San Jose Police Officers’ Association as an organization participated in the drug scheme. It does not establish that sworn officers were co-conspirators. The public record cited here says the opposite: investigators and the union’s review did not identify broader participation.
+
+## What We Know, What We Don't, and the Better Next Question — Part 2
 
 It also does not mean the sentence can be evaluated fairly by comparing one number — eighteen thousand pills — to a sentence from an unrelated drug case. Criminal sentencing is highly fact-specific. A meaningful comparison would require matching offense conduct, criminal history, guideline calculations, plea posture, role, profit, weapons, obstruction, cooperation, addiction, rehabilitation, and other sentencing factors.
 
@@ -219,14 +239,16 @@ The second half — consistency — requires broader comparative research that t
 
 That is a better investigative question than simply selecting the harshest comparison available.
 
+## What We Know, What We Don't, and the Better Next Question — Part 3
+
 For now, Episode One can end on the thing the record actually gives us: a case that began with a sensational fentanyl allegation, evolved after the government corrected its own testing, ended in a guilty plea to tapentadol importation, and produced a probationary sentence after both prosecution and defense presented addiction and rehabilitation as central to understanding the conduct.
 
 That sequence is complicated. It is also more interesting — and more useful — than the original headline.
 
 ## Outro and Source CTA
 
-That's this episode of Insight Corruption. The source manifest and accompanying article are linked with the episode. If you have records or firsthand information that can be independently verified, use the contact information in the show notes.
+That's Episode 1 of Insight Corruption. The source manifest and companion article are linked with the episode, so don't take my word for it — inspect the record. If you have documents or firsthand information that can be independently verified, use the contact information in the show notes. Follow Eric William Nissen on social media, share the episode, and support the work through Inner Rhythm Media merchandise. I'm Eric Nissen. This is Insight Corruption. Follow the record. Follow the money. I'll see you in the next one.
 
 ## Production Credits
 
-Insight Corruption is an independent investigative production, written, sourced, and hosted by Eric Nissen. This episode is narrated using an authorized AI-generated version of Eric Nissen's voice, disclosed here and in the show notes. Research and fact-checking follow the source manifest linked with this episode; if you find an error, use the corrections contact in the show notes.
+Insight Corruption is an independent Inner Rhythm Media production, written, researched, sourced, and hosted by Eric Nissen. This episode uses an authorized AI-generated version of Eric Nissen's voice as part of the production process. Research and fact-checking follow the source manifest published with the episode. Corrections and tips go through the contact information in the show notes.

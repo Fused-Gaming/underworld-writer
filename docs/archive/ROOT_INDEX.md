@@ -1,3 +1,5 @@
+> **Archived.** This snapshot predates the docs/ reorganization; many links below point at pre-reorg paths and are no longer valid. For current navigation, see [docs/INDEX.md](../INDEX.md).
+
 # Underworld Writer Skill - Complete Index
 
 ## Quick Navigation

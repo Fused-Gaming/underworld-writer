@@ -307,7 +307,7 @@ If benchmarks timeout:
 
 ## Performance Reports
 
-See [RELEASE_NOTES.md](../RELEASE_NOTES.md) for performance metrics by version.
+See [RELEASE_NOTES.md](archive/releases/RELEASE_NOTES.md) for performance metrics by version.
 
 Current baseline established in v2.1.0 provides reference for future optimizations.
 

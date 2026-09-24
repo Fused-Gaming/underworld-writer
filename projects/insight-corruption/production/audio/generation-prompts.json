@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0",
+  "notes": "Prompts and seeds for self-generating Insight Corruption's five required identity assets (asset-registry.json) with open-weight models, per docs/guides/ASSET_PROCUREMENT.md and modal/generate_production_audio.py. Fixed seeds make regeneration reproducible: same model version + prompt + seed should reproduce the same output, which is the basis for calling this 'consistent' rather than a one-off lucky take. A model upgrade (e.g. a new ACE-Step checkpoint) is expected to change output even with the same seed — pin modelLicense/model to the exact version actually used and regenerate deliberately, not silently.",
+  "assets": [
+    {
+      "assetId": "ic-theme-main",
+      "registryPath": "insight-corruption/music/theme-main.wav",
+      "kind": "music",
+      "model": "ACE-Step-1.5 v0.1.6 (acestep-v15-turbo, acestep-5Hz-lm-4B)",
+      "modelLicense": "Apache-2.0 (github.com/ace-step/ACE-Step-1.5) - unconditional commercial use, no revenue threshold",
+      "durationSeconds": 75,
+      "seed": 101,
+      "prompt": "Modern investigative documentary theme, instrumental, no vocals. 88 BPM. Sparse low percussion and a steady pulse, restrained sub bass, one subtle textural synth or organic instrumental element for color. Recognizable and identifiable within two seconds, restrained rather than cinematic-horror, leaves clear space for a spoken voice-over on top. Clean, deliberate ending button, not a fade.",
+      "followUp": "60-90s + stems + 15/30s cutdowns is the brief. This generates one ~75s master only; stems and cutdowns are a manual follow-up (trim/re-render at shorter duration with the same seed+prompt, or split stems with a source-separation pass) once the master itself is approved."
+    },
+    {
+      "assetId": "ic-bed-investigation",
+      "registryPath": "insight-corruption/music/investigation-bed.wav",
+      "kind": "music",
+      "model": "ACE-Step-1.5 v0.1.6 (acestep-v15-turbo, acestep-5Hz-lm-4B)",
+      "modelLicense": "Apache-2.0 (github.com/ace-step/ACE-Step-1.5) - unconditional commercial use, no revenue threshold",
+      "durationSeconds": 180,
+      "seed": 102,
+      "prompt": "Instrumental underscore for evidence review and timeline narration in an investigative documentary podcast. No vocals, no lead melody. Minimal harmonic movement, low rhythmic pulse, sparse texture. Designed to sit quietly beneath spoken narration, roughly 20-26 dB under a voice track, without pulling attention away from it. Even, unchanging energy throughout with no big builds or drops.",
+      "followUp": "Requested as a 2-4 minute seamless loop; this generates a single 180s pass. Verify the loop point (first vs. last ~2s) before use and, if it's not clean, crossfade-loop it with ffmpeg or trim to a cleanly loopable region rather than shipping an audible seam."
+    },
+    {
+      "assetId": "ic-bed-reflection",
+      "registryPath": "insight-corruption/music/reflection-bed.wav",
+      "kind": "music",
+      "model": "ACE-Step-1.5 v0.1.6 (acestep-v15-turbo, acestep-5Hz-lm-4B)",
+      "modelLicense": "Apache-2.0 (github.com/ace-step/ACE-Step-1.5) - unconditional commercial use, no revenue threshold",
+      "durationSeconds": 180,
+      "seed": 103,
+      "prompt": "Instrumental underscore for a closing reflection and known-versus-unknown analysis segment in an investigative documentary podcast. No vocals. Warmer and more open than a tense investigation cue, less rhythmic, gentle sustained harmonic movement. Contemplative and restrained, not sad or triumphant. Sits quietly beneath spoken narration without a prominent lead melody.",
+      "followUp": "Same 2-4 minute seamless-loop caveat as the investigation bed: verify or engineer the loop point before use."
+    },
+    {
+      "assetId": "ic-stinger-chapter",
+      "registryPath": "insight-corruption/sfx/chapter-stinger.wav",
+      "kind": "sfx",
+      "model": "Stable Audio Open 1.0 (stabilityai/stable-audio-open-1.0)",
+      "modelLicense": "Stability AI Community License - free commercial use for organizations under USD $1,000,000 annual revenue; Enterprise license required above that threshold",
+      "durationSeconds": 1.4,
+      "seed": 104,
+      "prompt": "A short, clean, modern documentary chapter-transition sound design hit. Subtle low pulse or soft metallic tick, restrained and minimal, no melody. Professional podcast branding punctuation, not dramatic or ominous.",
+      "followUp": "Brief asks for 0.8-1.8s; generated at 1.4s as a starting point. Explicitly avoid: sirens, gavels, gunshots, cash-register sounds, or anything that editorializes guilt (per SOUND_DESIGN_BRIEF.md and modal/config/production_profiles/investigative-documentary.json editorialRules) - reject and regenerate with a revised prompt/seed if the output leans that way."
+    },
+    {
+      "assetId": "ic-bumper-midroll",
+      "registryPath": "insight-corruption/sfx/midroll-bumper.wav",
+      "kind": "sfx",
+      "model": "Stable Audio Open 1.0 (stabilityai/stable-audio-open-1.0)",
+      "modelLicense": "Stability AI Community License - free commercial use for organizations under USD $1,000,000 annual revenue; Enterprise license required above that threshold",
+      "durationSeconds": 2.2,
+      "seed": 105,
+      "prompt": "A short transition sound design element related to a modern investigative-documentary theme, marking the boundary into a sponsor or house message. Clearly distinct from a chapter stinger, slightly longer and more open, but stylistically related to the same sonic identity. No melody, no vocals.",
+      "followUp": "Brief asks for 1.5-3s; generated at 2.2s as a starting point. Same editorial-restraint caveat as the chapter stinger."
+    }
+  ]
+}

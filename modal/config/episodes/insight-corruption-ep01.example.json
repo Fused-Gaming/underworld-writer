@@ -6,9 +6,18 @@
     "both": "voice-eric-nissen-01"
   },
   "episodeMeta": {
+    "series": "insight-corruption",
+    "seasonNumber": 1,
+    "episodeNumber": 1,
     "pauseAfterSegment": {}
   },
-  "introBedPath": "assets/audio/insight-corruption-intro.wav",
-  "outroBedPath": "assets/audio/insight-corruption-outro.wav",
-  "outputFileName": "insight-corruption-ep01.wav"
+  "outputFileName": "insight-corruption-ep01.wav",
+  "productionPlanPath": "projects/insight-corruption/production/audio/episode-01.production.json",
+  "assetRegistryPath": "projects/insight-corruption/production/audio/asset-registry.json",
+  "productionProfilePath": "modal/config/production_profiles/investigative-documentary.json",
+  "releaseCandidate": {
+    "requireClearedAssets": true,
+    "requireHumanListen": true,
+    "generateDeliveryMp3": true
+  }
 }

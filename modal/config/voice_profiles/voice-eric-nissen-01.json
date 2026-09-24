@@ -1,28 +1,57 @@
 {
   "voiceProfileId": "voice-eric-nissen-01",
-  "voiceActor": "Eric William Nissen",
-  "language": "en",
+  "authorHostId": "eric-william-nissen",
   "baseModel": "resemble-ai/chatterbox",
+  "language": "en",
   "synthesis": {
     "backend": "chatterbox",
+    "model": "resemble-ai/chatterbox",
     "exaggeration": 0.5,
-    "cfgWeight": 0.5
-  },
-  "referenceAudio": {
-    "clips": [
-      {
-        "path": "clips/eric-nissen/clip1.wav",
-        "duration_seconds": 93,
-        "quality": "clear_speech"
-      }
-    ]
+    "cfgWeight": 0.5,
+    "referenceClip": "clips/eric-nissen/eric-nissen-canonical.wav"
   },
   "consent": {
     "status": "confirmed",
     "confirmedBy": "project owner (jlucus) on behalf of host",
-    "confirmedDate": "2026-09-15",
-    "scope": "Voice cloning/synthesis of Eric William Nissen's voice for Insight Corruption podcast narration and editing, sourced from his own published social audio.",
-    "source": "Instagram published content"
+    "confirmedDate": "2026-09-15"
   },
-  "notes": "Runtime copy of projects/insight-corruption/voice-profiles/eric-william-nissen.json for upload to the Modal 'underworld-voice-profiles' volume; model/backend updated to Chatterbox per modal/CHATTERBOX_INTEGRATION_PLAN.md Phase 1 (2026-09-20). FLAG FOR HUMAN REVIEW: this file's referenceAudio.clips lists a clip as already sourced, but the canonical consent record (projects/insight-corruption/voice-profiles/eric-william-nissen.json) still shows referenceAudio.status as \"pending-intake\" with no clips recorded. Reconcile which is accurate — and confirm the clip itself has actually been uploaded to the Modal Volume, not just described here — before this profile is used for synthesis; VoiceSynthesizer refuses to run without both a confirmed consent record and an uploaded clip."
+  "referenceAudio": {
+    "status": "intake-complete-pending-modal-upload",
+    "canonicalClip": {
+      "path": "clips/eric-nissen/eric-nissen-canonical.wav",
+      "durationSeconds": 24,
+      "sha256": "2cac4265948b42b25cf5c921ff4a88b8a7815259b071a7d2cd90d8bda667912b"
+    },
+    "alternateClips": [
+      {
+        "path": "clips/eric-nissen/eric-nissen-alt-neutral-emphatic.wav",
+        "durationSeconds": 20,
+        "sha256": "8a3b1063245a5ad9382ddbdc089582df693395911b23229e05dd6d9968b410fc"
+      },
+      {
+        "path": "clips/eric-nissen/eric-nissen-alt-emphatic.wav",
+        "durationSeconds": 20,
+        "sha256": "1d18ead98686e9996631cbf6d226a005103a353cb4369e378249557e67f50dc5"
+      }
+    ],
+    "clips": [
+      {
+        "path": "clips/eric-nissen/eric-nissen-canonical.wav",
+        "durationSeconds": 24,
+        "sha256": "2cac4265948b42b25cf5c921ff4a88b8a7815259b071a7d2cd90d8bda667912b"
+      },
+      {
+        "path": "clips/eric-nissen/eric-nissen-alt-neutral-emphatic.wav",
+        "durationSeconds": 20,
+        "sha256": "8a3b1063245a5ad9382ddbdc089582df693395911b23229e05dd6d9968b410fc"
+      },
+      {
+        "path": "clips/eric-nissen/eric-nissen-alt-emphatic.wav",
+        "durationSeconds": 20,
+        "sha256": "1d18ead98686e9996631cbf6d226a005103a353cb4369e378249557e67f50dc5"
+      }
+    ]
+  },
+  "fineTunedCheckpoint": null,
+  "notes": "Runtime copy of projects/insight-corruption/voice-profiles/eric-william-nissen.json, reconciled 2026-09-24 against the actual committed and checksummed WAV clips under projects/insight-corruption/production/voice/references/clips/eric-nissen/. Supersedes an earlier stale draft of this file that referenced an unverified clip1.wav and a since-corrected consent-source description; scripts/sync-modal-voice-profiles.py regenerates the live copy on the Modal volume directly from the source-of-truth profile at deploy time, so this file is a readable snapshot rather than the deploy-time input."
 }
