@@ -82,11 +82,19 @@ const readAssembledBody = (segId) => {
     throw new Error(`Expected exactly one segment file for order ${order} (${segId}) in ${segmentsDir}, found ${files.length}`);
   }
   const raw = fs.readFileSync(path.join(segmentsDir, files[0]), 'utf8');
-  // Header block (# title, **Field:** value lines) is separated from the
-  // body by the first blank line.
-  const blankLineIndex = raw.indexOf('\n\n');
-  if (blankLineIndex === -1) throw new Error(`Could not find header/body split in ${files[0]}`);
-  return raw.slice(blankLineIndex + 2).trim();
+  // editorial-package.mjs's renderPodcastSegment writes exactly two
+  // blank-line-separated blocks before the body: "# NN — Title" and then
+  // the **Field:** metadata lines (Segment ID/Type/Words/Estimated
+  // runtime/Claim IDs). Splitting on the *first* "\n\n" only skips past
+  // the title, leaving the metadata block prepended to the body — which
+  // is what a prior version of this function did, and what let a TTS
+  // narrator read "Segment ID: cold-open ... Claim IDs: C03, C04" aloud.
+  // The body itself may contain its own blank-line paragraph breaks, so
+  // split on every "\n\n" and drop only the first two chunks (title,
+  // metadata), rejoining the rest to restore the body's paragraphing.
+  const parts = raw.split('\n\n');
+  if (parts.length < 3) throw new Error(`Could not find header/body split in ${files[0]}`);
+  return parts.slice(2).join('\n\n').trim();
 };
 
 const WORDS_PER_MINUTE = 145; // matches templates/editorial's assembly convention
