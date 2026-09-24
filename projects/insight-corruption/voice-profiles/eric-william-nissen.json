@@ -46,6 +46,12 @@
         "maximum": 30
       },
       "sentenceBoundaryChunking": true
+    },
+    "referenceClip": "clips/eric-nissen/eric-nissen-canonical.wav",
+    "referencePolicy": {
+      "default": "canonical",
+      "alternates": "benchmark-or-human-directed-only",
+      "fallbackToAlternate": false
     }
   },
   "consent": {
@@ -56,7 +62,7 @@
     "note": "Per AUDIO_GENERATION_PLAN.md Section 7, consent must be recorded before any reference audio is fine-tuned or cloned. This record tracks that approval; it does not itself constitute the audio intake."
   },
   "referenceAudio": {
-    "status": "pending-intake",
+    "status": "intake-complete-pending-modal-upload",
     "purpose": "Canonical zero-shot Chatterbox voice reference for Eric William Nissen. This is not a fine-tuned checkpoint.",
     "selectionProfile": {
       "speaker": "Eric William Nissen only",
@@ -87,7 +93,7 @@
         "normalize conservatively and retain an archival copy of the unprocessed source"
       ]
     },
-    "source": "Eric William Nissen's authorized published social audio; exact source URLs and timestamps must be recorded during intake",
+    "source": "User-provided Eric-sample.mp3 supplied directly for authorized Insight Corruption voice intake on 2026-09-23.",
     "provenanceRequired": [
       "source URL",
       "platform",
@@ -98,12 +104,98 @@
       "sampleRateHz"
     ],
     "storageLocation": "Modal Volume 'underworld-voice-profiles' under clips/eric-nissen/; audio is not committed to Git",
-    "canonicalClip": null,
-    "alternateClips": [],
-    "clips": []
+    "canonicalClip": {
+      "path": "clips/eric-nissen/eric-nissen-canonical.wav",
+      "sourceStartSeconds": 8,
+      "sourceEndSeconds": 32,
+      "durationSeconds": 24,
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "encoding": "PCM signed 16-bit little-endian WAV",
+      "sha256": "f5643c26df69bcc71dc9998b62de4c85166ea13ecd6ae782e58d4c56d30644c4",
+      "intendedUse": "Default Chatterbox audio_prompt_path for neutral/conversational Insight Corruption narration.",
+      "selectionReason": "Continuous natural speech near the beginning of the supplied recording; captures Eric's conversational cadence and ordinary emphasis without using the entire noisy field recording."
+    },
+    "alternateClips": [
+      {
+        "path": "clips/eric-nissen/eric-nissen-alt-neutral-emphatic.wav",
+        "sourceStartSeconds": 34,
+        "sourceEndSeconds": 54,
+        "durationSeconds": 20,
+        "sampleRateHz": 24000,
+        "channels": 1,
+        "encoding": "PCM signed 16-bit little-endian WAV",
+        "sha256": "ec7c041dfb397ed0270dacbf95a6257942c7f9ce92b1957aa89c5a06375f98fc",
+        "intendedUse": "A/B reference when a passage needs slightly stronger emphasis while retaining conversational delivery."
+      },
+      {
+        "path": "clips/eric-nissen/eric-nissen-alt-emphatic.wav",
+        "sourceStartSeconds": 58,
+        "sourceEndSeconds": 78,
+        "durationSeconds": 20,
+        "sampleRateHz": 24000,
+        "channels": 1,
+        "encoding": "PCM signed 16-bit little-endian WAV",
+        "sha256": "f2791704644f43ed22b4069abb6ce9ba57ba35742700a892e401a1a110c54822",
+        "intendedUse": "QC/benchmark alternate for Eric's more emphatic field-reporting delivery; not the default episode reference."
+      }
+    ],
+    "clips": [
+      {
+        "path": "clips/eric-nissen/eric-nissen-canonical.wav",
+        "sourceStartSeconds": 8,
+        "sourceEndSeconds": 32,
+        "durationSeconds": 24,
+        "sampleRateHz": 24000,
+        "channels": 1,
+        "encoding": "PCM signed 16-bit little-endian WAV",
+        "sha256": "f5643c26df69bcc71dc9998b62de4c85166ea13ecd6ae782e58d4c56d30644c4",
+        "intendedUse": "Default Chatterbox audio_prompt_path for neutral/conversational Insight Corruption narration.",
+        "selectionReason": "Continuous natural speech near the beginning of the supplied recording; captures Eric's conversational cadence and ordinary emphasis without using the entire noisy field recording."
+      },
+      {
+        "path": "clips/eric-nissen/eric-nissen-alt-neutral-emphatic.wav",
+        "sourceStartSeconds": 34,
+        "sourceEndSeconds": 54,
+        "durationSeconds": 20,
+        "sampleRateHz": 24000,
+        "channels": 1,
+        "encoding": "PCM signed 16-bit little-endian WAV",
+        "sha256": "ec7c041dfb397ed0270dacbf95a6257942c7f9ce92b1957aa89c5a06375f98fc",
+        "intendedUse": "A/B reference when a passage needs slightly stronger emphasis while retaining conversational delivery."
+      },
+      {
+        "path": "clips/eric-nissen/eric-nissen-alt-emphatic.wav",
+        "sourceStartSeconds": 58,
+        "sourceEndSeconds": 78,
+        "durationSeconds": 20,
+        "sampleRateHz": 24000,
+        "channels": 1,
+        "encoding": "PCM signed 16-bit little-endian WAV",
+        "sha256": "f2791704644f43ed22b4069abb6ce9ba57ba35742700a892e401a1a110c54822",
+        "intendedUse": "QC/benchmark alternate for Eric's more emphatic field-reporting delivery; not the default episode reference."
+      }
+    ],
+    "sourceFile": {
+      "fileName": "Eric-sample.mp3",
+      "durationSeconds": 93.361625,
+      "sampleRateHz": 44100,
+      "channels": 2,
+      "sha256": "7784366b4bbdf8f9c9d7304d469bea423bd7ca33be497e27a0abde0475bb10a6"
+    },
+    "intake": {
+      "completedDate": "2026-09-23",
+      "conversion": "ffmpeg; mono; 24 kHz; PCM s16le; no denoise, pitch, time-stretch, formant, or loudness processing",
+      "usabilityGrade": "B+ production reference / A identity reference",
+      "limitations": [
+        "Original source is an outdoor/field recording with persistent environmental ambience.",
+        "Use the canonical excerpt rather than the full 93-second recording for the default prompt.",
+        "Do not mark runtime-ready until the derived WAV is uploaded to the configured Modal Volume and checksum-verified there."
+      ]
+    }
   },
   "fineTunedCheckpoint": null,
-  "notes": "Canonical project voice specification for Eric William Nissen. Runtime voice-profile config should inherit these synthesis and delivery constraints, then add resolved Modal reference-clip paths. Consent is confirmed, but synthesis remains blocked until a clean canonical reference clip is selected, provenance is recorded, and the clip is uploaded. Chatterbox zero-shot cloning is the production baseline; fine-tuning is an escalation path, not the default.",
+  "notes": "Voice intake completed from the user-supplied Eric-sample.mp3. Three deterministic PCM WAV excerpts were derived locally and checksummed; the 24-second canonical clip is the default Chatterbox reference. The source contains outdoor ambience, so it is suitable for zero-shot identity/cadence reference but is not a studio-clean training corpus. Runtime remains blocked until these exact WAV files are uploaded to the Modal voice-profile volume and verified by SHA-256. Fine-tuning remains an escalation path only.",
   "training": {
     "status": "not-planned",
     "strategy": "Use Chatterbox zero-shot voice cloning first. Do not fine-tune unless controlled listening tests show unacceptable cross-segment identity or cadence drift.",
@@ -131,6 +223,14 @@
       "stable loudness before mastering",
       "appropriate emotional restraint for factual and disputed material"
     ],
-    "humanApprovalRequiredBeforeFullEpisodeRender": true
+    "humanApprovalRequiredBeforeFullEpisodeRender": true,
+    "nextPass": {
+      "referenceClip": "clips/eric-nissen/eric-nissen-canonical.wav",
+      "settings": {
+        "exaggeration": 0.5,
+        "cfgWeight": 0.5
+      },
+      "instruction": "Render a short proof corpus first. Compare canonical against alternates only if identity, cadence, or emphasis is unsatisfactory. Do not automatically mix reference voices between chunks."
+    }
   }
 }
