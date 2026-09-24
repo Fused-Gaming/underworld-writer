@@ -9,7 +9,7 @@ segment `speaker` value to a voice profile id.
 
 ```bash
 modal run modal/app.py::generate_episode_audio \
-  --episode-config modal/config/episodes/insight-corruption-ep01.json
+  --episode-config config/episodes/insight-corruption-ep01.json
 ```
 
 ## Schema

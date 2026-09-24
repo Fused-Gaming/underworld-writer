@@ -113,7 +113,7 @@ modal volume ls underworld-voice-profiles
 
 ```bash
 modal run modal/app.py::generate_episode_audio \
-  --episode-config modal/config/episodes/insight-corruption-ep01.json
+  --episode-config config/episodes/insight-corruption-ep01.json
 ```
 
 The app will:

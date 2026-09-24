@@ -25,8 +25,17 @@ from pathlib import Path
 
 import modal
 
-ROOT = Path(__file__).resolve().parents[1]
-app = modal.App("underworld-production-audio-sync")
+LOCAL_ROOT = Path(__file__).resolve().parents[1]
+# `modal run` only auto-mounts this single script file by default, not its
+# sibling directories — Path(__file__).resolve().parents[1] resolves to "/"
+# inside the container, not the repo root, unless the local project tree is
+# explicitly mounted here. ROOT below is the in-container path that mirrors
+# LOCAL_ROOT, via this explicit image.
+ROOT = Path("/root/repo")
+image = modal.Image.debian_slim(python_version="3.11").add_local_dir(
+    str(LOCAL_ROOT / "projects"), remote_path=str(ROOT / "projects")
+)
+app = modal.App("underworld-production-audio-sync", image=image)
 volume = modal.Volume.from_name("underworld-production-audio", create_if_missing=True)
 MOUNT = "/vol/production-audio"
 

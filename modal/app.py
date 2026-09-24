@@ -13,7 +13,14 @@ Design references:
 
 Usage:
     modal deploy modal/app.py
-    modal run modal/app.py::generate_episode_audio --episode-config modal/config/episodes/s1e01.json
+    modal run modal/app.py --episode-config config/episodes/s1e01.json
+
+Note the --episode-config path is resolved *inside the container*, where
+this file's sibling `config/` directory is mounted at `/root/config` (see
+the image's add_local_dir calls below) — pass `config/episodes/...`, not
+`modal/config/episodes/...` (the path from the repo root, which is what
+it looks like from the local checkout but is not where the container
+actually mounts it).
 """
 
 import hashlib
@@ -600,11 +607,14 @@ def generate_episode_audio(episode_config_json: str, force_regenerate: bool = Fa
 
 @app.local_entrypoint()
 def main(episode_config: str, force_regenerate: bool = False):
-    try:
-        result_path = generate_episode_audio.remote(episode_config, force_regenerate=force_regenerate)
-        print(f"Episode audio rendered to: {result_path}")
-    finally:
-        # Automatically shut down the Modal app after generation completes
-        # to avoid unnecessary cloud compute charges.
-        print("Shutting down Modal app...")
-        app.stop()
+    # No explicit app.stop() here: modal.App has no such method on the
+    # pinned SDK (a prior version of this code called it and crashed on
+    # every run, success or failure, immediately after actually rendering
+    # the episode). `modal run` apps are ephemeral and are torn down
+    # automatically once this local entrypoint returns — Modal itself
+    # prints "Stopping app - local entrypoint completed." with no action
+    # needed here. A long-lived *deployed* app (`modal deploy`) is a
+    # separate lifecycle entirely and is stopped with `modal app stop
+    # <app-id>`, not from inside a function.
+    result_path = generate_episode_audio.remote(episode_config, force_regenerate=force_regenerate)
+    print(f"Episode audio rendered to: {result_path}")
