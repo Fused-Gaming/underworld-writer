@@ -1,6 +1,6 @@
 # Episode 4: Half a Year for $20K Bribes
 
-![Insight Corruption](../../assets/linkedin-headers/ci-2-skyline.png)
+![Insight Corruption](../../../../production/assets/linkedin-headers/ci-2-skyline.png)
 
 **Subtitle:** Ken Wong's Minimal Sentence
 

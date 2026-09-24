@@ -23,8 +23,11 @@ const files = {
   package: readJson('package.json'),
   plugin: readJson('plugin.json'),
   version: readJson('VERSION.json'),
-  lock: readJson('package-lock.json')
+  lock: readJson('package-lock.json'),
+  claudePlugin: readJson('.claude-plugin/plugin.json'),
+  marketplace: readJson('.claude-plugin/marketplace.json')
 };
+const marketplaceEntry = files.marketplace.plugins?.find((p) => p.name === files.claudePlugin.name);
 const indexPath = path.join(root, 'src', 'index.ts');
 let indexSource = fs.readFileSync(indexPath, 'utf8');
 const skillVersionMatch = /const skill = \{[\s\S]*?version:\s*'([^']+)'/.exec(indexSource);
@@ -43,6 +46,8 @@ requireMatch('package.json', files.package.version);
 requireMatch('plugin.json', files.plugin.version);
 requireMatch('VERSION.json', files.version.version);
 requireMatch('src/index.ts skill.version', skillVersion);
+requireMatch('.claude-plugin/plugin.json', files.claudePlugin.version);
+requireMatch('.claude-plugin/marketplace.json plugins[].version', marketplaceEntry?.version);
 warnMatch('package-lock.json', files.lock.version);
 warnMatch('package-lock.json packages[""]', files.lock.packages?.['']?.version);
 
@@ -71,6 +76,8 @@ files.lock.version = target;
 files.lock.packages ??= {};
 files.lock.packages[''] ??= {};
 files.lock.packages[''].version = target;
+files.claudePlugin.version = target;
+if (marketplaceEntry) marketplaceEntry.version = target;
 
 if (!skillVersionMatch) {
   console.error('Could not locate src/index.ts skill.version');
@@ -85,7 +92,9 @@ writeJson('package.json', files.package);
 writeJson('plugin.json', files.plugin);
 writeJson('VERSION.json', files.version);
 writeJson('package-lock.json', files.lock);
+writeJson('.claude-plugin/plugin.json', files.claudePlugin);
+writeJson('.claude-plugin/marketplace.json', files.marketplace);
 fs.writeFileSync(indexPath, indexSource);
 
-console.log(`Synchronized package, plugin, release ledger, exported skill, and lockfile metadata to ${target}.`);
+console.log(`Synchronized package, plugin, release ledger, exported skill, lockfile, and Claude plugin/marketplace metadata to ${target}.`);
 console.log('Review VERSION.json and CHANGELOG.md before publishing.');

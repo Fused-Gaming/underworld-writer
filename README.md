@@ -1,13 +1,13 @@
 # Underworld Writer
 
-![Underworld Writer v2.3.2 release changelog](release-artifacts/underworld-writer-release-og-1200x630.svg)
+![Underworld Writer v2.4.0 release changelog](release-artifacts/underworld-writer-release-og-1200x630.svg)
 
 > **Release artwork:** Rock-Hardened supplies changelog/release evidence; Underworld Writer owns the visual design contract in `assets/branding/release-brand.json`. The immutable visual template is `assets/branding/underworld-writer-release-changelog-template.svg`, imported byte-for-byte from ArtPatch. `npm run release:art` regenerates only the declared changelog-driven text zones; `npm run release:art:check` verifies the committed artwork is current.
 
-**Current version: 2.3.2**  
-Multi-purpose character development, fact-sourced true-crime editorial tooling, and segment-first podcast/article production.
+**Current version: 2.4.0**  
+Multi-purpose character development, fact-sourced true-crime editorial tooling, and segment-first podcast/article production — with a full episode post-production pipeline.
 
-[![Version](https://img.shields.io/badge/version-2.3.2-purple.svg)](package.json)
+[![Version](https://img.shields.io/badge/version-2.4.0-purple.svg)](package.json)
 [![License: Non-Commercial](https://img.shields.io/badge/License-Non--Commercial-blue.svg)](LICENSE.md)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-green.svg)](package.json)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-blue.svg)](package.json)
@@ -19,6 +19,16 @@ Underworld Writer supports three primary workflows:
 1. **Creative fiction** — three-phase character and narrative-world development.
 2. **True-crime / investigative editorial work** — evidence-aware narrative construction with source attribution and PACER-informed verification workflows.
 3. **Podcast + article production** — deterministic, segment-first editorial packages that can produce long-form scripts, articles, producer materials, and downstream audio inputs from a shared evidence package.
+
+## v2.4.0 highlights
+
+- **Deterministic post-production mixer** (`modal/audio/postproduction.py`) — semantic cue markers so timing survives TTS duration changes, narration ducking, fades, music beds, stingers, and intro/outro cues; WAV master + 192 kbps MP3 delivery.
+- **Fail-closed music/SFX rights-clearance registry** — a release render refuses to run until every referenced asset is `approved` with a recorded license/provenance record. Nothing fake ships as a placeholder.
+- **Self-generated music/SFX pipeline** (`modal/generate_production_audio.py`) — a $0, open-weight alternative to licensing stock audio: [ACE-Step 1.5](https://github.com/ace-step/ACE-Step-1.5) (Apache-2.0) for music, [Stable Audio Open 1.0](https://huggingface.co/stabilityai/stable-audio-open-1.0) (free under $1M annual revenue) for short SFX. Reproducible via committed prompt/seed manifests; a human still has to listen and approve before anything ships. See [`docs/ops/MODAL_PRODUCTION_AUDIO.md`](docs/ops/MODAL_PRODUCTION_AUDIO.md).
+- **Verified voice-reference intake** for Chatterbox narration, with checksum-enforced sync into Modal storage. See [`docs/guides/VOICE_INTAKE.md`](docs/guides/VOICE_INTAKE.md).
+- **`npx` fix** — `dist/cli.js` now ships with its executable bit set (`npm run build` chmods it automatically), fixing `npx @h4shed/skill-underworld-writer` and the linked `underworld-writer` bin.
+- **Claude Code plugin secrets onboarding** — Modal/npm tokens are entered through the plugin's `userConfig` prompts (Claude's secure per-user storage), not committed placeholders; a `SessionStart` hook writes Modal credentials into `~/.modal.toml` automatically. See [Claude Code plugin](#claude-code-plugin) below.
+- Documentation reorganization: fixed broken links left by earlier moves, consolidated navigation, archived superseded plans.
 
 ## v2.3.x highlights
 
@@ -195,6 +205,12 @@ The specification is project-level infrastructure and is not tied to a single ep
 npm install @h4shed/skill-underworld-writer
 ```
 
+### Run without installing (npx)
+
+```bash
+npx @h4shed/skill-underworld-writer create --name "Hades" --role "Lord" --faction "Olympian"
+```
+
 ### Development
 
 ```bash
@@ -212,6 +228,30 @@ underworld-writer validate-script --character character.json
 ```
 
 The original character-development, true-crime adaptation, PACER verification, MCP tooling, Markdown export, and relationship-validation APIs remain supported alongside the newer editorial workspace.
+
+## Claude Code plugin
+
+Underworld Writer is published to the Fused Gaming Claude Code marketplace (`.claude-plugin/marketplace.json`).
+
+### Install
+
+```
+/plugin marketplace add Fused-Gaming/underworld-writer
+/plugin install underworld-writer@fused-gaming
+```
+
+Claude Code auto-discovers the root [`SKILL.md`](SKILL.md) as the plugin's skill; character creation, true-crime verification, and podcast-production workflows all work immediately with no configuration.
+
+### Optional: audio production secrets
+
+Character/narrative/editorial features need no configuration. If you also want episode audio synthesis, mastering, or the self-generated music/SFX pipeline (all Modal-based), enabling the plugin prompts for three **optional**, individually-optional values, defined in `.claude-plugin/plugin.json`'s `userConfig`:
+
+| Value | Needed for | Where to get it |
+| --- | --- | --- |
+| `modal_token_id` / `modal_token_secret` | Audio synthesis, mastering, self-generated music/SFX | [modal.com/settings/tokens](https://modal.com/settings/tokens) |
+| `uw_npm_token` | Cutting an npm release (maintainers only) | A scoped npm automation token — see [`docs/ops/PUBLISHING.md`](docs/ops/PUBLISHING.md) |
+
+These are entered through Claude Code's own secure per-user configuration prompt — never committed to this repo, never written into a shared settings file. A `SessionStart` hook (`scripts/plugin-onboard-secrets.sh`) writes the Modal credentials into `~/.modal.toml` (the real file Modal's own CLI/SDK reads) automatically once entered, via `modal token set`. See [`docs/ops/MODAL_SETUP.md`](docs/ops/MODAL_SETUP.md) for the equivalent manual flow if you're not using the plugin.
 
 ## Validation and benchmarks
 
@@ -282,6 +322,7 @@ The package follows Semantic Versioning.
 - **2.3.0** — two-pass loudness-normalized mastering, configurable editorial linter, chunk-level synthesis cache, local npm publish pipeline, relicense to a custom non-commercial license, `PRIVACY.md`, and root-directory doc cleanup.
 - **2.3.1** — scoped `UW_NPM_TOKEN` publish-auth support for the CLI publish pipeline.
 - **2.3.2** — root README refresh: current version tags, v2.3.x feature highlights, fixed doc links, documentation-structure overview.
+- **2.4.0** — deterministic post-production mixer, fail-closed asset-clearance registry, self-generated music/SFX pipeline, verified voice-reference intake, `npx` executable fix, Claude Code plugin secrets onboarding, documentation link cleanup.
 
 Primary release metadata is tracked through `package.json`, `plugin.json`, `VERSION.json`, source exports, and the changelog. Use the version tooling rather than manually changing only one surface:
 

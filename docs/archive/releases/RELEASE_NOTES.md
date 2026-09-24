@@ -1,3 +1,5 @@
+> **Archived.** Superseded by [CHANGELOG.md](../../../CHANGELOG.md), which now carries release notes for every version. Some links below (root-level `GETTING_STARTED.md`, `CONTRIBUTING.md`) point at pre-reorg paths.
+
 # Release Notes — Underworld Writer v2.1.0
 
 **Release Date:** September 20, 2026  

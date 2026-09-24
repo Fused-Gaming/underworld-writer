@@ -246,13 +246,11 @@ An `.env.example` file shows required variables (leave values empty as placehold
 
 ## Getting Help
 
-- Check the [documentation](docs/INDEX.md) for detailed guides
+- Check the [documentation](../INDEX.md) for detailed guides
 - Review test files for usage examples
 - Open an issue for bugs or feature requests
-- See [CONTRIBUTING.md](CONTRIBUTING.md) for development guidelines
+- See [CONTRIBUTING.md](../../CONTRIBUTING.md) for development guidelines
 
 ## Version Information
 
-Current version: 2.1.0
-
-See [RELEASE_NOTES.md](RELEASE_NOTES.md) for changes in this release.
+Current version: see [CHANGELOG.md](../../CHANGELOG.md), or `package.json`'s `version` field — this file isn't updated per release.

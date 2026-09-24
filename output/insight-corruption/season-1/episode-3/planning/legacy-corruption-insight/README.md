@@ -1,6 +1,6 @@
 # Episode 3: The Building Inspector's Decade of Bribes
 
-![Insight Corruption](../../assets/linkedin-headers/ci-3-broadsheet.png)
+![Insight Corruption](../../../../production/assets/linkedin-headers/ci-3-broadsheet.png)
 
 **Subtitle:** Rodolfo Pada's Bribery Syndicate
 

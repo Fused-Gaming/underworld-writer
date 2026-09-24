@@ -7,9 +7,13 @@ Start here if this is your first visit.
 2. [Podcast project architecture](PODCAST_PROJECT_ARCHITECTURE.md) — reusable brands, shows and episode packages.
 3. [Voice intake](guides/VOICE_INTAKE.md) — consent, provenance, Chatterbox references.
 4. [Production audio](guides/PRODUCTION_AUDIO.md) — music, SFX, cue plans and mastering.
-5. [Modal setup](ops/MODAL_SETUP.md) — GPU/runtime setup.\n6. [Modal voice sync](ops/MODAL_VOICE_SYNC.md) — repository → persistent voice volume deployment.
-7. [Production release](ops/PRODUCTION_RELEASE.md) — release gates and deliverables.
-8. [Publishing](ops/PUBLISHING.md) — distribution workflow.
+   - [Asset procurement](guides/ASSET_PROCUREMENT.md) — licensing vs. self-generated music/SFX and clearance rules.
+   - [Troubleshooting audio](guides/TROUBLESHOOTING_AUDIO.md)
+5. [Modal setup](ops/MODAL_SETUP.md) — GPU/runtime setup.
+6. [Modal voice sync](ops/MODAL_VOICE_SYNC.md) — repository → persistent voice volume deployment.
+7. [Modal production audio](ops/MODAL_PRODUCTION_AUDIO.md) — self-generated music/SFX, sync to volume.
+8. [Production release](ops/PRODUCTION_RELEASE.md) — release gates and deliverables.
+9. [Publishing](ops/PUBLISHING.md) — distribution workflow.
 
 ## Core reference
 - [Audio generation architecture](AUDIO_GENERATION_PLAN.md)
