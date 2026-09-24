@@ -1,13 +1,13 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-20T14:18:11.985Z",
+  "generatedAt": "2026-09-24T03:54:52.525Z",
   "sourcePackage": "projects/insight-corruption/episode-packages/season-1/episode-1.json",
   "channel": "linkedin",
   "targetWords": {
     "minimum": 1800,
-    "maximum": 2300
+    "maximum": 2600
   },
-  "totalWords": 1864,
+  "totalWords": 2143,
   "lengthPass": true,
   "sections": [
     {
@@ -28,59 +28,151 @@
     },
     {
       "order": 3,
-      "id": "article-opening",
-      "title": "Start With the Outcome",
-      "wordCount": 273,
+      "id": "article-1",
+      "title": "Cold Open — Start With the Outcome — Part 1",
+      "wordCount": 215,
       "claimIds": [
         "C03",
         "C04",
         "C07"
       ],
-      "sha256": "4decc82ec077a9a052ce9e14028147b9787a6e26e58f31ac303d4d0bc5a9aa4f"
+      "sha256": "905a1d47f6aefc87c77dfed4eb142ddb699b8745a6e1b1b2d7b4e37420ac5790"
     },
     {
       "order": 4,
-      "id": "article-network",
-      "title": "A Years-Long Shipment Record",
-      "wordCount": 552,
+      "id": "article-2",
+      "title": "Cold Open — Start With the Outcome — Part 2",
+      "wordCount": 58,
+      "claimIds": [
+        "C03",
+        "C04",
+        "C07"
+      ],
+      "sha256": "3f9aba3af31899a6f7907832a4b0589607c1da4e9d87512691738cf9e13e2a8c"
+    },
+    {
+      "order": 5,
+      "id": "article-3",
+      "title": "How the Shipment Network Worked — Part 1",
+      "wordCount": 165,
       "claimIds": [
         "C01",
         "C02",
         "C05",
         "C06"
       ],
-      "sha256": "e0c5bd0db13b6e652aab547796d262e0bbf67f7e930b0d58fc89b559773b91e1"
+      "sha256": "396d15d00514e2dff2bc6faa4cfab943022fed777531dd5709d7a198fb77f4e6"
     },
     {
-      "order": 5,
-      "id": "article-correction",
-      "title": "The Fentanyl Allegation Was Corrected",
-      "wordCount": 415,
+      "order": 6,
+      "id": "article-4",
+      "title": "How the Shipment Network Worked — Part 2",
+      "wordCount": 190,
+      "claimIds": [
+        "C01",
+        "C02",
+        "C05",
+        "C06"
+      ],
+      "sha256": "c86d0567d623014bf90a7d5b4735e94530f3e65be2dcd6911b19973fbdaccbe8"
+    },
+    {
+      "order": 7,
+      "id": "article-5",
+      "title": "How the Shipment Network Worked — Part 3",
+      "wordCount": 141,
+      "claimIds": [
+        "C01",
+        "C02",
+        "C05",
+        "C06"
+      ],
+      "sha256": "85f3598f74651d0193f5e68d79acdd0083a4df405049358e78587a883af15f97"
+    },
+    {
+      "order": 8,
+      "id": "article-6",
+      "title": "The Fentanyl Claim Was Wrong — Then Came the Guilty Plea — Part 1",
+      "wordCount": 186,
       "claimIds": [
         "C03",
         "C04",
         "C05"
       ],
-      "sha256": "6ba5ca1096baddbfd72f16139bc5bdd2568d9d590122aeb1c9a5110d7dc2dda4"
+      "sha256": "87a85d84b344d68209650a3c86fff1f7e33b248ece8c1f8b7dcdb2b41290aa32"
     },
     {
-      "order": 6,
-      "id": "article-sentence",
-      "title": "Why the Case Ended in Probation",
-      "wordCount": 571,
+      "order": 9,
+      "id": "article-7",
+      "title": "The Fentanyl Claim Was Wrong — Then Came the Guilty Plea — Part 2",
+      "wordCount": 150,
+      "claimIds": [
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "sha256": "b7cd6cb22fb229c181eba00ae79aa11002fe948f79e2e02fae79c879cced94ad"
+    },
+    {
+      "order": 10,
+      "id": "article-8",
+      "title": "Why the Judge Chose Probation — Part 1",
+      "wordCount": 188,
       "claimIds": [
         "C06",
         "C07"
       ],
-      "sha256": "4b2e58a0b2a37c2544746b8f94506a0cdd486891f166ac483dccad859a3d1d82"
+      "sha256": "65e143eaf71c6bc7e3fb995bccb5a6cb96a24e426ff1d3fe5a43f2b23e8452a4"
     },
     {
-      "order": 7,
+      "order": 11,
+      "id": "article-9",
+      "title": "Why the Judge Chose Probation — Part 2",
+      "wordCount": 205,
+      "claimIds": [
+        "C06",
+        "C07"
+      ],
+      "sha256": "f387639618a2a61be786ec9016a5cd0644f8b589da2b9bb15698442762dc3612"
+    },
+    {
+      "order": 12,
+      "id": "article-10",
+      "title": "Why the Judge Chose Probation — Part 3",
+      "wordCount": 178,
+      "claimIds": [
+        "C06",
+        "C07"
+      ],
+      "sha256": "955af79a348898b9b1b57b09bfbdcbb263dfd47532f08f5233cb8d988e8fdd4c"
+    },
+    {
+      "order": 13,
+      "id": "article-11",
+      "title": "What Institutional Accountability Does — and Does Not — Mean Here — Part 1",
+      "wordCount": 203,
+      "claimIds": [
+        "C08"
+      ],
+      "sha256": "d38cc9cc3d7806bbaa8b773b7d02ce8fd7ba1acf420389fd40faf18beabec648"
+    },
+    {
+      "order": 14,
+      "id": "article-12",
+      "title": "What Institutional Accountability Does — and Does Not — Mean Here — Part 2",
+      "wordCount": 187,
+      "claimIds": [
+        "C08"
+      ],
+      "sha256": "08300d56b455086d9c12e8833bc5ad8da7685e101f41448bf36631468c6ca31d"
+    },
+    {
+      "order": 15,
       "id": "article-cta",
-      "title": "Listen and Read the Record",
-      "wordCount": 14,
+      "title": "Listen, Read, and Support the Work",
+      "wordCount": 38,
       "claimIds": [],
-      "sha256": "5a776f0a9216f75db1b12e5cacb9ce1618f88db0edd5d940127cc192758f974d"
+      "sha256": "0a1626d6fc9fd02abf7c1d3bdb955ba373b1f3bdf305c85163561c219ee29946"
     }
   ]
 }
