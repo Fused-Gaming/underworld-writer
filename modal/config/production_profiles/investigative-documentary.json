@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "profileId": "investigative-documentary",
   "philosophy": "Voice and evidence remain foreground. Music supports structure and tension but never implies facts or guilt.",
-  "assetRoot": "assets/audio",
+  "assetRoot": "/vol/production-audio",
   "buses": {
     "dialogue": {
       "target": "foreground"

@@ -49,10 +49,21 @@ def sync(show:str="insight-corruption",verify_only:bool=False)->dict:
             actual=sha256(src); expected=clip.get("sha256")
             if expected and actual!=expected:
                 raise ValueError(f"{src}: sha256 {actual} != expected {expected}")
-            if not verify_only:
+            if verify_only:
+                # Verification must confirm the clip actually exists in the
+                # Modal volume with matching bytes, not merely that the
+                # repository source is present/correct. A missing remote
+                # clip previously passed silently here (dst.exists() was
+                # False, so the mismatch check below was skipped) and was
+                # still reported as "synced".
+                if not dst.exists():
+                    raise FileNotFoundError(f"Modal volume verification failed: {dst} does not exist")
+                if sha256(dst)!=actual:
+                    raise ValueError(f"Modal volume verification failed for {dst}")
+            else:
                 dst.parent.mkdir(parents=True,exist_ok=True); dst.write_bytes(src.read_bytes())
-            if dst.exists() and sha256(dst)!=actual:
-                raise ValueError(f"Modal volume verification failed for {dst}")
+                if sha256(dst)!=actual:
+                    raise ValueError(f"Modal volume verification failed for {dst}")
             synced.append({"profile":profile["voiceProfileId"],"clip":clip["path"],"sha256":actual})
         if not verify_only:
             runtime_profile.write_text(json.dumps(profile,indent=2)+"\n")

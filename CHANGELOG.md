@@ -30,6 +30,9 @@ Format follows Keep a Changelog and Semantic Versioning.
 ### Fixed
 - A literal `\n` (rather than a newline) in `docs/README.md`'s first-time-path list, which broke that list's rendering.
 - `dist/cli.js` was published without its executable bit, breaking `npx @h4shed/skill-underworld-writer` and the linked `underworld-writer` bin (`sh: Permission denied`) after a fresh install. `npm run build` now runs a `postbuild` step (`chmod +x dist/cli.js`) automatically; verified end-to-end against a real packed tarball.
+- (Code review) `modal/app.py` never mounted the `underworld-production-audio` Modal volume that `scripts/sync-modal-production-audio.py` uploads approved music/SFX into, and defaulted `asset_root` to an in-image path (`/root/assets/audio`) that was never anything mounted — the render pipeline could never actually read synced production audio. Both `assemble_episode` and `generate_episode_audio` now mount the volume, and `asset_root` defaults to it.
+- (Code review) `resolve_markers()` computed cue positions by summing raw segment durations, ignoring the 150ms crossfade `assemble_episode`'s dialogue-assembly loop applies between every segment and the conditional 800ms post-segment pause — cue timing (stingers, bed entry/exit) could drift seconds from the real edit by later chapters. Segment boundaries are now recorded from the actual assembled `AudioSegment`'s length at each step and passed into `resolve_markers()` directly, instead of being independently re-derived.
+- (Code review) `verify_only=True` in `scripts/sync-modal-voice-profiles.py` and `scripts/sync-modal-production-audio.py` only checked the local repository/staged source; a clip/asset never actually uploaded to the Modal volume still came back reported as `"synced"` during a verification-only pass. Both scripts now require the destination to exist with matching bytes during verification.
 
 ## [2.3.2] - 2026-09-23
 

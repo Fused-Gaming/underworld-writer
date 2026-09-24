@@ -142,7 +142,10 @@
       "bug_fixes": [
         "Fixed a literal \\n in docs/README.md that broke its first-time-path list",
         "Fixed ~15 broken relative documentation links across CONTRIBUTING.md, docs/use-cases/*, docs/guides/GETTING_STARTED.md, docs/ops/MODAL_SETUP.md, benchmarks/README.md, and five legacy episode planning docs",
-        "Fixed dist/cli.js publishing without its executable bit, which broke npx/the linked underworld-writer bin; npm run build now chmods it automatically"
+        "Fixed dist/cli.js publishing without its executable bit, which broke npx/the linked underworld-writer bin; npm run build now chmods it automatically",
+        "Fixed the production-audio Modal volume never being mounted in modal/app.py, so the render pipeline could never read what scripts/sync-modal-production-audio.py uploads",
+        "Fixed resolve_markers() ignoring dialogue crossfade/pause timing, which could drift cue positions seconds from the real edit by later chapters",
+        "Fixed verify_only in both Modal sync scripts reporting a never-uploaded clip/asset as synced"
       ],
       "improvements": [
         ".claude-plugin/plugin.json and .claude-plugin/marketplace.json versions no longer drift from package.json (previously stuck at 1.0.25)"

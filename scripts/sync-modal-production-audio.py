@@ -75,7 +75,16 @@ def sync(show: str = "insight-corruption", verify_only: bool = False) -> dict:
             raise ValueError(f"{asset['id']} ({src}): sha256 {actual} != registry {expected}")
 
         dst = Path(MOUNT) / asset["path"]
-        if not verify_only:
+        if verify_only:
+            # Verification must confirm the asset actually exists in the
+            # Modal volume with matching bytes — checking only the local
+            # staged copy (above) and skipping this block entirely
+            # previously let a never-synced asset be reported as "synced".
+            if not dst.exists():
+                raise FileNotFoundError(f"Modal volume verification failed: {dst} does not exist")
+            if sha256(dst) != actual:
+                raise ValueError(f"Modal volume verification failed for {dst}")
+        else:
             dst.parent.mkdir(parents=True, exist_ok=True)
             dst.write_bytes(src.read_bytes())
             if sha256(dst) != actual:

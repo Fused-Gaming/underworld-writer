@@ -44,12 +44,20 @@ def mix_production(narration: AudioSegment, plan: dict, asset_root: str | None=N
     return mix,applied
 
 
-def resolve_markers(plan: dict, segment_ids: list[str], segment_durations_ms: list[int], pause_ms: int=0) -> dict:
-    """Resolve semantic `segment-id:start|end` markers to absolute milliseconds."""
-    starts={}; cursor=0
-    for sid,dur in zip(segment_ids,segment_durations_ms):
-        starts[sid]=(cursor,cursor+dur)
-        cursor += dur + pause_ms
+def resolve_markers(plan: dict, segment_boundaries: dict[str, tuple[int, int]]) -> dict:
+    """Resolve semantic `segment-id:start|end` markers to absolute milliseconds.
+
+    `segment_boundaries` must be the *actual* (start_ms, end_ms) of each
+    segment in the assembled dialogue track — i.e. positions read back from
+    the real mixed AudioSegment as it was built (see
+    `assemble_episode`'s dialogue-assembly loop), not durations summed
+    independently of it. Recomputing boundaries from raw segment durations
+    here previously ignored the crossfade overlap `AudioSegment.append`
+    applies between segments and the conditional per-segment pause
+    (`pauseAfterSegment`), which silently drifted cue timing away from the
+    real edit by seconds over a long episode.
+    """
+    starts=segment_boundaries
     resolved={**plan,"cues":[]}
     for raw in plan.get("cues",[]):
         cue=dict(raw)

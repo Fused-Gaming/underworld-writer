@@ -73,9 +73,17 @@ voice_profiles_volume = modal.Volume.from_name(
 episode_output_volume = modal.Volume.from_name(
     "underworld-episode-output", create_if_missing=True
 )
+# Populated by scripts/sync-modal-production-audio.py from
+# projects/<show>/production/audio/asset-registry.json's approved assets.
+# Must be mounted here and used as the default asset_root below, or the
+# renderer can never actually read what that sync script uploads.
+production_audio_volume = modal.Volume.from_name(
+    "underworld-production-audio", create_if_missing=True
+)
 
 VOICE_PROFILES_MOUNT = "/vol/voice-profiles"
 EPISODE_OUTPUT_MOUNT = "/vol/episode-output"
+PRODUCTION_AUDIO_MOUNT = "/vol/production-audio"
 # Chunk cache lives on the same persistent volume as episode output, keyed
 # by content hash (modal/cache/chunk_cache.py), so it survives across
 # container restarts/retries of the same episode render.
@@ -364,7 +372,12 @@ class VoiceSynthesizer:
         return str(clip_path)
 
 
-@app.function(volumes={EPISODE_OUTPUT_MOUNT: episode_output_volume})
+@app.function(
+    volumes={
+        EPISODE_OUTPUT_MOUNT: episode_output_volume,
+        PRODUCTION_AUDIO_MOUNT: production_audio_volume,
+    }
+)
 def assemble_episode(
     segment_audio: list[bytes],
     episode_meta: dict,
@@ -392,14 +405,22 @@ def assemble_episode(
     from pydub import AudioSegment
 
     clips = [AudioSegment.from_wav(BytesIO(data)) for data in segment_audio]
+    ids_for_boundaries = segment_ids or [str(i) for i in range(len(clips))]
 
     # Dialogue edit first. Sound design is a downstream, deterministic layer.
+    # Segment boundaries are recorded from the real assembled track's length
+    # at each step (not summed independently from raw clip durations), so
+    # they agree exactly with the crossfade overlap `append()` applies and
+    # the conditional per-segment pause below — see resolve_markers().
     mixed = AudioSegment.silent(duration=0)
+    segment_boundaries: dict[str, tuple[int, int]] = {}
     for i, clip in enumerate(clips):
+        start_ms = len(mixed)
         if i == 0:
             mixed += clip
         else:
             mixed = mixed.append(clip, crossfade=DEFAULT_CROSSFADE_MS)
+        segment_boundaries[ids_for_boundaries[i]] = (start_ms, len(mixed))
         if episode_meta.get("pauseAfterSegment", {}).get(str(i)):
             mixed += AudioSegment.silent(duration=DEFAULT_PAUSE_MS)
 
@@ -416,8 +437,7 @@ def assemble_episode(
             if not registry_path.exists():
                 raise FileNotFoundError(f"Asset registry not found: {registry_path}")
             validate_asset_clearance(plan, json.loads(registry_path.read_text()))
-        ids = segment_ids or [str(i) for i in range(len(clips))]
-        resolved = resolve_markers(plan, ids, [len(clip) for clip in clips])
+        resolved = resolve_markers(plan, segment_boundaries)
         mixed, production_cues = mix_production(mixed, resolved, asset_root=asset_root)
 
     buf = BytesIO()
@@ -480,7 +500,13 @@ def assemble_episode(
     return mastered_wav_bytes, render_manifest
 
 
-@app.function(volumes={EPISODE_OUTPUT_MOUNT: episode_output_volume}, timeout=1200)
+@app.function(
+    volumes={
+        EPISODE_OUTPUT_MOUNT: episode_output_volume,
+        PRODUCTION_AUDIO_MOUNT: production_audio_volume,
+    },
+    timeout=1200,
+)
 def generate_episode_audio(episode_config_json: str, force_regenerate: bool = False) -> str:
     """Entrypoint: render one episode's audio from its ScriptOutput + config.
 
@@ -531,7 +557,7 @@ def generate_episode_audio(episode_config_json: str, force_regenerate: bool = Fa
         config.get("episodeMeta", {}),
         production_plan_path=config.get("productionPlanPath"),
         asset_registry_path=config.get("assetRegistryPath"),
-        asset_root=config.get("assetRoot", "/root/assets/audio"),
+        asset_root=config.get("assetRoot", PRODUCTION_AUDIO_MOUNT),
         segment_chunks=calls,
         segment_ids=segment_ids,
     )
