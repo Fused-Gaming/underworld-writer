@@ -1,10 +1,11 @@
 # Insight Corruption — Episode 1: Police Union Executive Imported Thousands of Opioid Pills — Then Received Probation
 
-**Proofing build:** proof/insight-corruption-ep1-hosted-refresh
-**Words:** 4139
-**Estimated runtime:** 29.55 minutes
+**Generated from:** `projects/insight-corruption/episode-packages/season-1/episode-1.json`
+**Words:** 4300
+**Estimated runtime:** 30.65 minutes at 145 WPM / fixed segment durations
+**Runtime validation:** PASS
 
-> Editorial proof only. Audio has not been generated.
+> The segmented files under `scripts/segments/` are authoritative. This assembled file is generated for producer read-through only.
 
 ## Cold Open — Start With the Outcome — Part 1
 
@@ -208,7 +209,7 @@ The public response to the case also reflected the symbolic weight of Segovia’
 
 There is a temptation in corruption storytelling to use proximity as proof. Someone works near police, therefore police are implicated. Someone uses an institutional account, therefore the institution intended the act. That leap is not supported here.
 
-The more useful accountability framework asks narrower questions: What access did the role provide? Which systems were used? What controls existed at the time? What changed after the case? Were investigators given timely access to relevant records? Were the conclusions of the internal investigation independently testable?
+The more useful accountability framework asks narrower questions: What access did the role provide? Which systems were used? What controls existed at the time? What changed after the case? Were investigators given timely access to relevant records? Were the conclusions of the internal investigation independently testable? What did Segovia receive, if anything, in exchange for the pills she redistributed, and does the documented volume support the sentencing record's account that this was not profit-driven?
 
 Some of those questions have answers in the current reporting; others remain open or would require additional records.
 
@@ -217,6 +218,8 @@ Some of those questions have answers in the current reporting; others remain ope
 What does this case establish, and what does it not?
 
 It establishes that Joanne Segovia pleaded guilty to unlawfully importing tapentadol. It establishes that investigators documented a long history of overseas shipments and that prosecutors described a period in which she ordered roughly eighteen thousand tapentadol pills. It establishes that some pills were redistributed, that workplace resources were implicated in parts of the conduct, and that she initially gave investigators a false explanation.
+
+That volume invites scrutiny on its own terms. Eighteen thousand pills across roughly seventeen months averages to more than thirty pills a day for that window alone, and prosecutors placed it inside a longer documented history of at least sixty-one shipments stretching back to 2015 — a fuller period whose total volume the public record does not state. Some of those pills went to other people. Prosecutors nonetheless argued addiction, not profit, was the driving motive. A volume and a pattern of redistribution large enough to raise the question of profit, alongside a sentencing position that argues there wasn't one, is a real tension in this record, not a resolved one. What Segovia received, if anything, for the pills she redistributed is not established here — that gap is worth naming rather than smoothing over.
 
 It establishes that the original fentanyl-related charge was withdrawn after prosecutors acknowledged a testing error.
 
@@ -249,4 +252,3 @@ That's Episode 1 of Insight Corruption. The source manifest and companion articl
 ## Production Credits
 
 Insight Corruption is an independent Inner Rhythm Media production, written, researched, sourced, and hosted by Eric Nissen. This episode uses an authorized AI-generated version of Eric Nissen's voice as part of the production process. Research and fact-checking follow the source manifest published with the episode. Corrections and tips go through the contact information in the show notes.
-

@@ -1,52 +1,66 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-20T14:18:11.985Z",
+  "generatedAt": "2026-09-24T03:54:52.525Z",
   "sourcePackage": "projects/insight-corruption/episode-packages/season-1/episode-1.json",
   "seriesSlug": "insight-corruption",
   "seasonNumber": 1,
   "episodeNumber": 1,
   "wordsPerMinute": 145,
   "targetRuntimeMinutes": 30,
-  "estimatedRuntimeMinutes": 29.97,
-  "totalWords": 4158,
+  "estimatedRuntimeMinutes": 30.65,
+  "totalWords": 4300,
   "runtimePass": true,
   "segments": [
     {
       "order": 1,
       "id": "cold-open",
       "type": "case-specific",
-      "title": "Cold Open — Start With the Outcome",
-      "wordCount": 273,
-      "estimatedSeconds": 113,
+      "title": "Cold Open — Start With the Outcome — Part 1",
+      "wordCount": 215,
+      "estimatedSeconds": 89,
       "claimIds": [
         "C03",
         "C04",
         "C07"
       ],
-      "sha256": "4decc82ec077a9a052ce9e14028147b9787a6e26e58f31ac303d4d0bc5a9aa4f"
+      "sha256": "905a1d47f6aefc87c77dfed4eb142ddb699b8745a6e1b1b2d7b4e37420ac5790"
     },
     {
       "order": 2,
-      "id": "host-intro",
-      "type": "reusable",
-      "title": "Host Introduction",
-      "wordCount": 8,
-      "estimatedSeconds": 3,
-      "claimIds": [],
-      "sha256": "1cfef2245a20eafac5fafed43191647dbfb99a2d9d10d66518df8af1d9349fea"
+      "id": "cold-open-part-2",
+      "type": "case-specific",
+      "title": "Cold Open — Start With the Outcome — Part 2",
+      "wordCount": 58,
+      "estimatedSeconds": 24,
+      "claimIds": [
+        "C03",
+        "C04",
+        "C07"
+      ],
+      "sha256": "3f9aba3af31899a6f7907832a4b0589607c1da4e9d87512691738cf9e13e2a8c"
     },
     {
       "order": 3,
-      "id": "series-intro",
+      "id": "host-intro",
       "type": "reusable",
-      "title": "Series Intro",
-      "wordCount": 21,
-      "estimatedSeconds": 9,
+      "title": "Host Introduction",
+      "wordCount": 75,
+      "estimatedSeconds": 31,
       "claimIds": [],
-      "sha256": "43a517d005cf8432badf1c9d7c43e28af521fa8a5b494a882c4fef2c7ecec67f"
+      "sha256": "9e5409b06e7eaf3dab166c091c5db755e797a485535b8756af31ac7d691d020e"
     },
     {
       "order": 4,
+      "id": "series-intro",
+      "type": "reusable",
+      "title": "Series Intro",
+      "wordCount": 78,
+      "estimatedSeconds": 32,
+      "claimIds": [],
+      "sha256": "90b0c97a022030d4dcdcb8d6ce39d4178a0ef408378648813e5dae70e2c1a38f"
+    },
+    {
+      "order": 5,
       "id": "source-disclosure",
       "type": "reusable",
       "title": "Evidence and Attribution Note",
@@ -56,115 +70,281 @@
       "sha256": "717802cb86c0c5db4dc24226b156aeeaa9afc9edc0f3b21f0cf26de18a504a7b"
     },
     {
-      "order": 5,
+      "order": 6,
       "id": "role-and-public-trust",
       "type": "case-specific",
-      "title": "The Position of Trust",
-      "wordCount": 413,
-      "estimatedSeconds": 171,
+      "title": "The Position of Trust — Part 1",
+      "wordCount": 185,
+      "estimatedSeconds": 77,
       "claimIds": [
         "C08"
       ],
-      "sha256": "9c695dda6e765b12298495a23b2d6f5b9b6a3757d80028c6073e4bfb41fe9fb4"
+      "sha256": "06f867813cb1ecb610713beff0dd5a3b64b56cc5d0009113b949f1f4544c8268"
     },
     {
-      "order": 6,
+      "order": 7,
+      "id": "role-and-public-trust-part-2",
+      "type": "case-specific",
+      "title": "The Position of Trust — Part 2",
+      "wordCount": 171,
+      "estimatedSeconds": 71,
+      "claimIds": [
+        "C08"
+      ],
+      "sha256": "c53bbaeea63ffb49de76b2f745075c5ecf9f6216bfa1f01602af93271774118e"
+    },
+    {
+      "order": 8,
+      "id": "role-and-public-trust-part-3",
+      "type": "case-specific",
+      "title": "The Position of Trust — Part 3",
+      "wordCount": 57,
+      "estimatedSeconds": 24,
+      "claimIds": [
+        "C08"
+      ],
+      "sha256": "ac4bce2a305d9122de7183dfb686793043a4c9423dc57cb733f3eef96827a55f"
+    },
+    {
+      "order": 9,
       "id": "shipment-network",
       "type": "case-specific",
-      "title": "How the Shipment Network Worked",
-      "wordCount": 552,
-      "estimatedSeconds": 228,
+      "title": "How the Shipment Network Worked — Part 1",
+      "wordCount": 165,
+      "estimatedSeconds": 68,
       "claimIds": [
         "C01",
         "C02",
         "C05",
         "C06"
       ],
-      "sha256": "e0c5bd0db13b6e652aab547796d262e0bbf67f7e930b0d58fc89b559773b91e1"
+      "sha256": "396d15d00514e2dff2bc6faa4cfab943022fed777531dd5709d7a198fb77f4e6"
     },
     {
-      "order": 7,
+      "order": 10,
+      "id": "shipment-network-part-2",
+      "type": "case-specific",
+      "title": "How the Shipment Network Worked — Part 2",
+      "wordCount": 190,
+      "estimatedSeconds": 79,
+      "claimIds": [
+        "C01",
+        "C02",
+        "C05",
+        "C06"
+      ],
+      "sha256": "c86d0567d623014bf90a7d5b4735e94530f3e65be2dcd6911b19973fbdaccbe8"
+    },
+    {
+      "order": 11,
+      "id": "shipment-network-part-3",
+      "type": "case-specific",
+      "title": "How the Shipment Network Worked — Part 3",
+      "wordCount": 141,
+      "estimatedSeconds": 58,
+      "claimIds": [
+        "C01",
+        "C02",
+        "C05",
+        "C06"
+      ],
+      "sha256": "85f3598f74651d0193f5e68d79acdd0083a4df405049358e78587a883af15f97"
+    },
+    {
+      "order": 12,
       "id": "investigation-and-deception",
       "type": "case-specific",
-      "title": "The Investigation and the False Explanation",
-      "wordCount": 483,
-      "estimatedSeconds": 200,
+      "title": "The Investigation and the False Explanation — Part 1",
+      "wordCount": 224,
+      "estimatedSeconds": 93,
       "claimIds": [
         "C01",
         "C02",
         "C08"
       ],
-      "sha256": "66497b67e53ef0a9acba4d87c162f189ee03710bed2aaa9c8411fb8a0285d734"
+      "sha256": "bb97185aad1ad1e007624cd44df1b723a3ce19dd16ccc599de6dbff4cfcd5d8c"
     },
     {
-      "order": 8,
+      "order": 13,
+      "id": "investigation-and-deception-part-2",
+      "type": "case-specific",
+      "title": "The Investigation and the False Explanation — Part 2",
+      "wordCount": 201,
+      "estimatedSeconds": 83,
+      "claimIds": [
+        "C01",
+        "C02",
+        "C08"
+      ],
+      "sha256": "d2549d091e63aea44fb343e880188e09a5114187d994422d87154c370848310c"
+    },
+    {
+      "order": 14,
+      "id": "investigation-and-deception-part-3",
+      "type": "case-specific",
+      "title": "The Investigation and the False Explanation — Part 3",
+      "wordCount": 58,
+      "estimatedSeconds": 24,
+      "claimIds": [
+        "C01",
+        "C02",
+        "C08"
+      ],
+      "sha256": "9cdb752cfb18ab20ca7f12b81f0d5df1c3eb2373f002af8d630a6d7d124aa5ae"
+    },
+    {
+      "order": 15,
       "id": "charge-correction-and-plea",
       "type": "case-specific",
-      "title": "The Fentanyl Claim Was Wrong — Then Came the Guilty Plea",
-      "wordCount": 415,
-      "estimatedSeconds": 172,
+      "title": "The Fentanyl Claim Was Wrong — Then Came the Guilty Plea — Part 1",
+      "wordCount": 186,
+      "estimatedSeconds": 77,
       "claimIds": [
         "C03",
         "C04",
         "C05"
       ],
-      "sha256": "6ba5ca1096baddbfd72f16139bc5bdd2568d9d590122aeb1c9a5110d7dc2dda4"
+      "sha256": "87a85d84b344d68209650a3c86fff1f7e33b248ece8c1f8b7dcdb2b41290aa32"
     },
     {
-      "order": 9,
+      "order": 16,
+      "id": "charge-correction-and-plea-part-2",
+      "type": "case-specific",
+      "title": "The Fentanyl Claim Was Wrong — Then Came the Guilty Plea — Part 2",
+      "wordCount": 150,
+      "estimatedSeconds": 62,
+      "claimIds": [
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "sha256": "b7cd6cb22fb229c181eba00ae79aa11002fe948f79e2e02fae79c879cced94ad"
+    },
+    {
+      "order": 17,
       "id": "midroll",
       "type": "sponsor",
       "title": "Mid-Roll Break",
-      "wordCount": 31,
+      "wordCount": 77,
       "estimatedSeconds": 90,
       "claimIds": [],
-      "sha256": "175efa4a9c9305f93c5902d40ba1c5010668d291dc1946a8ba3b02ea04c22c9e"
+      "sha256": "5f0298237c2e9fe6da82e53c010d7bdb1d69165315c2d7638bdadc99ca07b6db"
     },
     {
-      "order": 10,
+      "order": 18,
       "id": "sentencing-context",
       "type": "context",
-      "title": "Why a Maximum Sentence Is Not the Expected Sentence",
-      "wordCount": 357,
-      "estimatedSeconds": 148,
+      "title": "Why a Maximum Sentence Is Not the Expected Sentence — Part 1",
+      "wordCount": 165,
+      "estimatedSeconds": 68,
       "claimIds": [
         "C09",
         "C10"
       ],
-      "sha256": "028c90573fe3b4930faa8587a7a401f17718a1f01ba110b0f252f992bb8db87f"
+      "sha256": "58b6559dff6ab2d707fefe6aa3e92a2da90d966a2863451669ee7607956c4281"
     },
     {
-      "order": 11,
+      "order": 19,
+      "id": "sentencing-context-part-2",
+      "type": "context",
+      "title": "Why a Maximum Sentence Is Not the Expected Sentence — Part 2",
+      "wordCount": 192,
+      "estimatedSeconds": 79,
+      "claimIds": [
+        "C09",
+        "C10"
+      ],
+      "sha256": "17219ad4181b06823e06d896bd5dae97a9a064de4484841789b5c85cc51451c7"
+    },
+    {
+      "order": 20,
       "id": "sentencing-record",
       "type": "case-specific",
-      "title": "Why the Judge Chose Probation",
-      "wordCount": 571,
-      "estimatedSeconds": 236,
+      "title": "Why the Judge Chose Probation — Part 1",
+      "wordCount": 188,
+      "estimatedSeconds": 78,
       "claimIds": [
         "C06",
         "C07"
       ],
-      "sha256": "4b2e58a0b2a37c2544746b8f94506a0cdd486891f166ac483dccad859a3d1d82"
+      "sha256": "65e143eaf71c6bc7e3fb995bccb5a6cb96a24e426ff1d3fe5a43f2b23e8452a4"
     },
     {
-      "order": 12,
+      "order": 21,
+      "id": "sentencing-record-part-2",
+      "type": "case-specific",
+      "title": "Why the Judge Chose Probation — Part 2",
+      "wordCount": 205,
+      "estimatedSeconds": 85,
+      "claimIds": [
+        "C06",
+        "C07"
+      ],
+      "sha256": "f387639618a2a61be786ec9016a5cd0644f8b589da2b9bb15698442762dc3612"
+    },
+    {
+      "order": 22,
+      "id": "sentencing-record-part-3",
+      "type": "case-specific",
+      "title": "Why the Judge Chose Probation — Part 3",
+      "wordCount": 178,
+      "estimatedSeconds": 74,
+      "claimIds": [
+        "C06",
+        "C07"
+      ],
+      "sha256": "955af79a348898b9b1b57b09bfbdcbb263dfd47532f08f5233cb8d988e8fdd4c"
+    },
+    {
+      "order": 23,
       "id": "institutional-accountability",
       "type": "analysis",
-      "title": "What Institutional Accountability Does — and Does Not — Mean Here",
-      "wordCount": 464,
-      "estimatedSeconds": 192,
+      "title": "What Institutional Accountability Does — and Does Not — Mean Here — Part 1",
+      "wordCount": 203,
+      "estimatedSeconds": 84,
       "claimIds": [
         "C08"
       ],
-      "sha256": "c1b53f2d4802715b271793feb475eb4a523014d3fc11a4b09c44b0796a3eb6b8"
+      "sha256": "d38cc9cc3d7806bbaa8b773b7d02ce8fd7ba1acf420389fd40faf18beabec648"
     },
     {
-      "order": 13,
+      "order": 24,
+      "id": "institutional-accountability-part-2",
+      "type": "analysis",
+      "title": "What Institutional Accountability Does — and Does Not — Mean Here — Part 2",
+      "wordCount": 187,
+      "estimatedSeconds": 77,
+      "claimIds": [
+        "C08"
+      ],
+      "sha256": "08300d56b455086d9c12e8833bc5ad8da7685e101f41448bf36631468c6ca31d"
+    },
+    {
+      "order": 25,
       "id": "analysis-known-unknown",
       "type": "analysis",
-      "title": "What We Know, What We Don't, and the Better Next Question",
-      "wordCount": 447,
-      "estimatedSeconds": 185,
+      "title": "What We Know, What We Don't, and the Better Next Question — Part 1",
+      "wordCount": 305,
+      "estimatedSeconds": 126,
+      "claimIds": [
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C01"
+      ],
+      "sha256": "f6d379a9cdf00988c2fde78d7c3a53001a08dada2175a78ee283f4c58e4b6736"
+    },
+    {
+      "order": 26,
+      "id": "analysis-known-unknown-part-2",
+      "type": "analysis",
+      "title": "What We Know, What We Don't, and the Better Next Question — Part 2",
+      "wordCount": 200,
+      "estimatedSeconds": 83,
       "claimIds": [
         "C03",
         "C04",
@@ -174,27 +354,45 @@
         "C08",
         "C09"
       ],
-      "sha256": "0779e5d32976c272d1115b4b7e2c8a67adb6dfab79014c076960023f817f5b52"
+      "sha256": "4a8063a896b1b9cb5f2bf55b1f232bf39f1f7b4c4a00131a954707b7dfcb7e5a"
     },
     {
-      "order": 14,
+      "order": 27,
+      "id": "analysis-known-unknown-part-3",
+      "type": "analysis",
+      "title": "What We Know, What We Don't, and the Better Next Question — Part 3",
+      "wordCount": 75,
+      "estimatedSeconds": 31,
+      "claimIds": [
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "sha256": "5832b675ac751ea989abfae8eda035f6192b604cd9db50d835529a916fd64872"
+    },
+    {
+      "order": 28,
       "id": "series-outro",
       "type": "reusable",
       "title": "Outro and Source CTA",
-      "wordCount": 37,
-      "estimatedSeconds": 15,
+      "wordCount": 86,
+      "estimatedSeconds": 36,
       "claimIds": [],
-      "sha256": "00f4fffc22425d0b21b6254c03672b48bf8aee43567072c2b3fc67a20ac023ea"
+      "sha256": "f69b144a750c75f63886de0d7c67c8c8a0ae15b936f10429d4fba3d087583b37"
     },
     {
-      "order": 15,
+      "order": 29,
       "id": "credits",
       "type": "reusable",
       "title": "Production Credits",
-      "wordCount": 58,
+      "wordCount": 57,
       "estimatedSeconds": 24,
       "claimIds": [],
-      "sha256": "1f52e085abf66497891dfaad5dc8ed5783acd14cab5ed28dbc1c3e85a0f1c13d"
+      "sha256": "1d6a19bd2977d982dacdfd86b70cf142b44752195c5d5ad6d990646badefa78a"
     }
   ]
 }
