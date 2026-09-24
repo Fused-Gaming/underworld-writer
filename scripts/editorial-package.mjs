@@ -116,6 +116,12 @@ const outputRoot = `output/${series}/season-${season}/episode-${episode}`;
 const segmentRoot = `${outputRoot}/scripts/segments`;
 const generatedAt = new Date().toISOString();
 
+// Clear stale segment files before writing the current set: if segment
+// count/order/ids change between runs (a resequence, a renamed segment),
+// old files at colliding numeric prefixes otherwise linger indefinitely
+// and silently shadow/duplicate the current ones for anything that globs
+// this directory (e.g. scripts/build-script-output.mjs).
+if (!checkOnly) fs.rmSync(path.join(root, segmentRoot), { recursive: true, force: true });
 for (const [i, segment] of podcastSegments.entries()) {
   const filename = `${String(i + 1).padStart(2, '0')}-${slugify(segment.id)}.md`;
   write(`${segmentRoot}/${filename}`, segment.markdown);
@@ -166,6 +172,8 @@ const articleMax = spec.article.targetWords?.maximum ?? 2500;
 const articlePass = articleWords >= articleMin && articleWords <= articleMax;
 const articleRoot = `${outputRoot}/published-assets/articles/${spec.article.channel}`;
 
+// Same staleness issue as the podcast segments above.
+if (!checkOnly) fs.rmSync(path.join(root, articleRoot, "segments"), { recursive: true, force: true });
 for (const [i, section] of articleSections.entries()) {
   const filename = `${String(i + 1).padStart(2, '0')}-${slugify(section.id)}.md`;
   write(`${articleRoot}/segments/${filename}`, section.markdown);
