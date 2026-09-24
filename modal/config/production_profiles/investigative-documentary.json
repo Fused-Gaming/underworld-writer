@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0",
+  "profileId": "investigative-documentary",
+  "philosophy": "Voice and evidence remain foreground. Music supports structure and tension but never implies facts or guilt.",
+  "assetRoot": "assets/audio",
+  "buses": {
+    "dialogue": {
+      "target": "foreground"
+    },
+    "music": {
+      "defaultGainDb": -22,
+      "duckUnderDialogueDb": -8
+    },
+    "sfx": {
+      "defaultGainDb": -16
+    }
+  },
+  "transitions": {
+    "defaultFadeInMs": 350,
+    "defaultFadeOutMs": 650
+  },
+  "editorialRules": [
+    "No sensational hit/stinger directly under an allegation or disputed claim.",
+    "No police sirens, gunshots, courtroom gavels, cash-register sounds, or similar literalizing SFX unless they are authentic sourced audio identified in the episode.",
+    "Music may signal chapter structure, uncertainty, reflection, or momentum; it must not manufacture evidentiary meaning.",
+    "All third-party audio requires asset-registry provenance and license clearance."
+  ],
+  "mastering": {
+    "integratedLufs": -16,
+    "truePeakDb": -1,
+    "lra": 11,
+    "deliverySampleRateHz": 48000
+  }
+}

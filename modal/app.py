@@ -8,7 +8,7 @@ a mixed, edited episode audio file using a zero-shot voice-cloning model.
 
 Design references:
     docs/AUDIO_GENERATION_PLAN.md (original XTTS-v2 plan)
-    modal/CHATTERBOX_INTEGRATION_PLAN.md (Phase 1 backend swap this file implements)
+    docs/archive/CHATTERBOX_INTEGRATION_PLAN.md (Phase 1 backend swap this file implements)
     projects/insight-corruption/production/voice/VOICE_PODCAST_GENERATION.md
 
 Usage:
@@ -31,6 +31,7 @@ import modal
 # submodules, so they never collide with `import modal` above.
 sys.path.insert(0, str(Path(__file__).parent))
 from audio.segmenter import chunk_text  # noqa: E402
+from audio.postproduction import mix_production, resolve_markers, validate_asset_clearance  # noqa: E402
 from backends.chatterbox import ChatterboxBackend  # noqa: E402
 from cache.chunk_cache import (  # noqa: E402
     CACHE_VERSION,
@@ -60,6 +61,8 @@ image = (
     .add_local_dir(str(Path(__file__).parent / "cache"), remote_path="/root/cache")
     .add_local_dir(str(Path(__file__).parent / "config"), remote_path="/root/config")
     .add_local_dir(str(Path(__file__).parent.parent / "output"), remote_path="/root/output")
+    .add_local_dir(str(Path(__file__).parent.parent / "projects"), remote_path="/root/projects")
+    .add_local_dir(str(Path(__file__).parent.parent / "assets"), remote_path="/root/assets")
 )
 
 app = modal.App(APP_NAME, image=image)
@@ -90,7 +93,7 @@ TARGET_LRA = 11.0
 
 RENDER_MANIFEST_SCHEMA_VERSION = "1.0"
 
-# modal/CHATTERBOX_INTEGRATION_PLAN.md Section 3: benchmark cheapest-first.
+# docs/archive/CHATTERBOX_INTEGRATION_PLAN.md Section 3: benchmark cheapest-first.
 # L4 is the VOICE_PODCAST_GENERATION.md executive recommendation for the
 # initial inference GPU; the prior H100 default was never benchmarked
 # against it and is oversized/overpriced for this workload.
@@ -365,9 +368,11 @@ class VoiceSynthesizer:
 def assemble_episode(
     segment_audio: list[bytes],
     episode_meta: dict,
-    intro_bed_path: str | None = None,
-    outro_bed_path: str | None = None,
+    production_plan_path: str | None = None,
+    asset_registry_path: str | None = None,
+    asset_root: str | None = None,
     segment_chunks: list[tuple[str, str]] | None = None,
+    segment_ids: list[str] | None = None,
 ) -> tuple[bytes, dict]:
     """Stitch synthesized segments into one mastered episode file.
 
@@ -388,10 +393,8 @@ def assemble_episode(
 
     clips = [AudioSegment.from_wav(BytesIO(data)) for data in segment_audio]
 
+    # Dialogue edit first. Sound design is a downstream, deterministic layer.
     mixed = AudioSegment.silent(duration=0)
-    if intro_bed_path and Path(intro_bed_path).exists():
-        mixed += AudioSegment.from_file(intro_bed_path)
-
     for i, clip in enumerate(clips):
         if i == 0:
             mixed += clip
@@ -400,8 +403,22 @@ def assemble_episode(
         if episode_meta.get("pauseAfterSegment", {}).get(str(i)):
             mixed += AudioSegment.silent(duration=DEFAULT_PAUSE_MS)
 
-    if outro_bed_path and Path(outro_bed_path).exists():
-        mixed += AudioSegment.from_file(outro_bed_path)
+    production_cues = []
+    if production_plan_path:
+        plan_path = Path(production_plan_path)
+        if not plan_path.exists():
+            raise FileNotFoundError(f"Production plan not found: {plan_path}")
+        plan = json.loads(plan_path.read_text())
+        if plan.get("releaseGate", {}).get("requireApprovedAssets", True):
+            if not asset_registry_path:
+                raise ValueError("Production plan requires an asset registry")
+            registry_path = Path(asset_registry_path)
+            if not registry_path.exists():
+                raise FileNotFoundError(f"Asset registry not found: {registry_path}")
+            validate_asset_clearance(plan, json.loads(registry_path.read_text()))
+        ids = segment_ids or [str(i) for i in range(len(clips))]
+        resolved = resolve_markers(plan, ids, [len(clip) for clip in clips])
+        mixed, production_cues = mix_production(mixed, resolved, asset_root=asset_root)
 
     buf = BytesIO()
     mixed.export(buf, format="wav")
@@ -452,6 +469,12 @@ def assemble_episode(
             "final": loudnorm_stats["final"],
         },
         "segments": segments_manifest,
+        "postProduction": {
+            "productionPlan": production_plan_path,
+            "assetRegistry": asset_registry_path,
+            "assetRoot": asset_root,
+            "appliedCues": production_cues,
+        },
     }
 
     return mastered_wav_bytes, render_manifest
@@ -477,10 +500,18 @@ def generate_episode_audio(episode_config_json: str, force_regenerate: bool = Fa
     script_output = json.loads(Path(config["scriptOutputPath"]).read_text())
 
     synthesizer = VoiceSynthesizer()
-    segment_texts_and_speakers = [
-        (segment["text"], segment.get("speaker", "narrator"))
+    script_segments = [
+        segment
         for part in script_output["episodes"]
         for segment in part["segments"]
+    ]
+    segment_texts_and_speakers = [
+        (segment["text"], segment.get("speaker", "narrator"))
+        for segment in script_segments
+    ]
+    segment_ids = [
+        str(segment.get("id") or segment.get("segmentId") or i)
+        for i, segment in enumerate(script_segments)
     ]
     speaker_to_voice_profile = config["speakerVoiceProfiles"]
 
@@ -498,18 +529,28 @@ def generate_episode_audio(episode_config_json: str, force_regenerate: bool = Fa
     final_audio, render_manifest = assemble_episode.remote(
         segment_audio,
         config.get("episodeMeta", {}),
-        intro_bed_path=config.get("introBedPath"),
-        outro_bed_path=config.get("outroBedPath"),
+        production_plan_path=config.get("productionPlanPath"),
+        asset_registry_path=config.get("assetRegistryPath"),
+        asset_root=config.get("assetRoot", "/root/assets/audio"),
         segment_chunks=calls,
+        segment_ids=segment_ids,
     )
     manifest_json = json.dumps(render_manifest, indent=2)
 
     # Write to Modal volume, alongside a render manifest with the same stem.
     output_path = Path(EPISODE_OUTPUT_MOUNT) / config["outputFileName"]
     output_path.write_bytes(final_audio)
+
+    # Delivery encode is CPU-only and derived from the mastered WAV.
+    delivery_path = output_path.with_suffix(".mp3")
+    if config.get("releaseCandidate", {}).get("generateDeliveryMp3", True):
+        from io import BytesIO
+        from pydub import AudioSegment
+        mastered = AudioSegment.from_wav(BytesIO(final_audio))
+        mastered.export(delivery_path, format="mp3", bitrate="192k")
+        render_manifest["delivery"] = {"masterWav": str(output_path), "mp3": str(delivery_path), "mp3BitrateKbps": 192}
+
     manifest_path = output_path.with_name(output_path.stem + ".manifest.json")
-    manifest_path.write_text(manifest_json)
-    episode_output_volume.commit()
 
     # Also write to local output directory for accessibility
     meta = config.get("episodeMeta", {})
@@ -520,7 +561,13 @@ def generate_episode_audio(episode_config_json: str, force_regenerate: bool = Fa
     local_output_dir.mkdir(parents=True, exist_ok=True)
     local_output_path = local_output_dir / "episode.wav"
     local_output_path.write_bytes(final_audio)
+    if delivery_path.exists():
+        (local_output_dir / "episode.mp3").write_bytes(delivery_path.read_bytes())
+    # Rewrite after delivery metadata is added.
+    manifest_json = json.dumps(render_manifest, indent=2)
+    manifest_path.write_text(manifest_json)
     (local_output_dir / "episode.manifest.json").write_text(manifest_json)
+    episode_output_volume.commit()
 
     return str(output_path)
 

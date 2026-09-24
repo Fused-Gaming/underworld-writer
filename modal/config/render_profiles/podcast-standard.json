@@ -6,7 +6,11 @@
     "backend": "chatterbox",
     "modelVariant": "standard",
     "hardwarePolicy": "cheapest-compatible",
-    "preferredGpuOrder": ["T4", "L4", "A10"],
+    "preferredGpuOrder": [
+      "T4",
+      "L4",
+      "A10"
+    ],
     "seedPolicy": "episode-stable",
     "chunking": {
       "strategy": "sentence-aware",
@@ -24,17 +28,38 @@
     "truePeakDb": -1,
     "defaultCrossfadeMs": 150,
     "defaultPauseMs": 800,
-    "musicDucking": true
+    "musicDucking": true,
+    "lra": 11,
+    "dialoguePriority": true,
+    "bedDuckDb": -8,
+    "fadeInMs": 350,
+    "fadeOutMs": 650
   },
   "output": {
     "masterFormat": "wav",
-    "deliveryFormats": ["mp3"],
-    "sampleRateHz": 48000
+    "deliveryFormats": [
+      "mp3"
+    ],
+    "sampleRateHz": 48000,
+    "mp3BitrateKbps": 192,
+    "writeId3": true
   },
   "manifest": {
     "writeResolvedConfig": true,
     "recordCosts": true,
     "recordTimings": true,
     "recordInputHashes": true
+  },
+  "postProduction": {
+    "enabled": true,
+    "profile": "investigative-documentary",
+    "requireClearedAssets": true,
+    "semanticMarkers": true,
+    "buses": [
+      "dialogue",
+      "music",
+      "sfx"
+    ],
+    "writeCueManifest": true
   }
 }

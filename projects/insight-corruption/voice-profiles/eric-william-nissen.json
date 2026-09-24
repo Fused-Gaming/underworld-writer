@@ -197,11 +197,12 @@
       "derivedArtifactsVerified": true,
       "verification": "Derived WAV files were actually generated from the uploaded Eric-sample.mp3 and SHA-256 checksums were calculated from those bytes.",
       "runtimeReady": false,
-      "runtimeBlocker": "Upload the three verified WAV artifacts to the underworld-voice-profiles Modal Volume at the configured paths and verify their SHA-256 values after upload."
-    }
+      "runtimeBlocker": "Commit the three verified WAV artifacts under production/voice/references at their clip paths, then run scripts/deploy-modal-audio.sh; the sync verifies SHA-256 and uploads them to the Modal Volume."
+    },
+    "repositorySourceRoot": "projects/insight-corruption/production/voice/references"
   },
   "fineTunedCheckpoint": null,
-  "notes": "Voice intake completed and locally verified from the user-provided Eric-sample.mp3. The source MP3 remains the provenance master. Three real PCM WAV excerpts were generated from that MP3: a 24-second canonical Chatterbox reference and two 20-second alternates. Their SHA-256 values in this record correspond to the actual derived bytes. Runtime remains blocked only on uploading those exact WAV artifacts to the Modal voice-profile volume and verifying them there.",
+  "notes": "Voice intake completed and locally verified from the user-provided Eric-sample.mp3. The three derived WAV checksums correspond to the actual derived bytes. Runtime deployment is automated by scripts/sync-modal-voice-profiles.py once those exact verified WAV bytes are present in the repository reference path.",
   "training": {
     "status": "not-planned",
     "strategy": "Use Chatterbox zero-shot voice cloning first. Do not fine-tune unless controlled listening tests show unacceptable cross-segment identity or cadence drift.",
