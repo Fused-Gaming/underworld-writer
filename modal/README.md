@@ -7,6 +7,7 @@ The `modal/` directory is the production runtime for authorized synthetic narrat
 - `backends/` — TTS adapters; Chatterbox is current default.
 - `audio/segmenter.py` — sentence-aware synthesis chunking.
 - `audio/postproduction.py` — semantic cue resolution, asset-clearance gate and music/SFX mixing.
+- `generate_production_audio.py` — separate Modal app; self-generates the required music/SFX identity assets (ACE-Step 1.5, Stable Audio Open) instead of licensing stock audio. See `docs/ops/MODAL_PRODUCTION_AUDIO.md`.
 - `cache/` — content-addressed chunk cache.
 - `config/voice_profiles/` — runtime voice-profile templates.
 - `config/render_profiles/` — technical render/mastering defaults.
