@@ -163,6 +163,7 @@ SFX_MODEL_CACHE_DIR = "/vol/hf-cache"
     image=sfx_image,
     volumes={SFX_MODEL_CACHE_DIR: sfx_model_cache},
     env={"HF_HOME": SFX_MODEL_CACHE_DIR},
+    secrets=[modal.Secret.from_name("huggingface-secret")],
 )
 class SfxGenerator:
     """Short SFX/stinger generation via Stable Audio Open 1.0.
@@ -170,15 +171,34 @@ class SfxGenerator:
     Stability AI Community License: free for organizations with less than
     USD $1M in annual revenue (see docs/guides/ASSET_PROCUREMENT.md).
     Confirm that still applies before treating any output as cleared.
+
+    stabilityai/stable-audio-open-1.0 is a GATED model on Hugging Face:
+    downloading it (even after accepting the Community License, which is
+    free) requires an authenticated request. Before this class can load,
+    you must:
+      1. Accept the license at
+         https://huggingface.co/stabilityai/stable-audio-open-1.0
+         (logged in with your Hugging Face account).
+      2. Create a Hugging Face access token with read access to that repo:
+         https://huggingface.co/settings/tokens
+      3. Store it as a Modal secret named exactly "huggingface-secret"
+         with key HF_TOKEN:
+         modal secret create huggingface-secret HF_TOKEN=<your token>
+    Without this, from_pretrained() below fails with
+    huggingface_hub.errors.GatedRepoError (401), not a Modal/network issue.
     """
 
     @modal.enter()
     def init(self):
+        import os
+
         import torch
         from diffusers import StableAudioPipeline
 
         self.pipe = StableAudioPipeline.from_pretrained(
-            "stabilityai/stable-audio-open-1.0", torch_dtype=torch.float16
+            "stabilityai/stable-audio-open-1.0",
+            torch_dtype=torch.float16,
+            token=os.environ["HF_TOKEN"],
         ).to("cuda")
 
     @modal.method()

@@ -9,6 +9,28 @@ narration app in `modal/app.py` (`underworld-audio`): different, heavier
 dependencies (ACE-Step 1.5's own CUDA image, `diffusers`/Stable Audio Open),
 so it doesn't bloat the Chatterbox narration image.
 
+## One-time setup: Hugging Face access for Stable Audio Open
+
+`stabilityai/stable-audio-open-1.0` is a **gated** Hugging Face model — the
+Community License is free, but downloading the weights still requires an
+authenticated, license-accepted request. Discovered by actually running
+this: it fails with `huggingface_hub.errors.GatedRepoError` (401), not a
+Modal or network error, until this is done once:
+
+1. Accept the license at
+   [huggingface.co/stabilityai/stable-audio-open-1.0](https://huggingface.co/stabilityai/stable-audio-open-1.0)
+   while logged in to a Hugging Face account.
+2. Create an access token with read access to that repo at
+   [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens).
+3. Store it as a Modal secret named exactly `huggingface-secret` with key
+   `HF_TOKEN`:
+   ```sh
+   modal secret create huggingface-secret HF_TOKEN=<your token>
+   ```
+
+ACE-Step 1.5 (the music model) does not appear to require this — its
+weights download without authentication.
+
 ## Workflow
 
 1. **Generate one asset and stage it locally for review:**
