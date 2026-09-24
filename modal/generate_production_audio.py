@@ -157,6 +157,11 @@ sfx_image = (
         "transformers",
         "accelerate",
         "soundfile==0.12.1",
+        # StableAudioPipeline's default scheduler (CosineDPMSolverMultistepScheduler)
+        # requires this even though diffusers doesn't declare it as a hard
+        # dependency — found by actually running it: ImportError at
+        # from_pretrained() time, not an install-time failure.
+        "torchsde",
     )
 )
 
