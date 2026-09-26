@@ -4,7 +4,7 @@
 
 **Title:** Elizabeth Williams & Insight Housing: The Paper Trail  
 **Parent issue:** #148  
-**Target:** ~30 minutes including 90-second mid-roll  
+**Target:** ~36.5 minutes including 90-second mid-roll (widened from ~30 minutes on 2026-09-26 after folding new sourced facts, including the Judge Faith/Danielle Johnson corroboration, into Segment 2 rather than cutting them for time)  
 **Host voice:** Eric William Nissen (`voice-eric-nissen-01`)
 
 ## Editorial thesis

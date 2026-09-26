@@ -29,9 +29,9 @@
       {
         "partNumber": 1,
         "duration": {
-          "minimum": 28,
-          "maximum": 32,
-          "target": 30
+          "minimum": 34,
+          "maximum": 40,
+          "target": 36.5
         },
         "sponsorBreaks": [
           {
@@ -41,16 +41,16 @@
           }
         ],
         "contentDuration": {
-          "minimum": 26.5,
-          "maximum": 30.5,
-          "target": 28.5
+          "minimum": 33.5,
+          "maximum": 38.5,
+          "target": 35
         }
       }
     ],
     "totalDuration": {
-      "minimum": 28,
-      "maximum": 32,
-      "target": 30
+      "minimum": 34,
+      "maximum": 40,
+      "target": 36.5
     }
   },
   "keyPoints": [
@@ -81,5 +81,5 @@
     "Tier 2: Oakland Police Department report T26008570 as proof an allegation was reported, not proof the allegation itself is true; reported FBI immunity for Williams (single-sourced)",
     "Tier 3: complainant chronology and the single-sourced 2018 Indybay account of the 732 Apgar Street fire, where the underlying primary record has not yet been independently matched"
   ],
-  "producerNotes": "Editorial rule: never collapse the 2015-2016 PEC findings and the 2024-2026 SSVF dispute into a claim of one proven criminal scheme. The PEC adjudicated Espinosa's conduct. Later funding, habitability, retaliation, and fraud claims are allegations and requests for investigation unless independently established by primary records. Studio render may proceed with the current script because all unresolved propositions are either omitted or explicitly framed as allegations/questions. Any later ACCELA/fire/ledger records should trigger a script revision before publication if they materially change the facts. UPDATE (post-#148 comment): the final-decision fine amount/violation count, the Espinosa-as-contractor conflict, the Harbaugh matter, and the confirmed ACCELA 2600830 record are new Tier-1/2 facts that should be worked into the script and article, clearly attributed to press coverage where they have not been matched against primary Commission documents. The Apgar Street fire account and the exact Williams-to-Espinosa payment total remain unresolved/Tier 3 and should stay framed as such."
+  "producerNotes": "Editorial rule: never collapse the 2015-2016 PEC findings and the 2024-2026 SSVF dispute into a claim of one proven criminal scheme. The PEC adjudicated Espinosa's conduct. Later funding, habitability, retaliation, and fraud claims are allegations and requests for investigation unless independently established by primary records. Studio render may proceed with the current script because all unresolved propositions are either omitted or explicitly framed as allegations/questions. Any later ACCELA/fire/ledger records should trigger a script revision before publication if they materially change the facts. UPDATE (post-#148 comment): the final-decision fine amount/violation count, the Espinosa-as-contractor conflict, the Harbaugh matter, and the confirmed ACCELA 2600830 record are new Tier-1/2 facts that should be worked into the script and article, clearly attributed to press coverage where they have not been matched against primary Commission documents. The Apgar Street fire account and the exact Williams-to-Espinosa payment total remain unresolved/Tier 3 and should stay framed as such. RUNTIME UPDATE (2026-09-26): folding the new facts, plus the Judge Faith/Danielle Johnson corroboration, into Segment 2 narration added ~6:28 of spoken content (344→733 words at this episode's ~1 word/second hand-timed convention), pushing total runtime from ~30:00 to ~36:28. Rather than cut the new facts for time, the episode's duration targets were widened (part/total target 30→36.5 min, max 32→40 min) to keep full source-tiered content in the spoken script. Re-run runtime/word-count validation and re-render audio before publication."
 }

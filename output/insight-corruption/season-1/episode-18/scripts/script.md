@@ -1,7 +1,7 @@
 # Insight Corruption — S1E18: Elizabeth Williams & Insight Housing: The Paper Trail
 
 **Format:** Single-part investigative narrative  
-**Target runtime:** ~30:00 including 90-second mid-roll  
+**Target runtime:** ~36:28 including 90-second mid-roll (widened from ~30:00 after folding in new sourced facts, including the Judge Faith / Danielle Johnson corroboration — see EPISODE_CONFIG.json producerNotes)  
 **Host voice:** Eric William Nissen (`voice-eric-nissen-01`)  
 **Editorial status:** Studio-prep; source-tiered; no unresolved allegation is voiced as established criminal fact.
 
@@ -33,7 +33,7 @@ This is *Insight Corruption*.
 
 ---
 
-## Segment 2 — The 2015–2016 Oakland Ethics Record (2:15–8:00)
+## Segment 2 — The 2015–2016 Oakland Ethics Record (2:15–14:28)
 
 Start with the strongest source in the file.
 
@@ -73,6 +73,8 @@ That same reporting describes something beyond the four three-hundred-dollar sol
 
 And Espinosa wasn't the only inspector named. A second building inspector, Anthony Harbaugh, was separately found to have taken a three-hundred-dollar payment from Espinosa to approve electrical work at a Williams property after two other inspectors had turned it down, and to have failed to report income he received from Williams. Harbaugh was fined fifty-five thousand dollars. One outlet also reports Williams received immunity from the FBI to testify about the scheme — we haven't independently confirmed that against a federal record, so treat it as reported, not established.
 
+There's independent corroboration of this landlord's history outside the ethics file, too. In a separate small-claims arbitration that aired as an episode of the show Judge Faith, a tenant named Danielle Johnson sued Williams over habitability conditions at a different property — a ceiling that gave way during renovation, a roof leak that soaked her bed during a storm, and a sewage backup the City had documented — and won a judgment of fifteen hundred twenty-five dollars after the arbitrator found Williams had breached the legal warranty of habitability. In that same hearing, Johnson testified that the City of Oakland had sued Williams over eleven properties back in 2006. That's her sworn testimony, not something we've independently matched to a court filing ourselves, but it lines up with a separate 2018 news account describing that same lawsuit.
+
 So why does the old ethics file matter to a housing story years later?
 
 Because publicly funded housing systems depend on screening.
@@ -87,7 +89,7 @@ And that question becomes much more significant once the later SSVF records ente
 
 ---
 
-## Segment 3 — The Publicly Funded Placement (8:00–13:20)
+## Segment 3 — The Publicly Funded Placement (14:28–19:48)
 
 Fast-forward to December 2024.
 
@@ -151,7 +153,7 @@ Not assumption. Documentation.
 
 ---
 
-## Segment 4 — Mid-Roll / House Read (13:20–14:50)
+## Segment 4 — Mid-Roll / House Read (19:48–21:18)
 
 This episode of *Insight Corruption* is supported by the people who believe public records should actually be read.
 
@@ -169,7 +171,7 @@ Now, back to the paper trail.
 
 ---
 
-## Segment 5 — Complaint, Eviction, and the 2026 Police Report (14:50–21:40)
+## Segment 5 — Complaint, Eviction, and the 2026 Police Report (21:18–28:08)
 
 By early 2026, the housing relationship had deteriorated.
 
@@ -227,7 +229,7 @@ The goal is to make the theory answer to the documents.
 
 ---
 
-## Segment 6 — What Insight Housing Controls, and What It Does Not (21:40–25:45)
+## Segment 6 — What Insight Housing Controls, and What It Does Not (28:08–32:13)
 
 There is another reason to keep the roles straight.
 
@@ -291,7 +293,7 @@ It is the reason you know where to look.
 
 ---
 
-## Segment 7 — The Oversight Failure Question (25:45–29:10)
+## Segment 7 — The Oversight Failure Question (32:13–35:38)
 
 So what is the actual public-interest issue here?
 
@@ -347,7 +349,7 @@ If the answer is no, that is a policy gap worth fixing.
 
 ---
 
-## Segment 8 — Closing / Right of Reply (29:10–30:00)
+## Segment 8 — Closing / Right of Reply (35:38–36:28)
 
 For Episode 18, here is what the record supports today.
 
