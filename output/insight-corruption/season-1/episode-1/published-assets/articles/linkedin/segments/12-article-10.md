@@ -1,6 +1,6 @@
 ## Why the Judge Chose Probation — Part 3
 
-Those statements are crucial because they show that the sentence was not based on a finding that the conduct was harmless. The court balanced serious misconduct against mitigation and rehabilitation.
+Those statements matter because they show that the sentence was not based on a finding that the conduct was harmless. The court balanced serious misconduct against mitigation and rehabilitation.
 
 Whether a listener believes probation was too lenient, appropriately individualized, or somewhere in between is a separate judgment. The record can inform that judgment without making it for the listener.
 

@@ -1,8 +1,8 @@
 # Insight Corruption — Episode 1: Police Union Executive Imported Thousands of Opioid Pills — Then Received Probation
 
 **Generated from:** `projects/insight-corruption/episode-packages/season-1/episode-1.json`
-**Words:** 4300
-**Estimated runtime:** 30.65 minutes at 145 WPM / fixed segment durations
+**Words:** 4313
+**Estimated runtime:** 30.73 minutes at 145 WPM / fixed segment durations
 **Runtime validation:** PASS
 
 > The segmented files under `scripts/segments/` are authoritative. This assembled file is generated for producer read-through only.
@@ -177,7 +177,7 @@ In explaining the decision, the judge agreed that Segovia’s conduct looked mor
 
 ## Why the Judge Chose Probation — Part 3
 
-Those statements are crucial because they show that the sentence was not based on a finding that the conduct was harmless. The court balanced serious misconduct against mitigation and rehabilitation.
+Those statements matter because they show that the sentence was not based on a finding that the conduct was harmless. The court balanced serious misconduct against mitigation and rehabilitation.
 
 Whether a listener believes probation was too lenient, appropriately individualized, or somewhere in between is a separate judgment. The record can inform that judgment without making it for the listener.
 
@@ -207,9 +207,9 @@ That is an analytical question, not an accusation.
 
 The public response to the case also reflected the symbolic weight of Segovia’s position. Protests followed. Local officials and activists criticized the situation. The union faced scrutiny not because the public record proved officers were trafficking drugs, but because the person at the center of the case had spent years as a key civilian figure inside the organization.
 
-There is a temptation in corruption storytelling to use proximity as proof. Someone works near police, therefore police are implicated. Someone uses an institutional account, therefore the institution intended the act. That leap is not supported here.
+There is a temptation in corruption storytelling to use proximity as proof. Someone works near police, so the assumption follows that police are implicated. Someone uses an institutional account, therefore the institution intended the act. That leap is not supported here.
 
-The more useful accountability framework asks narrower questions: What access did the role provide? Which systems were used? What controls existed at the time? What changed after the case? Were investigators given timely access to relevant records? Were the conclusions of the internal investigation independently testable? What did Segovia receive, if anything, in exchange for the pills she redistributed, and does the documented volume support the sentencing record's account that this was not profit-driven?
+The more useful accountability framework asks narrower questions: what access the role provided, which systems were used, and what controls existed at the time. It also asks what changed after the case, whether investigators were given timely access to relevant records, and whether the conclusions of the internal investigation were independently testable. And it asks what Segovia received, if anything, in exchange for the pills she redistributed, and whether the documented volume supports the sentencing record's account that this was not profit-driven.
 
 Some of those questions have answers in the current reporting; others remain open or would require additional records.
 
@@ -217,13 +217,13 @@ Some of those questions have answers in the current reporting; others remain ope
 
 What does this case establish, and what does it not?
 
-It establishes that Joanne Segovia pleaded guilty to unlawfully importing tapentadol. It establishes that investigators documented a long history of overseas shipments and that prosecutors described a period in which she ordered roughly eighteen thousand tapentadol pills. It establishes that some pills were redistributed, that workplace resources were implicated in parts of the conduct, and that she initially gave investigators a false explanation.
+It establishes that Joanne Segovia pleaded guilty to unlawfully importing tapentadol. The record shows investigators documented a long history of overseas shipments and that prosecutors described a period in which she ordered roughly eighteen thousand tapentadol pills. It also establishes that some pills were redistributed, that workplace resources were implicated in parts of the conduct, and that she initially gave investigators a false explanation.
 
 That volume invites scrutiny on its own terms. Eighteen thousand pills across roughly seventeen months averages to more than thirty pills a day for that window alone, and prosecutors placed it inside a longer documented history of at least sixty-one shipments stretching back to 2015 — a fuller period whose total volume the public record does not state. Some of those pills went to other people. Prosecutors nonetheless argued addiction, not profit, was the driving motive. A volume and a pattern of redistribution large enough to raise the question of profit, alongside a sentencing position that argues there wasn't one, is a real tension in this record, not a resolved one. What Segovia received, if anything, for the pills she redistributed is not established here — that gap is worth naming rather than smoothing over.
 
-It establishes that the original fentanyl-related charge was withdrawn after prosecutors acknowledged a testing error.
+The record confirms the original fentanyl-related charge was withdrawn after prosecutors acknowledged a testing error.
 
-It establishes that prosecutors and the defense both centered addiction in the sentencing story, that the government did not portray Segovia as a profit-driven dealer, and that Judge Lee ultimately imposed probation and community service rather than incarceration.
+It establishes, too, that prosecutors and the defense both centered addiction in the sentencing story, that the government did not portray Segovia as a profit-driven dealer, and that Judge Lee ultimately imposed probation and community service rather than incarceration.
 
 It does not establish that the San Jose Police Officers’ Association as an organization participated in the drug scheme. It does not establish that sworn officers were co-conspirators. The public record cited here says the opposite: investigators and the union’s review did not identify broader participation.
 

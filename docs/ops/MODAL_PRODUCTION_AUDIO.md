@@ -44,8 +44,9 @@ weights download without authentication.
    runs the matching model (ACE-Step 1.5 for `kind: "music"`, Stable Audio
    Open for `kind: "sfx"`), reconforms the output to 48 kHz/24-bit WAV, and
    writes it under `projects/insight-corruption/production/audio/generated/`
-   (gitignored — never commit generated audio). It prints the file's
-   SHA-256 and a ready-to-paste `asset-registry.json` patch.
+   (committed to Git once approved, alongside its provenance record). It
+   prints the file's SHA-256 and a ready-to-paste `asset-registry.json`
+   patch.
 
 2. **Listen to the file.** This step is not optional and nothing in this
    pipeline does it for you. Check it against the brief

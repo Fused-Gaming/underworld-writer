@@ -108,11 +108,36 @@ TARGET_LRA = 11.0
 
 RENDER_MANIFEST_SCHEMA_VERSION = "1.0"
 
+# Target dBFS each synthesized narration clip is normalized to before
+# stitching, so per-segment loudness is consistent going into the mix
+# (see assemble_episode). -20 dBFS gives comfortable headroom under the
+# final -1 dBTP mastering ceiling.
+NARRATION_TARGET_DBFS = -20.0
+
 # docs/archive/CHATTERBOX_INTEGRATION_PLAN.md Section 3: benchmark cheapest-first.
 # L4 is the VOICE_PODCAST_GENERATION.md executive recommendation for the
 # initial inference GPU; the prior H100 default was never benchmarked
 # against it and is oversized/overpriced for this workload.
 DEFAULT_GPU = "L4"
+
+# Chatterbox's zero-shot generation has no fixed seed by default, so
+# independent generate() calls across a long episode's many chunks can
+# drift away from the reference voice's accent/timbre entirely — found by
+# listening to a full render, where a handful of segments sounded British
+# despite a fixed American-accented reference clip. A per-profile
+# "seed" in the voice profile's synthesis config overrides this.
+DEFAULT_SYNTHESIS_SEED = 42
+
+
+def _normalize_to_dbfs(clip, target_dbfs: float):
+    """Gain-adjust one clip so its average level matches `target_dbfs`.
+
+    Silence has dBFS of -inf; leave it untouched rather than trying to
+    compute an infinite gain.
+    """
+    if clip.dBFS == float("-inf"):
+        return clip
+    return clip.apply_gain(target_dbfs - clip.dBFS)
 
 
 def _parse_ffmpeg_loudnorm_json(stderr_text: str) -> dict:
@@ -272,6 +297,7 @@ class VoiceSynthesizer:
                 language=language,
                 exaggeration=synth_opts.get("exaggeration"),
                 cfg_weight=synth_opts.get("cfgWeight"),
+                seed=synth_opts.get("seed", DEFAULT_SYNTHESIS_SEED),
                 retry_count=retry_count,
                 voice_profile_id=voice_profile_id,
                 voice_profile_revision=str(profile.get("fineTunedCheckpoint") or profile.get("consent", {}).get("confirmedDate", "")),
@@ -291,6 +317,7 @@ class VoiceSynthesizer:
         language: str,
         exaggeration: float | None,
         cfg_weight: float | None,
+        seed: int | None,
         retry_count: int,
         voice_profile_id: str,
         voice_profile_revision: str,
@@ -305,7 +332,7 @@ class VoiceSynthesizer:
             backend_revision=self.chunk_cache.backend_version,
             exaggeration=exaggeration,
             cfg_weight=cfg_weight,
-            extra_params={"language": language},
+            extra_params={"language": language, "seed": seed},
         )
 
         if not force_regenerate:
@@ -322,6 +349,7 @@ class VoiceSynthesizer:
                     language=language,
                     exaggeration=exaggeration,
                     cfg_weight=cfg_weight,
+                    seed=seed,
                 )
                 self.chunk_cache.put(cache_key, audio)
                 episode_output_volume.commit()
@@ -413,6 +441,18 @@ def assemble_episode(
 
     clips = [AudioSegment.from_wav(BytesIO(data)) for data in segment_audio]
     ids_for_boundaries = segment_ids or [str(i) for i in range(len(clips))]
+
+    # Chatterbox's per-chunk output loudness varies noticeably from one
+    # synthesis call to the next — found by listening to a full episode
+    # render, where some segments were audibly louder/quieter than others.
+    # The final two-pass loudnorm mastering pass only fixes the *overall*
+    # integrated loudness of the whole stitched file (a single linear
+    # gain); it does nothing for inter-segment inconsistency, and that
+    # inconsistency is also what made the fixed-gain music beds sound too
+    # loud relative to the vocal wherever a segment happened to be quiet.
+    # Normalizing each clip to a consistent target dBFS before stitching
+    # fixes both.
+    clips = [_normalize_to_dbfs(clip, NARRATION_TARGET_DBFS) for clip in clips]
 
     # Dialogue edit first. Sound design is a downstream, deterministic layer.
     # Segment boundaries are recorded from the real assembled track's length

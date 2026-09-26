@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "generator": {
     "name": "@h4shed/skill-underworld-writer",
-    "version": "2.2.0"
+    "version": "2.4.0"
   },
   "seriesSlug": "insight-corruption",
   "episodeNumber": 1,
@@ -29,8 +29,8 @@
   "length": {
     "format": "single-part",
     "wordsPerMinute": 145,
-    "scriptWords": 4092,
-    "estimatedRuntimeMinutes": 29.52,
+    "scriptWords": 4313,
+    "estimatedRuntimeMinutes": 30.73,
     "runtimeValidation": "PASS",
     "targetRuntimeMinutes": 30,
     "runtimeToleranceMinutes": 1,
@@ -43,22 +43,24 @@
     ]
   },
   "outputs": {
-    "podcastSegments": 13,
+    "podcastSegments": 29,
     "scriptManifest": "scripts/manifest.json",
     "assembledScript": "scripts/assembled-script.md",
-    "linkedinArticleWords": 1864,
+    "linkedinArticleWords": 2154,
     "linkedinArticleLengthValidation": "PASS",
     "linkedinArticle": "published-assets/articles/linkedin/article.md"
   },
   "keyPoints": [
-    "The 2023 complaint alleged a long history of overseas pill shipments.",
+    "The 2023 complaint alleged a long history of overseas pill shipments, at least 61 shipments stretching back to 2015.",
     "Segovia pleaded guilty in October 2024 to unlawfully importing tapentadol.",
+    "Prosecutors said she ordered roughly 18,000 tapentadol pills during a 17-month period in 2021-2022 and redistributed some to other people, while arguing addiction rather than profit was the motive.",
     "The original fentanyl-related charge was removed after prosecutors acknowledged a testing error.",
     "Judge Eumi K. Lee imposed three years of probation and 100 hours of community service with no prison term."
   ],
   "investigativeAngles": [
     "How addiction, rehabilitation, deception, institutional position, and individualized federal sentencing were weighed in the final outcome.",
-    "How to distinguish institutional oversight questions from unsupported claims of broader organizational criminal participation."
+    "How to distinguish institutional oversight questions from unsupported claims of broader organizational criminal participation.",
+    "The tension between the documented shipment volume/redistribution pattern and the government's own sentencing position that this was not profit-driven, including what Segovia received, if anything, for the pills she redistributed."
   ],
   "producerNotes": "The segmented script is authoritative. Edit the source package or reusable templates and regenerate instead of hand-editing assembled-script.md. Runtime is validated from spoken-word count plus fixed-duration segments, not section timestamps."
 }
