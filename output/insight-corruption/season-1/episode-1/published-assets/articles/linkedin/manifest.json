@@ -1,13 +1,13 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-24T05:37:46.804Z",
+  "generatedAt": "2026-09-26T15:30:53.233Z",
   "sourcePackage": "projects/insight-corruption/episode-packages/season-1/episode-1.json",
   "channel": "linkedin",
   "targetWords": {
     "minimum": 1800,
     "maximum": 2600
   },
-  "totalWords": 2143,
+  "totalWords": 2154,
   "lengthPass": true,
   "sections": [
     {
@@ -139,12 +139,12 @@
       "order": 12,
       "id": "article-10",
       "title": "Why the Judge Chose Probation — Part 3",
-      "wordCount": 178,
+      "wordCount": 177,
       "claimIds": [
         "C06",
         "C07"
       ],
-      "sha256": "955af79a348898b9b1b57b09bfbdcbb263dfd47532f08f5233cb8d988e8fdd4c"
+      "sha256": "7668494b28136965c25422c758c9fda4d7248a9cc43c8f7ba616c2e55b9f58a3"
     },
     {
       "order": 13,
@@ -160,11 +160,11 @@
       "order": 14,
       "id": "article-12",
       "title": "What Institutional Accountability Does — and Does Not — Mean Here — Part 2",
-      "wordCount": 187,
+      "wordCount": 199,
       "claimIds": [
         "C08"
       ],
-      "sha256": "08300d56b455086d9c12e8833bc5ad8da7685e101f41448bf36631468c6ca31d"
+      "sha256": "684c2328a28358a40005e6f177dddedd76cedb094f28ee9ec36fd23599ec00ec"
     },
     {
       "order": 15,

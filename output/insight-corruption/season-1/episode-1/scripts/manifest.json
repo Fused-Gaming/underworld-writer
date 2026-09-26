@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-24T05:37:46.804Z",
+  "generatedAt": "2026-09-26T15:30:53.233Z",
   "sourcePackage": "projects/insight-corruption/episode-packages/season-1/episode-1.json",
   "seriesSlug": "insight-corruption",
   "seasonNumber": 1,
   "episodeNumber": 1,
   "wordsPerMinute": 145,
   "targetRuntimeMinutes": 30,
-  "estimatedRuntimeMinutes": 30.65,
-  "totalWords": 4300,
+  "estimatedRuntimeMinutes": 30.73,
+  "totalWords": 4313,
   "runtimePass": true,
   "segments": [
     {
@@ -287,13 +287,13 @@
       "id": "sentencing-record-part-3",
       "type": "case-specific",
       "title": "Why the Judge Chose Probation — Part 3",
-      "wordCount": 178,
-      "estimatedSeconds": 74,
+      "wordCount": 177,
+      "estimatedSeconds": 73,
       "claimIds": [
         "C06",
         "C07"
       ],
-      "sha256": "955af79a348898b9b1b57b09bfbdcbb263dfd47532f08f5233cb8d988e8fdd4c"
+      "sha256": "7668494b28136965c25422c758c9fda4d7248a9cc43c8f7ba616c2e55b9f58a3"
     },
     {
       "order": 23,
@@ -312,20 +312,20 @@
       "id": "institutional-accountability-part-2",
       "type": "analysis",
       "title": "What Institutional Accountability Does — and Does Not — Mean Here — Part 2",
-      "wordCount": 187,
-      "estimatedSeconds": 77,
+      "wordCount": 199,
+      "estimatedSeconds": 82,
       "claimIds": [
         "C08"
       ],
-      "sha256": "08300d56b455086d9c12e8833bc5ad8da7685e101f41448bf36631468c6ca31d"
+      "sha256": "684c2328a28358a40005e6f177dddedd76cedb094f28ee9ec36fd23599ec00ec"
     },
     {
       "order": 25,
       "id": "analysis-known-unknown",
       "type": "analysis",
       "title": "What We Know, What We Don't, and the Better Next Question — Part 1",
-      "wordCount": 305,
-      "estimatedSeconds": 126,
+      "wordCount": 307,
+      "estimatedSeconds": 127,
       "claimIds": [
         "C03",
         "C04",
@@ -336,7 +336,7 @@
         "C09",
         "C01"
       ],
-      "sha256": "f6d379a9cdf00988c2fde78d7c3a53001a08dada2175a78ee283f4c58e4b6736"
+      "sha256": "87a5d9c875a7e8b0e8bafa71c96c8199ee9ff4eee76528c4a15071ebd16333fc"
     },
     {
       "order": 26,
