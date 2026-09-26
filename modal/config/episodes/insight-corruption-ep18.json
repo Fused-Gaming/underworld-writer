@@ -1,0 +1,15 @@
+{
+  "scriptOutputPath": "output/insight-corruption/season-1/episode-18/script-output.json",
+  "speakerVoiceProfiles": {
+    "narrator": "voice-eric-nissen-01"
+  },
+  "outputFileName": "insight-corruption-ep18.wav",
+  "episodeMeta": {
+    "title": "Elizabeth Williams & Insight Housing: The Paper Trail",
+    "episodeNumber": 18,
+    "seasonNumber": 1,
+    "series": "insight-corruption",
+    "sourceIssue": 148,
+    "editorialStatus": "studio-prep"
+  }
+}
