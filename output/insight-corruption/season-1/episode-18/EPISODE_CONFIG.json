@@ -7,6 +7,7 @@
   "characters": [
     "Elizabeth Williams",
     "Thomas Espinosa",
+    "Anthony Harbaugh",
     "Insight Housing"
   ],
   "location": "Oakland, California",
@@ -20,7 +21,7 @@
     "oakland"
   ],
   "sourceVerificationTier": 2,
-  "caseReference": "Oakland PEC Case No. 16-14 / SSVF housing records / OPD report T26008570",
+  "caseReference": "Oakland PEC Case No. 16-14 / ACCELA Case No. 2600830 / SSVF housing records / OPD report T26008570",
   "status": "studio-prep",
   "length": {
     "format": "single-part",
@@ -55,6 +56,8 @@
   "keyPoints": [
     "In Oakland PEC Case No. 16-14, a hearing officer found that City building inspector Thomas Espinosa solicited and received four $300 payments from Elizabeth Williams in exchange for permit and inspection-related official acts.",
     "The PEC findings describe Williams as an Oakland landlord whose properties had been the subject of multiple City maintenance lawsuits; the adjudicated ethics violations were findings against Espinosa, not a criminal judgment against Williams.",
+    "Press coverage of the Commission's final September 2021 decision reports the fine was increased to $309,600 across 47 violations, that Espinosa was separately paid to work as Williams's contractor while inspecting his own work, and that a second inspector, Anthony Harbaugh, was fined $55,000 for a related $300 payment and for failing to report income from Williams.",
+    "Oakland ACCELA Case No. 2600830, covering the exact SSVF placement property (1055 72nd Ave), is now directly confirmed as an open, unabated housing-habitability case.",
     "In 2024, a veteran was placed through Insight Housing's SSVF program at an Oakland rental property associated with Williams, with public funding supporting the placement.",
     "A 2026 Oakland Police Department report records allegations by the reporting party concerning housing conditions, program funds, eviction, and retaliation; those allegations are not treated in this episode as proven criminal conduct.",
     "The episode asks what due diligence, inspection, complaint-handling, and fund-tracing controls should exist when public housing dollars intersect with a property or landlord already present in a municipal enforcement record."
@@ -73,9 +76,10 @@
   ],
   "factCheckLayers": [
     "Tier 1: Oakland Public Ethics Commission Case No. 16-14 findings and exhibits",
-    "Tier 1/2: court filings, agency correspondence, SSVF approval records, public-records responses",
-    "Tier 2: Oakland Police Department report T26008570 as proof an allegation was reported, not proof the allegation itself is true",
-    "Tier 3: complainant chronology where underlying primary record has not yet been independently matched"
+    "Tier 1: press coverage of the Commission's final decision and the separate Harbaugh matter (Oaklandside, CBS News/KPIX, East Bay Express), not yet reconciled against the Commission's own final written decision",
+    "Tier 1/2: court filings, agency correspondence, SSVF approval records, public-records responses, and the confirmed ACCELA Case No. 2600830 record",
+    "Tier 2: Oakland Police Department report T26008570 as proof an allegation was reported, not proof the allegation itself is true; reported FBI immunity for Williams (single-sourced)",
+    "Tier 3: complainant chronology and the single-sourced 2018 Indybay account of the 732 Apgar Street fire, where the underlying primary record has not yet been independently matched"
   ],
-  "producerNotes": "Editorial rule: never collapse the 2015-2016 PEC findings and the 2024-2026 SSVF dispute into a claim of one proven criminal scheme. The PEC adjudicated Espinosa's conduct. Later funding, habitability, retaliation, and fraud claims are allegations and requests for investigation unless independently established by primary records. Studio render may proceed with the current script because all unresolved propositions are either omitted or explicitly framed as allegations/questions. Any later ACCELA/fire/ledger records should trigger a script revision before publication if they materially change the facts."
+  "producerNotes": "Editorial rule: never collapse the 2015-2016 PEC findings and the 2024-2026 SSVF dispute into a claim of one proven criminal scheme. The PEC adjudicated Espinosa's conduct. Later funding, habitability, retaliation, and fraud claims are allegations and requests for investigation unless independently established by primary records. Studio render may proceed with the current script because all unresolved propositions are either omitted or explicitly framed as allegations/questions. Any later ACCELA/fire/ledger records should trigger a script revision before publication if they materially change the facts. UPDATE (post-#148 comment): the final-decision fine amount/violation count, the Espinosa-as-contractor conflict, the Harbaugh matter, and the confirmed ACCELA 2600830 record are new Tier-1/2 facts that should be worked into the script and article, clearly attributed to press coverage where they have not been matched against primary Commission documents. The Apgar Street fire account and the exact Williams-to-Espinosa payment total remain unresolved/Tier 3 and should stay framed as such."
 }

@@ -40,12 +40,16 @@ voice-eric-nissen-01
 
 The studio script is intentionally safe to render now because unresolved ACCELA/fire/payment-ledger claims are framed as questions or attributed allegations rather than established facts.
 
+**2026-09-26 update:** Issue #148 received a follow-up comment with an ACCELA link, a NextRequest link, a 2018 Indybay article, and a YouTube video. Research from those links (plus press coverage of the PEC's final decision) has been folded into `EPISODE_CONFIG.json`, `script-output.json` (attributions, missingFacts, Segment 2 narration), `scripts/script.md`, `published-assets/article.md`, and the producer brief — see each file's new/updated sections for details. Key additions: the Commission's final $309,600 fine / 47-violation count, the Espinosa-as-Williams's-contractor conflict, a second inspector (Anthony Harbaugh, $55,000 fine), and direct confirmation of ACCELA Case No. 2600830 at the placement property. The 732 Apgar Street fire account and the exact Williams-to-Espinosa payment total remain single-sourced/unreconciled; NextRequest 26-7112 and the linked YouTube video still need direct review.
+
 Before **publication**:
 
-1. Incorporate any material right-of-reply response from Elizabeth Williams, Insight Housing, or SSVF oversight.
-2. Reconcile direct ACCELA/code/fire records if obtained.
+1. Incorporate any material right-of-reply response from Elizabeth Williams, Insight Housing, Anthony Harbaugh, or SSVF oversight.
+2. Reconcile direct ACCELA/code/fire records if obtained (ACCELA Case 2600830 confirmed; full history still needed).
 3. Reconcile the complete SSVF payment ledger if obtained.
-4. Re-render if those records materially change narration.
+4. Reconcile the Commission's final written decision against the "43 vs. 47 violations" and "$176,000 vs. ~$112,000" discrepancies currently attributed only to press coverage.
+5. Review the linked YouTube video and NextRequest 26-7112 status.
+6. Re-run `npm run editorial:check` and re-render — Segment 2 narration and duration changed and have not been re-timed or re-rendered.
 
 ## Child issues
 

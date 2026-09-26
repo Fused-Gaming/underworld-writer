@@ -40,6 +40,22 @@ The important limitation is equally clear: these were findings against Espinosa.
 
 That distinction is essential to responsible reporting.
 
+## What later reporting adds
+
+The hearing-officer document is not the end of the paper trail. Press coverage of the Public Ethics Commission's *final* decision — reported by Oaklandside and CBS News/KPIX in September 2021 — describes a broader case than the hearing officer's recommendation alone:
+
+- The Commission's final vote reportedly raised Espinosa's fine to **$309,600**, described by the Commission's chair as the most extensive case it had ever investigated, covering **47** violations. That is a higher violation count than the "43" in the hearing-officer document cited above; this article has not yet obtained the Commission's own final written decision to reconcile the discrepancy, so both figures are presented with their source.
+- Beyond the four $300 solicitations, reporting describes Espinosa also being paid to work as Williams's electrical or general contractor on her rental properties — then inspecting his own work and closing at least one code-enforcement case against her, in October 2015, without disclosing the conflict on his required financial-disclosure form. The reported total of those contractor payments is inconsistent across outlets: Oaklandside reports $176,000; East Bay Express reports approximately $112,000. Neither figure is independently verified here against the Commission's underlying exhibits.
+- A second Oakland building inspector, **Anthony Harbaugh**, was separately found by a PEC hearing officer to have committed ethics violations — accepting a $300 payment from Espinosa to approve electrical work at a Williams property after two other inspectors had rejected it, and failing to report income he received from Williams between January 2015 and September 2016. Harbaugh was fined $55,000.
+- East Bay Express reports that Williams was granted immunity by the FBI in exchange for testimony about the scheme. That has not been independently confirmed here against a Department of Justice or FBI record.
+- A single 2018 account (Indybay) describes tenants alleging an electrical fire at a different Williams-associated property displaced three units, and a separate tenant alleging Harbaugh was personally close to Williams and refused a requested verification inspection. That account has not been corroborated against fire-department incident records or a second outlet and is treated here as an unverified allegation, not an established fact.
+
+None of this changes the article's core limitation: these are findings against Espinosa and Harbaugh, and reporting about their conduct, not criminal findings against Williams.
+
+## The ACCELA case, now confirmed
+
+A follow-up records link identifies the code-enforcement case directly: **Oakland ACCELA Case No. 2600830**, for the property at 1055 72nd Avenue (parcel 041 414600600) — the exact address of the SSVF placement described below. As of this review, the case is open with a status of "OP-Insp-Not Abated," and its narrative references a January 4, 2026 complaint to the VA's National Homeless Veterans Hotline and a January 8, 2026 summons, consistent with the participant's own chronology. The case's full prior inspection and violation history has not yet been pulled, and a related public-records request (NextRequest 26-7112) could not be reviewed past its landing page in this pass.
+
 ## The later SSVF placement
 
 In December 2024, records retained by the housing-program participant show that he was approved for financial support through SSVF and placed through Insight Housing at 1055 72nd Avenue in Oakland.
@@ -196,6 +212,12 @@ Any material response or newly obtained primary record that changes the factual 
 ### Sources
 
 - City of Oakland Public Ethics Commission, Case No. 16-14, Hearing Officer Findings of Fact and Conclusions of Law.
+- Oaklandside, "Oakland issues its largest ethics fine ever, against a corrupt former building inspector" (Sept. 28, 2021).
+- Oaklandside, "Oakland building inspector faces possible $22,000 fine for bribery and extortion" (Dec. 22, 2020) [re: Harbaugh].
+- CBS News/KPIX, "Former Oakland Building Inspector Fined Over $300,000 For Dozens Of Bribery, Ethics Violations."
+- East Bay Express, "Former Oakland Building Inspector Accused of Shakedowns, Bribery, and Colluding with Landlords to Displace Tenants."
+- Indybay, "Oakland renters are wondering why landlord Elizabeth Williams is not in jail" (Nov. 29, 2018) — tenant-account allegations, single-sourced.
+- City of Oakland ACCELA public case record, Case No. 2600830 (1055 72nd Ave, Oakland).
 - SSVF and Insight Housing records retained by the program participant, including approval and correspondence materials.
 - Oakland Police Department report T26008570 / original report T26002522, used only as evidence of allegations reported to police unless independently corroborated.
 - Related court and public-records materials identified in the episode producer brief.

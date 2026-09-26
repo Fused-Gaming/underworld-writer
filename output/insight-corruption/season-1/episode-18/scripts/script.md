@@ -67,6 +67,12 @@ The ethics findings are against Espinosa. The document does not make this episod
 
 That distinction is not a technicality. It is the difference between reporting what the government actually found and inventing a stronger conclusion than the record supports.
 
+There's more to the record than the hearing officer's recommendation alone. Press coverage of the Commission's final vote, in September 2021, describes the fine being raised to three hundred nine thousand six hundred dollars — the largest ethics fine the Commission had ever issued — across a reported forty-seven violations. That's a higher count than the forty-three in the hearing-officer document we're relying on here, and we have not yet obtained the Commission's own final written decision to reconcile the two numbers, so we're naming both, with their sources.
+
+That same reporting describes something beyond the four three-hundred-dollar solicitations: Espinosa was also paid to work as Williams's contractor on her rental properties, then inspected his own work and closed at least one code case against her without disclosing the conflict. Reports disagree on the total — one outlet says one hundred seventy-six thousand dollars, another says roughly one hundred twelve thousand — and neither figure is verified here against the Commission's financial exhibits.
+
+And Espinosa wasn't the only inspector named. A second building inspector, Anthony Harbaugh, was separately found to have taken a three-hundred-dollar payment from Espinosa to approve electrical work at a Williams property after two other inspectors had turned it down, and to have failed to report income he received from Williams. Harbaugh was fined fifty-five thousand dollars. One outlet also reports Williams received immunity from the FBI to testify about the scheme — we haven't independently confirmed that against a federal record, so treat it as reported, not established.
+
 So why does the old ethics file matter to a housing story years later?
 
 Because publicly funded housing systems depend on screening.
