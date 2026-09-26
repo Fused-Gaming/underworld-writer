@@ -76,6 +76,15 @@ The YouTube link from issue #148 is an episode of *Judge Faith*, a binding small
 - Exact total payments from Williams to Espinosa ($176,000 vs. ~$112,000 — sources disagree).
 - FBI immunity for Williams (reported by one outlet, not independently confirmed).
 
+## Witness outreach
+
+### Danielle Johnson (tenant witness, Judge Faith S1E4)
+Identified by the production (not independently verified by this research pass) as Danielle Johnson, Operations Director, Homeless Action Center. Contact on file: `johnsondanielle626@yahoo.com`.
+
+Outreach purpose: invite her to give witness testimony for the episode about her tenancy dispute with Elizabeth Williams and the conditions described in the Judge Faith arbitration.
+
+Status: outreach pending as of 2026-09-26.
+
 ## Right-of-reply targets
 
 ### Anthony Harbaugh
