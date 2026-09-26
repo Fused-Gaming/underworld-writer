@@ -115,6 +115,18 @@
       "confidence": 0.5
     },
     {
+      "claim": "In a separate small-claims arbitration (Judge Faith, \"Johnson v. Williams,\" Season 1 Episode 4), tenant Danielle Johnson was awarded $1,525 against Elizabeth Williams after the arbitrator found Williams breached the implied warranty of habitability, citing a ceiling collapse during renovation, a roof leak that soaked Johnson's bed, a second bathroom-ceiling collapse, and a City-documented sewage backup shortly before the hearing.",
+      "tier": 1,
+      "source": "Judge Faith, Season 1 Episode 4 (\"She's a Slumlord From Hell\"), aired arbitration judgment; reviewed via transcript",
+      "confidence": 0.85
+    },
+    {
+      "claim": "In that same arbitration, Danielle Johnson testified that the City of Oakland sued Williams over 11 properties in 2006 and that three articles had described her as an Oakland slumlord.",
+      "tier": 2,
+      "source": "Johnson's sworn testimony in Judge Faith S1E4; not independently matched by this production to a specific court filing, though consistent with Indybay's separate report of a 2006 City lawsuit",
+      "confidence": 0.6
+    },
+    {
       "claim": "A veteran housing placement through Insight Housing's SSVF program began in December 2024 at 1055 72nd Avenue.",
       "tier": 2,
       "source": "Retained SSVF approval and Insight Housing records",
