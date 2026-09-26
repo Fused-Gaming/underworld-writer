@@ -79,7 +79,7 @@ The YouTube link from issue #148 is an episode of *Judge Faith*, a binding small
 ## Witness outreach
 
 ### Danielle Johnson (tenant witness, Judge Faith S1E4)
-Identified by the production (not independently verified by this research pass) as Danielle Johnson, Operations Director, Homeless Action Center. Contact on file: `johnsondanielle626@yahoo.com`.
+Confirmed by the production as Danielle Johnson, Operations Director, Homeless Action Center (this research pass could not independently verify the identity match from public sources alone — the confirmation is the production's). Contact on file: `johnsondanielle626@yahoo.com`. Org backup lines (no personal contact listed on her staff bio): Oakland (510) 695-2260 / Berkeley (510) 540-0878.
 
 Outreach purpose: invite her to give witness testimony for the episode about her tenancy dispute with Elizabeth Williams and the conditions described in the Judge Faith arbitration.
 
