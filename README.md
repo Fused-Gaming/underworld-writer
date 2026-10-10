@@ -20,6 +20,17 @@ Underworld Writer supports three primary workflows:
 2. **True-crime / investigative editorial work** — evidence-aware narrative construction with source attribution and PACER-informed verification workflows.
 3. **Podcast + article production** — deterministic, segment-first editorial packages that can produce long-form scripts, articles, producer materials, and downstream audio inputs from a shared evidence package.
 
+## v2.4.1 highlights
+
+- **Plugin directory listing fields** — `.claude-plugin/plugin.json` now declares `icon`, `documentationUrl`, `supportUrl`, `privacyPolicyUrl`, and `termsOfServiceUrl` for Anthropic's plugin directory.
+- **Smaller npm package** — `package.json` declares a `files` allowlist. The published tarball drops from 551 entries to 80; production episode material, voice reference clips, Modal scripts, and tests no longer ship.
+- **Tarball guard before publish** — `scripts/publish-npm.mjs` runs `npm pack --dry-run` and aborts if output, projects, modal, tests, docs, or other non-runtime paths would be included.
+- **Editorial-package converter** — `scripts/build-script-output.mjs` turns editorial-package output into the ScriptOutput shape that `modal/app.py` consumes, so Episode 1 audio renders from the current segment-first script.
+- **Fixes** — removed an `app.stop()` call that the pinned Modal SDK does not provide; fixed a segment cleanup bug in the editorial converter; the Stable Audio Open SFX path now takes an `HF_TOKEN` through a Modal secret (the model is gated), instead of retrying a 401 in a loop; the SessionStart hook in the plugin manifest declares `command` as a string.
+- **Release evidence** — `@h4shed/rock-hardened` is pinned to `1.1.0`, and `npm run rock:evidence` reports provenance as verified. See [`docs/ops/ROCK_HARDENED.md`](docs/ops/ROCK_HARDENED.md).
+
+---
+
 ## v2.4.0 highlights
 
 - **Deterministic post-production mixer** (`modal/audio/postproduction.py`) — semantic cue markers so timing survives TTS duration changes, narration ducking, fades, music beds, stingers, and intro/outro cues; WAV master + 192 kbps MP3 delivery.
@@ -322,6 +333,7 @@ The package follows Semantic Versioning.
 - **2.3.0** — two-pass loudness-normalized mastering, configurable editorial linter, chunk-level synthesis cache, local npm publish pipeline, relicense to a custom non-commercial license, `PRIVACY.md`, and root-directory doc cleanup.
 - **2.3.1** — scoped `UW_NPM_TOKEN` publish-auth support for the CLI publish pipeline.
 - **2.3.2** — root README refresh: current version tags, v2.3.x feature highlights, fixed doc links, documentation-structure overview.
+- **2.4.1** — plugin directory listing fields, `files` allowlist and tarball guard for npm publish, editorial-package converter for Episode 1 audio, Modal and plugin-manifest fixes, rock-hardened 1.1.0 with verified provenance.
 - **2.4.0** — deterministic post-production mixer, fail-closed asset-clearance registry, self-generated music/SFX pipeline, verified voice-reference intake, `npx` executable fix, Claude Code plugin secrets onboarding, documentation link cleanup.
 
 Primary release metadata is tracked through `package.json`, `plugin.json`, `VERSION.json`, source exports, and the changelog. Use the version tooling rather than manually changing only one surface:
