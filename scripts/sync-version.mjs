@@ -33,6 +33,24 @@ let indexSource = fs.readFileSync(indexPath, 'utf8');
 const skillVersionMatch = /const skill = \{[\s\S]*?version:\s*'([^']+)'/.exec(indexSource);
 const skillVersion = skillVersionMatch?.[1];
 
+const readmePath = path.join(root, 'README.md');
+const readmeSource = fs.readFileSync(readmePath, 'utf8');
+const readmeMarkers = [
+  {
+    label: 'README.md release image alt text',
+    pattern: /(!\[Underworld Writer v)([^\s]+)( release changelog\])/,
+  },
+  {
+    label: 'README.md "Current version" line',
+    pattern: /(\*\*Current version: )([^*\s]+)(\*\*)/,
+  },
+  {
+    label: 'README.md version badge',
+    pattern: /(badge\/version-)([^-\s)]+)(-purple)/,
+  },
+];
+const readmeMatches = readmeMarkers.map((marker) => ({ ...marker, match: marker.pattern.exec(readmeSource) }));
+
 const errors = [];
 const warnings = [];
 const requireMatch = (label, actual) => {
@@ -48,6 +66,9 @@ requireMatch('VERSION.json', files.version.version);
 requireMatch('src/index.ts skill.version', skillVersion);
 requireMatch('.claude-plugin/plugin.json', files.claudePlugin.version);
 requireMatch('.claude-plugin/marketplace.json plugins[].version', marketplaceEntry?.version);
+for (const marker of readmeMatches) {
+  requireMatch(marker.label, marker.match?.[2]);
+}
 warnMatch('package-lock.json', files.lock.version);
 warnMatch('package-lock.json packages[""]', files.lock.packages?.['']?.version);
 
@@ -84,9 +105,13 @@ if (!skillVersionMatch) {
   process.exit(1);
 }
 indexSource = indexSource.replace(
-  /(const skill = \{[\s\S]*?version:\s*)'[^']+'/, 
+  /(const skill = \{[\s\S]*?version:\s*)'[^']+'/,
   `$1'${target}'`
 );
+let readmeNext = readmeSource;
+for (const marker of readmeMatches) {
+  if (marker.match) readmeNext = readmeNext.replace(marker.pattern, (_, before, _version, after) => `${before}${target}${after}`);
+}
 
 writeJson('package.json', files.package);
 writeJson('plugin.json', files.plugin);
@@ -95,6 +120,7 @@ writeJson('package-lock.json', files.lock);
 writeJson('.claude-plugin/plugin.json', files.claudePlugin);
 writeJson('.claude-plugin/marketplace.json', files.marketplace);
 fs.writeFileSync(indexPath, indexSource);
+fs.writeFileSync(readmePath, readmeNext);
 
 console.log(`Synchronized package, plugin, release ledger, exported skill, lockfile, and Claude plugin/marketplace metadata to ${target}.`);
 console.log('Review VERSION.json and CHANGELOG.md before publishing.');

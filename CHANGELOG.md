@@ -9,6 +9,9 @@ Format follows Keep a Changelog and Semantic Versioning.
 ### Added
 - Future changes belong here before release.
 
+### Fixed
+- `npm run version:check` now also verifies the README release image alt text, the "Current version" line, and the version badge. A mismatch fails the release pipeline, and `npm run version:sync` rewrites them.
+
 ## [2.4.1] - 2026-10-10
 
 ### Added
