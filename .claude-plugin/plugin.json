@@ -1,6 +1,6 @@
 {
   "name": "underworld-writer",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "Three-use-case skill for fictional underworld narratives, fact-sourced true crime writing, and episodic podcast production — character development, PACER-informed editorial verification, and an optional self-generated audio/mastering pipeline.",
   "author": {
     "name": "Fused Gaming",
@@ -18,13 +18,6 @@
   ],
   "bin": {
     "underworld-writer": "./dist/cli.js"
-  },
-  "capabilities": {
-    "character-creation": true,
-    "narrative-development": true,
-    "fact-checking": true,
-    "pacer-integration": true,
-    "markdown-export": true
   },
   "tools": {
     "underworld_create_character": "Create character profiles with three-phase methodology",
@@ -61,7 +54,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": ["${CLAUDE_PLUGIN_ROOT}/scripts/plugin-onboard-secrets.sh"],
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/plugin-onboard-secrets.sh",
             "args": [
               "${user_config.modal_token_id}",
               "${user_config.modal_token_secret}",
