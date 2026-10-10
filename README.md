@@ -1,13 +1,13 @@
 # Underworld Writer
 
-![Underworld Writer v2.4.0 release changelog](release-artifacts/underworld-writer-release-og-1200x630.svg)
+![Underworld Writer v2.4.1 release changelog](release-artifacts/underworld-writer-release-og-1200x630.svg)
 
 > **Release artwork:** Rock-Hardened supplies changelog/release evidence; Underworld Writer owns the visual design contract in `assets/branding/release-brand.json`. The immutable visual template is `assets/branding/underworld-writer-release-changelog-template.svg`, imported byte-for-byte from ArtPatch. `npm run release:art` regenerates only the declared changelog-driven text zones; `npm run release:art:check` verifies the committed artwork is current.
 
-**Current version: 2.4.0**  
+**Current version: 2.4.1**  
 Multi-purpose character development, fact-sourced true-crime editorial tooling, and segment-first podcast/article production — with a full episode post-production pipeline.
 
-[![Version](https://img.shields.io/badge/version-2.4.0-purple.svg)](package.json)
+[![Version](https://img.shields.io/badge/version-2.4.1-purple.svg)](package.json)
 [![License: Non-Commercial](https://img.shields.io/badge/License-Non--Commercial-blue.svg)](LICENSE.md)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-green.svg)](package.json)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-blue.svg)](package.json)
