@@ -7,6 +7,11 @@
     "url": "https://github.com/Fused-Gaming"
   },
   "homepage": "https://github.com/Fused-Gaming/underworld-writer",
+  "icon": "./assets/underworld-writer-icon.svg",
+  "documentationUrl": "https://github.com/Fused-Gaming/underworld-writer#readme",
+  "supportUrl": "https://github.com/Fused-Gaming/underworld-writer/issues",
+  "privacyPolicyUrl": "https://github.com/Fused-Gaming/underworld-writer/blob/main/PRIVACY.md",
+  "termsOfServiceUrl": "https://github.com/Fused-Gaming/underworld-writer/blob/main/LICENSE.md",
   "keywords": [
     "underworld",
     "character",
