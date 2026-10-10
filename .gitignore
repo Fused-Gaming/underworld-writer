@@ -160,3 +160,20 @@ episode.mp3
 # Runtime data, reviewed by a human and then synced to the Modal volume,
 # never committed — see modal/README.md and docs/guides/ASSET_PROCUREMENT.md.
 projects/*/production/audio/generated/
+
+# Generated audio under output/ (episode renders, mastered mixes) — producer
+# artifacts, kept out of the repo and out of the plugin upload.
+output/**/*.mp3
+output/**/*.wav
+output/**/*.flac
+output/**/*.ogg
+output/**/*.m4a
+output/**/*.aac
+
+# Voice-training reference clips (source recordings used to train voice models).
+projects/*/production/voice/references/**/*.mp3
+projects/*/production/voice/references/**/*.wav
+projects/*/production/voice/references/**/*.flac
+projects/*/production/voice/references/**/*.ogg
+projects/*/production/voice/references/**/*.m4a
+projects/*/production/voice/references/**/*.aac
