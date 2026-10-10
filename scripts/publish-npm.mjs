@@ -75,6 +75,21 @@ try {
 console.log("\nRunning release validation (npm run release:evidence)...");
 runInherit("npm", ["run", "release:evidence"]);
 
+// 5b. The tarball must never carry production, episode, voice-reference, or
+// test material. Check the exact file list npm would publish.
+const FORBIDDEN_PACK_PREFIXES = [
+  "output/", "projects/", "modal/", "tests/", "test/", "src/", "docs/",
+  "use-cases/", "benchmarks/", "shared/", "release-artifacts/", ".github/", ".claude/",
+];
+const packed = JSON.parse(run("npm", ["pack", "--dry-run", "--json"]))[0];
+const leaked = packed.files
+  .map((f) => f.path)
+  .filter((p) => FORBIDDEN_PACK_PREFIXES.some((prefix) => p.startsWith(prefix)));
+if (leaked.length) {
+  fail(`Tarball would include ${leaked.length} forbidden path(s), e.g. ${leaked.slice(0, 5).join(", ")}. Check the "files" allowlist in package.json.`);
+}
+console.log(`Tarball check passed: ${packed.entryCount} entries, none under forbidden paths.`);
+
 // 6. Publish.
 const publishArgs = ["publish", "--access", "public"];
 if (DRY_RUN) publishArgs.push("--dry-run");

@@ -4,6 +4,19 @@
   "description": "Three-use-case skill for fictional underworld narratives, factually sourced true crime writing, and episodic podcast production with podcast scripting engine, character development, editorial verification, PACER API integration, and comprehensive documentation",
   "type": "module",
   "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "templates",
+    "schemas",
+    "assets",
+    "SKILL.md",
+    "plugin.json",
+    "VERSION.json",
+    "README.md",
+    "LICENSE.md",
+    "CHANGELOG.md",
+    "PRIVACY.md"
+  ],
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
@@ -61,7 +74,7 @@
     "@modelcontextprotocol/sdk": "^1.0.0"
   },
   "devDependencies": {
-    "@h4shed/rock-hardened": "0.8.2",
+    "@h4shed/rock-hardened": "1.1.0",
     "@types/jest": "^30.0.0",
     "@types/node": "^20.12.0",
     "@typescript-eslint/eslint-plugin": "^8.70.0",

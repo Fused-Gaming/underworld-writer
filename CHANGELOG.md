@@ -9,6 +9,22 @@ Format follows Keep a Changelog and Semantic Versioning.
 ### Added
 - Future changes belong here before release.
 
+## [2.4.1] - 2026-10-10
+
+### Added
+- Plugin directory listing fields in `.claude-plugin/plugin.json`: `icon`, `documentationUrl`, `supportUrl`, `privacyPolicyUrl`, and `termsOfServiceUrl`, read by Anthropic's plugin directory at submission time.
+- `scripts/publish-npm.mjs` now checks the tarball before publishing: it runs `npm pack --dry-run` and aborts if output, projects, modal, tests, docs, or other non-runtime paths would ship.
+- `scripts/build-script-output.mjs` converts editorial-package output into the ScriptOutput shape that `modal/app.py` consumes, so Episode 1 audio renders from the current segment-first script.
+
+### Changed
+- `package.json` declares a `files` allowlist (`dist`, `templates`, `schemas`, `assets`, `SKILL.md`, `plugin.json`, `VERSION.json`, `README.md`, `LICENSE.md`, `CHANGELOG.md`, `PRIVACY.md`). The published tarball drops from 551 entries to 80. Production episode material, voice reference clips, Modal scripts, and tests are no longer shipped.
+
+### Fixed
+- Removed an `app.stop()` call in `modal/app.py` that does not exist on the pinned Modal SDK (1.5.5). It raised on every run, including runs that had already rendered.
+- Fixed a segment cleanup bug in the editorial-package converter.
+- Stable Audio Open SFX generation: the model is gated on Hugging Face. It now takes an `HF_TOKEN` through a Modal secret. Previously it retried a 401 in a loop until the app was stopped.
+- The SessionStart hook in `.claude-plugin/plugin.json` declares `command` as a string, which Claude Code requires, and the unused `capabilities` block is removed.
+
 ## [2.4.0] - 2026-09-24
 
 ### Added
