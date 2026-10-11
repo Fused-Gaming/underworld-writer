@@ -9,7 +9,9 @@ if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
   exit 0
 fi
 
-cd "${CLAUDE_PROJECT_DIR:-$(pwd)}"
+# Resolve the project root from this script's location so npm never runs in
+# whatever directory the session happens to start in (for example $HOME).
+cd "${CLAUDE_PROJECT_DIR:-$(cd "$(dirname "$0")/../.." && pwd)}"
 
 echo "[session-start] installing npm dependencies"
 npm install --no-audit --no-fund
