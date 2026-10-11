@@ -9,8 +9,12 @@ Format follows Keep a Changelog and Semantic Versioning.
 ### Added
 - Future changes belong here before release.
 
+## [2.4.2] - 2026-10-11
+
 ### Fixed
 - `npm run version:check` now also verifies the README release image alt text, the "Current version" line, and the version badge. A mismatch fails the release pipeline, and `npm run version:sync` rewrites them.
+- `.claude-plugin/plugin.json` is now the only plugin manifest. The root `plugin.json` moved there, merged with the listing fields, `userConfig`, and the SessionStart hook from the previous file, so Claude Code loads the skill tools and capabilities from the path it reads. `package.json`, the Dockerfile, the npm `files` allowlist, `sync-version`, `validate-output-structure`, and the tests point to the new path.
+- Removed the `dependencies` and `optionalDependencies` objects from the plugin manifest. Claude Code expects `dependencies` to be an array and rejected the manifest with a blocking error. The npm dependencies remain declared in `package.json`.
 
 ## [2.4.1] - 2026-10-10
 

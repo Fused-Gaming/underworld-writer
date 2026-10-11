@@ -19,7 +19,7 @@ const writeJson = (root, relative, value) => {
 function fixture() {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'underworld-workspace-'));
   writeJson(root, 'package.json', { name: '@h4shed/skill-underworld-writer', version: '2.2.0' });
-  writeJson(root, 'plugin.json', { name: 'underworld-writer', version: '2.2.0' });
+  writeJson(root, '.claude-plugin/plugin.json', { name: 'underworld-writer', version: '2.2.0' });
   writeJson(root, 'VERSION.json', { version: '2.2.0' });
   writeJson(root, 'package-lock.json', { version: '2.2.0', packages: { '': { version: '2.2.0' } } });
   writeJson(root, 'output/SERIES_REGISTRY.json', { schemaVersion: '1.0', series: [] });
