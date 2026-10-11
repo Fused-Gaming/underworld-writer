@@ -33,8 +33,8 @@ describe('Core Module Tests', () => {
       expect(pkg.type).toBe('module');
     });
 
-    it('should have valid plugin.json', () => {
-      const pluginPath = path.resolve(__dirname, '../plugin.json');
+    it('should have valid .claude-plugin/plugin.json', () => {
+      const pluginPath = path.resolve(__dirname, '../.claude-plugin/plugin.json');
       expect(fs.existsSync(pluginPath)).toBe(true);
 
       const plugin = JSON.parse(fs.readFileSync(pluginPath, 'utf-8'));

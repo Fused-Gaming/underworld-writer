@@ -21,7 +21,6 @@ if (!semver.test(target)) {
 
 const files = {
   package: readJson('package.json'),
-  plugin: readJson('plugin.json'),
   version: readJson('VERSION.json'),
   lock: readJson('package-lock.json'),
   claudePlugin: readJson('.claude-plugin/plugin.json'),
@@ -61,7 +60,6 @@ const warnMatch = (label, actual) => {
 };
 
 requireMatch('package.json', files.package.version);
-requireMatch('plugin.json', files.plugin.version);
 requireMatch('VERSION.json', files.version.version);
 requireMatch('src/index.ts skill.version', skillVersion);
 requireMatch('.claude-plugin/plugin.json', files.claudePlugin.version);
@@ -88,7 +86,6 @@ if (checkOnly) {
 }
 
 files.package.version = target;
-files.plugin.version = target;
 files.version.version = target;
 files.version.majorVersion = Number(target.split('.')[0]);
 files.version.minorVersion = Number(target.split('.')[1]);
@@ -114,7 +111,6 @@ for (const marker of readmeMatches) {
 }
 
 writeJson('package.json', files.package);
-writeJson('plugin.json', files.plugin);
 writeJson('VERSION.json', files.version);
 writeJson('package-lock.json', files.lock);
 writeJson('.claude-plugin/plugin.json', files.claudePlugin);

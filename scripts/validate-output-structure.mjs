@@ -20,9 +20,9 @@ const packageJson = readJson('package.json');
 const releaseVersion = packageJson?.version;
 if (!releaseVersion) errors.push('package.json: version is required');
 
-const pluginJson = readJson('plugin.json');
+const pluginJson = readJson('.claude-plugin/plugin.json');
 if (pluginJson && releaseVersion && pluginJson.version !== releaseVersion) {
-  errors.push(`plugin.json: version ${pluginJson.version} must match package.json ${releaseVersion}`);
+  errors.push(`.claude-plugin/plugin.json: version ${pluginJson.version} must match package.json ${releaseVersion}`);
 }
 
 const versionJson = readJson('VERSION.json');

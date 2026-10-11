@@ -1,10 +1,10 @@
 {
-  "version": "2.4.1",
-  "releaseDate": "2026-09-24",
+  "version": "2.4.2",
+  "releaseDate": "2026-10-11",
   "status": "release-candidate",
   "majorVersion": 2,
   "minorVersion": 4,
-  "patchVersion": 1,
+  "patchVersion": 2,
   "prerelease": null,
   "metadata": {
     "nodeMinimum": "20.0.0",
@@ -346,6 +346,21 @@
       "highlights": [
         "Initial migration to standalone repository",
         "Core character creation and narrative development"
+      ]
+    },
+    "2.4.2": {
+      "releaseDate": "2026-10-11",
+      "highlights": [
+        "Single plugin manifest at .claude-plugin/plugin.json; Claude Code loads components from it",
+        "Release version check now covers README version markers and fails on mismatch"
+      ],
+      "breaking_changes": [],
+      "deprecations": [],
+      "new_features": [],
+      "bug_fixes": [
+        "Removed root plugin.json; merged its skill metadata into .claude-plugin/plugin.json",
+        "Removed array-invalid dependencies objects from the plugin manifest (blocking manifest error)",
+        "npm run version:check fails when README version markers do not match package.json"
       ]
     }
   }

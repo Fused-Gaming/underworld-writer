@@ -1,13 +1,13 @@
 # Underworld Writer
 
-![Underworld Writer v2.4.1 release changelog](release-artifacts/underworld-writer-release-og-1200x630.svg)
+![Underworld Writer v2.4.2 release changelog](release-artifacts/underworld-writer-release-og-1200x630.svg)
 
 > **Release artwork:** Rock-Hardened supplies changelog/release evidence; Underworld Writer owns the visual design contract in `assets/branding/release-brand.json`. The immutable visual template is `assets/branding/underworld-writer-release-changelog-template.svg`, imported byte-for-byte from ArtPatch. `npm run release:art` regenerates only the declared changelog-driven text zones; `npm run release:art:check` verifies the committed artwork is current.
 
-**Current version: 2.4.1**  
+**Current version: 2.4.2**  
 Multi-purpose character development, fact-sourced true-crime editorial tooling, and segment-first podcast/article production — with a full episode post-production pipeline.
 
-[![Version](https://img.shields.io/badge/version-2.4.1-purple.svg)](package.json)
+[![Version](https://img.shields.io/badge/version-2.4.2-purple.svg)](package.json)
 [![License: Non-Commercial](https://img.shields.io/badge/License-Non--Commercial-blue.svg)](LICENSE.md)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-green.svg)](package.json)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-blue.svg)](package.json)
@@ -336,7 +336,7 @@ The package follows Semantic Versioning.
 - **2.4.1** — plugin directory listing fields, `files` allowlist and tarball guard for npm publish, editorial-package converter for Episode 1 audio, Modal and plugin-manifest fixes, rock-hardened 1.1.0 with verified provenance.
 - **2.4.0** — deterministic post-production mixer, fail-closed asset-clearance registry, self-generated music/SFX pipeline, verified voice-reference intake, `npx` executable fix, Claude Code plugin secrets onboarding, documentation link cleanup.
 
-Primary release metadata is tracked through `package.json`, `plugin.json`, `VERSION.json`, source exports, and the changelog. Use the version tooling rather than manually changing only one surface:
+Primary release metadata is tracked through `package.json`, `.claude-plugin/plugin.json`, `VERSION.json`, source exports, and the changelog. Use the version tooling rather than manually changing only one surface:
 
 ```bash
 npm run version:check

@@ -45,7 +45,7 @@ COPY jest.config.cjs ./
 COPY eslint.config.mjs ./
 COPY .eslintrc.json ./
 COPY VERSION.json ./
-COPY plugin.json ./
+COPY .claude-plugin/ ./.claude-plugin/
 COPY README.md ./
 COPY SKILL.md ./
 
